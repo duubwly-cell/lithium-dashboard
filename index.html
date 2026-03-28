@@ -153,6 +153,17 @@
   .news-orig  { font-size:11px; color:var(--text2); margin-top:2px; font-style:italic; }
   .news-meta  { flex-shrink:0; font-size:11px; color:var(--text2); white-space:nowrap; text-align:right; }
 
+  /* 市场情绪 */
+  .sent-list  { display:flex; flex-direction:column; gap:10px; }
+  .sent-card  { background:var(--bg3); border:1px solid var(--border); border-radius:6px; padding:12px 14px; }
+  .sent-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:5px; }
+  .sent-inst  { font-size:12px; font-weight:600; color:var(--accent); }
+  .sent-time  { font-size:11px; color:var(--text2); }
+  .sent-title { font-size:13px; font-weight:600; color:var(--text); margin-bottom:5px; }
+  .sent-body  { font-size:12px; color:var(--text2); line-height:1.6; white-space:pre-wrap; }
+  .sent-stocks { margin-top:6px; display:flex; flex-wrap:wrap; gap:5px; }
+  .sent-stock { font-size:11px; background:#e8edf5; color:var(--accent); border-radius:3px; padding:1px 6px; }
+
   /* 边际变化 */
   .topics-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:10px; }
   .marginal-card {
@@ -207,6 +218,7 @@
 <a href="#p7" class="nav-link" onclick="setActive(this)">📅 日历</a>
 <a href="#p8" class="nav-link" onclick="setActive(this)">📈 期货曲线</a>
 <a href="#pvol" class="nav-link" onclick="setActive(this)">📊 成交量</a>
+<a href="#psent" class="nav-link" onclick="setActive(this)">🧠 市场情绪</a>
   </nav>
   <main class="main-content" id="mainContent">
     
@@ -1207,6 +1219,185 @@
     });
   })();
   </script>
+</div>
+    
+<div class="panel" id="psent">
+  <div class="panel-title">🧠 市场情绪（Alpha派干货点评）</div>
+  <div class="section-label">扫描 150 条点评，筛出 14 条碳酸锂产业链相关 · 更新 2026-03-28 20:55:43</div>
+  <div class="sent-list">
+
+  <div class="sent-card">
+    <div class="sent-header">
+      <span class="sent-inst">天风证券</span>
+      <span class="sent-time">2026-03-28T19:59:41</span>
+    </div>
+    <div class="sent-title">天能股份25年报交流-260328</div>
+    <div class="sent-body">全文摘要
+天能股份的领导与投资者举行会议，深入讨论了公司至2025年的经营情况、技术进步、市场策略及未来展望。公司深耕电动轻型车动力电池、储能电池等领域，通过技术创新和市场布局，实现了营收与利润的持续增长。特别地，锂电业务的强劲增长及海外市场扩张成为新的增长动力。公司重申对保密要求的严肃性，并强调对股东价值的重视。未来，天能股份将持续投入技术研发，扩大产能，探索新应用场景和市场机会，以确保可持续发</div>
+    <div class="sent-stocks"><span class='sent-stock'>天能股份</span> <span class='sent-stock'>爱玛科技</span> <span class='sent-stock'>伊顿.US</span></div>
+  </div>
+  <div class="sent-card">
+    <div class="sent-header">
+      <span class="sent-inst">国联民生</span>
+      <span class="sent-time">2026-03-28T19:50:10</span>
+    </div>
+    <div class="sent-title">法拉电子25年报交流-国联260328</div>
+    <div class="sent-body">全文摘要
+公司去年在新能源市场（含新能源车、光伏、储能、风电）、数据中心及智能电网市场表现强劲，传统消费类市场占比下降。预期未来将继续受益于新能源和智能电网的发展。会议讨论了成本控制、毛利率、原材料价格波动、研发投资、产能规划和新产品布局等议题。参会者就毛利率、原材料价格影响、海外投资计划、产品应用和市场定位等问题提问，管理层逐一解答。会议感谢投资者参与，并简要回顾了公司今年的市场展望和策略。
+问</div>
+    <div class="sent-stocks"><span class='sent-stock'>法拉电子</span> <span class='sent-stock'>伊顿.US</span></div>
+  </div>
+  <div class="sent-card">
+    <div class="sent-header">
+      <span class="sent-inst">长江证券 · 司鸿历</span>
+      <span class="sent-time">2026-03-28T16:09:44</span>
+    </div>
+    <div class="sent-title">【长江电新】台达SST发布会速递</div>
+    <div class="sent-body">今日下午台达、汉腾科技、龙芯中科等联合发布“集装箱式SST直流移动智算中心”。
+总体产品情况
+1）集装箱形式，一体化预制，24h内部署，可实现快速边缘场景部署。
+2）结构：动力舱：包括中压柜、SST、直流柜；后备锂电柜；多冗余设计+算力舱：国产算力卡；可风冷，可液冷。
+3）集装箱设计总功率300-1000KW。
+4）PUE1.2以下。
+SST情况
+1）台达自研；10KV交流输入，800V（可调）直</div>
+    <div class="sent-stocks"><span class='sent-stock'>正泰电器</span> <span class='sent-stock'>龙芯中科</span> <span class='sent-stock'>科士达</span> <span class='sent-stock'>伊戈尔</span></div>
+  </div>
+  <div class="sent-card">
+    <div class="sent-header">
+      <span class="sent-inst">国联民生 · 许浚哲</span>
+      <span class="sent-time">2026-03-28T13:21:25</span>
+    </div>
+    <div class="sent-title">【法拉电子】25年业绩点评-260328</div>
+    <div class="sent-body">25年业绩符合预期
+2025年公司实现营业收入53.27亿元，同比增长11.64%；实现归母净利润11.92亿元，同比增长14.72%；实现扣非归母净利润11.28亿元，同比增长10.21%。
+下游拆分
+新能源车占比57%，实现收入约30亿，yoy+16%；光储占比22%，实现收入约11.7亿，yoy+7%；工控占比15%，实现收入约8亿，yoy+12%。
+盈利能力分析
+25Q4毛利率下降是新能源</div>
+    <div class="sent-stocks"><span class='sent-stock'>法拉电子</span> <span class='sent-stock'>伊顿.US</span></div>
+  </div>
+  <div class="sent-card">
+    <div class="sent-header">
+      <span class="sent-inst">机构点评</span>
+      <span class="sent-time">2026-03-28T13:02:08</span>
+    </div>
+    <div class="sent-title">锂矿行情与澳洲供给危机</div>
+    <div class="sent-body">概要：会议聚焦锂矿供需格局变化，强调澳洲柴油危机导致减产预期强化，锂价上行确定性高。
+要点1：中东局势持续发酵导致澳洲柴油供应紧张，预计4月中下旬将见底，已引发澳洲垃圾回收等行业停摆，并可能蔓延至锂矿开采端，造成减产甚至停产
+要点2：澳洲占全球锂供给约30%，若负荷下降10个百分点相当于少一个宁德时代，下降20个百分点则相当于少一个赣锋锂业，供给收缩确定性高且影响巨大
+要点3：锂价底部预期随油价翻</div>
+    <div class="sent-stocks"><span class='sent-stock'>宁德时代</span> <span class='sent-stock'>宁德时代.HK</span> <span class='sent-stock'>赣锋锂业.HK</span> <span class='sent-stock'>赣锋锂业</span></div>
+  </div>
+  <div class="sent-card">
+    <div class="sent-header">
+      <span class="sent-inst">长江证券 · 叶之楠</span>
+      <span class="sent-time">2026-03-28T12:19:56</span>
+    </div>
+    <div class="sent-title">【长江电新】亿纬锂能2025年报业绩分析：出货高速增长，储能盈利稳步修复</div>
+    <div class="sent-body">事件：亿纬锂能发布2025年年报，全年实现收入614.7亿元，同比增长26.44%，归母净利润41.34亿元，同比增长1.44%，扣非净利润30.96亿元，同比下滑2.09%。其中单看4季度来看，实现收入164.68亿元，同比增长13.06%，归母净利润13.19亿元，同比增长48.67%，扣非净利润11.58亿元，同比增长75.09%。
+1、就全年分业务数据看，2025年公司动力电池销量50.1</div>
+    <div class="sent-stocks"><span class='sent-stock'>亿纬锂能</span> <span class='sent-stock'>思摩尔国际.HK</span></div>
+  </div>
+  <div class="sent-card">
+    <div class="sent-header">
+      <span class="sent-inst">国海证券</span>
+      <span class="sent-time">2026-03-28T11:28:14</span>
+    </div>
+    <div class="sent-title">【国海化工】蓝晓科技深度报告：创新驱动，吸附分离材料龙头厚积薄发</div>
+    <div class="sent-body">公司是吸附分离材料龙头，平台型企业韧性凸显
+公司产品覆盖生命科学、金属资源、水处理与超纯水、节能环保、食品加工、化工与催化等多个领域，作为国内吸附分离龙头，公司创新驱动，抓住盐湖提锂、CLP-1药等下游新兴产业机遇，2013-2024年公司营业收入和归母净利润均实现十倍以上增长。
+生命科学领域产品线丰富，小核酸固相载体迎拐点
+全球小核酸药物市场规模有望从2024年的57亿美元增长至2034年的54</div>
+    <div class="sent-stocks"><span class='sent-stock'>蓝晓科技</span></div>
+  </div>
+  <div class="sent-card">
+    <div class="sent-header">
+      <span class="sent-inst">机构点评</span>
+      <span class="sent-time">2026-03-28T10:45:00</span>
+    </div>
+    <div class="sent-title">比亚迪25年业绩，展望26Q1</div>
+    <div class="sent-body">一句话：25Q4盈利韧性好于我预期（考虑加回10e），悬念只有26Q1的低点如何定价。
+·反内卷：应付从年初164天降到年底123天，Q4经营性净现金流仍然有183亿，逐步回到正规
+·降本增效：瘦身约10w人（年底87w人），研发人均薪酬减少约5%。
+·26Q1展望：25Q4单车折摊+SG&A有2.7w/车（25Q4销量135w台）；26Q1销量预计仅75w台，单车盈利压力显著
+最终盈利水平欢迎交</div>
+    <div class="sent-stocks"><span class='sent-stock'>比亚迪股份.HK</span> <span class='sent-stock'>比亚迪</span></div>
+  </div>
+  <div class="sent-card">
+    <div class="sent-header">
+      <span class="sent-inst">机构点评</span>
+      <span class="sent-time">2026-03-28T10:30:56</span>
+    </div>
+    <div class="sent-title">比亚迪电子25年报点评</div>
+    <div class="sent-body">比亚迪电子25年报点评：电子主业压力已计价，看好26年汽车+AI液冷增长动能20260327
+>>收入1795亿元（预期1851亿；YoY+1.2%），归母净利润35.15亿元（预期47亿；YoY-18%）。
+>>收入562亿（YoY+1.8%），归母净利润3.78亿（YoY-69%）。
+手机/汽车/智能终端=>智能终端（零部件+组装）/汽车/AI算力基础设施。
+上次调整还是2018年，汽车业务独</div>
+    <div class="sent-stocks"><span class='sent-stock'>比亚迪电子.HK</span> <span class='sent-stock'>英伟达.US</span></div>
+  </div>
+  <div class="sent-card">
+    <div class="sent-header">
+      <span class="sent-inst">机构点评</span>
+      <span class="sent-time">2026-03-28T10:26:51</span>
+    </div>
+    <div class="sent-title">【比亚迪】发布2025年业绩</div>
+    <div class="sent-body">【比亚迪】发布2025年业绩：
+4Q25公司实现营业收入2377亿元，同比-14%/环比+22%；归母净利润93亿元，同比-38%/环比+19%；扣非归母净利润90亿元，同比-35%/环比+30%。
+剔除比亚迪电子估算，4Q25汽车+电池业务实现收入1815亿元，同比-17%/环比+19%；归母净利润90亿元，同比-36%/环比+31%。
+4Q高端品牌+出口占比提升，销量结构向好
+-4Q25公司总</div>
+    <div class="sent-stocks"><span class='sent-stock'>比亚迪股份.HK</span> <span class='sent-stock'>比亚迪</span> <span class='sent-stock'>比亚迪电子.HK</span></div>
+  </div>
+  <div class="sent-card">
+    <div class="sent-header">
+      <span class="sent-inst">国金证券 · 夏心怡</span>
+      <span class="sent-time">2026-03-28T09:05:06</span>
+    </div>
+    <div class="sent-title">比亚迪：25Q4单车盈利环比提升，期待内销拐点向上&出口持续放量</div>
+    <div class="sent-body">1、公司发布2025年年报：
+1）25Q4公司实现收入2377亿元，同比-14%、环比+22%；归母净利润93亿元，同比-38%、环比+19%，实现扣非净利润89亿元、同比-35%、环比+30%。
+2）2025全年，公司实现收入8040亿元、同比+3%，归母净利润326亿元、同比-19%，扣非归母净利润294亿元、同比-20%。
+2、收入端：量价环比齐升
+1）25Q4公司汽车业务收入1815亿元、</div>
+    <div class="sent-stocks"><span class='sent-stock'>比亚迪股份.HK</span> <span class='sent-stock'>比亚迪</span> <span class='sent-stock'>比亚迪电子.HK</span></div>
+  </div>
+  <div class="sent-card">
+    <div class="sent-header">
+      <span class="sent-inst">长江证券</span>
+      <span class="sent-time">2026-03-28T01:26:32</span>
+    </div>
+    <div class="sent-title">【高伊楠团队】汽车周洞察：供需合力有望推动2026年乘用车均价企稳回升</div>
+    <div class="sent-body">从近期改款上市新车的样本数据来看，今年新车价格出现改款车型涨价现象，且涨价车型普遍伴随配置升级：比亚迪、问界、尊界、小米等品牌的改款车型均上调指导价，其中比亚迪新增电池、闪充等配置；问界M9与尊界S800增配激光雷达；小米则在电池、电机功率扭矩、芯片算力等方面升级，同时低配版补齐激光雷达、高配版新增光感天幕。
+同时并非所有改款车型均呈现涨价趋势，部分车型呈现多样化调整：小鹏G6增配不调价，新P7降</div>
+    <div class="sent-stocks"><span class='sent-stock'>比亚迪股份.HK</span> <span class='sent-stock'>比亚迪</span> <span class='sent-stock'>小鹏汽车.HK</span></div>
+  </div>
+  <div class="sent-card">
+    <div class="sent-header">
+      <span class="sent-inst">长江证券</span>
+      <span class="sent-time">2026-03-28T00:27:19</span>
+    </div>
+    <div class="sent-title">【比亚迪】25Q4业绩符合预期，单车盈利平稳，看好新技术+出海加速开启新周期</div>
+    <div class="sent-body">2025全年营收8039.7亿元，同比+3.5%；归母净利润326.2亿元，同比-19.0%。
+业绩点评：受益出海强势，Q4销量环比持续增长，Q4汽车毛利率约21.6%，环比提升，Q4派发经销商红包（10亿+，直接扣减收入）。研发开支费用率化有所下降，带来研发费用率下降，Q4整体期间费用率下降。同时，规模提升，单车摊折有所下降。综合来看，单车盈利回升，业绩符合预期。
+业绩情况：
+营收：Q4实现收入</div>
+    <div class="sent-stocks"><span class='sent-stock'>比亚迪股份.HK</span> <span class='sent-stock'>比亚迪</span> <span class='sent-stock'>比亚迪电子.HK</span></div>
+  </div>
+  <div class="sent-card">
+    <div class="sent-header">
+      <span class="sent-inst">国信证券</span>
+      <span class="sent-time">2026-03-27T23:28:18</span>
+    </div>
+    <div class="sent-title">铜
+1.智利一季度进入环境评审的矿业项目投资额创纪录达173...</div>
+    <div class="sent-body">铜
+1.智利一季度进入环境评审的矿业项目投资额创纪录达173亿美元，主要包括MineraElAbra75亿美元、Escondida超51亿美元新选矿厂及Albemarle在Atacama盐湖31亿美元直接提锂项目，显示铜矿和锂资源后续新增供给项目推进加快。
+2.EldoradoGold以38亿加元（27亿美元）收购ForanMining遭GlassLewis反对，交易再遇阻，或影响其位于Saska</div>
+    
+  </div>
+  </div>
 </div>
     <div style="height:40px;"></div>
   </main>
