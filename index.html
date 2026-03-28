@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>碳酸锂监测看板</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg:       #0d1117;
+    --bg2:      #161b22;
+    --bg3:      #1c2128;
+    --border:   #30363d;
+    --text:     #e6edf3;
+    --text2:    #8b949e;
+    --accent:   #58a6ff;
+    --up:       #e74c3c;
+    --dn:       #27ae60;
+  }
+  body { background:var(--bg); color:var(--text); font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; font-size:13px; }
+  a { color:var(--accent); text-decoration:none; }
+  a:hover { text-decoration:underline; }
+
+  /* 顶栏 */
+  .topbar {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--bg2); border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; gap: 0; padding: 0;
+  }
+  .topbar-title {
+    flex-shrink: 0; padding: 10px 16px;
+    font-size: 14px; font-weight: 700; color: var(--accent);
+    border-right: 1px solid var(--border);
+    white-space: nowrap;
+  }
+  .ticker-strip {
+    flex: 1; overflow: hidden;
+    display: flex; align-items: center;
+    padding: 8px 12px; gap: 24px;
+    white-space: nowrap;
+  }
+  .ticker-item { display:inline-flex; align-items:center; gap:5px; }
+  .ticker-label { color:var(--text2); font-size:11px; }
+  .ticker-val   { color:var(--text); font-weight:600; }
+  .topbar-meta  {
+    flex-shrink: 0; padding: 8px 14px;
+    font-size:11px; color:var(--text2);
+    border-left: 1px solid var(--border);
+    white-space: nowrap;
+  }
+
+  /* 布局 */
+  .layout { display:flex; height:calc(100vh - 41px); overflow:hidden; }
+  .sidebar {
+    width: 150px; flex-shrink: 0;
+    background: var(--bg2); border-right: 1px solid var(--border);
+    padding: 12px 0; overflow-y: auto;
+  }
+  .nav-link {
+    display:block; padding:9px 16px;
+    color:var(--text2); font-size:12px;
+    transition: all .15s;
+  }
+  .nav-link:hover, .nav-link.active {
+    color:var(--text); background:var(--bg3);
+    text-decoration:none;
+    border-left: 3px solid var(--accent);
+    padding-left: 13px;
+  }
+  .main-content {
+    flex: 1; overflow-y: auto; padding: 16px 20px;
+    scroll-behavior: smooth;
+  }
+
+  /* 面板 */
+  .panel {
+    background: var(--bg2); border: 1px solid var(--border);
+    border-radius: 8px; padding: 16px 18px;
+    margin-bottom: 16px;
+    scroll-margin-top: 16px;
+  }
+  .panel-title {
+    font-size: 15px; font-weight: 700;
+    margin-bottom: 14px; color: var(--text);
+    padding-bottom: 10px; border-bottom: 1px solid var(--border);
+  }
+  .section-label {
+    font-size: 11px; font-weight: 600;
+    color: var(--text2); text-transform: uppercase;
+    letter-spacing: .5px; margin-bottom: 8px;
+    margin-top: 4px;
+  }
+
+  /* 价格卡片 */
+  .card-row { display:flex; gap:10px; flex-wrap:wrap; }
+  .price-card {
+    flex: 1; min-width: 140px;
+    background: var(--bg3); border: 1px solid var(--border);
+    border-radius: 6px; padding: 12px 14px;
+  }
+  .price-card.main-price { border-color: var(--accent); }
+  .price-label  { font-size:11px; color:var(--text2); margin-bottom:4px; }
+  .price-value  { font-size:22px; font-weight:700; color:var(--text); }
+  .price-unit   { font-size:11px; color:var(--text2); font-weight:400; }
+  .price-meta   { font-size:11px; color:var(--text2); margin-top:4px; }
+
+  /* 统计卡片 */
+  .stat-card {
+    flex: 1; min-width: 110px;
+    background: var(--bg3); border: 1px solid var(--border);
+    border-radius: 6px; padding: 10px 12px;
+  }
+  .stat-label { font-size:11px; color:var(--text2); }
+  .stat-value { font-size:18px; font-weight:700; color:var(--text); margin-top:3px; }
+  .stat-sub   { font-size:11px; margin-top:2px; }
+  .unit-small { font-size:11px; color:var(--text2); font-weight:400; }
+  .stat-row   { font-size:13px; color:var(--text2); }
+
+  /* 表格 */
+  .data-table {
+    width:100%; border-collapse:collapse; font-size:12px;
+  }
+  .data-table th {
+    text-align:left; padding:7px 10px;
+    background:var(--bg3); color:var(--text2);
+    border-bottom:1px solid var(--border);
+    font-weight:600; white-space:nowrap;
+  }
+  .data-table td {
+    padding:7px 10px; border-bottom:1px solid var(--border);
+    color:var(--text);
+  }
+  .data-table tr:last-child td { border-bottom:none; }
+  .data-table tr:hover td { background:var(--bg3); }
+  .text-right { text-align:right; }
+  .note       { color:var(--text2); font-size:11px; }
+
+  /* 资讯 */
+  .ai-summary {
+    background:var(--bg3); border-left:3px solid var(--accent);
+    padding:12px 14px; border-radius:0 6px 6px 0;
+    font-size:13px; line-height:1.7; color:var(--text);
+  }
+  .news-list  { display:flex; flex-direction:column; gap:6px; }
+  .news-item  {
+    display:flex; justify-content:space-between; align-items:baseline;
+    gap:8px; padding:5px 0; border-bottom:1px solid var(--border);
+  }
+  .news-title { flex:1; color:var(--text); font-size:12px; }
+  .news-title:hover { color:var(--accent); }
+  .news-meta  { flex-shrink:0; font-size:10px; color:var(--text2); white-space:nowrap; }
+
+  /* 边际变化 */
+  .topics-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:10px; }
+  .marginal-card {
+    background:var(--bg3); border:1px solid var(--border);
+    border-radius:6px; padding:12px 14px;
+  }
+  .marginal-card.manual-card { border-color:#f39c12; }
+  .marginal-header { display:flex; align-items:center; gap:8px; margin-bottom:7px; }
+  .marginal-title  { font-weight:600; font-size:13px; }
+  .marginal-summary{ font-size:12px; color:var(--text2); line-height:1.6; }
+  .marginal-event  { font-size:12px; color:var(--text); margin-top:6px; }
+  .marginal-impact { font-size:11px; color:var(--accent); margin-top:4px; }
+  .marginal-meta   { font-size:10px; color:var(--text2); margin-top:4px; }
+  .tag-manual { background:#f39c12;color:#000;padding:1px 6px;border-radius:3px;font-size:10px; }
+
+  /* 标签 */
+  .tag-region { background:#1a3a2a;color:#27ae60;padding:1px 6px;border-radius:3px;font-size:11px; }
+  .tag-cat    { background:var(--bg);color:var(--text2);padding:1px 6px;border-radius:3px;font-size:11px; }
+
+  /* 提示框 */
+  .warn-box  { background:#2d1b1b;border:1px solid #c0392b;border-radius:5px;padding:8px 12px;color:#e74c3c;font-size:12px;margin-top:10px; }
+  .tip-box   { background:#1a2d1a;border:1px solid #27ae60;border-radius:5px;padding:6px 12px;color:#27ae60;font-size:11px;display:inline-block; }
+  .data-source { font-size:11px;color:var(--text2);margin-top:8px; }
+  .empty     { color:var(--text2);text-align:center;padding:16px;font-size:12px; }
+
+  /* 数据出处标签 */
+  .src-tag   { display:inline-block;font-size:10px;padding:1px 5px;border-radius:3px;margin-left:4px;vertical-align:middle;font-weight:500; }
+  .src-api   { background:#1a2d3a;color:#58a6ff;border:1px solid #1f4060; }
+  .src-ai    { background:#2a2a1a;color:#e6c84a;border:1px solid #4a4a1a; }
+  .src-manual{ background:#2a1a1a;color:#e05252;border:1px solid #4a1a1a; }
+  .src-empty { background:#2a2a2a;color:#888;border:1px solid #444; }
+</style>
+</head>
+<body>
+
+<!-- 顶栏 -->
+<div class="topbar">
+  <div class="topbar-title">⚗️ 碳酸锂监测</div>
+  <div class="ticker-strip"><span class="ticker-item"><span class="ticker-label">电池级现货</span> <span class="ticker-val">16.00万元/吨</span></span><span class="ticker-item"><span class="ticker-label">GFEX LC2605</span> <span class="ticker-val">168,440元/吨</span> <span style='color:#e74c3c'>+0.05%</span></span><span class="ticker-item"><span class="ticker-label">DXY</span> <span class="ticker-val">100.15</span> <span style='color:#e74c3c'>+0.25%</span></span><span class="ticker-item"><span class="ticker-label">USD/CNY</span> <span class="ticker-val">6.9107</span></span></div>
+  <div class="topbar-meta">更新于 2026-03-28 16:54:43</div>
+</div>
+
+<!-- 主体布局 -->
+<div class="layout">
+  <nav class="sidebar">
+    <a href="#p1" class="nav-link" onclick="setActive(this)">💎 价格</a>
+<a href="#p2" class="nav-link" onclick="setActive(this)">📰 资讯</a>
+<a href="#p3" class="nav-link" onclick="setActive(this)">⚡ 边际变化</a>
+<a href="#p4" class="nav-link" onclick="setActive(this)">⛏️ 供给</a>
+<a href="#p5" class="nav-link" onclick="setActive(this)">🚗 需求</a>
+<a href="#p6" class="nav-link" onclick="setActive(this)">🏭 库存</a>
+<a href="#p7" class="nav-link" onclick="setActive(this)">📅 日历</a>
+<a href="#p8" class="nav-link" onclick="setActive(this)">📈 期货曲线</a>
+<a href="#p9" class="nav-link" onclick="setActive(this)">📊 股票</a>
+  </nav>
+  <main class="main-content" id="mainContent">
+    
+<div class="panel" id="p1">
+  <div class="panel-title">💎 价格行情</div>
+
+  <!-- 现货价格卡片 -->
+  <div class="card-row">
+    <div class="price-card main-price">
+      <div class="price-label">电池级碳酸锂 现货 <span class="src-tag src-ai">🔍 AI搜索·百川/SMM/Mysteel</span></div>
+      <div class="price-value">16.00 <span class="price-unit">万元/吨</span></div>
+      <div class="price-meta">2026-03-27</div>
+    </div>
+    <div class="price-card">
+      <div class="price-label">工业级碳酸锂 现货</div>
+      <div class="price-value">15.60 <span class="price-unit">万元/吨</span></div>
+      <div class="price-meta"><span class="src-tag src-ai">🔍 AI搜索·百川/SMM/Mysteel</span></div>
+    </div>
+    <div class="price-card">
+      <div class="price-label">电池级氢氧化锂 现货</div>
+      <div class="price-value">14.88 <span class="price-unit">万元/吨</span></div>
+      <div class="price-meta"><span class="src-tag src-ai">🔍 AI搜索·百川/SMM/Mysteel</span></div>
+    </div>
+    <div class="price-card">
+      <div class="price-label">锂精矿 SC6</div>
+      <div class="price-value">2,100 <span class="price-unit">USD/吨</span></div>
+      <div class="price-meta"><span class="src-tag src-ai">🔍 AI搜索·百川/SMM/Mysteel</span></div>
+    </div>
+  </div>
+
+  <!-- 期货主力 + 宏观 -->
+  <div class="card-row" style="margin-top:12px;">
+    <div class="price-card">
+      <div class="price-label">GFEX LC2605 最新价
+        <span class="src-tag src-api">📡 新浪财经·GFEX</span>
+      </div>
+      <div class="price-value">168,480 <span class="price-unit">元/吨</span></div>
+      <div class="price-meta">
+        <span style="color:#e74c3c">+0.05%</span>
+        &nbsp;(80元)
+        &nbsp;· 持仓324,620手 成交247,637手 · 2026-03-27
+      </div>
+    </div>
+    <div class="price-card">
+      <div class="price-label">美元指数 DXY
+        <span class="src-tag src-api">📡 Yahoo Finance</span>
+      </div>
+      <div class="price-value">100.15</div>
+      <div class="price-meta" style="color:#e74c3c">+0.25%</div>
+    </div>
+    <div class="price-card">
+      <div class="price-label">美元/人民币
+        <span class="src-tag src-api">📡 Yahoo Finance</span>
+      </div>
+      <div class="price-value">6.9107</div>
+      <div class="price-meta" style="color:#e74c3c">+0.14%</div>
+    </div>
+  </div>
+
+  ''
+</div>
+    
+<div class="panel" id="p2">
+  <div class="panel-title">📰 产业链资讯</div>
+  <div class="ai-summary">以下是今日碳酸锂/锂电产业链相关资讯整理：<br><br>**价格与市场**<br>近期新能源车市场竞争加剧，部分电动汽车提供高达1万美元的折扣。一季度新能源车（新车）销量下降28%，但二手电动车销量增长12%至接近历史高位。特斯拉等头部车企的销售也面临压力，显示市场整体增长放缓。<br><br>**供给动态**<br>电池技术方面出现新进展，首款搭载半固态电池的电动车在欧洲上市，同时钠电池技术被提及正在兴起，未来可能对锂电池形成长期替代。日产部分新生产的LEAF电动车因电池缺陷被召回，凸显电池质量管理的重要性。<br><br>**需求动态**<br>全球新能源需求呈现多样化增长。纽约市部署首个家庭储能系统，便携式电源和绿色出行工具如电动自行车、滑板车销售强劲。比亚迪、起亚和大众等车企推出多款经济型及豪华型新能源车，并取得良好市场反响。此外，非洲工业电动化及商用卡车充电基础设施也在推进。<br><br>**政策与地缘**<br>地缘政治冲突（如伊朗战争）和能源基础设施受损（海湾地区）导致传统能源价格飙升，正加速英国和中东等地区消费者转向电动汽车和清洁能源。然而，美国市场对电动汽车政策仍存在不确定性。<br><br>**综合判断**<br>综合来看，尽管全球电动化趋势和储能需求持续增长，但新能源车新车销量增速放缓及市场价格战可能导致碳酸锂短期价格承压。</div>
+  <div class="news-list" style="margin-top:14px;">
+    
+    <div class="news-item">
+      <a href="https://electrek.co/2026/03/27/new-york-city-first-home-battery-storage-system/" target="_blank" class="news-title">New York City finally gets its first home battery storage system</a>
+      <span class="news-meta">Electrek · Fri, 27 Mar 2026</span>
+    </div>
+    <div class="news-item">
+      <a href="https://electrek.co/2026/03/27/5-evs-10000-off-right-now/" target="_blank" class="news-title">These 5 EVs are $10,000 off right now</a>
+      <span class="news-meta">Electrek · Fri, 27 Mar 2026</span>
+    </div>
+    <div class="news-item">
+      <a href="https://electrek.co/2026/03/27/podcast-tesla-minivan-but-cooler-used-ev-sales-rise-sodium-batteries-are-coming/" target="_blank" class="news-title">Podcast: Tesla minivan but cooler?, used EV sales rise, sodium batteries are coming</a>
+      <span class="news-meta">Electrek · Fri, 27 Mar 2026</span>
+    </div>
+    <div class="news-item">
+      <a href="https://electrek.co/2026/03/27/iran-war-spikes-energy-prices-uk-homes-ditch-fossil-fuels-fast/" target="_blank" class="news-title">Iran war spikes energy prices – UK homes ditch fossil fuels fast</a>
+      <span class="news-meta">Electrek · Fri, 27 Mar 2026</span>
+    </div>
+    <div class="news-item">
+      <a href="https://electrek.co/2026/03/27/chevy-equinox-ev-driver-nearly-gets-whiplash-from-auto-braking/" target="_blank" class="news-title">Chevy Equinox EV driver nearly gets ‘whiplash’ over touchy auto braking [Video]</a>
+      <span class="news-meta">Electrek · Fri, 27 Mar 2026</span>
+    </div>
+    <div class="news-item">
+      <a href="https://electrek.co/2026/03/27/day-3-spring-sale-green-deals-anker-eufy-security-bluetti-power-station-segway-more/" target="_blank" class="news-title">Day 3 Spring Sale Green Deals – Anker eufy smart security devices 50% off, Bluetti increases power station savings, Segway, more</a>
+      <span class="news-meta">Electrek · Fri, 27 Mar 2026</span>
+    </div>
+    <div class="news-item">
+      <a href="https://electrek.co/2026/03/27/nissan-recalls-new-leaf-evs-japan-battery-defect/" target="_blank" class="news-title">Nissan recalls a batch of new LEAF EVs in Japan due to a battery defect</a>
+      <span class="news-meta">Electrek · Fri, 27 Mar 2026</span>
+    </div>
+    <div class="news-item">
+      <a href="https://electrek.co/2026/03/27/kia-ev2-affordable-ev-suv-that-can-park-itself-video/" target="_blank" class="news-title">The Kia EV2 is an affordable electric SUV that can park itself [Video]</a>
+      <span class="news-meta">Electrek · Fri, 27 Mar 2026</span>
+    </div>
+    <div class="news-item">
+      <a href="https://electrek.co/2026/03/27/slush-slate-pickup-winter-testing-video/" target="_blank" class="news-title">Slush pits and snowball fights: Slate’s upcoming pickup endures winter testing [Video]</a>
+      <span class="news-meta">Electrek · Fri, 27 Mar 2026</span>
+    </div>
+    <div class="news-item">
+      <a href="https://electrek.co/2026/03/27/used-ev-sales-boom-new-ev-sales-drop-28-percent-q1-2026/" target="_blank" class="news-title">New EV sales drop 28% in Q1 2026, but used EVs surge 12% to near-record levels</a>
+      <span class="news-meta">Electrek · Fri, 27 Mar 2026</span>
+    </div>
+    <div class="news-item">
+      <a href="https://electrek.co/2026/03/27/hyundais-new-ev-suv-looks-like-twin-to-kia-ev2-video/" target="_blank" class="news-title">Hyundai’s new electric SUV looks like a twin to the Kia EV2 [Video]</a>
+      <span class="news-meta">Electrek · Fri, 27 Mar 2026</span>
+    </div>
+    <div class="news-item">
+      <a href="https://electrek.co/2026/03/27/volkswagen-groups-joint-venture-with-rivian-hits-latest-milestone-unlocking-another-1b-for-the-ev-automaker/" target="_blank" class="news-title">Volkswagen Group’s joint venture with Rivian hits latest milestone, unlocking another $1B for the EV automaker</a>
+      <span class="news-meta">Electrek · Fri, 27 Mar 2026</span>
+    </div>
+    <div class="news-item">
+      <a href="https://electrek.co/2026/03/27/wheel-e-podcast-new-super73s-heybike-villain-more/" target="_blank" class="news-title">Wheel-E Podcast: New Super73s, Heybike Villain, more</a>
+      <span class="news-meta">Electrek · Fri, 27 Mar 2026</span>
+    </div>
+    <div class="news-item">
+      <a href="https://electrek.co/2026/03/27/big-spring-sale-green-deals-hub-e-bikes-e-scooters-power-stations-tools-more/" target="_blank" class="news-title">Big Spring Sale Green Deals hub – e-bikes, e-scooters, power stations, tools, more</a>
+      <span class="news-meta">Electrek · Fri, 27 Mar 2026</span>
+    </div>
+    <div class="news-item">
+      <a href="https://electrek.co/2026/03/26/byd-launches-song-ultra-ev-orders-top-21500-in-20-days/" target="_blank" class="news-title">BYD launches the Song Ultra EV as orders reach over 21,500 in 20 days</a>
+      <span class="news-meta">Electrek · Thu, 26 Mar 2026</span>
+    </div>
+    <div class="news-item">
+      <a href="https://electrek.co/2026/03/26/volkswagens-high-tech-new-ev-suv-in-china-starts-at-35000/" target="_blank" class="news-title">Volkswagen’s high-tech new electric SUV in China starts at $35,000</a>
+      <span class="news-meta">Electrek · Thu, 26 Mar 2026</span>
+    </div>
+    <div class="news-item">
+      <a href="https://electrek.co/2026/03/26/this-chargers-first-megawatt-truck-charge-hits-north-america/" target="_blank" class="news-title">This charger’s first megawatt truck charge hits North America</a>
+      <span class="news-meta">Electrek · Thu, 26 Mar 2026</span>
+    </div>
+    <div class="news-item">
+      <a href="https://electrek.co/2026/03/26/day-2-spring-sale-ecoflow-power-stations-flash-sale-segway-navimow-ego-tools-more/" target="_blank" class="news-title">Day 2 Spring Sale Green Deals – Amazon EcoFlow power stations 53% off + flash sale, Segway Navimow expanded sale, EGO tools, more</a>
+      <span class="news-meta">Electrek · Thu, 26 Mar 2026</span>
+    </div>
+    <div class="news-item">
+      <a href="https://electrek.co/2026/03/26/first-ev-with-semi-solid-state-ev-batteries-launching-europe/" target="_blank" class="news-title">The first EV with a semi-solid-state battery is launching in Europe</a>
+      <span class="news-meta">Electrek · Thu, 26 Mar 2026</span>
+    </div>
+    <div class="news-item">
+      <a href="https://electrek.co/2026/03/26/byd-recruits-james-bond-launch-new-longe-range-luxury-ev/" target="_blank" class="news-title">BYD recruits James Bond to launch its new long-range, 5-min charging luxury EV</a>
+      <span class="news-meta">Electrek · Thu, 26 Mar 2026</span>
+    </div>
+  </div>
+</div>
+    
+<div class="panel" id="p3">
+  <div class="panel-title">⚡ 边际变化追踪</div>
+  <div class="topics-grid">
+    
+    <div class="marginal-card">
+      <div class="marginal-header">
+        <span class="marginal-title">津巴布韦锂矿</span>
+        <span style="background:#27ae60;color:#fff;padding:2px 8px;border-radius:3px;font-size:11px;">利多</span>
+      </div>
+      <div class="marginal-summary">津巴布韦于2026年2月下旬突然提前实施了全面的锂原矿和精矿出口禁令，旨在促进本地深加工，此举扰乱了全球供应链。华友Arcadia矿的锂硫酸盐工厂计划于2026年第一季度投产，而中矿资源（Sinomine）的Bikita矿也计划建设类似的加工设施。</div>
+      <div class='marginal-event'>📌 津巴布韦政府于2026年2月25日突然宣布立即禁止所有原矿和锂精矿出口，将原计划2027年的禁令提前实施，以强制推动锂矿石的本地深加工。</div>
+      <div class='marginal-impact'>📊 该禁令预计将扰乱全球锂精矿供应链，导致市场供应紧张，从而推高碳酸锂短期价格。</div>
+    </div>
+    <div class="marginal-card">
+      <div class="marginal-header">
+        <span class="marginal-title">宁德宜春笕下窝矿</span>
+        <span style="background:#f39c12;color:#fff;padding:2px 8px;border-radius:3px;font-size:11px;">中性</span>
+      </div>
+      <div class="marginal-summary">宁德时代宜春笕下窝锂矿已于2025年底获得采矿许可证，但截至2026年3月9日，仍在办理政府审批手续以恢复生产。公司表示将加快推进复产工作。在此背景下，碳酸锂市场自2025年末以来经历价格强劲反弹，并在2026年3月维持高位，主要受出口退税政策调整引发的“抢出口”及储能需求增长的驱动。</div>
+      <div class='marginal-event'>📌 宁德时代于2026年3月9日确认宜春枧下窝锂矿已于2025年底获得采矿证，但仍处于复产流程中。</div>
+      <div class='marginal-impact'>📊 尽管采矿证已获批，但该矿区迟迟未能全面复产，这限制了锂云母供应的增长，对碳酸锂价格形成支撑，并可能助推其维持高位震荡。</div>
+    </div>
+    <div class="marginal-card">
+      <div class="marginal-header">
+        <span class="marginal-title">智利锂国有化</span>
+        <span style="background:#27ae60;color:#fff;padding:2px 8px;border-radius:3px;font-size:11px;">利多</span>
+      </div>
+      <div class="marginal-summary">2026年3月，智利SQM与国有Codelco公司的锂业务合并协议最终完成，最高法院驳回了上诉，为双方在阿塔卡马盐滩的锂矿合资企业运营至2060年扫清了障碍。新总统卡斯特政府上任，预示着更市场化的锂矿政策，并计划推动更多新锂矿项目，旨在增加智利锂产量。</div>
+      <div class='marginal-event'>📌 智利最高法院驳回上诉，SQM与Codelco的锂业务合并协议于2026年3月5日最终完成。</div>
+      <div class='marginal-impact'>📊 智利锂供应的长期确定性增加，可能在中长期对全球碳酸锂供应产生积极影响，短期价格影响中性。</div>
+    </div>
+    <div class="marginal-card">
+      <div class="marginal-header">
+        <span class="marginal-title">阿根廷锂三角</span>
+        <span style="background:#27ae60;color:#fff;padding:2px 8px;border-radius:3px;font-size:11px;">利多</span>
+      </div>
+      <div class="marginal-summary">阿根廷锂三角地区锂矿开发近期进展积极，包括全球首个多盐湖锂项目的启动和主要生产商Arcadium Lithium及Lithium Americas (Argentina)的强劲扩产计划。米莱政府的投资激励政策（RIGI）持续吸引外资，推动2025年锂产量实现显著增长。</div>
+      <div class='marginal-event'>📌 阿根廷于2026年3月23日正式启动全球首个“多盐湖”锂开发项目。</div>
+      <div class='marginal-impact'>📊 尽管2025年锂价承压，但阿根廷锂产量的持续增长和新项目的开发预示着全球锂供应增加，可能对碳酸锂价格形成长期供应压力，但短期内价格已显现企稳迹象。</div>
+    </div>
+    <div class="marginal-card">
+      <div class="marginal-header">
+        <span class="marginal-title">澳矿产量/停复产</span>
+        <span style="background:#f39c12;color:#fff;padding:2px 8px;border-radius:3px;font-size:11px;">中性</span>
+      </div>
+      <div class="marginal-summary">澳大利亚锂矿近期动态：Core Lithium获2.05亿美元融资重启Finniss项目，预计2026年Q3投产。Liontown完成Kathleen Valley矿地下化转型，目标2026年3月达1.5mtpa。Pilbara考虑重启Ngungaju工厂。2026年澳矿产量预计强劲反弹，全球供应将增加。</div>
+      <div class='marginal-event'>📌 Core Lithium宣布获得2.05亿美元融资，并批准Finniss锂矿项目重启，预计2026年第三季度开始生产锂精矿。</div>
+      <div class='marginal-impact'>📊 澳矿重启和扩产计划预示市场供应增加，但锂价走势仍受需求增长与市场供需平衡预期影响。</div>
+    </div>
+    <div class="marginal-card">
+      <div class="marginal-header">
+        <span class="marginal-title">国内政策动向</span>
+        <span style="background:#f39c12;color:#fff;padding:2px 8px;border-radius:3px;font-size:11px;">中性</span>
+      </div>
+      <div class="marginal-summary">近期中国推出新能源汽车以旧换新补贴政策，最高综合优惠达3.5万元，并减半征收购置税，以刺激新能源汽车消费。同时，津巴布韦于2月暂停锂精矿出口，叠加国内矿山换证不确定性及电池产品出口退税率下调引发的“抢出口”预期，加剧了锂资源供应紧张。碳酸锂价格在剧烈波动后维持高位震荡，电池行业规范化持续推进。</div>
+      <div class='marginal-event'>📌 中国推出新能源汽车以旧换新补贴，津巴布韦暂停锂精矿出口加剧锂资源供应紧张。</div>
+      <div class='marginal-impact'>📊 新能源汽车补贴政策和锂产品出口退税调整带来的“抢出口”预期，以及锂资源供应趋紧，共同支撑碳酸锂价格，预计短期内维持高位震荡，但长期走势仍受供需关系影响。</div>
+    </div>
+  </div>
+  <div style='margin-top:14px;'><div class='section-label'>手动补充</div>
+    <div class="marginal-card manual-card">
+      <div class="marginal-header">
+        <span class="marginal-title">示例事件（请删除或替换）</span>
+        <span class="tag-manual">手动</span>
+      </div>
+      <div class="marginal-summary">在此填写事件内容和分析</div>
+      <div class="marginal-meta">2026-03-27 · 老板</div>
+    </div></div>
+</div>
+    
+<div class="panel" id="p4">
+  <div class="panel-title">⛏️ 供给端</div>
+  
+  <div class="section-label">锂盐厂开工率</div>
+  <div class="card-row">
+    <div class="stat-card">
+      <div class="stat-label">全国综合</div>
+      <div class="stat-value">—</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">四川/云南</div>
+      <div class="stat-value">—</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">青海</div>
+      <div class="stat-value">—</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">江西（云母）</div>
+      <div class="stat-value">—</div>
+    </div>
+  </div>
+  <div class="data-source">来源：None · 2026-03-28</div>
+  
+  <div class="section-label" style="margin-top:16px;">中国月度产量（2026-02）</div>
+  <div class="card-row">
+    <div class="stat-card">
+      <div class="stat-label">碳酸锂产量</div>
+      <div class="stat-value">78,000 <span class="unit-small">吨</span></div>
+      <div class="stat-sub" style="color:#888">同比 — &nbsp; 环比 <span style="color:#27ae60">-3.00%</span></div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">氢氧化锂产量</div>
+      <div class="stat-value">28,000 <span class="unit-small">吨</span></div>
+      <div class="stat-sub" style="color:#888">同比 —</div>
+    </div>
+  </div>
+  <div class="data-source">来源：中国有色金属工业协会</div>
+  
+  <canvas id="chinaOutputChart" style="max-height:160px;margin-top:8px;"></canvas>
+  <script>
+  (function(){
+    var ctx = document.getElementById('chinaOutputChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ["2025-09", "2025-10", "2025-11", "2025-12", "2026-01"],
+        datasets: [
+          {label:'碳酸锂(吨)', data:[87200, null, 95350, 99200, 97900], backgroundColor:'rgba(59,130,246,0.7)', yAxisID:'y'},
+          {label:'氢氧化锂(吨)', data:[27500, null, null, null, 26950], backgroundColor:'rgba(16,185,129,0.7)', yAxisID:'y'}
+        ]
+      },
+      options: {
+        responsive:true, plugins:{legend:{position:'top'}},
+        scales:{y:{beginAtZero:false, ticks:{callback:function(v){return (v/10000).toFixed(1)+'万'}}}}
+      }
+    });
+  })();
+  </script>
+  
+  <div class="section-label" style="margin-top:16px;">主要矿山产量</div>
+  <table class="data-table">
+    <thead><tr><th>公司</th><th>地区</th><th>产量</th><th>季度</th><th>同比</th><th>备注</th></tr></thead>
+    <tbody>
+    <tr>
+      <td>Pilbara Minerals</td>
+      <td><span class="tag-region">澳大利亚</span></td>
+      <td>224.8 千吨锂辉石精矿</td>
+      <td>2025Q3</td>
+      <td style="color:#888">—</td>
+      <td class="note">2025年第三季度（即2026财年第一季度）产量，Pilgan工厂P1000扩建项目完成后产量保持稳定。与2025财年第四季度相比，环比增长2%。</td>
+    </tr>
+    <tr>
+      <td>Greenbushes</td>
+      <td><span class="tag-region">澳大利亚</span></td>
+      <td>None None</td>
+      <td>2025Q4</td>
+      <td style="color:#888">—</td>
+      <td class="note">Talison第三期化学级锂精矿扩产项目于2025年12月建设完成并正式投料试车，并于2026年1月30日生产出首批符合标准的化学级锂精矿产品。无具体季度产量数据。</td>
+    </tr>
+    <tr>
+      <td>Core Lithium</td>
+      <td><span class="tag-region">澳大利亚</span></td>
+      <td>None None</td>
+      <td>2025Q4</td>
+      <td style="color:#888">—</td>
+      <td class="note">公司于2025年第四季度发布季度报告，主要关注Finniss锂矿项目重启研究进展和运营准备，本季度无实际生产数据。</td>
+    </tr>
+    <tr>
+      <td>Liontown</td>
+      <td><span class="tag-region">澳大利亚</span></td>
+      <td>105342 干公吨锂辉石精矿</td>
+      <td>2025Q4</td>
+      <td style="color:#888">—</td>
+      <td class="note">Kathleen Valley项目已完全过渡到地下采矿作业。本季度锂辉石精矿产量环比增长21%。</td>
+    </tr>
+    <tr>
+      <td>SQM</td>
+      <td><span class="tag-region">智利</span></td>
+      <td>73.2 千吨碳酸锂当量</td>
+      <td>2025Q4</td>
+      <td style="color:#e74c3c">+33.00%</td>
+      <td class="note">此为2025年第四季度锂业务的销售量，同比增长33%。公司2025年锂业务销售量创历史新高。</td>
+    </tr>
+    <tr>
+      <td>Albemarle</td>
+      <td><span class="tag-region">智利</span></td>
+      <td>63.0 千吨碳酸锂当量</td>
+      <td>2025Q4</td>
+      <td style="color:#e74c3c">+17.00%</td>
+      <td class="note">此数据为Albemarle全球能源存储部门（包含锂业务）的销量，同比增长17%。</td>
+    </tr>
+    <tr>
+      <td>Arcadium</td>
+      <td><span class="tag-region">阿根廷</span></td>
+      <td>21138 吨碳酸锂当量</td>
+      <td>2024Q4</td>
+      <td style="color:#888">0.00%</td>
+      <td class="note">此数据为2024年第四季度数据，基于第三季度产量估算，与去年同期基本持平。Arcadium Lithium已于2025年3月被Rio Tinto收购。</td>
+    </tr>
+    <tr>
+      <td>盐湖股份</td>
+      <td><span class="tag-region">国内-青海</span></td>
+      <td>14900 吨碳酸锂</td>
+      <td>2025Q4</td>
+      <td style="color:#888">—</td>
+      <td class="note">2025年9月4万吨/年基础锂盐一体化项目投料试车，已生产出合格碳酸锂产品。2025年全年碳酸锂产量为4.65万吨，前三季度产量为3.16万吨，第四季度产量为全年减前三季度所得。</td>
+    </tr></tbody>
+  </table>
+  
+  <div class="section-label" style="margin-top:16px;">进口量（—）</div>
+  <div class="card-row">
+    <div class="stat-card">
+      <div class="stat-label">锂矿石进口量</div>
+      <div class="stat-value">— <span class="unit-small">吨</span></div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">碳酸锂进口量</div>
+      <div class="stat-value">— <span class="unit-small">吨</span></div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">同比变化</div>
+      <div class="stat-value" style="color:#888">—</div>
+    </div>
+  </div>
+</div>
+    
+<div class="panel" id="p5">
+  <div class="panel-title">🚗 需求端</div>
+
+  <div class="section-label">国内新能源车（2026-02 · 乘联会）</div>
+  <div class="card-row">
+    <div class="stat-card">
+      <div class="stat-label">新能源乘用车销量</div>
+      <div class="stat-value">46.4 <span class="unit-small">万辆</span></div>
+      <div class="stat-sub" style="color:#27ae60">同比 -32.00%</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">纯电 BEV</div>
+      <div class="stat-value">— <span class="unit-small">万辆</span></div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">插混 PHEV</div>
+      <div class="stat-value">— <span class="unit-small">万辆</span></div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">新能源渗透率</div>
+      <div class="stat-value">44.9%</div>
+    </div>
+  </div>
+
+  <div class="section-label" style="margin-top:16px;">动力电池（2026-02 · CABIA）</div>
+  <div class="card-row">
+    <div class="stat-card">
+      <div class="stat-label">总装机量</div>
+      <div class="stat-value">26.3 <span class="unit-small">GWh</span></div>
+      <div class="stat-sub" style="color:#27ae60">同比 -24.60%</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">磷酸铁锂 LFP</div>
+      <div class="stat-value">20.6 <span class="unit-small">GWh</span></div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">三元 NCM</div>
+      <div class="stat-value">5.7 <span class="unit-small">GWh</span></div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">宁德时代市占</div>
+      <div class="stat-value">52.7%</div>
+    </div>
+  </div>
+
+  <div class="section-label" style="margin-top:16px;">储能（2026-01 · CNESA）</div>
+  <div class="card-row">
+    <div class="stat-card">
+      <div class="stat-label">当月新增装机</div>
+      <div class="stat-value">10.9 <span class="unit-small">GWh</span></div>
+      <div class="stat-sub" style="color:#e74c3c">同比 +106.00%</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">累计装机</div>
+      <div class="stat-value">— <span class="unit-small">GWh</span></div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">欧洲BEV（2026-02）</div>
+      <div class="stat-value">15.8 <span class="unit-small">万辆</span></div>
+      <div class="stat-sub" style="color:#e74c3c">同比 +20.60%</div>
+    </div>
+  </div>
+</div>
+    
+<div class="panel" id="p6">
+  <div class="panel-title">🏭 库存</div>
+  <div class="tip-box">📅 SMM碳酸锂社会库存每周四发布</div>
+
+  <div class="card-row" style="margin-top:10px;">
+    <div class="price-card main-price">
+      <div class="price-label">SMM碳酸锂社会库存  <span class="src-tag src-empty">⚠️ 待填写</span></div>
+      <div class="price-value">— <span class="price-unit">吨</span></div>
+      <div class="price-meta">
+        周环比：<span style="color:#888">—</span>
+        &nbsp;—
+      </div>
+    </div>
+    <div class="price-card">
+      <div class="price-label">GFEX注册仓单 20260327
+        <span class="src-tag src-api">📡 akshare·GFEX</span>
+      </div>
+      <div class="price-value">30,111 <span class="price-unit">手</span></div>
+      <div class="price-meta">手（1手=2吨）</div>
+    </div>
+    <div class="price-card">
+      <div class="price-label">港口锂精矿库存</div>
+      <div class="price-value">18.50 <span class="price-unit">万吨</span></div>
+      <div class="price-meta">None · 2026-03-12</div>
+    </div>
+  </div>
+  <div class="data-source">氢氧化锂库存：—吨</div>
+
+  
+  <div class="section-label" style="margin-top:16px;">SMM社会库存周度趋势（近6个月）
+    <span class="src-tag src-ai">🔍 AI搜索·SMM</span>
+  </div>
+  <div style="height:200px;">
+    <canvas id="inventoryHistChart"></canvas>
+  </div>
+  <script>
+  (function(){
+    var labels  = ["10-23", "10-30", "11-20", "11-27", "12-04", "12-25", "01-01", "01-08", "02-12", "02-26", "03-05", "03-12", "03-19"];
+    var values  = [130300, 127400, 118400, 115968, 113602, 109800, 109650, 109900, 102932, 100093, 99700, 98959, 98873];
+    var changes = [-2392, -2908, -2052, -2452, -2366, -652, -168, 337, -2531, null, -720, -414, -86];
+    new Chart(document.getElementById('inventoryHistChart'), {
+      type: 'line',
+      data: {
+        labels: labels,
+        datasets: [
+          {
+            label: '社会库存（吨）',
+            data: values,
+            borderColor: '#e67e22',
+            backgroundColor: 'rgba(230,126,34,0.08)',
+            tension: 0.3, pointRadius: 4, fill: true,
+            yAxisID: 'y',
+          },
+          {
+            label: '周变化（吨）',
+            data: changes,
+            type: 'bar',
+            backgroundColor: changes.map(function(v){
+              return v === null ? 'rgba(0,0,0,0)' : v > 0 ? 'rgba(231,76,60,0.5)' : 'rgba(39,174,96,0.5)';
+            }),
+            yAxisID: 'y2',
+          }
+        ]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        interaction: { mode: 'index', intersect: false },
+        plugins: { legend: { labels: { color: '#ccc', font: { size: 11 } } } },
+        scales: {
+          x:  { ticks: { color: '#aaa', maxTicksLimit: 10 }, grid: { color: '#2a2a2a' } },
+          y:  { position:'left',  ticks: { color:'#aaa' }, grid: { color:'#2a2a2a' }, title: { display:true, text:'库存（吨）', color:'#aaa' } },
+          y2: { position:'right', ticks: { color:'#777' }, grid: { display:false }, title: { display:true, text:'周变化', color:'#777' } },
+        },
+      }
+    });
+  })();
+  </script>
+</div>
+    
+<div class="panel" id="p7">
+  <div class="panel-title">📅 重要日历</div>
+  <table class="data-table">
+    <thead><tr><th>日期</th><th>距今</th><th>事件</th><th>重要性</th><th>说明</th></tr></thead>
+    <tbody>
+    <tr>
+      <td style="white-space:nowrap">2026-04-03</td>
+      <td><span style="background:#f39c12;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;">6天后</span></td>
+      <td>GFEX LC2504合约最后交易日</td>
+      <td style="color:#f39c12;font-size:12px;">MEDIUM</td>
+      <td class="note">2025年4月合约到期，关注移仓价差</td>
+    </tr>
+    <tr>
+      <td style="white-space:nowrap">2026-04-10</td>
+      <td><span style="background:#555;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;">13天后</span></td>
+      <td>SMM碳酸锂库存周报</td>
+      <td style="color:#f39c12;font-size:12px;">MEDIUM</td>
+      <td class="note">每周四发布，关注库存去化速度</td>
+    </tr>
+    <tr>
+      <td style="white-space:nowrap">2026-04-15</td>
+      <td><span style="background:#555;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;">18天后</span></td>
+      <td>CABIA动力电池3月装机数据</td>
+      <td style="color:#e74c3c;font-size:12px;">HIGH</td>
+      <td class="note">中国汽车动力电池产业创新联盟月度数据</td>
+    </tr>
+    <tr>
+      <td style="white-space:nowrap">2026-04-15</td>
+      <td><span style="background:#555;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;">18天后</span></td>
+      <td>乘联会3月新能源车销量</td>
+      <td style="color:#e74c3c;font-size:12px;">HIGH</td>
+      <td class="note">乘联会月度乘用车市场数据，关注渗透率</td>
+    </tr>
+    <tr>
+      <td style="white-space:nowrap">2026-04-20</td>
+      <td><span style="background:#555;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;">23天后</span></td>
+      <td>中国3月进出口数据（海关总署）</td>
+      <td style="color:#f39c12;font-size:12px;">MEDIUM</td>
+      <td class="note">锂矿石及碳酸锂进口量</td>
+    </tr>
+    <tr>
+      <td style="white-space:nowrap">2026-04-28</td>
+      <td><span style="background:#555;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;">31天后</span></td>
+      <td>天齐锂业/赣锋锂业一季报</td>
+      <td style="color:#e74c3c;font-size:12px;">HIGH</td>
+      <td class="note">主要锂企Q1业绩披露，关注产量和库存变化</td>
+    </tr></tbody>
+  </table>
+</div>
+    
+<div class="panel" id="p8">
+  <div class="panel-title">📈 GFEX期货曲线</div>
+  <div class="stat-row">
+    <span>期限结构：<strong style="color:#e74c3c">contango（远期升水）</strong></span>
+    <span style='margin-left:20px;'>现货参考：<strong>16.00 万元/吨（160,000 元/吨）</strong></span>
+  </div>
+
+  <div style="height:280px;margin-top:12px;">
+    <canvas id="futuresCurveChart"></canvas>
+  </div>
+
+  <div style="height:160px;margin-top:16px;">
+    <canvas id="basisChart"></canvas>
+  </div>
+
+  <script>
+  (function(){
+    var labels  = ["LC2604", "LC2605", "LC2606", "LC2607", "LC2608", "LC2609", "LC2610", "LC2611", "LC2612", "LC2701", "LC2702", "LC2703"];
+    var prices  = [167480.0, 168440.0, 168440.0, 168400.0, 168920.0, 169400.0, 166540.0, 169620.0, 168960.0, 169380.0, 169840.0, 170000.0];
+    var bases   = [-7480.0, -8440.0, -8440.0, -8400.0, -8920.0, -9400.0, -6540.0, -9620.0, -8960.0, -9380.0, -9840.0, -10000.0];
+    var volumes = [12602, 247637, 22307, 114273, 14488, 190857, 9804, 12214, 12212, 6789, 730, 44];
+
+    new Chart(document.getElementById('futuresCurveChart'), {
+      type: 'line',
+      data: {
+        labels: labels,
+        datasets: [
+          {
+            label: '结算价（元/吨）',
+            data: prices,
+            borderColor: '#3498db',
+            backgroundColor: 'rgba(52,152,219,0.08)',
+            tension: 0.3,
+            pointRadius: 5,
+            pointHoverRadius: 7,
+            yAxisID: 'y',
+          },
+          {
+            label: '成交量（手）',
+            data: volumes,
+            type: 'bar',
+            backgroundColor: 'rgba(149,165,166,0.3)',
+            yAxisID: 'y2',
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        interaction: { mode: 'index', intersect: false },
+        plugins: { legend: { labels: { color: '#ccc' } } },
+        scales: {
+          x:  { ticks: { color: '#aaa' }, grid: { color: '#2a2a2a' } },
+          y:  { position: 'left',  ticks: { color: '#aaa' }, grid: { color: '#2a2a2a' }, title: { display: true, text: '元/吨', color: '#aaa' } },
+          y2: { position: 'right', ticks: { color: '#777' }, grid: { display: false }, title: { display: true, text: '成交量', color: '#777' } },
+        },
+      }
+    });
+
+    if (bases.some(function(b){ return b !== null; })) {
+      new Chart(document.getElementById('basisChart'), {
+        type: 'bar',
+        data: {
+          labels: labels,
+          datasets: [{
+            label: '基差（现货-期货，元/吨）',
+            data: bases,
+            backgroundColor: bases.map(function(b){ return b > 0 ? 'rgba(231,76,60,0.5)' : 'rgba(39,174,96,0.5)'; }),
+            borderColor: bases.map(function(b){ return b > 0 ? '#e74c3c' : '#27ae60'; }),
+            borderWidth: 1,
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: { legend: { labels: { color: '#ccc' } } },
+          scales: {
+            x: { ticks: { color: '#aaa' }, grid: { color: '#2a2a2a' } },
+            y: { ticks: { color: '#aaa' }, grid: { color: '#2a2a2a' }, title: { display: true, text: '基差（元/吨）', color: '#aaa' } },
+          },
+        }
+      });
+    }
+  })();
+  </script>
+
+  <div class='section-label' style='margin-top:16px;'>多空持仓排名（前5）</div><table class='data-table'><tbody><tr><td>1</td><td>中信期货</td><td>62959</td><td>5354</td><td>国泰君安期货</td><td>22278</td></tr><tr><td>2</td><td>国泰君安期货</td><td>62522</td><td>12259</td><td>东证期货</td><td>18530</td></tr><tr><td>3</td><td>东证期货</td><td>30009</td><td>4915</td><td>中信期货</td><td>15283</td></tr><tr><td>4</td><td>广发期货</td><td>29767</td><td>3510</td><td>永安期货</td><td>14020</td></tr><tr><td>5</td><td>中信建投</td><td>21617</td><td>6776</td><td>华泰期货</td><td>12003</td></tr></tbody></table>
+</div>
+    
+<div class="panel" id="p9">
+  <div class="panel-title">📊 相关股票</div>
+
+  <div class="section-label">A股</div>
+  <table class="data-table">
+    <thead><tr><th>代码</th><th>名称</th><th class="text-right">价格(¥)</th><th class="text-right">涨跌幅</th><th>类型</th></tr></thead>
+    <tbody>
+    <tr>
+      <td>002466</td>
+      <td>天齐锂业</td>
+      <td class="text-right">57.96</td>
+      <td class="text-right" style="color:#e74c3c">+6.94%</td>
+      <td><span class="tag-cat">锂矿+锂盐</span></td>
+    </tr>
+    <tr>
+      <td>002460</td>
+      <td>赣锋锂业</td>
+      <td class="text-right">79.67</td>
+      <td class="text-right" style="color:#e74c3c">+10.00%</td>
+      <td><span class="tag-cat">锂盐+电池</span></td>
+    </tr>
+    <tr>
+      <td>000792</td>
+      <td>盐湖股份</td>
+      <td class="text-right">39.45</td>
+      <td class="text-right" style="color:#e74c3c">+7.06%</td>
+      <td><span class="tag-cat">盐湖提锂</span></td>
+    </tr>
+    <tr>
+      <td>000408</td>
+      <td>藏格矿业</td>
+      <td class="text-right">80.50</td>
+      <td class="text-right" style="color:#e74c3c">+3.46%</td>
+      <td><span class="tag-cat">盐湖提锂</span></td>
+    </tr>
+    <tr>
+      <td>002756</td>
+      <td>永兴材料</td>
+      <td class="text-right">81.21</td>
+      <td class="text-right" style="color:#e74c3c">+10.00%</td>
+      <td><span class="tag-cat">云母提锂</span></td>
+    </tr>
+    <tr>
+      <td>002176</td>
+      <td>江特电机</td>
+      <td class="text-right">10.29</td>
+      <td class="text-right" style="color:#e74c3c">+10.05%</td>
+      <td><span class="tag-cat">云母提锂</span></td>
+    </tr>
+    <tr>
+      <td>002497</td>
+      <td>雅化集团</td>
+      <td class="text-right">24.20</td>
+      <td class="text-right" style="color:#e74c3c">+4.99%</td>
+      <td><span class="tag-cat">锂盐</span></td>
+    </tr>
+    <tr>
+      <td>002738</td>
+      <td>中矿资源</td>
+      <td class="text-right">73.02</td>
+      <td class="text-right" style="color:#e74c3c">+7.04%</td>
+      <td><span class="tag-cat">锂矿</span></td>
+    </tr>
+    <tr>
+      <td>603799</td>
+      <td>华友钴业</td>
+      <td class="text-right">59.90</td>
+      <td class="text-right" style="color:#e74c3c">+2.97%</td>
+      <td><span class="tag-cat">电池材料</span></td>
+    </tr>
+    <tr>
+      <td>300750</td>
+      <td>宁德时代</td>
+      <td class="text-right">416.18</td>
+      <td class="text-right" style="color:#e74c3c">+3.40%</td>
+      <td><span class="tag-cat">动力电池</span></td>
+    </tr>
+    <tr>
+      <td>002594</td>
+      <td>比亚迪</td>
+      <td class="text-right">105.30</td>
+      <td class="text-right" style="color:#e74c3c">+2.09%</td>
+      <td><span class="tag-cat">整车+电池</span></td>
+    </tr></tbody>
+  </table>
+
+  <div class="section-label" style="margin-top:16px;">港股 / 美股 / 澳股</div>
+  <table class="data-table">
+    <thead><tr><th>代码</th><th>名称</th><th class="text-right">价格</th><th class="text-right">涨跌幅</th><th>类型</th></tr></thead>
+    <tbody>
+    <tr>
+      <td>9696.HK</td>
+      <td>天齐锂业H</td>
+      <td class="text-right">47.74</td>
+      <td class="text-right" style="color:#e74c3c">+6.14%</td>
+      <td><span class="tag-cat">锂矿+锂盐</span></td>
+    </tr>
+    <tr>
+      <td>1772.HK</td>
+      <td>赣锋锂业H</td>
+      <td class="text-right">74.30</td>
+      <td class="text-right" style="color:#e74c3c">+9.26%</td>
+      <td><span class="tag-cat">锂盐+电池</span></td>
+    </tr>
+    <tr>
+      <td>ALB</td>
+      <td>Albemarle</td>
+      <td class="text-right">179.45</td>
+      <td class="text-right" style="color:#e74c3c">+2.84%</td>
+      <td><span class="tag-cat">全球最大锂生产商</span></td>
+    </tr>
+    <tr>
+      <td>SQM</td>
+      <td>SQM</td>
+      <td class="text-right">82.70</td>
+      <td class="text-right" style="color:#e74c3c">+6.89%</td>
+      <td><span class="tag-cat">智利盐湖锂</span></td>
+    </tr>
+    <tr>
+      <td>RIO</td>
+      <td>力拓(Rio Tinto)</td>
+      <td class="text-right">86.64</td>
+      <td class="text-right" style="color:#e74c3c">+0.99%</td>
+      <td><span class="tag-cat">矿业巨头（含锂）</span></td>
+    </tr>
+    <tr>
+      <td>LAC</td>
+      <td>Lithium Americas</td>
+      <td class="text-right">3.90</td>
+      <td class="text-right" style="color:#e74c3c">+0.52%</td>
+      <td><span class="tag-cat">锂矿开发</span></td>
+    </tr>
+    <tr>
+      <td>PLS.AX</td>
+      <td>Pilbara Minerals</td>
+      <td class="text-right">5.15</td>
+      <td class="text-right" style="color:#e74c3c">+3.62%</td>
+      <td><span class="tag-cat">锂精矿</span></td>
+    </tr>
+    <tr>
+      <td>LTR.AX</td>
+      <td>Liontown Resources</td>
+      <td class="text-right">1.76</td>
+      <td class="text-right" style="color:#e74c3c">+3.22%</td>
+      <td><span class="tag-cat">锂精矿</span></td>
+    </tr>
+    <tr>
+      <td>IGO.AX</td>
+      <td>IGO Limited</td>
+      <td class="text-right">7.93</td>
+      <td class="text-right" style="color:#e74c3c">+3.93%</td>
+      <td><span class="tag-cat">锂精矿</span></td>
+    </tr></tbody>
+  </table>
+
+  <div class="data-source">A股数据来源：新浪财经（akshare）· 港/美/澳股：Yahoo Finance</div>
+</div>
+    <div style="height:40px;"></div>
+  </main>
+</div>
+
+<script>
+function setActive(el) {
+  document.querySelectorAll('.nav-link').forEach(function(a){ a.classList.remove('active'); });
+  el.classList.add('active');
+}
+
+// 滚动时自动高亮导航
+var sections = document.querySelectorAll('.panel');
+var navLinks = document.querySelectorAll('.nav-link');
+var mainContent = document.getElementById('mainContent');
+
+mainContent.addEventListener('scroll', function() {
+  var scrollTop = mainContent.scrollTop;
+  var active = null;
+  sections.forEach(function(sec) {
+    if (sec.offsetTop - mainContent.offsetTop - 30 <= scrollTop) {
+      active = sec.id;
+    }
+  });
+  navLinks.forEach(function(a) {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + active);
+  });
+});
+</script>
+
+</body>
+</html>
