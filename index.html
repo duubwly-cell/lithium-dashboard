@@ -8,17 +8,17 @@
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
-    --bg:       #0d1117;
-    --bg2:      #161b22;
-    --bg3:      #1c2128;
-    --border:   #30363d;
-    --text:     #e6edf3;
-    --text2:    #8b949e;
-    --accent:   #58a6ff;
-    --up:       #e74c3c;
-    --dn:       #27ae60;
+    --bg:       #f5f6f7;
+    --bg2:      #ffffff;
+    --bg3:      #f0f2f5;
+    --border:   #dde1e7;
+    --text:     #1a1a2e;
+    --text2:    #5a6474;
+    --accent:   #1565c0;
+    --up:       #c0392b;
+    --dn:       #1a7a4a;
   }
-  body { background:var(--bg); color:var(--text); font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; font-size:13px; }
+  body { background:var(--bg); color:var(--text); font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; font-size:14px; }
   a { color:var(--accent); text-decoration:none; }
   a:hover { text-decoration:underline; }
 
@@ -30,7 +30,7 @@
   }
   .topbar-title {
     flex-shrink: 0; padding: 10px 16px;
-    font-size: 14px; font-weight: 700; color: var(--accent);
+    font-size: 15px; font-weight: 700; color: var(--accent);
     border-right: 1px solid var(--border);
     white-space: nowrap;
   }
@@ -41,11 +41,11 @@
     white-space: nowrap;
   }
   .ticker-item { display:inline-flex; align-items:center; gap:5px; }
-  .ticker-label { color:var(--text2); font-size:11px; }
+  .ticker-label { color:var(--text2); font-size:12px; }
   .ticker-val   { color:var(--text); font-weight:600; }
   .topbar-meta  {
     flex-shrink: 0; padding: 8px 14px;
-    font-size:11px; color:var(--text2);
+    font-size:12px; color:var(--text2);
     border-left: 1px solid var(--border);
     white-space: nowrap;
   }
@@ -59,11 +59,11 @@
   }
   .nav-link {
     display:block; padding:9px 16px;
-    color:var(--text2); font-size:12px;
+    color:var(--text2); font-size:13px;
     transition: all .15s;
   }
   .nav-link:hover, .nav-link.active {
-    color:var(--text); background:var(--bg3);
+    color:var(--accent); background:var(--bg3);
     text-decoration:none;
     border-left: 3px solid var(--accent);
     padding-left: 13px;
@@ -81,12 +81,12 @@
     scroll-margin-top: 16px;
   }
   .panel-title {
-    font-size: 15px; font-weight: 700;
+    font-size: 16px; font-weight: 700;
     margin-bottom: 14px; color: var(--text);
     padding-bottom: 10px; border-bottom: 1px solid var(--border);
   }
   .section-label {
-    font-size: 11px; font-weight: 600;
+    font-size: 12px; font-weight: 600;
     color: var(--text2); text-transform: uppercase;
     letter-spacing: .5px; margin-bottom: 8px;
     margin-top: 4px;
@@ -100,10 +100,10 @@
     border-radius: 6px; padding: 12px 14px;
   }
   .price-card.main-price { border-color: var(--accent); }
-  .price-label  { font-size:11px; color:var(--text2); margin-bottom:4px; }
-  .price-value  { font-size:22px; font-weight:700; color:var(--text); }
-  .price-unit   { font-size:11px; color:var(--text2); font-weight:400; }
-  .price-meta   { font-size:11px; color:var(--text2); margin-top:4px; }
+  .price-label  { font-size:12px; color:var(--text2); margin-bottom:4px; }
+  .price-value  { font-size:24px; font-weight:700; color:var(--text); }
+  .price-unit   { font-size:12px; color:var(--text2); font-weight:400; }
+  .price-meta   { font-size:12px; color:var(--text2); margin-top:4px; }
 
   /* 统计卡片 */
   .stat-card {
@@ -111,45 +111,47 @@
     background: var(--bg3); border: 1px solid var(--border);
     border-radius: 6px; padding: 10px 12px;
   }
-  .stat-label { font-size:11px; color:var(--text2); }
-  .stat-value { font-size:18px; font-weight:700; color:var(--text); margin-top:3px; }
-  .stat-sub   { font-size:11px; margin-top:2px; }
-  .unit-small { font-size:11px; color:var(--text2); font-weight:400; }
-  .stat-row   { font-size:13px; color:var(--text2); }
+  .stat-label { font-size:12px; color:var(--text2); }
+  .stat-value { font-size:20px; font-weight:700; color:var(--text); margin-top:3px; }
+  .stat-sub   { font-size:12px; margin-top:2px; }
+  .unit-small { font-size:12px; color:var(--text2); font-weight:400; }
+  .stat-row   { font-size:14px; color:var(--text2); }
 
   /* 表格 */
   .data-table {
-    width:100%; border-collapse:collapse; font-size:12px;
+    width:100%; border-collapse:collapse; font-size:13px;
   }
   .data-table th {
-    text-align:left; padding:7px 10px;
+    text-align:left; padding:8px 10px;
     background:var(--bg3); color:var(--text2);
     border-bottom:1px solid var(--border);
     font-weight:600; white-space:nowrap;
   }
   .data-table td {
-    padding:7px 10px; border-bottom:1px solid var(--border);
+    padding:8px 10px; border-bottom:1px solid var(--border);
     color:var(--text);
   }
   .data-table tr:last-child td { border-bottom:none; }
   .data-table tr:hover td { background:var(--bg3); }
   .text-right { text-align:right; }
-  .note       { color:var(--text2); font-size:11px; }
+  .note       { color:var(--text2); font-size:12px; }
 
   /* 资讯 */
   .ai-summary {
     background:var(--bg3); border-left:3px solid var(--accent);
     padding:12px 14px; border-radius:0 6px 6px 0;
-    font-size:13px; line-height:1.7; color:var(--text);
+    font-size:14px; line-height:1.8; color:var(--text);
   }
-  .news-list  { display:flex; flex-direction:column; gap:6px; }
+  .news-list  { display:flex; flex-direction:column; gap:4px; }
   .news-item  {
-    display:flex; justify-content:space-between; align-items:baseline;
-    gap:8px; padding:5px 0; border-bottom:1px solid var(--border);
+    display:flex; justify-content:space-between; align-items:flex-start;
+    gap:10px; padding:7px 0; border-bottom:1px solid var(--border);
   }
-  .news-title { flex:1; color:var(--text); font-size:12px; }
+  .news-title-wrap { flex:1; }
+  .news-title { display:block; color:var(--text); font-size:13px; font-weight:500; }
   .news-title:hover { color:var(--accent); }
-  .news-meta  { flex-shrink:0; font-size:10px; color:var(--text2); white-space:nowrap; }
+  .news-orig  { font-size:11px; color:var(--text2); margin-top:2px; font-style:italic; }
+  .news-meta  { flex-shrink:0; font-size:11px; color:var(--text2); white-space:nowrap; text-align:right; }
 
   /* 边际变化 */
   .topics-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:10px; }
@@ -157,31 +159,31 @@
     background:var(--bg3); border:1px solid var(--border);
     border-radius:6px; padding:12px 14px;
   }
-  .marginal-card.manual-card { border-color:#f39c12; }
+  .marginal-card.manual-card { border-color:#e67e22; }
   .marginal-header { display:flex; align-items:center; gap:8px; margin-bottom:7px; }
-  .marginal-title  { font-weight:600; font-size:13px; }
-  .marginal-summary{ font-size:12px; color:var(--text2); line-height:1.6; }
-  .marginal-event  { font-size:12px; color:var(--text); margin-top:6px; }
-  .marginal-impact { font-size:11px; color:var(--accent); margin-top:4px; }
-  .marginal-meta   { font-size:10px; color:var(--text2); margin-top:4px; }
-  .tag-manual { background:#f39c12;color:#000;padding:1px 6px;border-radius:3px;font-size:10px; }
+  .marginal-title  { font-weight:600; font-size:14px; }
+  .marginal-summary{ font-size:13px; color:var(--text2); line-height:1.6; }
+  .marginal-event  { font-size:13px; color:var(--text); margin-top:6px; }
+  .marginal-impact { font-size:12px; color:var(--accent); margin-top:4px; }
+  .marginal-meta   { font-size:11px; color:var(--text2); margin-top:4px; }
+  .tag-manual { background:#e67e22;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px; }
 
   /* 标签 */
-  .tag-region { background:#1a3a2a;color:#27ae60;padding:1px 6px;border-radius:3px;font-size:11px; }
-  .tag-cat    { background:var(--bg);color:var(--text2);padding:1px 6px;border-radius:3px;font-size:11px; }
+  .tag-region { background:#e8f5e9;color:#1a7a4a;padding:2px 7px;border-radius:3px;font-size:12px; }
+  .tag-cat    { background:#f0f2f5;color:var(--text2);padding:2px 7px;border-radius:3px;font-size:12px; }
 
   /* 提示框 */
-  .warn-box  { background:#2d1b1b;border:1px solid #c0392b;border-radius:5px;padding:8px 12px;color:#e74c3c;font-size:12px;margin-top:10px; }
-  .tip-box   { background:#1a2d1a;border:1px solid #27ae60;border-radius:5px;padding:6px 12px;color:#27ae60;font-size:11px;display:inline-block; }
-  .data-source { font-size:11px;color:var(--text2);margin-top:8px; }
-  .empty     { color:var(--text2);text-align:center;padding:16px;font-size:12px; }
+  .warn-box  { background:#fff3f3;border:1px solid #e74c3c;border-radius:5px;padding:8px 12px;color:#c0392b;font-size:13px;margin-top:10px; }
+  .tip-box   { background:#f0faf5;border:1px solid #27ae60;border-radius:5px;padding:6px 12px;color:#1a7a4a;font-size:12px;display:inline-block; }
+  .data-source { font-size:12px;color:var(--text2);margin-top:8px; }
+  .empty     { color:var(--text2);text-align:center;padding:16px;font-size:13px; }
 
   /* 数据出处标签 */
-  .src-tag   { display:inline-block;font-size:10px;padding:1px 5px;border-radius:3px;margin-left:4px;vertical-align:middle;font-weight:500; }
-  .src-api   { background:#1a2d3a;color:#58a6ff;border:1px solid #1f4060; }
-  .src-ai    { background:#2a2a1a;color:#e6c84a;border:1px solid #4a4a1a; }
-  .src-manual{ background:#2a1a1a;color:#e05252;border:1px solid #4a1a1a; }
-  .src-empty { background:#2a2a2a;color:#888;border:1px solid #444; }
+  .src-tag   { display:inline-block;font-size:11px;padding:1px 6px;border-radius:3px;margin-left:4px;vertical-align:middle;font-weight:500; }
+  .src-api   { background:#e3f0fc;color:#1565c0;border:1px solid #b8d4f0; }
+  .src-ai    { background:#fdf8e3;color:#7d6000;border:1px solid #e8d98a; }
+  .src-manual{ background:#fff3e0;color:#b35c00;border:1px solid #f0c070; }
+  .src-empty { background:#f5f5f5;color:#888;border:1px solid #ccc; }
 </style>
 </head>
 <body>
@@ -196,7 +198,7 @@
 <!-- 主体布局 -->
 <div class="layout">
   <nav class="sidebar">
-    <a href="#p1" class="nav-link" onclick="setActive(this)">💎 价格</a>
+    <a href="#p1" class="nav-link" onclick="setActive(this)">💎 价格&股票</a>
 <a href="#p2" class="nav-link" onclick="setActive(this)">📰 资讯</a>
 <a href="#p3" class="nav-link" onclick="setActive(this)">⚡ 边际变化</a>
 <a href="#p4" class="nav-link" onclick="setActive(this)">⛏️ 供给</a>
@@ -204,14 +206,13 @@
 <a href="#p6" class="nav-link" onclick="setActive(this)">🏭 库存</a>
 <a href="#p7" class="nav-link" onclick="setActive(this)">📅 日历</a>
 <a href="#p8" class="nav-link" onclick="setActive(this)">📈 期货曲线</a>
-<a href="#p9" class="nav-link" onclick="setActive(this)">📊 股票</a>
+<a href="#pvol" class="nav-link" onclick="setActive(this)">📊 成交量</a>
   </nav>
   <main class="main-content" id="mainContent">
     
 <div class="panel" id="p1">
-  <div class="panel-title">💎 价格行情</div>
+  <div class="panel-title">💎 价格行情 & 相关股票</div>
 
-  <!-- 现货价格卡片 -->
   <div class="card-row">
     <div class="price-card main-price">
       <div class="price-label">电池级碳酸锂 现货 <span class="src-tag src-ai">🔍 AI搜索·百川/SMM/Mysteel</span></div>
@@ -235,7 +236,6 @@
     </div>
   </div>
 
-  <!-- 期货主力 + 宏观 -->
   <div class="card-row" style="margin-top:12px;">
     <div class="price-card">
       <div class="price-label">GFEX LC2605 最新价
@@ -265,6 +265,179 @@
   </div>
 
   ''
+
+  <div class="section-label" style="margin-top:18px;">A股相关标的</div>
+  <table class="data-table">
+    <thead><tr><th>代码</th><th>名称</th><th class="text-right">价格(¥)</th><th class="text-right">涨跌幅</th><th class="text-right">成交量(手)</th><th>类型</th></tr></thead>
+    <tbody>
+    <tr>
+      <td>002466</td>
+      <td>天齐锂业</td>
+      <td class="text-right">57.96</td>
+      <td class="text-right" style="color:#e74c3c">+6.94%</td>
+      <td class="text-right">—</td>
+      <td><span class="tag-cat">锂矿+锂盐</span></td>
+    </tr>
+    <tr>
+      <td>002460</td>
+      <td>赣锋锂业</td>
+      <td class="text-right">79.67</td>
+      <td class="text-right" style="color:#e74c3c">+10.00%</td>
+      <td class="text-right">—</td>
+      <td><span class="tag-cat">锂盐+电池</span></td>
+    </tr>
+    <tr>
+      <td>000792</td>
+      <td>盐湖股份</td>
+      <td class="text-right">39.45</td>
+      <td class="text-right" style="color:#e74c3c">+7.06%</td>
+      <td class="text-right">—</td>
+      <td><span class="tag-cat">盐湖提锂</span></td>
+    </tr>
+    <tr>
+      <td>000408</td>
+      <td>藏格矿业</td>
+      <td class="text-right">80.50</td>
+      <td class="text-right" style="color:#e74c3c">+3.46%</td>
+      <td class="text-right">—</td>
+      <td><span class="tag-cat">盐湖提锂</span></td>
+    </tr>
+    <tr>
+      <td>002756</td>
+      <td>永兴材料</td>
+      <td class="text-right">81.21</td>
+      <td class="text-right" style="color:#e74c3c">+10.00%</td>
+      <td class="text-right">—</td>
+      <td><span class="tag-cat">云母提锂</span></td>
+    </tr>
+    <tr>
+      <td>002176</td>
+      <td>江特电机</td>
+      <td class="text-right">10.29</td>
+      <td class="text-right" style="color:#e74c3c">+10.05%</td>
+      <td class="text-right">—</td>
+      <td><span class="tag-cat">云母提锂</span></td>
+    </tr>
+    <tr>
+      <td>002497</td>
+      <td>雅化集团</td>
+      <td class="text-right">24.20</td>
+      <td class="text-right" style="color:#e74c3c">+4.99%</td>
+      <td class="text-right">—</td>
+      <td><span class="tag-cat">锂盐</span></td>
+    </tr>
+    <tr>
+      <td>002738</td>
+      <td>中矿资源</td>
+      <td class="text-right">73.02</td>
+      <td class="text-right" style="color:#e74c3c">+7.04%</td>
+      <td class="text-right">—</td>
+      <td><span class="tag-cat">锂矿</span></td>
+    </tr>
+    <tr>
+      <td>603799</td>
+      <td>华友钴业</td>
+      <td class="text-right">59.90</td>
+      <td class="text-right" style="color:#e74c3c">+2.97%</td>
+      <td class="text-right">—</td>
+      <td><span class="tag-cat">电池材料</span></td>
+    </tr>
+    <tr>
+      <td>300750</td>
+      <td>宁德时代</td>
+      <td class="text-right">416.18</td>
+      <td class="text-right" style="color:#e74c3c">+3.40%</td>
+      <td class="text-right">—</td>
+      <td><span class="tag-cat">动力电池</span></td>
+    </tr>
+    <tr>
+      <td>002594</td>
+      <td>比亚迪</td>
+      <td class="text-right">105.30</td>
+      <td class="text-right" style="color:#e74c3c">+2.09%</td>
+      <td class="text-right">—</td>
+      <td><span class="tag-cat">整车+电池</span></td>
+    </tr></tbody>
+  </table>
+
+  <div class="section-label" style="margin-top:16px;">港股 / 美股 / 澳股</div>
+  <table class="data-table">
+    <thead><tr><th>代码</th><th>名称</th><th class="text-right">价格</th><th class="text-right">涨跌幅</th><th class="text-right">成交量</th><th>类型</th></tr></thead>
+    <tbody>
+    <tr>
+      <td>9696.HK</td>
+      <td>天齐锂业H</td>
+      <td class="text-right">47.74</td>
+      <td class="text-right" style="color:#e74c3c">+6.14%</td>
+      <td class="text-right">—</td>
+      <td><span class="tag-cat">锂矿+锂盐</span></td>
+    </tr>
+    <tr>
+      <td>1772.HK</td>
+      <td>赣锋锂业H</td>
+      <td class="text-right">74.30</td>
+      <td class="text-right" style="color:#e74c3c">+9.26%</td>
+      <td class="text-right">—</td>
+      <td><span class="tag-cat">锂盐+电池</span></td>
+    </tr>
+    <tr>
+      <td>ALB</td>
+      <td>Albemarle</td>
+      <td class="text-right">179.45</td>
+      <td class="text-right" style="color:#e74c3c">+2.84%</td>
+      <td class="text-right">—</td>
+      <td><span class="tag-cat">全球最大锂生产商</span></td>
+    </tr>
+    <tr>
+      <td>SQM</td>
+      <td>SQM</td>
+      <td class="text-right">82.70</td>
+      <td class="text-right" style="color:#e74c3c">+6.89%</td>
+      <td class="text-right">—</td>
+      <td><span class="tag-cat">智利盐湖锂</span></td>
+    </tr>
+    <tr>
+      <td>RIO</td>
+      <td>力拓(Rio Tinto)</td>
+      <td class="text-right">86.64</td>
+      <td class="text-right" style="color:#e74c3c">+0.99%</td>
+      <td class="text-right">—</td>
+      <td><span class="tag-cat">矿业巨头（含锂）</span></td>
+    </tr>
+    <tr>
+      <td>LAC</td>
+      <td>Lithium Americas</td>
+      <td class="text-right">3.90</td>
+      <td class="text-right" style="color:#e74c3c">+0.52%</td>
+      <td class="text-right">—</td>
+      <td><span class="tag-cat">锂矿开发</span></td>
+    </tr>
+    <tr>
+      <td>PLS.AX</td>
+      <td>Pilbara Minerals</td>
+      <td class="text-right">5.15</td>
+      <td class="text-right" style="color:#e74c3c">+3.62%</td>
+      <td class="text-right">—</td>
+      <td><span class="tag-cat">锂精矿</span></td>
+    </tr>
+    <tr>
+      <td>LTR.AX</td>
+      <td>Liontown Resources</td>
+      <td class="text-right">1.76</td>
+      <td class="text-right" style="color:#e74c3c">+3.22%</td>
+      <td class="text-right">—</td>
+      <td><span class="tag-cat">锂精矿</span></td>
+    </tr>
+    <tr>
+      <td>IGO.AX</td>
+      <td>IGO Limited</td>
+      <td class="text-right">7.93</td>
+      <td class="text-right" style="color:#e74c3c">+3.93%</td>
+      <td class="text-right">—</td>
+      <td><span class="tag-cat">锂精矿</span></td>
+    </tr></tbody>
+  </table>
+  <div class="data-source">A股：新浪财经（akshare）· 港/美/澳股：Yahoo Finance</div>
 </div>
     
 <div class="panel" id="p2">
@@ -273,84 +446,214 @@
   <div class="news-list" style="margin-top:14px;">
     
     <div class="news-item">
-      <a href="https://electrek.co/2026/03/27/new-york-city-first-home-battery-storage-system/" target="_blank" class="news-title">New York City finally gets its first home battery storage system</a>
-      <span class="news-meta">Electrek · Fri, 27 Mar 2026</span>
+      <div class="news-title-wrap">
+        <a href="https://electrek.co/2026/03/27/new-york-city-first-home-battery-storage-system/" target="_blank" class="news-title">New York City finally gets its first home battery storage system</a>
+        
+      </div>
+      <span class="news-meta"><b>Electrek</b> · Fri, 27 Mar 2026</span>
     </div>
     <div class="news-item">
-      <a href="https://electrek.co/2026/03/27/5-evs-10000-off-right-now/" target="_blank" class="news-title">These 5 EVs are $10,000 off right now</a>
-      <span class="news-meta">Electrek · Fri, 27 Mar 2026</span>
+      <div class="news-title-wrap">
+        <a href="https://electrek.co/2026/03/27/5-evs-10000-off-right-now/" target="_blank" class="news-title">These 5 EVs are $10,000 off right now</a>
+        
+      </div>
+      <span class="news-meta"><b>Electrek</b> · Fri, 27 Mar 2026</span>
     </div>
     <div class="news-item">
-      <a href="https://electrek.co/2026/03/27/podcast-tesla-minivan-but-cooler-used-ev-sales-rise-sodium-batteries-are-coming/" target="_blank" class="news-title">Podcast: Tesla minivan but cooler?, used EV sales rise, sodium batteries are coming</a>
-      <span class="news-meta">Electrek · Fri, 27 Mar 2026</span>
+      <div class="news-title-wrap">
+        <a href="https://electrek.co/2026/03/27/podcast-tesla-minivan-but-cooler-used-ev-sales-rise-sodium-batteries-are-coming/" target="_blank" class="news-title">Podcast: Tesla minivan but cooler?, used EV sales rise, sodium batteries are coming</a>
+        
+      </div>
+      <span class="news-meta"><b>Electrek</b> · Fri, 27 Mar 2026</span>
     </div>
     <div class="news-item">
-      <a href="https://electrek.co/2026/03/27/iran-war-spikes-energy-prices-uk-homes-ditch-fossil-fuels-fast/" target="_blank" class="news-title">Iran war spikes energy prices – UK homes ditch fossil fuels fast</a>
-      <span class="news-meta">Electrek · Fri, 27 Mar 2026</span>
+      <div class="news-title-wrap">
+        <a href="https://electrek.co/2026/03/27/iran-war-spikes-energy-prices-uk-homes-ditch-fossil-fuels-fast/" target="_blank" class="news-title">Iran war spikes energy prices – UK homes ditch fossil fuels fast</a>
+        
+      </div>
+      <span class="news-meta"><b>Electrek</b> · Fri, 27 Mar 2026</span>
     </div>
     <div class="news-item">
-      <a href="https://electrek.co/2026/03/27/chevy-equinox-ev-driver-nearly-gets-whiplash-from-auto-braking/" target="_blank" class="news-title">Chevy Equinox EV driver nearly gets ‘whiplash’ over touchy auto braking [Video]</a>
-      <span class="news-meta">Electrek · Fri, 27 Mar 2026</span>
+      <div class="news-title-wrap">
+        <a href="https://electrek.co/2026/03/27/chevy-equinox-ev-driver-nearly-gets-whiplash-from-auto-braking/" target="_blank" class="news-title">Chevy Equinox EV driver nearly gets ‘whiplash’ over touchy auto braking [Video]</a>
+        
+      </div>
+      <span class="news-meta"><b>Electrek</b> · Fri, 27 Mar 2026</span>
     </div>
     <div class="news-item">
-      <a href="https://electrek.co/2026/03/27/day-3-spring-sale-green-deals-anker-eufy-security-bluetti-power-station-segway-more/" target="_blank" class="news-title">Day 3 Spring Sale Green Deals – Anker eufy smart security devices 50% off, Bluetti increases power station savings, Segway, more</a>
-      <span class="news-meta">Electrek · Fri, 27 Mar 2026</span>
+      <div class="news-title-wrap">
+        <a href="https://electrek.co/2026/03/27/day-3-spring-sale-green-deals-anker-eufy-security-bluetti-power-station-segway-more/" target="_blank" class="news-title">Day 3 Spring Sale Green Deals – Anker eufy smart security devices 50% off, Bluetti increases power station savings, Segway, more</a>
+        
+      </div>
+      <span class="news-meta"><b>Electrek</b> · Fri, 27 Mar 2026</span>
     </div>
     <div class="news-item">
-      <a href="https://electrek.co/2026/03/27/nissan-recalls-new-leaf-evs-japan-battery-defect/" target="_blank" class="news-title">Nissan recalls a batch of new LEAF EVs in Japan due to a battery defect</a>
-      <span class="news-meta">Electrek · Fri, 27 Mar 2026</span>
+      <div class="news-title-wrap">
+        <a href="https://electrek.co/2026/03/27/nissan-recalls-new-leaf-evs-japan-battery-defect/" target="_blank" class="news-title">Nissan recalls a batch of new LEAF EVs in Japan due to a battery defect</a>
+        
+      </div>
+      <span class="news-meta"><b>Electrek</b> · Fri, 27 Mar 2026</span>
     </div>
     <div class="news-item">
-      <a href="https://electrek.co/2026/03/27/kia-ev2-affordable-ev-suv-that-can-park-itself-video/" target="_blank" class="news-title">The Kia EV2 is an affordable electric SUV that can park itself [Video]</a>
-      <span class="news-meta">Electrek · Fri, 27 Mar 2026</span>
+      <div class="news-title-wrap">
+        <a href="https://electrek.co/2026/03/27/kia-ev2-affordable-ev-suv-that-can-park-itself-video/" target="_blank" class="news-title">The Kia EV2 is an affordable electric SUV that can park itself [Video]</a>
+        
+      </div>
+      <span class="news-meta"><b>Electrek</b> · Fri, 27 Mar 2026</span>
     </div>
     <div class="news-item">
-      <a href="https://electrek.co/2026/03/27/slush-slate-pickup-winter-testing-video/" target="_blank" class="news-title">Slush pits and snowball fights: Slate’s upcoming pickup endures winter testing [Video]</a>
-      <span class="news-meta">Electrek · Fri, 27 Mar 2026</span>
+      <div class="news-title-wrap">
+        <a href="https://electrek.co/2026/03/27/slush-slate-pickup-winter-testing-video/" target="_blank" class="news-title">Slush pits and snowball fights: Slate’s upcoming pickup endures winter testing [Video]</a>
+        
+      </div>
+      <span class="news-meta"><b>Electrek</b> · Fri, 27 Mar 2026</span>
     </div>
     <div class="news-item">
-      <a href="https://electrek.co/2026/03/27/used-ev-sales-boom-new-ev-sales-drop-28-percent-q1-2026/" target="_blank" class="news-title">New EV sales drop 28% in Q1 2026, but used EVs surge 12% to near-record levels</a>
-      <span class="news-meta">Electrek · Fri, 27 Mar 2026</span>
+      <div class="news-title-wrap">
+        <a href="https://electrek.co/2026/03/27/used-ev-sales-boom-new-ev-sales-drop-28-percent-q1-2026/" target="_blank" class="news-title">New EV sales drop 28% in Q1 2026, but used EVs surge 12% to near-record levels</a>
+        
+      </div>
+      <span class="news-meta"><b>Electrek</b> · Fri, 27 Mar 2026</span>
     </div>
     <div class="news-item">
-      <a href="https://electrek.co/2026/03/27/hyundais-new-ev-suv-looks-like-twin-to-kia-ev2-video/" target="_blank" class="news-title">Hyundai’s new electric SUV looks like a twin to the Kia EV2 [Video]</a>
-      <span class="news-meta">Electrek · Fri, 27 Mar 2026</span>
+      <div class="news-title-wrap">
+        <a href="https://electrek.co/2026/03/27/hyundais-new-ev-suv-looks-like-twin-to-kia-ev2-video/" target="_blank" class="news-title">Hyundai’s new electric SUV looks like a twin to the Kia EV2 [Video]</a>
+        
+      </div>
+      <span class="news-meta"><b>Electrek</b> · Fri, 27 Mar 2026</span>
     </div>
     <div class="news-item">
-      <a href="https://electrek.co/2026/03/27/volkswagen-groups-joint-venture-with-rivian-hits-latest-milestone-unlocking-another-1b-for-the-ev-automaker/" target="_blank" class="news-title">Volkswagen Group’s joint venture with Rivian hits latest milestone, unlocking another $1B for the EV automaker</a>
-      <span class="news-meta">Electrek · Fri, 27 Mar 2026</span>
+      <div class="news-title-wrap">
+        <a href="https://electrek.co/2026/03/27/volkswagen-groups-joint-venture-with-rivian-hits-latest-milestone-unlocking-another-1b-for-the-ev-automaker/" target="_blank" class="news-title">Volkswagen Group’s joint venture with Rivian hits latest milestone, unlocking another $1B for the EV automaker</a>
+        
+      </div>
+      <span class="news-meta"><b>Electrek</b> · Fri, 27 Mar 2026</span>
     </div>
     <div class="news-item">
-      <a href="https://electrek.co/2026/03/27/wheel-e-podcast-new-super73s-heybike-villain-more/" target="_blank" class="news-title">Wheel-E Podcast: New Super73s, Heybike Villain, more</a>
-      <span class="news-meta">Electrek · Fri, 27 Mar 2026</span>
+      <div class="news-title-wrap">
+        <a href="https://electrek.co/2026/03/27/wheel-e-podcast-new-super73s-heybike-villain-more/" target="_blank" class="news-title">Wheel-E Podcast: New Super73s, Heybike Villain, more</a>
+        
+      </div>
+      <span class="news-meta"><b>Electrek</b> · Fri, 27 Mar 2026</span>
     </div>
     <div class="news-item">
-      <a href="https://electrek.co/2026/03/27/big-spring-sale-green-deals-hub-e-bikes-e-scooters-power-stations-tools-more/" target="_blank" class="news-title">Big Spring Sale Green Deals hub – e-bikes, e-scooters, power stations, tools, more</a>
-      <span class="news-meta">Electrek · Fri, 27 Mar 2026</span>
+      <div class="news-title-wrap">
+        <a href="https://electrek.co/2026/03/27/big-spring-sale-green-deals-hub-e-bikes-e-scooters-power-stations-tools-more/" target="_blank" class="news-title">Big Spring Sale Green Deals hub – e-bikes, e-scooters, power stations, tools, more</a>
+        
+      </div>
+      <span class="news-meta"><b>Electrek</b> · Fri, 27 Mar 2026</span>
     </div>
     <div class="news-item">
-      <a href="https://electrek.co/2026/03/26/byd-launches-song-ultra-ev-orders-top-21500-in-20-days/" target="_blank" class="news-title">BYD launches the Song Ultra EV as orders reach over 21,500 in 20 days</a>
-      <span class="news-meta">Electrek · Thu, 26 Mar 2026</span>
+      <div class="news-title-wrap">
+        <a href="https://electrek.co/2026/03/26/byd-launches-song-ultra-ev-orders-top-21500-in-20-days/" target="_blank" class="news-title">BYD launches the Song Ultra EV as orders reach over 21,500 in 20 days</a>
+        
+      </div>
+      <span class="news-meta"><b>Electrek</b> · Thu, 26 Mar 2026</span>
     </div>
     <div class="news-item">
-      <a href="https://electrek.co/2026/03/26/volkswagens-high-tech-new-ev-suv-in-china-starts-at-35000/" target="_blank" class="news-title">Volkswagen’s high-tech new electric SUV in China starts at $35,000</a>
-      <span class="news-meta">Electrek · Thu, 26 Mar 2026</span>
+      <div class="news-title-wrap">
+        <a href="https://electrek.co/2026/03/26/volkswagens-high-tech-new-ev-suv-in-china-starts-at-35000/" target="_blank" class="news-title">Volkswagen’s high-tech new electric SUV in China starts at $35,000</a>
+        
+      </div>
+      <span class="news-meta"><b>Electrek</b> · Thu, 26 Mar 2026</span>
     </div>
     <div class="news-item">
-      <a href="https://electrek.co/2026/03/26/this-chargers-first-megawatt-truck-charge-hits-north-america/" target="_blank" class="news-title">This charger’s first megawatt truck charge hits North America</a>
-      <span class="news-meta">Electrek · Thu, 26 Mar 2026</span>
+      <div class="news-title-wrap">
+        <a href="https://electrek.co/2026/03/26/this-chargers-first-megawatt-truck-charge-hits-north-america/" target="_blank" class="news-title">This charger’s first megawatt truck charge hits North America</a>
+        
+      </div>
+      <span class="news-meta"><b>Electrek</b> · Thu, 26 Mar 2026</span>
     </div>
     <div class="news-item">
-      <a href="https://electrek.co/2026/03/26/day-2-spring-sale-ecoflow-power-stations-flash-sale-segway-navimow-ego-tools-more/" target="_blank" class="news-title">Day 2 Spring Sale Green Deals – Amazon EcoFlow power stations 53% off + flash sale, Segway Navimow expanded sale, EGO tools, more</a>
-      <span class="news-meta">Electrek · Thu, 26 Mar 2026</span>
+      <div class="news-title-wrap">
+        <a href="https://electrek.co/2026/03/26/day-2-spring-sale-ecoflow-power-stations-flash-sale-segway-navimow-ego-tools-more/" target="_blank" class="news-title">Day 2 Spring Sale Green Deals – Amazon EcoFlow power stations 53% off + flash sale, Segway Navimow expanded sale, EGO tools, more</a>
+        
+      </div>
+      <span class="news-meta"><b>Electrek</b> · Thu, 26 Mar 2026</span>
     </div>
     <div class="news-item">
-      <a href="https://electrek.co/2026/03/26/first-ev-with-semi-solid-state-ev-batteries-launching-europe/" target="_blank" class="news-title">The first EV with a semi-solid-state battery is launching in Europe</a>
-      <span class="news-meta">Electrek · Thu, 26 Mar 2026</span>
+      <div class="news-title-wrap">
+        <a href="https://electrek.co/2026/03/26/first-ev-with-semi-solid-state-ev-batteries-launching-europe/" target="_blank" class="news-title">The first EV with a semi-solid-state battery is launching in Europe</a>
+        
+      </div>
+      <span class="news-meta"><b>Electrek</b> · Thu, 26 Mar 2026</span>
     </div>
     <div class="news-item">
-      <a href="https://electrek.co/2026/03/26/byd-recruits-james-bond-launch-new-longe-range-luxury-ev/" target="_blank" class="news-title">BYD recruits James Bond to launch its new long-range, 5-min charging luxury EV</a>
-      <span class="news-meta">Electrek · Thu, 26 Mar 2026</span>
+      <div class="news-title-wrap">
+        <a href="https://electrek.co/2026/03/26/byd-recruits-james-bond-launch-new-longe-range-luxury-ev/" target="_blank" class="news-title">BYD recruits James Bond to launch its new long-range, 5-min charging luxury EV</a>
+        
+      </div>
+      <span class="news-meta"><b>Electrek</b> · Thu, 26 Mar 2026</span>
+    </div>
+    <div class="news-item">
+      <div class="news-title-wrap">
+        <a href="https://electrek.co/2026/03/26/car-owners-turn-to-evs-gulf-energy-infrastructure-destroyed/" target="_blank" class="news-title">Car owners turn to EVs as 30-40% of Gulf energy capacity is destroyed</a>
+        
+      </div>
+      <span class="news-meta"><b>Electrek</b> · Thu, 26 Mar 2026</span>
+    </div>
+    <div class="news-item">
+      <div class="news-title-wrap">
+        <a href="https://electrek.co/2026/03/26/kias-most-affordable-ev-enters-production-available-to-order/" target="_blank" class="news-title">Kia’s most affordable EV enters production and is now available to order</a>
+        
+      </div>
+      <span class="news-meta"><b>Electrek</b> · Thu, 26 Mar 2026</span>
+    </div>
+    <div class="news-item">
+      <div class="news-title-wrap">
+        <a href="https://electrek.co/2026/03/26/while-us-flip-flops-on-evs-africa-charges-ahead-with-electric-mining-migs/" target="_blank" class="news-title">While US flip-flops on EVs, Africa charges ahead with electric mining migs</a>
+        
+      </div>
+      <span class="news-meta"><b>Electrek</b> · Thu, 26 Mar 2026</span>
+    </div>
+    <div class="news-item">
+      <div class="news-title-wrap">
+        <a href="https://electrek.co/2026/03/26/i-took-a-city-e-bike-out-extreme-off-roading-heres-what-happened/" target="_blank" class="news-title">I took a city e-bike out extreme off-roading. Here’s what happened</a>
+        
+      </div>
+      <span class="news-meta"><b>Electrek</b> · Thu, 26 Mar 2026</span>
+    </div>
+    <div class="news-item">
+      <div class="news-title-wrap">
+        <a href="https://electrek.co/2026/03/25/elon-teases-a-van-tesla-sales-tumble-and-there-is-no-robotaxi-in-california/" target="_blank" class="news-title">Elon teases a van, Tesla sales tumble, and there is no Robotaxi in California</a>
+        
+      </div>
+      <span class="news-meta"><b>Electrek</b> · Thu, 26 Mar 2026</span>
+    </div>
+    <div class="news-item">
+      <div class="news-title-wrap">
+        <a href="https://electrek.co/2026/03/25/kia-ev2-cheap-gt-line-10k-more-video/" target="_blank" class="news-title">The Kia EV2 is affordable, so is the GT-Line worth over $10,000 more? [Video]</a>
+        
+      </div>
+      <span class="news-meta"><b>Electrek</b> · Wed, 25 Mar 2026</span>
+    </div>
+    <div class="news-item">
+      <div class="news-title-wrap">
+        <a href="https://insideevs.com/reviews/787629/2026-toyota-bz-review/" target="_blank" class="news-title">2026 Toyota bZ Review: One Big Thing Missing</a>
+        
+      </div>
+      <span class="news-meta"><b>InsideEVs</b> · Fri, 27 Mar 2026</span>
+    </div>
+    <div class="news-item">
+      <div class="news-title-wrap">
+        <a href="https://insideevs.com/reviews/791261/porsche-cayenne-electric-active-ride/" target="_blank" class="news-title">I Can't Believe How Smooth The Porsche Cayenne Electric Is</a>
+        
+      </div>
+      <span class="news-meta"><b>InsideEVs</b> · Fri, 27 Mar 2026</span>
+    </div>
+    <div class="news-item">
+      <div class="news-title-wrap">
+        <a href="https://insideevs.com/news/791250/toyota-safety-supplier-warning-china/" target="_blank" class="news-title">'Unless Things Change, We Will Not Survive': Even Toyota Doesn't Feel Safe Right Now</a>
+        
+      </div>
+      <span class="news-meta"><b>InsideEVs</b> · Fri, 27 Mar 2026</span>
+    </div>
+    <div class="news-item">
+      <div class="news-title-wrap">
+        <a href="https://insideevs.com/news/791296/jeep-wagoneer-s-recall-liftgate-hinge-cover/" target="_blank" class="news-title">Jeep Recalls Over 11,000 Wagoneer S EVs Over Liftgate Issue</a>
+        
+      </div>
+      <span class="news-meta"><b>InsideEVs</b> · Fri, 27 Mar 2026</span>
     </div>
   </div>
 </div>
@@ -703,11 +1006,11 @@
       options: {
         responsive: true, maintainAspectRatio: false,
         interaction: { mode: 'index', intersect: false },
-        plugins: { legend: { labels: { color: '#ccc', font: { size: 11 } } } },
+        plugins: { legend: { labels: { color: '#444', font: { size: 12 } } } },
         scales: {
-          x:  { ticks: { color: '#aaa', maxTicksLimit: 10 }, grid: { color: '#2a2a2a' } },
-          y:  { position:'left',  ticks: { color:'#aaa' }, grid: { color:'#2a2a2a' }, title: { display:true, text:'库存（吨）', color:'#aaa' } },
-          y2: { position:'right', ticks: { color:'#777' }, grid: { display:false }, title: { display:true, text:'周变化', color:'#777' } },
+          x:  { ticks: { color: '#666', maxTicksLimit: 10 }, grid: { color: '#e8e8e8' } },
+          y:  { position:'left',  ticks: { color:'#444' }, grid: { color:'#e8e8e8' }, title: { display:true, text:'库存（吨）', color:'#444' } },
+          y2: { position:'right', ticks: { color:'#888' }, grid: { display:false }, title: { display:true, text:'周变化', color:'#888' } },
         },
       }
     });
@@ -815,11 +1118,11 @@
         responsive: true,
         maintainAspectRatio: false,
         interaction: { mode: 'index', intersect: false },
-        plugins: { legend: { labels: { color: '#ccc' } } },
+        plugins: { legend: { labels: { color: '#444' } } },
         scales: {
-          x:  { ticks: { color: '#aaa' }, grid: { color: '#2a2a2a' } },
-          y:  { position: 'left',  ticks: { color: '#aaa' }, grid: { color: '#2a2a2a' }, title: { display: true, text: '元/吨', color: '#aaa' } },
-          y2: { position: 'right', ticks: { color: '#777' }, grid: { display: false }, title: { display: true, text: '成交量', color: '#777' } },
+          x:  { ticks: { color: '#666' }, grid: { color: '#e8e8e8' } },
+          y:  { position: 'left',  ticks: { color: '#444' }, grid: { color: '#e8e8e8' }, title: { display: true, text: '元/吨', color: '#444' } },
+          y2: { position: 'right', ticks: { color: '#888' }, grid: { display: false }, title: { display: true, text: '成交量', color: '#888' } },
         },
       }
     });
@@ -840,10 +1143,10 @@
         options: {
           responsive: true,
           maintainAspectRatio: false,
-          plugins: { legend: { labels: { color: '#ccc' } } },
+          plugins: { legend: { labels: { color: '#444' } } },
           scales: {
-            x: { ticks: { color: '#aaa' }, grid: { color: '#2a2a2a' } },
-            y: { ticks: { color: '#aaa' }, grid: { color: '#2a2a2a' }, title: { display: true, text: '基差（元/吨）', color: '#aaa' } },
+            x: { ticks: { color: '#666' }, grid: { color: '#e8e8e8' } },
+            y: { ticks: { color: '#444' }, grid: { color: '#e8e8e8' }, title: { display: true, text: '基差（元/吨）', color: '#444' } },
           },
         }
       });
@@ -854,162 +1157,9 @@
   <div class='section-label' style='margin-top:16px;'>多空持仓排名（前5）</div><table class='data-table'><tbody><tr><td>1</td><td>中信期货</td><td>62959</td><td>5354</td><td>国泰君安期货</td><td>22278</td></tr><tr><td>2</td><td>国泰君安期货</td><td>62522</td><td>12259</td><td>东证期货</td><td>18530</td></tr><tr><td>3</td><td>东证期货</td><td>30009</td><td>4915</td><td>中信期货</td><td>15283</td></tr><tr><td>4</td><td>广发期货</td><td>29767</td><td>3510</td><td>永安期货</td><td>14020</td></tr><tr><td>5</td><td>中信建投</td><td>21617</td><td>6776</td><td>华泰期货</td><td>12003</td></tr></tbody></table>
 </div>
     
-<div class="panel" id="p9">
-  <div class="panel-title">📊 相关股票</div>
-
-  <div class="section-label">A股</div>
-  <table class="data-table">
-    <thead><tr><th>代码</th><th>名称</th><th class="text-right">价格(¥)</th><th class="text-right">涨跌幅</th><th>类型</th></tr></thead>
-    <tbody>
-    <tr>
-      <td>002466</td>
-      <td>天齐锂业</td>
-      <td class="text-right">57.96</td>
-      <td class="text-right" style="color:#e74c3c">+6.94%</td>
-      <td><span class="tag-cat">锂矿+锂盐</span></td>
-    </tr>
-    <tr>
-      <td>002460</td>
-      <td>赣锋锂业</td>
-      <td class="text-right">79.67</td>
-      <td class="text-right" style="color:#e74c3c">+10.00%</td>
-      <td><span class="tag-cat">锂盐+电池</span></td>
-    </tr>
-    <tr>
-      <td>000792</td>
-      <td>盐湖股份</td>
-      <td class="text-right">39.45</td>
-      <td class="text-right" style="color:#e74c3c">+7.06%</td>
-      <td><span class="tag-cat">盐湖提锂</span></td>
-    </tr>
-    <tr>
-      <td>000408</td>
-      <td>藏格矿业</td>
-      <td class="text-right">80.50</td>
-      <td class="text-right" style="color:#e74c3c">+3.46%</td>
-      <td><span class="tag-cat">盐湖提锂</span></td>
-    </tr>
-    <tr>
-      <td>002756</td>
-      <td>永兴材料</td>
-      <td class="text-right">81.21</td>
-      <td class="text-right" style="color:#e74c3c">+10.00%</td>
-      <td><span class="tag-cat">云母提锂</span></td>
-    </tr>
-    <tr>
-      <td>002176</td>
-      <td>江特电机</td>
-      <td class="text-right">10.29</td>
-      <td class="text-right" style="color:#e74c3c">+10.05%</td>
-      <td><span class="tag-cat">云母提锂</span></td>
-    </tr>
-    <tr>
-      <td>002497</td>
-      <td>雅化集团</td>
-      <td class="text-right">24.20</td>
-      <td class="text-right" style="color:#e74c3c">+4.99%</td>
-      <td><span class="tag-cat">锂盐</span></td>
-    </tr>
-    <tr>
-      <td>002738</td>
-      <td>中矿资源</td>
-      <td class="text-right">73.02</td>
-      <td class="text-right" style="color:#e74c3c">+7.04%</td>
-      <td><span class="tag-cat">锂矿</span></td>
-    </tr>
-    <tr>
-      <td>603799</td>
-      <td>华友钴业</td>
-      <td class="text-right">59.90</td>
-      <td class="text-right" style="color:#e74c3c">+2.97%</td>
-      <td><span class="tag-cat">电池材料</span></td>
-    </tr>
-    <tr>
-      <td>300750</td>
-      <td>宁德时代</td>
-      <td class="text-right">416.18</td>
-      <td class="text-right" style="color:#e74c3c">+3.40%</td>
-      <td><span class="tag-cat">动力电池</span></td>
-    </tr>
-    <tr>
-      <td>002594</td>
-      <td>比亚迪</td>
-      <td class="text-right">105.30</td>
-      <td class="text-right" style="color:#e74c3c">+2.09%</td>
-      <td><span class="tag-cat">整车+电池</span></td>
-    </tr></tbody>
-  </table>
-
-  <div class="section-label" style="margin-top:16px;">港股 / 美股 / 澳股</div>
-  <table class="data-table">
-    <thead><tr><th>代码</th><th>名称</th><th class="text-right">价格</th><th class="text-right">涨跌幅</th><th>类型</th></tr></thead>
-    <tbody>
-    <tr>
-      <td>9696.HK</td>
-      <td>天齐锂业H</td>
-      <td class="text-right">47.74</td>
-      <td class="text-right" style="color:#e74c3c">+6.14%</td>
-      <td><span class="tag-cat">锂矿+锂盐</span></td>
-    </tr>
-    <tr>
-      <td>1772.HK</td>
-      <td>赣锋锂业H</td>
-      <td class="text-right">74.30</td>
-      <td class="text-right" style="color:#e74c3c">+9.26%</td>
-      <td><span class="tag-cat">锂盐+电池</span></td>
-    </tr>
-    <tr>
-      <td>ALB</td>
-      <td>Albemarle</td>
-      <td class="text-right">179.45</td>
-      <td class="text-right" style="color:#e74c3c">+2.84%</td>
-      <td><span class="tag-cat">全球最大锂生产商</span></td>
-    </tr>
-    <tr>
-      <td>SQM</td>
-      <td>SQM</td>
-      <td class="text-right">82.70</td>
-      <td class="text-right" style="color:#e74c3c">+6.89%</td>
-      <td><span class="tag-cat">智利盐湖锂</span></td>
-    </tr>
-    <tr>
-      <td>RIO</td>
-      <td>力拓(Rio Tinto)</td>
-      <td class="text-right">86.64</td>
-      <td class="text-right" style="color:#e74c3c">+0.99%</td>
-      <td><span class="tag-cat">矿业巨头（含锂）</span></td>
-    </tr>
-    <tr>
-      <td>LAC</td>
-      <td>Lithium Americas</td>
-      <td class="text-right">3.90</td>
-      <td class="text-right" style="color:#e74c3c">+0.52%</td>
-      <td><span class="tag-cat">锂矿开发</span></td>
-    </tr>
-    <tr>
-      <td>PLS.AX</td>
-      <td>Pilbara Minerals</td>
-      <td class="text-right">5.15</td>
-      <td class="text-right" style="color:#e74c3c">+3.62%</td>
-      <td><span class="tag-cat">锂精矿</span></td>
-    </tr>
-    <tr>
-      <td>LTR.AX</td>
-      <td>Liontown Resources</td>
-      <td class="text-right">1.76</td>
-      <td class="text-right" style="color:#e74c3c">+3.22%</td>
-      <td><span class="tag-cat">锂精矿</span></td>
-    </tr>
-    <tr>
-      <td>IGO.AX</td>
-      <td>IGO Limited</td>
-      <td class="text-right">7.93</td>
-      <td class="text-right" style="color:#e74c3c">+3.93%</td>
-      <td><span class="tag-cat">锂精矿</span></td>
-    </tr></tbody>
-  </table>
-
-  <div class="data-source">A股数据来源：新浪财经（akshare）· 港/美/澳股：Yahoo Finance</div>
+<div class="panel" id="pvol">
+  <div class="panel-title">📊 成交量监测</div>
+  <div class="empty">成交量数据正在初始化，下次运行后可见...</div>
 </div>
     <div style="height:40px;"></div>
   </main>
