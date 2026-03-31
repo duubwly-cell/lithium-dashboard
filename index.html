@@ -202,8 +202,8 @@
 <!-- 顶栏 -->
 <div class="topbar">
   <div class="topbar-title">⚗️ 碳酸锂监测</div>
-  <div class="ticker-strip"><span class="ticker-item"><span class="ticker-label">电池级现货</span> <span class="ticker-val">16.63万元/吨</span></span><span class="ticker-item"><span class="ticker-label">GFEX LC2605</span> <span class="ticker-val">157,200元/吨</span> <span style='color:#e74c3c'>+0.19%</span></span><span class="ticker-item"><span class="ticker-label">DXY</span> <span class="ticker-val">100.27</span> <span style='color:#27ae60'>-0.24%</span></span><span class="ticker-item"><span class="ticker-label">USD/CNY</span> <span class="ticker-val">6.9002</span></span></div>
-  <div class="topbar-meta">更新于 2026-03-31 20:16:21</div>
+  <div class="ticker-strip"><span class="ticker-item"><span class="ticker-label">电池级现货</span> <span class="ticker-val">16.30万元/吨</span></span><span class="ticker-item"><span class="ticker-label">GFEX LC2605</span> <span class="ticker-val">157,200元/吨</span> <span style='color:#e74c3c'>+0.19%</span></span><span class="ticker-item"><span class="ticker-label">DXY</span> <span class="ticker-val">100.21</span> <span style='color:#27ae60'>-0.30%</span></span><span class="ticker-item"><span class="ticker-label">USD/CNY</span> <span class="ticker-val">6.8975</span></span></div>
+  <div class="topbar-meta">更新于 2026-04-01 00:27:01</div>
 </div>
 
 <!-- 主体布局 -->
@@ -229,24 +229,28 @@
   <!-- 现货价格卡片 -->
   <div class="card-row">
     <div class="price-card main-price">
-      <div class="price-label">电池级碳酸锂 现货 <span class="src-tag src-ai">🔍 AI搜索·Mysteel/SMM</span></div>
-      <div class="price-value">16.63 <span class="price-unit">万元/吨</span></div>
+      <div class="price-label">电池级碳酸锂 现货 <span class="src-tag src-ai">🔍 AI搜索·SMM, 百川盈孚, 生意社, 华泰期货</span></div>
+      <div class="price-value">16.30 <span class="price-unit">万元/吨</span></div>
       <div class="price-meta">2026-03-31</div>
+      <div style="height:55px;margin-top:6px;"><canvas id="spark_battery"></canvas></div>
     </div>
     <div class="price-card">
       <div class="price-label">工业级碳酸锂 现货</div>
-      <div class="price-value">16.32 <span class="price-unit">万元/吨</span></div>
-      <div class="price-meta"><span class="src-tag src-ai">🔍 AI搜索·Mysteel/SMM</span></div>
+      <div class="price-value">15.90 <span class="price-unit">万元/吨</span></div>
+      <div class="price-meta"><span class="src-tag src-ai">🔍 AI搜索·SMM, 百川盈孚, 生意社, 华泰期货</span></div>
+      <div style="height:55px;margin-top:6px;"><canvas id="spark_industry"></canvas></div>
     </div>
     <div class="price-card">
       <div class="price-label">电池级氢氧化锂 现货</div>
-      <div class="price-value">15.10 <span class="price-unit">万元/吨</span></div>
-      <div class="price-meta"><span class="src-tag src-ai">🔍 AI搜索·Mysteel/SMM</span></div>
+      <div class="price-value">14.90 <span class="price-unit">万元/吨</span></div>
+      <div class="price-meta"><span class="src-tag src-ai">🔍 AI搜索·SMM, 百川盈孚, 生意社, 华泰期货</span></div>
+      <div style="height:55px;margin-top:6px;"><canvas id="spark_hydroxide"></canvas></div>
     </div>
     <div class="price-card">
       <div class="price-label">锂精矿 SC6</div>
-      <div class="price-value">— <span class="price-unit">USD/吨</span></div>
-      <div class="price-meta"><span class="src-tag src-ai">🔍 AI搜索·Mysteel/SMM</span></div>
+      <div class="price-value">2,080 <span class="price-unit">USD/吨</span></div>
+      <div class="price-meta"><span class="src-tag src-ai">🔍 AI搜索·SMM, 百川盈孚, 生意社, 华泰期货</span></div>
+      <div style="height:55px;margin-top:6px;"><canvas id="spark_spodumene"></canvas></div>
     </div>
   </div>
 
@@ -262,42 +266,52 @@
         &nbsp;(300元)
         &nbsp;· 持仓296,998手 成交217,916手 · 2026-03-31
       </div>
+      <div style="height:55px;margin-top:6px;"><canvas id="spark_futures"></canvas></div>
     </div>
     <div class="price-card">
       <div class="price-label">美元指数 DXY
         <span class="src-tag src-api">📡 Yahoo Finance</span>
       </div>
-      <div class="price-value">100.27</div>
-      <div class="price-meta" style="color:#27ae60">-0.24%</div>
+      <div class="price-value">100.21</div>
+      <div class="price-meta" style="color:#27ae60">-0.30%</div>
     </div>
     <div class="price-card">
       <div class="price-label">美元/人民币
         <span class="src-tag src-api">📡 Yahoo Finance</span>
       </div>
-      <div class="price-value">6.9002</div>
-      <div class="price-meta" style="color:#27ae60">-0.16%</div>
+      <div class="price-value">6.8975</div>
+      <div class="price-meta" style="color:#27ae60">-0.20%</div>
     </div>
   </div>
 
   ''
 
   
-  <div class="section-label" style="margin-top:18px;">现货价格历史走势（万元/吨）</div>
-  <div style="height:220px; margin-top:8px;">
+  <div class="section-label" style="margin-top:18px;">价格历史走势（近1年）</div>
+  <div style="height:260px; margin-top:8px;">
     <canvas id="priceHistChart"></canvas>
   </div>
   <script>
   (function(){
-    var labels    = ["03-30", "03-31"];
-    var battery   = [16.45, 16.63];
-    var industry  = [16.1, 16.325];
-    var hydroxide = [15.65, 15.1];
-    var spodumene = [2080, null];
+    var labels    = ["04-01", "04-02", "04-03", "04-07", "04-08", "04-09", "04-10", "04-11", "04-14", "04-15", "04-16", "04-17", "04-18", "04-21", "04-22", "04-23", "04-24", "04-25", "04-28", "04-29", "04-30", "05-06", "05-07", "05-08", "05-09", "05-12", "05-13", "05-14", "05-15", "05-16", "05-19", "05-20", "05-21", "05-22", "05-23", "05-26", "05-27", "05-28", "05-29", "05-30", "06-03", "06-04", "06-05", "06-06", "06-09", "06-10", "06-11", "06-12", "06-13", "06-16", "06-17", "06-18", "06-19", "06-20", "06-23", "06-24", "06-25", "06-26", "06-27", "06-30", "07-01", "07-02", "07-03", "07-04", "07-07", "07-08", "07-09", "07-10", "07-11", "07-14", "07-15", "07-16", "07-17", "07-18", "07-21", "07-22", "07-23", "07-24", "07-25", "07-28", "07-29", "07-30", "07-31", "08-01", "08-04", "08-05", "08-06", "08-07", "08-08", "08-11", "08-12", "08-13", "08-14", "08-15", "08-18", "08-19", "08-20", "08-21", "08-22", "08-25", "08-26", "08-27", "08-28", "08-29", "09-01", "09-02", "09-03", "09-04", "09-05", "09-08", "09-09", "09-10", "09-11", "09-12", "09-15", "09-16", "09-17", "09-18", "09-19", "09-22", "09-23", "09-24", "09-25", "09-26", "09-29", "09-30", "10-09", "10-10", "10-13", "10-14", "10-15", "10-16", "10-17", "10-20", "10-21", "10-22", "10-23", "10-24", "10-27", "10-28", "10-29", "10-30", "10-31", "11-03", "11-04", "11-05", "11-06", "11-07", "11-10", "11-11", "11-12", "11-13", "11-14", "11-17", "11-18", "11-19", "11-20", "11-21", "11-24", "11-25", "11-26", "11-27", "11-28", "12-01", "12-02", "12-03", "12-04", "12-05", "12-08", "12-09", "12-10", "12-11", "12-12", "12-15", "12-16", "12-17", "12-18", "12-19", "12-22", "12-23", "12-24", "12-25", "12-26", "12-29", "12-30", "12-31", "01-05", "01-06", "01-07", "01-08", "01-09", "01-12", "01-13", "01-14", "01-15", "01-16", "01-19", "01-20", "01-21", "01-22", "01-23", "01-26", "01-27", "01-28", "01-29", "01-30", "02-02", "02-03", "02-04", "02-05", "02-06", "02-09", "02-10", "02-11", "02-12", "02-13", "02-24", "02-25", "02-26", "02-27", "03-02", "03-03", "03-04", "03-05", "03-06", "03-09", "03-10", "03-11", "03-12", "03-13", "03-16", "03-17", "03-18", "03-19", "03-20", "03-23", "03-24", "03-25", "03-26", "03-27", "03-30", "03-31"];
+    var battery   = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 16.45, 16.3];
+    var industry  = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 16.1, 15.9];
+    var hydroxide = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 15.65, 14.9];
+    var spodumene = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 2080, 2080];
     new Chart(document.getElementById('priceHistChart'), {
       type: 'line',
       data: {
         labels: labels,
         datasets: [
+          
+          {
+            label: 'LC主力合约（元/吨，右轴）',
+            data: [74360.0, 73340.0, 73160.0, 71060.0, 70280.0, 69900.0, 70540.0, 70260.0, 70760.0, 70720.0, 70380.0, 70460.0, 70180.0, 69000.0, 67840.0, 68980.0, 68300.0, 68180.0, 66960.0, 66260.0, 65960.0, 65260.0, 64160.0, 64280.0, 63020.0, 64040.0, 63220.0, 65200.0, 64120.0, 61800.0, 61180.0, 60860.0, 61100.0, 62140.0, 60960.0, 60100.0, 60920.0, 60380.0, 58860.0, 59800.0, 59940.0, 61080.0, 60100.0, 60440.0, 60700.0, 60760.0, 61740.0, 60480.0, 59800.0, 59780.0, 59860.0, 59880.0, 60060.0, 58900.0, 59120.0, 60700.0, 60880.0, 61500.0, 63300.0, 62260.0, 62780.0, 63960.0, 64080.0, 63280.0, 63660.0, 63880.0, 64400.0, 64180.0, 64280.0, 66480.0, 66660.0, 66420.0, 67960.0, 69960.0, 71280.0, 72880.0, 69380.0, 76680.0, 80520.0, 73120.0, 70840.0, 70600.0, 68280.0, 68920.0, 68920.0, 67840.0, 69620.0, 72300.0, 76960.0, 81000.0, 82520.0, 85100.0, 85300.0, 86900.0, 89240.0, 87540.0, 80980.0, 82760.0, 78960.0, 79380.0, 79020.0, 78860.0, 78140.0, 77180.0, 75560.0, 72620.0, 71880.0, 73420.0, 74260.0, 74800.0, 72900.0, 70720.0, 71000.0, 71160.0, 72680.0, 73180.0, 73640.0, 72880.0, 73960.0, 73420.0, 73660.0, 72880.0, 74040.0, 72880.0, 73920.0, 72800.0, 73340.0, 72740.0, 72280.0, 72680.0, 72940.0, 75080.0, 75780.0, 75940.0, 75980.0, 77120.0, 79940.0, 79520.0, 81900.0, 81640.0, 82900.0, 83400.0, 80780.0, 82280.0, 78560.0, 79140.0, 80500.0, 82300.0, 87240.0, 86540.0, 86580.0, 87840.0, 87360.0, 95200.0, 93520.0, 99300.0, 98980.0, 91020.0, 90480.0, 95400.0, 96340.0, 95820.0, 96420.0, 96940.0, 96560.0, 93660.0, 93700.0, 92160.0, 94840.0, 92800.0, 95980.0, 98880.0, 97720.0, 101060.0, 100600.0, 108620.0, 106160.0, 111400.0, 114380.0, 120360.0, 124720.0, 123520.0, 130520.0, 118820.0, 121580.0, 121580.0, 129980.0, 137940.0, 142300.0, 145000.0, 143420.0, 156060.0, 166980.0, 161940.0, 163220.0, 146200.0, 147260.0, 160500.0, 166740.0, 168780.0, 181520.0, 165680.0, 179600.0, 166280.0, 164820.0, 148200.0, 132440.0, 148100.0, 147220.0, 132780.0, 132920.0, 137000.0, 137340.0, 150260.0, 149420.0, 152640.0, 164120.0, 166480.0, 173660.0, 176040.0, 172020.0, 150860.0, 153060.0, 155860.0, 156160.0, 161060.0, 163000.0, 155040.0, 156980.0, 152080.0, 159620.0, 155320.0, 150120.0, 142600.0, 143860.0, 149040.0, 152940.0, 159120.0, 157200.0, 168440.0, 171620.0, 157500.0],
+            borderColor: '#27ae60', backgroundColor: 'rgba(39,174,96,0.06)',
+            tension: 0.3, pointRadius: 0, fill: false, spanGaps: true,
+            borderWidth: 2,
+            yAxisID: 'y3',
+          },
           {
             label: '电池级碳酸锂（万元/吨）',
             data: battery,
@@ -322,7 +336,7 @@
           
           {
             label: '锂精矿SC6（USD/吨，右轴）',
-            data: [2080, null],
+            data: [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 2080, 2080],
             borderColor: '#8e44ad', backgroundColor: 'rgba(142,68,173,0.08)',
             tension: 0.3, pointRadius: 3, borderDash: [4,3],
             yAxisID: 'y2', spanGaps: true,
@@ -334,117 +348,295 @@
         interaction: { mode: 'index', intersect: false },
         plugins: { legend: { labels: { color:'#444', font:{ size:11 } } } },
         scales: {
-          x: { ticks:{ color:'#666', maxTicksLimit:12 }, grid:{ color:'#e8e8e8' } },
+          x: { ticks:{ color:'#666', maxTicksLimit:16 }, grid:{ color:'#e8e8e8' } },
           y: { position:'left', ticks:{ color:'#444' }, grid:{ color:'#e8e8e8' },
                title:{ display:true, text:'万元/吨', color:'#444' } },
           y2: { position:'right', ticks:{color:'#8e44ad'}, grid:{display:false},
                       title:{display:true,text:'SC6 (USD/吨)',color:'#8e44ad'} },
+          y3: { position:'right', ticks:{color:'#27ae60'}, grid:{display:false},
+                      title:{display:true,text:'期货(元/吨)',color:'#27ae60'} },
         },
       }
     });
   })();
   </script>
+  <script>
+  (function(){
+    var el = document.getElementById('spark_battery');
+    if (!el || typeof Chart === 'undefined') return;
+    new Chart(el, {
+      type: 'line',
+      data: {
+        labels: ["03-30", "03-31"],
+        datasets: [{
+          data: [16.45, 16.3],
+          borderColor: '#e74c3c',
+          backgroundColor: '#e74c3c18',
+          tension: 0.3, pointRadius: 0, fill: true,
+          spanGaps: true, borderWidth: 1.5,
+        }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        animation: false,
+        plugins: { legend: { display: false }, tooltip: {
+          callbacks: { label: function(ctx) { return ctx.parsed.y + '万元/吨'; } }
+        } },
+        scales: {
+          x: { display: false },
+          y: { display: false },
+        },
+      }
+    });
+  })();
+  (function(){
+    var el = document.getElementById('spark_industry');
+    if (!el || typeof Chart === 'undefined') return;
+    new Chart(el, {
+      type: 'line',
+      data: {
+        labels: ["03-30", "03-31"],
+        datasets: [{
+          data: [16.1, 15.9],
+          borderColor: '#e67e22',
+          backgroundColor: '#e67e2218',
+          tension: 0.3, pointRadius: 0, fill: true,
+          spanGaps: true, borderWidth: 1.5,
+        }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        animation: false,
+        plugins: { legend: { display: false }, tooltip: {
+          callbacks: { label: function(ctx) { return ctx.parsed.y + '万元/吨'; } }
+        } },
+        scales: {
+          x: { display: false },
+          y: { display: false },
+        },
+      }
+    });
+  })();
+  (function(){
+    var el = document.getElementById('spark_hydroxide');
+    if (!el || typeof Chart === 'undefined') return;
+    new Chart(el, {
+      type: 'line',
+      data: {
+        labels: ["03-30", "03-31"],
+        datasets: [{
+          data: [15.65, 14.9],
+          borderColor: '#2980b9',
+          backgroundColor: '#2980b918',
+          tension: 0.3, pointRadius: 0, fill: true,
+          spanGaps: true, borderWidth: 1.5,
+        }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        animation: false,
+        plugins: { legend: { display: false }, tooltip: {
+          callbacks: { label: function(ctx) { return ctx.parsed.y + '万元/吨'; } }
+        } },
+        scales: {
+          x: { display: false },
+          y: { display: false },
+        },
+      }
+    });
+  })();
+  (function(){
+    var el = document.getElementById('spark_spodumene');
+    if (!el || typeof Chart === 'undefined') return;
+    new Chart(el, {
+      type: 'line',
+      data: {
+        labels: ["03-30", "03-31"],
+        datasets: [{
+          data: [2080, 2080],
+          borderColor: '#8e44ad',
+          backgroundColor: '#8e44ad18',
+          tension: 0.3, pointRadius: 0, fill: true,
+          spanGaps: true, borderWidth: 1.5,
+        }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        animation: false,
+        plugins: { legend: { display: false }, tooltip: {
+          callbacks: { label: function(ctx) { return ctx.parsed.y + 'USD/吨'; } }
+        } },
+        scales: {
+          x: { display: false },
+          y: { display: false },
+        },
+      }
+    });
+  })();
+  (function(){
+    var el = document.getElementById('spark_futures');
+    if (!el || typeof Chart === 'undefined') return;
+    new Chart(el, {
+      type: 'line',
+      data: {
+        labels: ["04-01", "04-02", "04-03", "04-07", "04-08", "04-09", "04-10", "04-11", "04-14", "04-15", "04-16", "04-17", "04-18", "04-21", "04-22", "04-23", "04-24", "04-25", "04-28", "04-29", "04-30", "05-06", "05-07", "05-08", "05-09", "05-12", "05-13", "05-14", "05-15", "05-16", "05-19", "05-20", "05-21", "05-22", "05-23", "05-26", "05-27", "05-28", "05-29", "05-30", "06-03", "06-04", "06-05", "06-06", "06-09", "06-10", "06-11", "06-12", "06-13", "06-16", "06-17", "06-18", "06-19", "06-20", "06-23", "06-24", "06-25", "06-26", "06-27", "06-30", "07-01", "07-02", "07-03", "07-04", "07-07", "07-08", "07-09", "07-10", "07-11", "07-14", "07-15", "07-16", "07-17", "07-18", "07-21", "07-22", "07-23", "07-24", "07-25", "07-28", "07-29", "07-30", "07-31", "08-01", "08-04", "08-05", "08-06", "08-07", "08-08", "08-11", "08-12", "08-13", "08-14", "08-15", "08-18", "08-19", "08-20", "08-21", "08-22", "08-25", "08-26", "08-27", "08-28", "08-29", "09-01", "09-02", "09-03", "09-04", "09-05", "09-08", "09-09", "09-10", "09-11", "09-12", "09-15", "09-16", "09-17", "09-18", "09-19", "09-22", "09-23", "09-24", "09-25", "09-26", "09-29", "09-30", "10-09", "10-10", "10-13", "10-14", "10-15", "10-16", "10-17", "10-20", "10-21", "10-22", "10-23", "10-24", "10-27", "10-28", "10-29", "10-30", "10-31", "11-03", "11-04", "11-05", "11-06", "11-07", "11-10", "11-11", "11-12", "11-13", "11-14", "11-17", "11-18", "11-19", "11-20", "11-21", "11-24", "11-25", "11-26", "11-27", "11-28", "12-01", "12-02", "12-03", "12-04", "12-05", "12-08", "12-09", "12-10", "12-11", "12-12", "12-15", "12-16", "12-17", "12-18", "12-19", "12-22", "12-23", "12-24", "12-25", "12-26", "12-29", "12-30", "12-31", "01-05", "01-06", "01-07", "01-08", "01-09", "01-12", "01-13", "01-14", "01-15", "01-16", "01-19", "01-20", "01-21", "01-22", "01-23", "01-26", "01-27", "01-28", "01-29", "01-30", "02-02", "02-03", "02-04", "02-05", "02-06", "02-09", "02-10", "02-11", "02-12", "02-13", "02-24", "02-25", "02-26", "02-27", "03-02", "03-03", "03-04", "03-05", "03-06", "03-09", "03-10", "03-11", "03-12", "03-13", "03-16", "03-17", "03-18", "03-19", "03-20", "03-23", "03-24", "03-25", "03-26", "03-27", "03-30", "03-31"],
+        datasets: [{
+          data: [74360.0, 73340.0, 73160.0, 71060.0, 70280.0, 69900.0, 70540.0, 70260.0, 70760.0, 70720.0, 70380.0, 70460.0, 70180.0, 69000.0, 67840.0, 68980.0, 68300.0, 68180.0, 66960.0, 66260.0, 65960.0, 65260.0, 64160.0, 64280.0, 63020.0, 64040.0, 63220.0, 65200.0, 64120.0, 61800.0, 61180.0, 60860.0, 61100.0, 62140.0, 60960.0, 60100.0, 60920.0, 60380.0, 58860.0, 59800.0, 59940.0, 61080.0, 60100.0, 60440.0, 60700.0, 60760.0, 61740.0, 60480.0, 59800.0, 59780.0, 59860.0, 59880.0, 60060.0, 58900.0, 59120.0, 60700.0, 60880.0, 61500.0, 63300.0, 62260.0, 62780.0, 63960.0, 64080.0, 63280.0, 63660.0, 63880.0, 64400.0, 64180.0, 64280.0, 66480.0, 66660.0, 66420.0, 67960.0, 69960.0, 71280.0, 72880.0, 69380.0, 76680.0, 80520.0, 73120.0, 70840.0, 70600.0, 68280.0, 68920.0, 68920.0, 67840.0, 69620.0, 72300.0, 76960.0, 81000.0, 82520.0, 85100.0, 85300.0, 86900.0, 89240.0, 87540.0, 80980.0, 82760.0, 78960.0, 79380.0, 79020.0, 78860.0, 78140.0, 77180.0, 75560.0, 72620.0, 71880.0, 73420.0, 74260.0, 74800.0, 72900.0, 70720.0, 71000.0, 71160.0, 72680.0, 73180.0, 73640.0, 72880.0, 73960.0, 73420.0, 73660.0, 72880.0, 74040.0, 72880.0, 73920.0, 72800.0, 73340.0, 72740.0, 72280.0, 72680.0, 72940.0, 75080.0, 75780.0, 75940.0, 75980.0, 77120.0, 79940.0, 79520.0, 81900.0, 81640.0, 82900.0, 83400.0, 80780.0, 82280.0, 78560.0, 79140.0, 80500.0, 82300.0, 87240.0, 86540.0, 86580.0, 87840.0, 87360.0, 95200.0, 93520.0, 99300.0, 98980.0, 91020.0, 90480.0, 95400.0, 96340.0, 95820.0, 96420.0, 96940.0, 96560.0, 93660.0, 93700.0, 92160.0, 94840.0, 92800.0, 95980.0, 98880.0, 97720.0, 101060.0, 100600.0, 108620.0, 106160.0, 111400.0, 114380.0, 120360.0, 124720.0, 123520.0, 130520.0, 118820.0, 121580.0, 121580.0, 129980.0, 137940.0, 142300.0, 145000.0, 143420.0, 156060.0, 166980.0, 161940.0, 163220.0, 146200.0, 147260.0, 160500.0, 166740.0, 168780.0, 181520.0, 165680.0, 179600.0, 166280.0, 164820.0, 148200.0, 132440.0, 148100.0, 147220.0, 132780.0, 132920.0, 137000.0, 137340.0, 150260.0, 149420.0, 152640.0, 164120.0, 166480.0, 173660.0, 176040.0, 172020.0, 150860.0, 153060.0, 155860.0, 156160.0, 161060.0, 163000.0, 155040.0, 156980.0, 152080.0, 159620.0, 155320.0, 150120.0, 142600.0, 143860.0, 149040.0, 152940.0, 159120.0, 157200.0, 168440.0, 171620.0, 157500.0],
+          borderColor: '#27ae60',
+          backgroundColor: '#27ae6018',
+          tension: 0.3, pointRadius: 0, fill: true,
+          spanGaps: true, borderWidth: 1.5,
+        }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        animation: false,
+        plugins: { legend: { display: false }, tooltip: {
+          callbacks: { label: function(ctx) { return ctx.parsed.y + '元/吨'; } }
+        } },
+        scales: {
+          x: { display: false },
+          y: { display: false },
+        },
+      }
+    });
+  })();</script>
 </div>
     
 <div class="panel" id="p2">
   <div class="panel-title">📰 产业链资讯</div>
-  <div class="ai-summary">以下是今日碳酸锂/锂电产业链相关资讯的整理：<br><br>**1. 价格与市场**<br>第一季度新电动汽车销量同比下降28%，但二手电动汽车销量激增12%，接近历史新高。多家车企推出价格更亲民的电动车型，如比亚迪2.2万美元的新电动车、丰田在中国2.2万美元的豪华电动车，以及售价1万美元的Leapmotor A10，显示市场竞争激烈，部分电动车甚至有1万美元的折扣。这可能将成本压力传导至电池供应链，从而间接影响碳酸锂价格。<br><br>**2. 供给动态**<br>半固态电动汽车电池已开始为卡车和飞行汽车提供动力，预示电池技术在能量密度和安全性方面持续进步。有消息提到钠电池即将进入市场，这为锂离子电池提供了潜在的替代方案，未来可能影响锂的需求格局。日产在日本召回部分新款LEAF电动汽车，原因是电池存在缺陷，但这是特定批次的质量问题，对整体锂供应影响有限。<br><br>**3. 需求动态**<br>大型储能项目需求强劲，例如加州一个6亿美元的电池项目可为32.1万户家庭供电，纽约市也首次安装家用电池储能系统。全球电动汽车市场新品频出，包括现代、起亚、比亚迪、丰田等多款新车型上市，且定价更具竞争力。电动车充电基础设施持续完善，出现400kW快充设备，支持电动车普及。电动自行车、电动滑板车及便携式储能设备在春季促销中表现活跃，显示消费端对电动化产品需求旺盛。<br><br>**4. 政策与地缘**<br>今日资讯主要关注技术和市场动态，未直接涉及碳酸锂/锂精矿相关的明确政策变动或地缘政治影响。美国国会正在审议新的电动自行车法案，可能对电动自行车市场产生监管影响，但与锂资源政策关联度不大。伊朗战争导致能源价格上涨，推动英国加速摆脱化石燃料，这是一个宏观能源转型趋势，非直接锂政策。<br><br>**综合判断：**<br>尽管大型储能和新型电动车（尤其是低价位和中国市场）显示出强劲需求，但新电动车整体销量下滑和市场价格战预示需求端承压。短期内，碳酸锂价格可能因电动车销量增长放缓和市场竞争加剧而面临一定的下行压力。</div>
+  <div class="ai-summary">**碳酸锂/锂电产业链今日资讯要点总结**<br><br>**1. 价格与市场**<br>今日资讯显示电动车市场竞争激烈，多个品牌推出性价比高的电动车型，部分起价低至2.2万美元，甚至有1万美元的超低价位新车，以吸引消费者。同时，部分电动车提供高达1万美元的折扣，反映市场为刺激销售或应对库存压力的策略。尽管如此，丰田在华的豪华电动车一小时内获得3000多份订单，比亚迪新车也因快速充电和具竞争力价格受到关注，表明市场对特定电动车型的需求依然强劲。<br><br>**2. 供给动态**<br>通用汽车（GM）的Factory Zero工厂再次宣布停产并裁员1300名电动车工人，为期一个月，显示电动车生产端存在短期调整或需求不确定性。本次资讯中未提及锂矿或锂盐厂的具体产量、开停产或投产等上游供给侧的直接动态。<br><br>**3. 需求动态**<br>新能源车需求方面，VinFast在越南大力推广电动滑板车及电池更换系统，扩大两轮电动市场。多款新型电动车如路虎卫士越野EV、现代新车、比亚迪新车、起亚经济型EV以及丰田在华豪华EV相继发布或上市，并快速获得市场订单。储能需求方面，加州将建设价值6亿美元的巨型电池储能系统，纽约市也引入了首个家用电池储能系统，显示电网级和分布式储能需求旺盛。此外，半固态电池技术开始应用于卡车和飞行汽车，电动车充电桩（如400 kW快充）基础设施持续升级，进一步支持电动车普及。<br><br>**4. 政策与地缘**<br>美国国会正在审议一项新的电动自行车法案，可能带来联邦层面的监管。地缘政治方面，伊朗战争导致能源价格飙升，促使英国家庭加速放弃化石燃料，这将间接推动对新能源汽车和储能解决方案的需求。<br><br>**综合判断**<br>今日资讯整体指向电动汽车和储能领域的需求持续增长，尽管终端市场价格竞争激烈且部分车企面临生产调整，但整体需求面的扩张和新能源转型的加速，预计将对碳酸锂价格形成支撑。</div>
   <div class="news-list" style="margin-top:14px;">
     
     <div class="news-item">
       <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/03/30/this-600m-california-battery-will-power-321000-homes-at-peak-demand/" target="_blank" class="news-title">加州6亿美元电池可在高峰期为32.1万户家庭供电</a>
+        <a href="https://electrek.co/2026/03/31/vinfast-is-going-all-in-on-electric-scooters-with-massive-battery-swapping-rollout-in-vietnam/" target="_blank" class="news-title">VinFast在越南全力押注电动滑板车，大规模推广换电</a>
+        <div class='news-orig'>VinFast is going all-in on electric scooters with massive battery swapping rollout in Vietnam</div>
+      </div>
+      <span class="news-meta"><b>Electrek</b> · Tue, 31 Mar 2026</span>
+    </div>
+    <div class="news-item">
+      <div class="news-title-wrap">
+        <a href="https://electrek.co/2026/03/31/gm-factory-zero-idled-again-1300-workers-laid-off/" target="_blank" class="news-title">通用汽车零号工厂再次停产，裁员1300名电动汽车工人一个月</a>
+        <div class='news-orig'>GM idles Factory Zero again, lays off 1,300 EV workers for a month</div>
+      </div>
+      <span class="news-meta"><b>Electrek</b> · Tue, 31 Mar 2026</span>
+    </div>
+    <div class="news-item">
+      <div class="news-title-wrap">
+        <a href="https://electrek.co/2026/03/31/freelander-suv-reborn-sharp-off-road-ev-images/" target="_blank" class="news-title">神行者SUV重生为锐利越野电动车，走向全球</a>
+        <div class='news-orig'>The Freelander SUV is reborn as a sharp off-road EV, and it’s going global [Images]</div>
+      </div>
+      <span class="news-meta"><b>Electrek</b> · Tue, 31 Mar 2026</span>
+    </div>
+    <div class="news-item">
+      <div class="news-title-wrap">
+        <a href="https://electrek.co/2026/03/31/big-spring-sale-green-deals-hub-evs-power-stations-tools-appliances-more/" target="_blank" class="news-title">春季大促绿色优惠中心——电动汽车、储能电源、工具、电器等</a>
+        <div class='news-orig'>Big Spring Sale Green Deals hub – EVs, power stations, tools, appliances, more</div>
+      </div>
+      <span class="news-meta"><b>Electrek</b> · Tue, 31 Mar 2026</span>
+    </div>
+    <div class="news-item">
+      <div class="news-title-wrap">
+        <a href="https://electrek.co/2026/03/31/navee-xt5-pro-30-mph-e-scooter-review-awesome-except-for-one-little-thing/" target="_blank" class="news-title">Navee XT5 Pro电动滑板车评测：时速超30英里，除一小点外堪称完美</a>
+        <div class='news-orig'>Navee XT5 Pro 30+ MPH e-scooter review: Awesome except for one little thing</div>
+      </div>
+      <span class="news-meta"><b>Electrek</b> · Tue, 31 Mar 2026</span>
+    </div>
+    <div class="news-item">
+      <div class="news-title-wrap">
+        <a href="https://electrek.co/2026/03/30/this-600m-california-battery-will-power-321000-homes-at-peak-demand/" target="_blank" class="news-title">这款6亿美元的加州电池可在用电高峰期为32.1万户家庭供电</a>
         <div class='news-orig'>This $600M California battery will power 321,000 homes at peak demand</div>
       </div>
       <span class="news-meta"><b>Electrek</b> · Mon, 30 Mar 2026</span>
     </div>
     <div class="news-item">
       <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/03/30/hyundai-unveil-something-big-this-week-this-could-be-it/" target="_blank" class="news-title">现代本周将揭晓“大事件”，我们认为已猜到</a>
+        <a href="https://electrek.co/2026/03/30/hyundai-unveil-something-big-this-week-this-could-be-it/" target="_blank" class="news-title">现代本周将揭示“大事件”，我们认为已知晓内容</a>
         <div class='news-orig'>Hyundai will unveil ‘something big’ this week, and we think we know what it is</div>
       </div>
       <span class="news-meta"><b>Electrek</b> · Mon, 30 Mar 2026</span>
     </div>
     <div class="news-item">
       <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/03/30/tesla-customer-experience-head-leaves-coinbase-talent-exodus/" target="_blank" class="news-title">特斯拉客户体验负责人跳槽Coinbase，人才流失加剧</a>
+        <a href="https://electrek.co/2026/03/30/tesla-customer-experience-head-leaves-coinbase-talent-exodus/" target="_blank" class="news-title">特斯拉客户体验主管离职跳槽Coinbase，人才流失加剧</a>
         <div class='news-orig'>Tesla’s head of customer experience leaves for Coinbase as talent exodus grows</div>
       </div>
       <span class="news-meta"><b>Electrek</b> · Mon, 30 Mar 2026</span>
     </div>
     <div class="news-item">
       <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/03/30/400-kw-ev-charger-packs-more-power-into-half-the-space/" target="_blank" class="news-title">这款400千瓦电动汽车充电器功率更大，占用空间减半</a>
+        <a href="https://electrek.co/2026/03/30/400-kw-ev-charger-packs-more-power-into-half-the-space/" target="_blank" class="news-title">这款400千瓦电动汽车充电器以一半空间提供更大功率</a>
         <div class='news-orig'>This 400 kW EV charger packs more power into half the space</div>
       </div>
       <span class="news-meta"><b>Electrek</b> · Mon, 30 Mar 2026</span>
     </div>
     <div class="news-item">
       <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/03/30/semi-solid-state-ev-batteries-powering-up-trucks-flying-cars/" target="_blank" class="news-title">半固态电动汽车电池正为卡车和飞行汽车供电</a>
+        <a href="https://electrek.co/2026/03/30/semi-solid-state-ev-batteries-powering-up-trucks-flying-cars/" target="_blank" class="news-title">半固态电动汽车电池现为卡车和飞行汽车供电</a>
         <div class='news-orig'>Semi-solid-state EV batteries are now powering up trucks and flying cars</div>
       </div>
       <span class="news-meta"><b>Electrek</b> · Mon, 30 Mar 2026</span>
     </div>
     <div class="news-item">
       <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/03/30/day-6-spring-sale-green-deals-heybike-helio-f-smart-e-bike-jackery-explorer-1500-ultra-power-station-more/" target="_blank" class="news-title">春季促销第6天绿色优惠：Heybike Helio F智能电动自行车首次优惠，Jackery Explorer 1500 Ultra移动电源创新低等</a>
+        <a href="https://electrek.co/2026/03/30/day-6-spring-sale-green-deals-heybike-helio-f-smart-e-bike-jackery-explorer-1500-ultra-power-station-more/" target="_blank" class="news-title">春季大促绿色优惠第六天——Heybike Helio F智能电动自行车首降，Jackery Explorer 1500 Ultra储能电源创低价等</a>
         <div class='news-orig'>Day 6 Spring Sale Green Deals – Heybike Helio F smart e-bike first savings, Jackery Explorer 1500 Ultra power station hits low, more</div>
       </div>
       <span class="news-meta"><b>Electrek</b> · Mon, 30 Mar 2026</span>
     </div>
     <div class="news-item">
       <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/03/30/byds-new-ev-lures-buyers-with-5-min-charging-low-prices/" target="_blank" class="news-title">比亚迪新电动汽车以5分钟快充和2.2万美元起售价吸引买家</a>
+        <a href="https://electrek.co/2026/03/30/byds-new-ev-lures-buyers-with-5-min-charging-low-prices/" target="_blank" class="news-title">比亚迪新款电动汽车以5分钟充电和2.2万美元起售价吸引买家</a>
         <div class='news-orig'>BYD’s new EV is luring in buyers with 5 minute charging and prices starting at $22,000</div>
       </div>
       <span class="news-meta"><b>Electrek</b> · Mon, 30 Mar 2026</span>
     </div>
     <div class="news-item">
       <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/03/30/kias-most-affordable-ev-launches-big-ambitions/" target="_blank" class="news-title">起亚最实惠电动汽车怀揣雄心上市</a>
+        <a href="https://electrek.co/2026/03/30/kias-most-affordable-ev-launches-big-ambitions/" target="_blank" class="news-title">起亚最实惠电动汽车携远大抱负上市</a>
         <div class='news-orig'>Kia’s most affordable EV launches with big ambitions</div>
       </div>
       <span class="news-meta"><b>Electrek</b> · Mon, 30 Mar 2026</span>
     </div>
     <div class="news-item">
       <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/03/30/toyotas-new-luxury-ev-china-receives-3100-orders-in-1-hour/" target="_blank" class="news-title">丰田新款豪华电动汽车在中国上市，2.2万美元起售价1小时内获3000多份订单</a>
+        <a href="https://electrek.co/2026/03/30/toyotas-new-luxury-ev-china-receives-3100-orders-in-1-hour/" target="_blank" class="news-title">丰田在中国推出2.2万美元起售豪华电动汽车，一小时内获超3000份订单</a>
         <div class='news-orig'>Toyota’s new luxury EV in China receives over 3,000 orders in 1 hour after launching for $22,000</div>
       </div>
       <span class="news-meta"><b>Electrek</b> · Mon, 30 Mar 2026</span>
     </div>
     <div class="news-item">
       <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/03/30/big-spring-sale-green-deals-hub-e-bikes-e-scooters-power-stations-tools-more/" target="_blank" class="news-title">春季大促绿色优惠中心：电动自行车、电动滑板车、移动电源、工具等</a>
+        <a href="https://electrek.co/2026/03/30/big-spring-sale-green-deals-hub-e-bikes-e-scooters-power-stations-tools-more/" target="_blank" class="news-title">春季大促绿色优惠中心——电动自行车、电动滑板车、储能电源、工具等</a>
         <div class='news-orig'>Big Spring Sale Green Deals hub – e-bikes, e-scooters, power stations, tools, more</div>
       </div>
       <span class="news-meta"><b>Electrek</b> · Mon, 30 Mar 2026</span>
     </div>
     <div class="news-item">
       <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/03/30/new-e-bike-bill-in-congress-could-bring-long-awaited-federal-regulation/" target="_blank" class="news-title">国会新电动自行车法案或将带来期待已久的联邦法规</a>
+        <a href="https://electrek.co/2026/03/30/new-e-bike-bill-in-congress-could-bring-long-awaited-federal-regulation/" target="_blank" class="news-title">国会新电动自行车法案有望带来期待已久的联邦法规</a>
         <div class='news-orig'>New e-bike bill in congress could bring long-awaited federal regulation</div>
       </div>
       <span class="news-meta"><b>Electrek</b> · Mon, 30 Mar 2026</span>
     </div>
     <div class="news-item">
       <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/03/29/which-early-ev-will-become-the-first-classic-car-of-the-electric-era/" target="_blank" class="news-title">哪款早期电动汽车将成为电动时代的开山经典车？</a>
+        <a href="https://electrek.co/2026/03/29/which-early-ev-will-become-the-first-classic-car-of-the-electric-era/" target="_blank" class="news-title">哪款早期电动汽车将成为电动时代首批经典车？</a>
         <div class='news-orig'>Which early EV will become the first classic car of the electric era?</div>
       </div>
       <span class="news-meta"><b>Electrek</b> · Sun, 29 Mar 2026</span>
     </div>
     <div class="news-item">
       <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/03/29/tesla-promotes-cybertruck-buyer-losing-eyesight-fsd/" target="_blank" class="news-title">特斯拉粗心向视障司机宣传“完全自动驾驶”</a>
+        <a href="https://electrek.co/2026/03/29/tesla-promotes-cybertruck-buyer-losing-eyesight-fsd/" target="_blank" class="news-title">特斯拉不慎向视力下降司机推广“完全自动驾驶”</a>
         <div class='news-orig'>Tesla carelessly promotes ‘Full Self-Driving’ for driver losing his eyesight</div>
       </div>
       <span class="news-meta"><b>Electrek</b> · Sun, 29 Mar 2026</span>
     </div>
     <div class="news-item">
       <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/03/28/10000-leapmotor-a10-is-the-new-age-neon-stellantis-needs-in-the-us/" target="_blank" class="news-title">1万美元零跑A10是Stellantis在美国所需的新时代Neon</a>
+        <a href="https://electrek.co/2026/03/28/10000-leapmotor-a10-is-the-new-age-neon-stellantis-needs-in-the-us/" target="_blank" class="news-title">售价1万美元的零跑A10是Stellantis在美国所需的新时代Neon</a>
         <div class='news-orig'>$10,000 Leapmotor A10 is the new-age Neon Stellantis needs in the US</div>
       </div>
       <span class="news-meta"><b>Electrek</b> · Sat, 28 Mar 2026</span>
@@ -458,78 +650,36 @@
     </div>
     <div class="news-item">
       <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/03/27/5-evs-10000-off-right-now/" target="_blank" class="news-title">这5款电动汽车现优惠1万美元</a>
+        <a href="https://electrek.co/2026/03/27/5-evs-10000-off-right-now/" target="_blank" class="news-title">这五款电动汽车现优惠1万美元</a>
         <div class='news-orig'>These 5 EVs are $10,000 off right now</div>
       </div>
       <span class="news-meta"><b>Electrek</b> · Fri, 27 Mar 2026</span>
     </div>
     <div class="news-item">
       <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/03/27/podcast-tesla-minivan-but-cooler-used-ev-sales-rise-sodium-batteries-are-coming/" target="_blank" class="news-title">播客：更酷的特斯拉面包车？二手电动汽车销量上涨，钠离子电池即将到来</a>
+        <a href="https://electrek.co/2026/03/27/podcast-tesla-minivan-but-cooler-used-ev-sales-rise-sodium-batteries-are-coming/" target="_blank" class="news-title">播客：更酷的特斯拉小型货车？二手电动汽车销量上升，钠离子电池将至</a>
         <div class='news-orig'>Podcast: Tesla minivan but cooler?, used EV sales rise, sodium batteries are coming</div>
       </div>
       <span class="news-meta"><b>Electrek</b> · Fri, 27 Mar 2026</span>
     </div>
     <div class="news-item">
       <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/03/27/iran-war-spikes-energy-prices-uk-homes-ditch-fossil-fuels-fast/" target="_blank" class="news-title">伊朗战争推高能源价格，英国家庭迅速放弃化石燃料</a>
+        <a href="https://electrek.co/2026/03/27/iran-war-spikes-energy-prices-uk-homes-ditch-fossil-fuels-fast/" target="_blank" class="news-title">伊朗战争推高能源价格——英国家庭迅速淘汰化石燃料</a>
         <div class='news-orig'>Iran war spikes energy prices – UK homes ditch fossil fuels fast</div>
       </div>
       <span class="news-meta"><b>Electrek</b> · Fri, 27 Mar 2026</span>
     </div>
     <div class="news-item">
       <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/03/27/chevy-equinox-ev-driver-nearly-gets-whiplash-from-auto-braking/" target="_blank" class="news-title">雪佛兰探界者电动汽车司机险因敏感自动制动“甩头”受伤 [视频]</a>
+        <a href="https://electrek.co/2026/03/27/chevy-equinox-ev-driver-nearly-gets-whiplash-from-auto-braking/" target="_blank" class="news-title">雪佛兰Equinox电动汽车司机因自动刹车过于灵敏险些“颈部受伤”</a>
         <div class='news-orig'>Chevy Equinox EV driver nearly gets ‘whiplash’ over touchy auto braking [Video]</div>
       </div>
       <span class="news-meta"><b>Electrek</b> · Fri, 27 Mar 2026</span>
     </div>
     <div class="news-item">
       <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/03/27/day-3-spring-sale-green-deals-anker-eufy-security-bluetti-power-station-segway-more/" target="_blank" class="news-title">春季促销第3天绿色优惠：Anker eufy智能安防设备半价，Bluetti移动电源优惠加大，赛格威等</a>
+        <a href="https://electrek.co/2026/03/27/day-3-spring-sale-green-deals-anker-eufy-security-bluetti-power-station-segway-more/" target="_blank" class="news-title">春季大促绿色优惠第三天——Anker eufy智能安防设备五折，Bluetti储能电源优惠加大，Segway等</a>
         <div class='news-orig'>Day 3 Spring Sale Green Deals – Anker eufy smart security devices 50% off, Bluetti increases power station savings, Segway, more</div>
-      </div>
-      <span class="news-meta"><b>Electrek</b> · Fri, 27 Mar 2026</span>
-    </div>
-    <div class="news-item">
-      <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/03/27/nissan-recalls-new-leaf-evs-japan-battery-defect/" target="_blank" class="news-title">日产因电池缺陷在日本召回一批新款聆风电动汽车</a>
-        <div class='news-orig'>Nissan recalls a batch of new LEAF EVs in Japan due to a battery defect</div>
-      </div>
-      <span class="news-meta"><b>Electrek</b> · Fri, 27 Mar 2026</span>
-    </div>
-    <div class="news-item">
-      <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/03/27/kia-ev2-affordable-ev-suv-that-can-park-itself-video/" target="_blank" class="news-title">起亚EV2：可自动泊车的经济型电动SUV [视频]</a>
-        <div class='news-orig'>The Kia EV2 is an affordable electric SUV that can park itself [Video]</div>
-      </div>
-      <span class="news-meta"><b>Electrek</b> · Fri, 27 Mar 2026</span>
-    </div>
-    <div class="news-item">
-      <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/03/27/slush-slate-pickup-winter-testing-video/" target="_blank" class="news-title">泥泞雪坑与雪球大战：Slate新款皮卡通过冬季测试 [视频]</a>
-        <div class='news-orig'>Slush pits and snowball fights: Slate’s upcoming pickup endures winter testing [Video]</div>
-      </div>
-      <span class="news-meta"><b>Electrek</b> · Fri, 27 Mar 2026</span>
-    </div>
-    <div class="news-item">
-      <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/03/27/used-ev-sales-boom-new-ev-sales-drop-28-percent-q1-2026/" target="_blank" class="news-title">2026年第一季度新电动汽车销量下降28%，但二手电动汽车销量飙升12%至接近纪录水平</a>
-        <div class='news-orig'>New EV sales drop 28% in Q1 2026, but used EVs surge 12% to near-record levels</div>
-      </div>
-      <span class="news-meta"><b>Electrek</b> · Fri, 27 Mar 2026</span>
-    </div>
-    <div class="news-item">
-      <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/03/27/hyundais-new-ev-suv-looks-like-twin-to-kia-ev2-video/" target="_blank" class="news-title">现代新款电动SUV酷似起亚EV2孪生车型 [视频]</a>
-        <div class='news-orig'>Hyundai’s new electric SUV looks like a twin to the Kia EV2 [Video]</div>
-      </div>
-      <span class="news-meta"><b>Electrek</b> · Fri, 27 Mar 2026</span>
-    </div>
-    <div class="news-item">
-      <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/03/27/volkswagen-groups-joint-venture-with-rivian-hits-latest-milestone-unlocking-another-1b-for-the-ev-automaker/" target="_blank" class="news-title">大众集团与Rivian合资企业达成最新里程碑，为后者再解锁10亿美元资金</a>
-        <div class='news-orig'>Volkswagen Group’s joint venture with Rivian hits latest milestone, unlocking another $1B for the EV automaker</div>
       </div>
       <span class="news-meta"><b>Electrek</b> · Fri, 27 Mar 2026</span>
     </div>
@@ -542,7 +692,7 @@
     </div>
     <div class="news-item">
       <div class="news-title-wrap">
-        <a href="https://insideevs.com/news/791573/byd-15-million-sales-2026/" target="_blank" class="news-title">比亚迪遭遇困境，今年仍计划在中国以外销售150万辆汽车</a>
+        <a href="https://insideevs.com/news/791573/byd-15-million-sales-2026/" target="_blank" class="news-title">比亚迪遭遇困境，但仍计划今年在中国境外销售150万辆汽车</a>
         <div class='news-orig'>BYD Has Hit A Rough Patch. It Still Plans To Sell 1.5 Million Cars Outside Of China This Year</div>
       </div>
       <span class="news-meta"><b>InsideEVs</b> · Mon, 30 Mar 2026</span>
@@ -556,8 +706,15 @@
     </div>
     <div class="news-item">
       <div class="news-title-wrap">
-        <a href="https://insideevs.com/news/791527/chevy-silverado-ev-max-range/" target="_blank" class="news-title">雪佛兰Silverado电动皮卡很棒，但这位YouTuber为何要卖掉它？</a>
+        <a href="https://insideevs.com/news/791527/chevy-silverado-ev-max-range/" target="_blank" class="news-title">雪佛兰Silverado电动汽车是辆好皮卡。这位YouTube博主为何出售它？</a>
         <div class='news-orig'>The Chevy Silverado EV Is A Great Truck. Here's Why This YouTuber Is Selling His</div>
+      </div>
+      <span class="news-meta"><b>InsideEVs</b> · Mon, 30 Mar 2026</span>
+    </div>
+    <div class="news-item">
+      <div class="news-title-wrap">
+        <a href="https://insideevs.com/news/791474/2026-bmw-i5-nacs-charge-port-us/" target="_blank" class="news-title">所有新款宝马i5电动汽车现已配备原生NACS充电端口</a>
+        <div class='news-orig'>All New BMW i5 EVs Now Have A Native NACS Charge Port</div>
       </div>
       <span class="news-meta"><b>InsideEVs</b> · Mon, 30 Mar 2026</span>
     </div>
@@ -571,56 +728,56 @@
     <div class="marginal-card">
       <div class="marginal-header">
         <span class="marginal-title">津巴布韦锂矿</span>
-        <span style="background:#f39c12;color:#fff;padding:2px 8px;border-radius:3px;font-size:11px;">中性</span>
+        <span style="background:#e74c3c;color:#fff;padding:2px 8px;border-radius:3px;font-size:11px;">利空</span>
       </div>
-      <div class="marginal-summary">津巴布韦于2026年2月25日突然实施锂原矿和精矿出口禁令，以推动本地化加工。华友Arcadia矿的锂硫酸盐产线预计2026年一季度末/二季度初投产，中矿资源（Bikita矿所有者）也计划建设锂硫酸盐工厂。合规矿企正积极申请出口许可，中小矿企面临现金流压力。</div>
-      <div class='marginal-event'>📌 津巴布韦政府于2026年2月25日宣布立即暂停所有原矿及锂精矿出口，并于3月初获内阁批准，提前实施原计划2027年生效的禁令。</div>
-      <div class='marginal-impact'>📊 禁令短期内扰动全球锂辉石供应链，预计将为碳酸锂及锂辉石价格提供短期支撑，导致价格上涨。</div>
+      <div class="marginal-summary">津巴布韦于2026年2月25日宣布立即无限期禁止所有原矿及锂精矿出口，旨在促进本地加工，此举已加剧全球锂供应紧张。华友钴业的Arcadia锂矿项目已投料试生产，预计将产出硫酸锂。中资企业正积极与津政府沟通以应对政策变化。</div>
+      <div class='marginal-event'>📌 津巴布韦自2026年2月25日起立即无限期禁止所有原矿及锂精矿出口。</div>
+      <div class='marginal-impact'>📊 该禁令预计将加剧全球碳酸锂供应短缺，从而推高碳酸锂价格。</div>
     </div>
     <div class="marginal-card">
       <div class="marginal-header">
         <span class="marginal-title">宁德宜春枧下窝矿</span>
         <span style="background:#27ae60;color:#fff;padding:2px 8px;border-radius:3px;font-size:11px;">利多</span>
       </div>
-      <div class="marginal-summary">宁德时代江西宜春枧下窝锂矿在因采矿证到期并涉及矿种变更于2025年8月停产后，已于2025年底获得采矿许可证。目前，矿区复产仍需完成政府审批手续。</div>
-      <div class='marginal-event'>📌 宁德时代管理层在2026年3月确认宜春锂矿已于2025年底拿到采矿证。</div>
-      <div class='marginal-impact'>📊 采矿许可证的获得为未来锂供应提供了积极信号，长期有望缓解宜春地区锂云母供应紧张局面，对碳酸锂价格形成潜在的稳定或下行压力，但短期内因复产仍需审批，影响有限。</div>
+      <div class="marginal-summary">宁德时代于2026年3月9日披露，其江西宜春枧下窝锂矿已在2025年底获得采矿许可证，目前仍在推进复产流程，涉及政府审批手续。</div>
+      <div class='marginal-event'>📌 宁德时代江西宜春枧下窝锂矿已于2025年底获得采矿许可证。</div>
+      <div class='marginal-impact'>📊 矿山获得采矿证预示未来锂供应可能增加，长期来看对碳酸锂价格构成潜在利空，但短期影响取决于实际复产进度。</div>
     </div>
     <div class="marginal-card">
       <div class="marginal-header">
         <span class="marginal-title">智利锂国有化</span>
         <span style="background:#27ae60;color:#fff;padding:2px 8px;border-radius:3px;font-size:11px;">利多</span>
       </div>
-      <div class="marginal-summary">智利国有企业Codelco与SQM成立合资公司Nova Andino Litio，于2026年初正式运营，将主导阿塔卡马盐滩锂矿开采至2060年，智利政府加强了对锂资源的控制并计划提高产量。</div>
-      <div class='marginal-event'>📌 智利国有企业Codelco与私营矿商SQM的合资公司Nova Andino Litio于2026年1月正式成立并开始运营，接管阿塔卡马盐滩的锂矿开采业务直至2060年。</div>
-      <div class='marginal-impact'>📊 智利锂生产的长期确定性和产量提升，可能在中长期对全球碳酸锂供应产生稳定或增加的作用，从而对价格产生一定的缓解作用。</div>
+      <div class="marginal-summary">智利SQM与Codelco锂合资企业协议在最高法院驳回上诉后于2026年3月全面完成，确保了Atacama盐滩至2060年的锂生产，为智利锂战略带来清晰度和稳定性。</div>
+      <div class='marginal-event'>📌 2026年3月，智利最高法院驳回上诉，促成了SQM与Codelco锂合资协议的全面完成，消除了重大不确定性。</div>
+      <div class='marginal-impact'>📊 增加的供应量和市场清晰度有助于稳定碳酸锂价格，长期可能带来下行压力。</div>
     </div>
     <div class="marginal-card">
       <div class="marginal-header">
         <span class="marginal-title">阿根廷锂三角</span>
         <span style="background:#27ae60;color:#fff;padding:2px 8px;border-radius:3px;font-size:11px;">利多</span>
       </div>
-      <div class="marginal-summary">米莱政府通过大型投资激励制度（RIGI）和汇率改革积极吸引外资。锂矿企业正推进重大扩产和新项目，预计2026年产量将显著增长，巩固阿根廷在全球锂供应中的地位。</div>
-      <div class='marginal-event'>📌 阿根廷政府持续推行结构性改革，包括扩大《大型投资激励制度》（RIGI）以吸引外资，并于2026年初实施与通胀挂钩的汇率新政，旨在稳定经济并促进锂矿开发。</div>
-      <div class='marginal-impact'>📊 阿根廷锂产量的显著增长若全球需求未超预期，可能在中长期内增加市场供应，从而对碳酸锂价格形成一定的缓解作用，但短期影响不明确。</div>
+      <div class="marginal-summary">米莱政府政策吸引外资，推动阿根廷锂矿扩张。Cauchari-Olaroz项目产能和资源量显著增加，多家公司公布2026年增产计划，整体前景积极。</div>
+      <div class='marginal-event'>📌 Cauchari-Olaroz锂矿扩建将年产量增至8.5万吨LCE，2025年底资源量达3770万吨LCE。</div>
+      <div class='marginal-impact'>📊 对碳酸锂价格影响中性偏多，供应增长与全球电动汽车需求抵消，价格已企稳。</div>
     </div>
     <div class="marginal-card">
       <div class="marginal-header">
         <span class="marginal-title">澳矿产量/停复产</span>
         <span style="background:#27ae60;color:#fff;padding:2px 8px;border-radius:3px;font-size:11px;">利多</span>
       </div>
-      <div class="marginal-summary">澳锂矿商Core Lithium和Pilbara Minerals宣布重启停产项目，预计2026年下半年恢复生产。Liontown持续增产，整体产量预计2026年反弹，全球锂市场过剩收窄，甚至可能出现小幅短缺。</div>
-      <div class='marginal-event'>📌 Core Lithium和Pilbara Minerals决定重启其锂矿项目，预计2026年下半年恢复精矿生产。</div>
-      <div class='marginal-impact'>📊 这些复产和增产计划反映锂价回升和供需趋紧的预期，长期对碳酸锂价格构成正面支撑。</div>
+      <div class="marginal-summary">澳锂矿业回暖，Core Lithium决定重启Finniss项目，Liontown成功转型地下生产并增产，Pilbara考虑复产。预计2026年产量回升，市场需求强劲。</div>
+      <div class='marginal-event'>📌 Core Lithium于2026年3月宣布最终投资决定，重启其Finniss锂矿项目，预计2026年下半年首次出货。</div>
+      <div class='marginal-impact'>📊 尽管澳大利亚锂矿复产和增产将增加供应，但全球锂需求（特别是储能领域）强劲增长，预计市场将趋于平衡，价格有望保持高位震荡。</div>
     </div>
     <div class="marginal-card">
       <div class="marginal-header">
         <span class="marginal-title">国内政策动向</span>
         <span style="background:#27ae60;color:#fff;padding:2px 8px;border-radius:3px;font-size:11px;">利多</span>
       </div>
-      <div class="marginal-summary">中国发布碳酸锂战略储备政策，优化新能源汽车以旧换新补贴，并调整锂电池出口退税，多项政策旨在稳定供应链、促消费、规范市场。</div>
-      <div class='marginal-event'>📌 中国国家发展改革委和财政部联合发文，明确将从2026年起实施碳酸锂战略储备制度，以稳定碳酸锂供应并促进新能源汽车和储能产业高质量发展。</div>
-      <div class='marginal-impact'>📊 预计将对碳酸锂价格形成支撑，因战略储备增加需求，新能源汽车补贴提振市场信心，尽管电池出口退税调整可能带来短期波动。</div>
+      <div class="marginal-summary">中国出台碳酸锂战略储备政策，并调整新能源汽车补贴，聚焦技术和绿色制造。动力电池“白名单”取消促市场竞争。锂价因供给扰动和储能需求上涨，预计未来供需紧平衡。</div>
+      <div class='marginal-event'>📌 国家发改委和财政部宣布自2026年起实施碳酸锂战略储备制度，以保障关键矿产资源供应安全。</div>
+      <div class='marginal-impact'>📊 碳酸锂战略储备及全球供需趋紧预期将支撑碳酸锂价格中枢稳步上移，短期受供给扰动和储能需求影响价格波动。</div>
     </div>
   </div>
   <div style='margin-top:14px;'><div class='section-label'>手动补充</div>
@@ -727,43 +884,43 @@
     <tr>
       <td>9696.HK</td>
       <td>天齐锂业H</td>
-      <td class="text-right">45.94</td>
-      <td class="text-right" style="color:#27ae60">-3.89%</td>
+      <td class="text-right">47.80</td>
+      <td class="text-right" style="color:#e74c3c">+0.13%</td>
       <td><span class="tag-cat">锂矿+锂盐</span></td>
     </tr>
     <tr>
       <td>1772.HK</td>
       <td>赣锋锂业H</td>
-      <td class="text-right">72.75</td>
-      <td class="text-right" style="color:#27ae60">-2.41%</td>
+      <td class="text-right">74.55</td>
+      <td class="text-right" style="color:#e74c3c">+0.34%</td>
       <td><span class="tag-cat">锂盐+电池</span></td>
     </tr>
     <tr>
       <td>ALB</td>
       <td>Albemarle</td>
-      <td class="text-right">177.22</td>
-      <td class="text-right" style="color:#27ae60">-1.24%</td>
+      <td class="text-right">179.86</td>
+      <td class="text-right" style="color:#e74c3c">+1.49%</td>
       <td><span class="tag-cat">全球最大锂生产商</span></td>
     </tr>
     <tr>
       <td>SQM</td>
       <td>SQM</td>
-      <td class="text-right">80.92</td>
-      <td class="text-right" style="color:#27ae60">-2.15%</td>
+      <td class="text-right">80.09</td>
+      <td class="text-right" style="color:#27ae60">-1.03%</td>
       <td><span class="tag-cat">智利盐湖锂</span></td>
     </tr>
     <tr>
       <td>RIO</td>
       <td>力拓(Rio Tinto)</td>
-      <td class="text-right">88.82</td>
-      <td class="text-right" style="color:#e74c3c">+2.52%</td>
+      <td class="text-right">91.72</td>
+      <td class="text-right" style="color:#e74c3c">+3.27%</td>
       <td><span class="tag-cat">矿业巨头（含锂）</span></td>
     </tr>
     <tr>
       <td>LAC</td>
       <td>Lithium Americas</td>
-      <td class="text-right">3.79</td>
-      <td class="text-right" style="color:#27ae60">-2.82%</td>
+      <td class="text-right">3.90</td>
+      <td class="text-right" style="color:#e74c3c">+2.77%</td>
       <td><span class="tag-cat">锂矿开发</span></td>
     </tr>
     <tr>
@@ -1060,34 +1217,82 @@
     <tr>
       <td>Pilbara Minerals</td>
       <td><span class="tag-region">澳大利亚</span></td>
-      <td>224.8 千吨锂辉石精矿</td>
-      <td>2025Q3</td>
+      <td>224800 吨锂精矿</td>
+      <td>2025Q1 (FY26 Q1)</td>
       <td style="color:#e74c3c">+2.10%</td>
-      <td class="note">2025年第三季度产量为224.8千吨锂辉石精矿，较2024年同期增长2.1%。</td>
+      <td class="note">2025年7月至9月季度产量，较2024年同期增长2.1%</td>
     </tr>
     <tr>
       <td>Greenbushes</td>
       <td><span class="tag-region">澳大利亚</span></td>
-      <td>352 千吨锂辉石精矿</td>
+      <td>352000 吨锂精矿</td>
       <td>2025Q4</td>
       <td style="color:#888">—</td>
-      <td class="note">2025年第四季度产量为352千吨锂辉石精矿，环比增长10%；CGP3选矿厂于2025年12月开始处理第一批矿石。</td>
+      <td class="note">2025年10月至12月季度产量，较上一季度增长10%。Greenbushes由Tianqi Lithium Energy Australia (TLEA)运营，TLEA是IGO (49%)和天齐锂业(51%)的合资公司，Albemarle Corporation持有Greenbushes 49%的股份</td>
+    </tr>
+    <tr>
+      <td>Core Lithium</td>
+      <td><span class="tag-region">澳大利亚</span></td>
+      <td>None None</td>
+      <td>None</td>
+      <td style="color:#888">—</td>
+      <td class="note">公司目标是2026年第四季度开始从Grants露天矿生产锂精矿，并计划在2026年9月季度首次生产锂精矿</td>
     </tr>
     <tr>
       <td>Liontown</td>
       <td><span class="tag-region">澳大利亚</span></td>
-      <td>105342 干公吨锂辉石精矿</td>
-      <td>2025Q4</td>
+      <td>87172 吨锂精矿</td>
+      <td>2025Q1 (FY26 Q1)</td>
       <td style="color:#888">—</td>
-      <td class="note">2025年第四季度产量为105,342干公吨锂辉石精矿，环比增长21%；Kathleen Valley已全面转为地下开采。</td>
+      <td class="note">2025年7月至9月季度产量，较上年同期约28,000吨大幅增长</td>
     </tr>
     <tr>
       <td>SQM</td>
       <td><span class="tag-region">智利</span></td>
-      <td>66.2 千吨碳酸锂当量</td>
+      <td>66200 吨</td>
       <td>2025Q4</td>
-      <td style="color:#e74c3c">+33.00%</td>
-      <td class="note">2025年第四季度锂业务销量达到66.2千吨碳酸锂当量，同比增长33%，创历史新高。</td>
+      <td style="color:#e74c3c">+50.00%</td>
+      <td class="note">2025年第四季度锂产品销售量，较上年同期增长超过50%</td>
+    </tr>
+    <tr>
+      <td>Albemarle</td>
+      <td><span class="tag-region">智利</span></td>
+      <td>63000 吨LCE</td>
+      <td>2025Q4</td>
+      <td style="color:#888">—</td>
+      <td class="note">2025年第四季度能源存储部门（包括锂业务）的销售量。这是整个部门的销售量，而非特定智利矿山的生产量</td>
+    </tr>
+    <tr>
+      <td>Arcadium</td>
+      <td><span class="tag-region">阿根廷</span></td>
+      <td>15000 吨LCE</td>
+      <td>2025Q4</td>
+      <td style="color:#888">—</td>
+      <td class="note">Arcadium Lithium于2025年3月被力拓(Rio Tinto)收购。此数据为力拓报告的2025年第四季度锂当量总产量，主要来自阿根廷的运营资产，环比增长23%</td>
+    </tr>
+    <tr>
+      <td>天齐锂业雅安</td>
+      <td><span class="tag-region">国内</span></td>
+      <td>None None</td>
+      <td>None</td>
+      <td style="color:#888">—</td>
+      <td class="note">未找到雅安工厂最新季度的具体产量数据。</td>
+    </tr>
+    <tr>
+      <td>盐湖股份</td>
+      <td><span class="tag-region">国内-青海</span></td>
+      <td>None None</td>
+      <td>None</td>
+      <td style="color:#888">—</td>
+      <td class="note">公司2025年全年碳酸锂产量为4.65万吨，销售4.56万吨。新建的4万吨锂盐项目已于2025年9月底投产。预计2026年锂盐总产量较2025年增长50%以上</td>
+    </tr>
+    <tr>
+      <td>永兴材料</td>
+      <td><span class="tag-region">国内-江西</span></td>
+      <td>None None</td>
+      <td>None</td>
+      <td style="color:#888">—</td>
+      <td class="note">公司目前碳酸锂年产能为3万吨。2026年2月，与江钨控股签署协议，合资公司将年产2万吨碳酸锂，永兴材料拥有1万吨权益</td>
     </tr></tbody>
   </table>
   
@@ -1111,12 +1316,12 @@
 <div class="panel" id="p5">
   <div class="panel-title">🚗 需求端</div>
 
-  <div class="section-label">国内新能源车（2026-02 · 乘联会）</div>
+  <div class="section-label">国内新能源车（2026-03 · 乘联会）</div>
   <div class="card-row">
     <div class="stat-card">
       <div class="stat-label">新能源乘用车销量</div>
-      <div class="stat-value">46.4 <span class="unit-small">万辆</span></div>
-      <div class="stat-sub" style="color:#27ae60">同比 -32.00%</div>
+      <div class="stat-value">90.0 <span class="unit-small">万辆</span></div>
+      <div class="stat-sub" style="color:#888">同比 —</div>
     </div>
     <div class="stat-card">
       <div class="stat-label">纯电 BEV</div>
@@ -1128,7 +1333,7 @@
     </div>
     <div class="stat-card">
       <div class="stat-label">新能源渗透率</div>
-      <div class="stat-value">44.9%</div>
+      <div class="stat-value">52.9%</div>
     </div>
   </div>
 
@@ -1153,16 +1358,16 @@
     </div>
   </div>
 
-  <div class="section-label" style="margin-top:16px;">储能（2026-02 · 国家能源局, CESA储能应用分会）</div>
+  <div class="section-label" style="margin-top:16px;">储能（2026-02 · CNESA）</div>
   <div class="card-row">
     <div class="stat-card">
       <div class="stat-label">当月新增装机</div>
-      <div class="stat-value">9.6 <span class="unit-small">GWh</span></div>
-      <div class="stat-sub" style="color:#e74c3c">同比 +242.15%</div>
+      <div class="stat-value">8.2 <span class="unit-small">GWh</span></div>
+      <div class="stat-sub" style="color:#e74c3c">同比 +95.00%</div>
     </div>
     <div class="stat-card">
       <div class="stat-label">累计装机</div>
-      <div class="stat-value">375 <span class="unit-small">GWh</span></div>
+      <div class="stat-value">370 <span class="unit-small">GWh</span></div>
     </div>
     <div class="stat-card">
       <div class="stat-label">欧洲BEV（2026-02）</div>
@@ -1209,7 +1414,7 @@
 
   <div class="card-row" style="margin-top:10px;">
     <div class="price-card main-price">
-      <div class="price-label">SMM碳酸锂社会库存 2026-03-27 <span class="src-tag src-ai">🔍 AI搜索·SMM</span></div>
+      <div class="price-label">SMM碳酸锂社会库存 2026-03-27 <span class="src-tag src-ai">🔍 AI搜索·<a href="https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQErVjcv03Y-TTvUPT3P7xziWA2dhVrFJDovPQ2oPnHGZNeBoqYwbE87JVMA79XIvhemU-2WIIHroOa3BkddWn97SiyUqkk8cvS_QTm_054LsApNV37WayTbQnZMOWca2kkoXRg0NCG36LulIQbIdl6pWpLvPsDQY35iYtMrR3c=" target="_blank" style="color:inherit">vertexaisearch.cloud.google.com</a></span></div>
       <div class="price-value">99,489 <span class="price-unit">吨</span></div>
       <div class="price-meta">
         周环比：<span style="color:#e74c3c">616吨</span>
@@ -1371,42 +1576,42 @@
     <tbody>
     <tr>
       <td style="white-space:nowrap">2026-04-03</td>
-      <td><span style="background:#e67e22;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;">3天后</span></td>
+      <td><span style="background:#e67e22;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;">2天后</span></td>
       <td>GFEX LC2504合约最后交易日</td>
       <td style="color:#f39c12;font-size:12px;">MEDIUM</td>
       <td class="note">2025年4月合约到期，关注移仓价差</td>
     </tr>
     <tr>
       <td style="white-space:nowrap">2026-04-10</td>
-      <td><span style="background:#555;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;">10天后</span></td>
+      <td><span style="background:#555;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;">9天后</span></td>
       <td>SMM碳酸锂库存周报</td>
       <td style="color:#f39c12;font-size:12px;">MEDIUM</td>
       <td class="note">每周四发布，关注库存去化速度</td>
     </tr>
     <tr>
       <td style="white-space:nowrap">2026-04-15</td>
-      <td><span style="background:#555;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;">15天后</span></td>
+      <td><span style="background:#555;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;">14天后</span></td>
       <td>CABIA动力电池3月装机数据</td>
       <td style="color:#e74c3c;font-size:12px;">HIGH</td>
       <td class="note">中国汽车动力电池产业创新联盟月度数据</td>
     </tr>
     <tr>
       <td style="white-space:nowrap">2026-04-15</td>
-      <td><span style="background:#555;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;">15天后</span></td>
+      <td><span style="background:#555;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;">14天后</span></td>
       <td>乘联会3月新能源车销量</td>
       <td style="color:#e74c3c;font-size:12px;">HIGH</td>
       <td class="note">乘联会月度乘用车市场数据，关注渗透率</td>
     </tr>
     <tr>
       <td style="white-space:nowrap">2026-04-20</td>
-      <td><span style="background:#555;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;">20天后</span></td>
+      <td><span style="background:#555;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;">19天后</span></td>
       <td>中国3月进出口数据（海关总署）</td>
       <td style="color:#f39c12;font-size:12px;">MEDIUM</td>
       <td class="note">锂矿石及碳酸锂进口量</td>
     </tr>
     <tr>
       <td style="white-space:nowrap">2026-04-28</td>
-      <td><span style="background:#555;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;">28天后</span></td>
+      <td><span style="background:#555;color:#fff;padding:1px 6px;border-radius:3px;font-size:11px;">27天后</span></td>
       <td>天齐锂业/赣锋锂业一季报</td>
       <td style="color:#e74c3c;font-size:12px;">HIGH</td>
       <td class="note">主要锂企Q1业绩披露，关注产量和库存变化</td>
@@ -1418,7 +1623,7 @@
   <div class="panel-title">📈 GFEX期货曲线</div>
   <div class="stat-row">
     <span>期限结构：<strong style="color:#e74c3c">contango（远期升水）</strong></span>
-    <span style='margin-left:20px;'>现货参考：<strong>16.63 万元/吨（166,300 元/吨）</strong></span>
+    <span style='margin-left:20px;'>现货参考：<strong>16.30 万元/吨（163,000 元/吨）</strong></span>
   </div>
 
   <div style="height:280px;margin-top:12px;">
@@ -1433,7 +1638,7 @@
   (function(){
     var labels  = ["LC2604", "LC2605", "LC2606", "LC2607", "LC2608", "LC2609", "LC2610", "LC2611", "LC2612", "LC2701", "LC2702", "LC2703"];
     var prices  = [158040.0, 157200.0, 157000.0, 157400.0, 157240.0, 158040.0, 157600.0, 157520.0, 156500.0, 156000.0, 161240.0, 169000.0];
-    var bases   = [8260.0, 9100.0, 9300.0, 8900.0, 9060.0, 8260.0, 8700.0, 8780.0, 9800.0, 10300.0, 5060.0, -2700.0];
+    var bases   = [4960.0, 5800.0, 6000.0, 5600.0, 5760.0, 4960.0, 5400.0, 5480.0, 6500.0, 7000.0, 1760.0, -6000.0];
     var volumes = [12439, 217916, 22762, 118462, 14546, 209109, 9792, 12123, 12228, 6987, 728, 49];
 
     new Chart(document.getElementById('futuresCurveChart'), {
@@ -1515,7 +1720,7 @@
   <div class="section-label" style="margin-top:16px;">GFEX LC期货主力成交量（日度，手）— 2022年至今</div>
   <canvas id="fvChart" style="max-height:160px;"></canvas>
 
-  <div class="data-source">数据来源：akshare（新浪财经·A股历史）+ 新浪财经·GFEX · 更新于 2026-03-31 20:21:26</div>
+  <div class="data-source">数据来源：akshare（新浪财经·A股历史）+ 新浪财经·GFEX · 更新于 2026-04-01 00:33:03</div>
 
   <script>
   (function(){
@@ -1535,8 +1740,8 @@
 
     new Chart(document.getElementById('svMonthChart'), {
       type:'bar',
-      data:{labels:["2006-01", "2006-02", "2006-03", "2006-04", "2006-05", "2006-06", "2006-07", "2006-08", "2006-09", "2006-10", "2006-11", "2006-12", "2007-01", "2007-02", "2007-03", "2007-04", "2007-05", "2007-06", "2007-07", "2007-08", "2007-09", "2007-10", "2007-11", "2007-12", "2008-01", "2008-02", "2008-03", "2008-04", "2008-05", "2008-06", "2008-07", "2008-08", "2008-09", "2008-10", "2008-11", "2008-12", "2009-01", "2009-02", "2009-03", "2009-04", "2009-05", "2009-06", "2009-07", "2009-08", "2009-09", "2009-10", "2009-11", "2009-12", "2010-01", "2010-02", "2010-03", "2010-04", "2010-05", "2010-06", "2010-07", "2010-08", "2010-09", "2010-10", "2010-11", "2010-12", "2011-01", "2011-02", "2011-03", "2011-04", "2011-05", "2011-06", "2011-07", "2011-08", "2011-09", "2011-10", "2011-11", "2011-12", "2012-01", "2012-02", "2012-03", "2012-04", "2012-05", "2012-06", "2012-07", "2012-08", "2012-09", "2012-10", "2012-11", "2012-12", "2013-01", "2013-02", "2013-03", "2013-04", "2013-05", "2013-06", "2013-07", "2013-08", "2013-09", "2013-10", "2013-11", "2013-12", "2014-01", "2014-02", "2014-03", "2014-04", "2014-05", "2014-06", "2014-07", "2014-08", "2014-09", "2014-10", "2014-11", "2014-12", "2015-01", "2015-02", "2015-03", "2015-04", "2015-05", "2015-06", "2015-07", "2015-08", "2015-09", "2015-10", "2015-11", "2015-12", "2016-01", "2016-02", "2016-03", "2016-04", "2016-05", "2016-06", "2016-07", "2016-08", "2016-09", "2016-10", "2016-11", "2016-12", "2017-01", "2017-02", "2017-03", "2017-04", "2017-05", "2017-06", "2017-07", "2017-08", "2017-09", "2017-10", "2017-11", "2017-12", "2018-01", "2018-02", "2018-03", "2018-04", "2018-05", "2018-06", "2018-07", "2018-08", "2018-09", "2018-10", "2018-11", "2018-12", "2019-01", "2019-02", "2019-03", "2019-04", "2019-05", "2019-06", "2019-07", "2019-08", "2019-09", "2019-10", "2019-11", "2019-12", "2020-01", "2020-02", "2020-03", "2020-04", "2020-05", "2020-06", "2020-07", "2020-08", "2020-09", "2020-10", "2020-11", "2020-12", "2021-01", "2021-02", "2021-03", "2021-04", "2021-05", "2021-06", "2021-07", "2021-08", "2021-09", "2021-10", "2021-11", "2021-12", "2022-01", "2022-02", "2022-03", "2022-04", "2022-05", "2022-06", "2022-07", "2022-08", "2022-09", "2022-10", "2022-11", "2022-12", "2023-01", "2023-02", "2023-03", "2023-04", "2023-05", "2023-06", "2023-07", "2023-08", "2023-09", "2023-10", "2023-11", "2023-12", "2024-01", "2024-02", "2024-03", "2024-04", "2024-05", "2024-06", "2024-07", "2024-08", "2024-09", "2024-10", "2024-11", "2024-12", "2025-01", "2025-02", "2025-03", "2025-04", "2025-05", "2025-06", "2025-07", "2025-08", "2025-09", "2025-10", "2025-11", "2025-12", "2026-01", "2026-02", "2026-03"], datasets:[{
-        label:'月均日成交额（亿元）', data:[0.66, 0.4, 0.53, 1.15, 0.85, 1.53, 0.87, 0.37, 0.44, 0.76, 0.86, 1.37, 2.01, 2.25, 2.31, 3.12, 2.84, 2.15, 2.26, 3.33, 2.71, 3.18, 1.8, 2.3, 3.84, 2.18, 2.25, 3.72, 1.48, 1.56, 0.1, 0.33, 0.26, 0.17, 0.42, 0.6, 9.21, 8.06, 4.75, 4.98, 5.87, 5.26, 3.99, 5.79, 3.9, 4.14, 5.42, 3.14, 4.12, 1.81, 3.0, 4.77, 3.31, 1.98, 3.56, 11.25, 13.94, 13.08, 11.97, 7.24, 5.79, 7.23, 6.68, 7.77, 5.19, 6.3, 15.84, 8.6, 5.6, 6.04, 7.44, 3.61, 5.63, 7.61, 8.55, 6.43, 5.63, 6.96, 6.81, 5.52, 4.75, 3.38, 2.82, 4.56, 6.77, 6.33, 6.32, 4.94, 13.52, 9.02, 10.18, 7.85, 10.85, 7.2, 4.68, 4.89, 4.38, 15.81, 10.04, 3.52, 3.53, 5.08, 9.5, 7.82, 8.95, 6.91, 9.89, 15.78, 19.2, 23.98, 37.91, 43.4, 50.05, 72.41, 43.78, 44.51, 31.45, 52.82, 100.49, 89.94, 53.58, 55.12, 58.69, 72.66, 94.75, 91.35, 68.0, 29.0, 23.73, 27.53, 29.25, 22.18, 18.41, 29.17, 56.54, 60.77, 41.02, 52.63, 84.07, 82.85, 166.55, 97.8, 94.35, 59.27, 71.37, 83.3, 91.29, 61.83, 60.7, 52.55, 69.97, 43.83, 43.14, 45.75, 48.03, 43.31, 30.63, 66.89, 79.61, 58.3, 27.98, 29.06, 29.04, 35.94, 43.69, 25.68, 47.06, 65.77, 118.03, 201.97, 109.16, 85.03, 80.7, 99.49, 156.24, 100.3, 96.52, 143.78, 229.89, 224.17, 413.68, 373.25, 229.16, 211.64, 285.52, 306.96, 472.61, 587.48, 475.07, 389.46, 380.11, 340.62, 308.83, 370.96, 358.78, 272.04, 318.52, 445.38, 414.36, 318.44, 243.46, 215.76, 225.91, 157.38, 205.65, 165.35, 152.15, 199.69, 158.79, 139.84, 120.17, 109.26, 101.44, 160.36, 113.45, 142.28, 138.81, 144.16, 145.43, 143.32, 103.83, 113.35, 93.46, 77.21, 144.96, 272.13, 259.83, 135.83, 119.36, 214.33, 176.98, 148.13, 165.63, 135.79, 215.24, 265.06, 426.07, 449.27, 433.01, 291.5, 435.24, 310.44, 422.49],
+      data:{labels:["2006-01", "2006-02", "2006-03", "2006-04", "2006-05", "2006-06", "2006-07", "2006-08", "2006-09", "2006-10", "2006-11", "2006-12", "2007-01", "2007-02", "2007-03", "2007-04", "2007-05", "2007-06", "2007-07", "2007-08", "2007-09", "2007-10", "2007-11", "2007-12", "2008-01", "2008-02", "2008-03", "2008-04", "2008-05", "2008-06", "2008-07", "2008-08", "2008-09", "2008-10", "2008-11", "2008-12", "2009-01", "2009-02", "2009-03", "2009-04", "2009-05", "2009-06", "2009-07", "2009-08", "2009-09", "2009-10", "2009-11", "2009-12", "2010-01", "2010-02", "2010-03", "2010-04", "2010-05", "2010-06", "2010-07", "2010-08", "2010-09", "2010-10", "2010-11", "2010-12", "2011-01", "2011-02", "2011-03", "2011-04", "2011-05", "2011-06", "2011-07", "2011-08", "2011-09", "2011-10", "2011-11", "2011-12", "2012-01", "2012-02", "2012-03", "2012-04", "2012-05", "2012-06", "2012-07", "2012-08", "2012-09", "2012-10", "2012-11", "2012-12", "2013-01", "2013-02", "2013-03", "2013-04", "2013-05", "2013-06", "2013-07", "2013-08", "2013-09", "2013-10", "2013-11", "2013-12", "2014-01", "2014-02", "2014-03", "2014-04", "2014-05", "2014-06", "2014-07", "2014-08", "2014-09", "2014-10", "2014-11", "2014-12", "2015-01", "2015-02", "2015-03", "2015-04", "2015-05", "2015-06", "2015-07", "2015-08", "2015-09", "2015-10", "2015-11", "2015-12", "2016-01", "2016-02", "2016-03", "2016-04", "2016-05", "2016-06", "2016-07", "2016-08", "2016-09", "2016-10", "2016-11", "2016-12", "2017-01", "2017-02", "2017-03", "2017-04", "2017-05", "2017-06", "2017-07", "2017-08", "2017-09", "2017-10", "2017-11", "2017-12", "2018-01", "2018-02", "2018-03", "2018-04", "2018-05", "2018-06", "2018-07", "2018-08", "2018-09", "2018-10", "2018-11", "2018-12", "2019-01", "2019-02", "2019-03", "2019-04", "2019-05", "2019-06", "2019-07", "2019-08", "2019-09", "2019-10", "2019-11", "2019-12", "2020-01", "2020-02", "2020-03", "2020-04", "2020-05", "2020-06", "2020-07", "2020-08", "2020-09", "2020-10", "2020-11", "2020-12", "2021-01", "2021-02", "2021-03", "2021-04", "2021-05", "2021-06", "2021-07", "2021-08", "2021-09", "2021-10", "2021-11", "2021-12", "2022-01", "2022-02", "2022-03", "2022-04", "2022-05", "2022-06", "2022-07", "2022-08", "2022-09", "2022-10", "2022-11", "2022-12", "2023-01", "2023-02", "2023-03", "2023-04", "2023-05", "2023-06", "2023-07", "2023-08", "2023-09", "2023-10", "2023-11", "2023-12", "2024-01", "2024-02", "2024-03", "2024-04", "2024-05", "2024-06", "2024-07", "2024-08", "2024-09", "2024-10", "2024-11", "2024-12", "2025-01", "2025-02", "2025-03", "2025-04", "2025-05", "2025-06", "2025-07", "2025-08", "2025-09", "2025-10", "2025-11", "2025-12"], datasets:[{
+        label:'月均日成交额（亿元）', data:[0.66, 0.4, 0.53, 1.15, 0.85, 1.53, 0.87, 0.37, 0.44, 0.76, 0.86, 1.37, 2.01, 2.25, 2.31, 3.12, 2.84, 2.15, 2.26, 3.33, 2.71, 3.18, 1.8, 2.3, 3.84, 2.18, 2.25, 3.72, 1.48, 1.56, 0.1, 0.33, 0.26, 0.17, 0.42, 0.6, 9.21, 8.06, 4.75, 4.98, 5.87, 5.26, 3.99, 5.79, 3.9, 4.14, 5.42, 3.14, 4.12, 1.81, 3.0, 4.77, 3.31, 1.98, 3.56, 11.25, 13.94, 13.08, 11.97, 7.24, 5.79, 7.23, 6.68, 7.77, 5.19, 6.3, 15.84, 8.6, 5.6, 6.04, 7.44, 3.61, 5.63, 7.61, 8.55, 6.43, 5.63, 6.96, 6.81, 5.52, 4.75, 3.38, 2.82, 4.56, 6.77, 6.33, 6.32, 4.94, 13.52, 9.02, 10.18, 7.85, 10.85, 7.2, 4.68, 4.89, 4.38, 15.81, 10.04, 3.52, 3.53, 5.08, 9.5, 7.82, 8.95, 6.91, 9.89, 15.78, 19.2, 23.98, 37.91, 43.4, 50.05, 72.41, 43.78, 44.51, 31.45, 52.82, 100.49, 89.94, 53.58, 55.12, 58.69, 72.66, 94.75, 91.35, 68.0, 29.0, 23.73, 27.53, 29.25, 22.18, 18.41, 29.17, 56.54, 60.77, 41.02, 52.63, 84.07, 82.85, 166.55, 97.8, 94.35, 59.27, 71.37, 83.3, 91.29, 61.83, 60.7, 52.55, 69.97, 43.83, 43.14, 45.75, 48.03, 43.31, 30.63, 66.89, 79.61, 58.3, 27.98, 29.06, 29.04, 35.94, 43.69, 25.68, 47.06, 65.77, 118.03, 201.97, 109.16, 85.03, 80.7, 99.49, 156.24, 100.3, 96.52, 143.78, 229.89, 224.17, 413.68, 373.25, 229.16, 211.64, 285.52, 306.96, 472.61, 587.48, 475.07, 389.46, 380.11, 340.62, 308.83, 370.96, 358.78, 272.04, 318.52, 445.38, 414.36, 318.44, 243.46, 215.76, 225.91, 157.38, 205.65, 165.35, 152.15, 199.69, 158.79, 139.84, 120.17, 109.26, 101.44, 160.36, 113.45, 142.28, 138.81, 144.16, 145.43, 143.32, 103.83, 113.35, 93.46, 77.21, 144.96, 272.13, 259.83, 135.83, 119.36, 214.33, 176.98, 148.13, 165.63, 135.79, 215.24, 265.06, 426.07, 449.27, 433.01, 291.93],
         backgroundColor:'rgba(21,101,192,0.6)', borderRadius:2
       }]},
       options: baseOpts('亿元')
@@ -1544,8 +1749,8 @@
 
     new Chart(document.getElementById('svDayChart'), {
       type:'bar',
-      data:{labels:["2024-03-04", "2024-03-05", "2024-03-06", "2024-03-07", "2024-03-08", "2024-03-11", "2024-03-12", "2024-03-13", "2024-03-14", "2024-03-15", "2024-03-18", "2024-03-19", "2024-03-20", "2024-03-21", "2024-03-22", "2024-03-25", "2024-03-26", "2024-03-27", "2024-03-28", "2024-03-29", "2024-04-01", "2024-04-02", "2024-04-03", "2024-04-08", "2024-04-09", "2024-04-10", "2024-04-11", "2024-04-12", "2024-04-15", "2024-04-16", "2024-04-17", "2024-04-18", "2024-04-19", "2024-04-22", "2024-04-23", "2024-04-24", "2024-04-25", "2024-04-26", "2024-04-29", "2024-04-30", "2024-05-06", "2024-05-07", "2024-05-08", "2024-05-09", "2024-05-10", "2024-05-13", "2024-05-14", "2024-05-15", "2024-05-16", "2024-05-17", "2024-05-20", "2024-05-21", "2024-05-22", "2024-05-23", "2024-05-24", "2024-05-27", "2024-05-28", "2024-05-29", "2024-05-30", "2024-05-31", "2024-06-03", "2024-06-04", "2024-06-05", "2024-06-06", "2024-06-07", "2024-06-11", "2024-06-12", "2024-06-13", "2024-06-14", "2024-06-17", "2024-06-18", "2024-06-19", "2024-06-20", "2024-06-21", "2024-06-24", "2024-06-25", "2024-06-26", "2024-06-27", "2024-06-28", "2024-07-01", "2024-07-02", "2024-07-03", "2024-07-04", "2024-07-05", "2024-07-08", "2024-07-09", "2024-07-10", "2024-07-11", "2024-07-12", "2024-07-15", "2024-07-16", "2024-07-17", "2024-07-18", "2024-07-19", "2024-07-22", "2024-07-23", "2024-07-24", "2024-07-25", "2024-07-26", "2024-07-29", "2024-07-30", "2024-07-31", "2024-08-01", "2024-08-02", "2024-08-05", "2024-08-06", "2024-08-07", "2024-08-08", "2024-08-09", "2024-08-12", "2024-08-13", "2024-08-14", "2024-08-15", "2024-08-16", "2024-08-19", "2024-08-20", "2024-08-21", "2024-08-22", "2024-08-23", "2024-08-26", "2024-08-27", "2024-08-28", "2024-08-29", "2024-08-30", "2024-09-02", "2024-09-03", "2024-09-04", "2024-09-05", "2024-09-06", "2024-09-09", "2024-09-10", "2024-09-11", "2024-09-12", "2024-09-13", "2024-09-18", "2024-09-19", "2024-09-20", "2024-09-23", "2024-09-24", "2024-09-25", "2024-09-26", "2024-09-27", "2024-09-30", "2024-10-08", "2024-10-09", "2024-10-10", "2024-10-11", "2024-10-14", "2024-10-15", "2024-10-16", "2024-10-17", "2024-10-18", "2024-10-21", "2024-10-22", "2024-10-23", "2024-10-24", "2024-10-25", "2024-10-28", "2024-10-29", "2024-10-30", "2024-10-31", "2024-11-01", "2024-11-04", "2024-11-05", "2024-11-06", "2024-11-07", "2024-11-08", "2024-11-11", "2024-11-12", "2024-11-13", "2024-11-14", "2024-11-15", "2024-11-18", "2024-11-19", "2024-11-20", "2024-11-21", "2024-11-22", "2024-11-25", "2024-11-26", "2024-11-27", "2024-11-28", "2024-11-29", "2024-12-02", "2024-12-03", "2024-12-04", "2024-12-05", "2024-12-06", "2024-12-09", "2024-12-10", "2024-12-11", "2024-12-12", "2024-12-13", "2024-12-16", "2024-12-17", "2024-12-18", "2024-12-19", "2024-12-20", "2024-12-23", "2024-12-24", "2024-12-25", "2024-12-26", "2024-12-27", "2024-12-30", "2024-12-31", "2025-01-02", "2025-01-03", "2025-01-06", "2025-01-07", "2025-01-08", "2025-01-09", "2025-01-10", "2025-01-13", "2025-01-14", "2025-01-15", "2025-01-16", "2025-01-17", "2025-01-20", "2025-01-21", "2025-01-22", "2025-01-23", "2025-01-24", "2025-01-27", "2025-02-05", "2025-02-06", "2025-02-07", "2025-02-10", "2025-02-11", "2025-02-12", "2025-02-13", "2025-02-14", "2025-02-17", "2025-02-18", "2025-02-19", "2025-02-20", "2025-02-21", "2025-02-24", "2025-02-25", "2025-02-26", "2025-02-27", "2025-02-28", "2025-03-03", "2025-03-04", "2025-03-05", "2025-03-06", "2025-03-07", "2025-03-10", "2025-03-11", "2025-03-12", "2025-03-13", "2025-03-14", "2025-03-17", "2025-03-18", "2025-03-19", "2025-03-20", "2025-03-21", "2025-03-24", "2025-03-25", "2025-03-26", "2025-03-27", "2025-03-28", "2025-03-31", "2025-04-01", "2025-04-02", "2025-04-03", "2025-04-07", "2025-04-08", "2025-04-09", "2025-04-10", "2025-04-11", "2025-04-14", "2025-04-15", "2025-04-16", "2025-04-17", "2025-04-18", "2025-04-21", "2025-04-22", "2025-04-23", "2025-04-24", "2025-04-25", "2025-04-28", "2025-04-29", "2025-04-30", "2025-05-06", "2025-05-07", "2025-05-08", "2025-05-09", "2025-05-12", "2025-05-13", "2025-05-14", "2025-05-15", "2025-05-16", "2025-05-19", "2025-05-20", "2025-05-21", "2025-05-22", "2025-05-23", "2025-05-26", "2025-05-27", "2025-05-28", "2025-05-29", "2025-05-30", "2025-06-03", "2025-06-04", "2025-06-05", "2025-06-06", "2025-06-09", "2025-06-10", "2025-06-11", "2025-06-12", "2025-06-13", "2025-06-16", "2025-06-17", "2025-06-18", "2025-06-19", "2025-06-20", "2025-06-23", "2025-06-24", "2025-06-25", "2025-06-26", "2025-06-27", "2025-06-30", "2025-07-01", "2025-07-02", "2025-07-03", "2025-07-04", "2025-07-07", "2025-07-08", "2025-07-09", "2025-07-10", "2025-07-11", "2025-07-14", "2025-07-15", "2025-07-16", "2025-07-17", "2025-07-18", "2025-07-21", "2025-07-22", "2025-07-23", "2025-07-24", "2025-07-25", "2025-07-28", "2025-07-29", "2025-07-30", "2025-07-31", "2025-08-01", "2025-08-04", "2025-08-05", "2025-08-06", "2025-08-07", "2025-08-08", "2025-08-11", "2025-08-12", "2025-08-13", "2025-08-14", "2025-08-15", "2025-08-18", "2025-08-19", "2025-08-20", "2025-08-21", "2025-08-22", "2025-08-25", "2025-08-26", "2025-08-27", "2025-08-28", "2025-08-29", "2025-09-01", "2025-09-02", "2025-09-03", "2025-09-04", "2025-09-05", "2025-09-08", "2025-09-09", "2025-09-10", "2025-09-11", "2025-09-12", "2025-09-15", "2025-09-16", "2025-09-17", "2025-09-18", "2025-09-19", "2025-09-22", "2025-09-23", "2025-09-24", "2025-09-25", "2025-09-26", "2025-09-29", "2025-09-30", "2025-10-09", "2025-10-10", "2025-10-13", "2025-10-14", "2025-10-15", "2025-10-16", "2025-10-17", "2025-10-20", "2025-10-21", "2025-10-22", "2025-10-23", "2025-10-24", "2025-10-27", "2025-10-28", "2025-10-29", "2025-10-30", "2025-10-31", "2025-11-03", "2025-11-04", "2025-11-05", "2025-11-06", "2025-11-07", "2025-11-10", "2025-11-11", "2025-11-12", "2025-11-13", "2025-11-14", "2025-11-17", "2025-11-18", "2025-11-19", "2025-11-20", "2025-11-21", "2025-11-24", "2025-11-25", "2025-11-26", "2025-11-27", "2025-11-28", "2025-12-01", "2025-12-02", "2025-12-03", "2025-12-04", "2025-12-05", "2025-12-08", "2025-12-09", "2025-12-10", "2025-12-11", "2025-12-12", "2025-12-15", "2025-12-16", "2025-12-17", "2025-12-18", "2025-12-19", "2025-12-22", "2025-12-23", "2025-12-24", "2025-12-25", "2025-12-26", "2025-12-31", "2026-01-05", "2026-01-06", "2026-01-07", "2026-01-08", "2026-01-09", "2026-01-12", "2026-01-13", "2026-01-14", "2026-01-15", "2026-01-16", "2026-01-19", "2026-01-20", "2026-01-21", "2026-01-22", "2026-01-23", "2026-01-26", "2026-01-27", "2026-01-28", "2026-01-29", "2026-01-30", "2026-02-02", "2026-02-03", "2026-02-04", "2026-02-05", "2026-02-06", "2026-02-09", "2026-02-10", "2026-02-11", "2026-02-12", "2026-02-13", "2026-02-24", "2026-02-25", "2026-02-26", "2026-02-27", "2026-03-02", "2026-03-03", "2026-03-04", "2026-03-05", "2026-03-06", "2026-03-09", "2026-03-10", "2026-03-11", "2026-03-12", "2026-03-13", "2026-03-16", "2026-03-17", "2026-03-18", "2026-03-19", "2026-03-20", "2026-03-23", "2026-03-24", "2026-03-25", "2026-03-26", "2026-03-27", "2026-03-30"], datasets:[{
-        label:'日成交额（亿元）', data:[152.39, 146.6, 108.62, 114.65, 89.88, 305.52, 243.38, 154.22, 166.8, 182.26, 205.66, 138.97, 103.89, 99.78, 124.86, 99.33, 134.53, 116.71, 107.91, 99.22, 164.87, 183.0, 198.62, 174.0, 165.03, 126.27, 126.12, 113.7, 142.94, 152.6, 117.56, 134.11, 124.98, 102.75, 98.59, 106.04, 122.37, 159.04, 221.39, 132.31, 172.65, 115.59, 88.57, 140.77, 114.88, 109.71, 78.17, 82.69, 86.76, 95.73, 113.08, 82.55, 122.67, 97.03, 87.42, 78.99, 65.81, 134.87, 108.28, 100.4, 135.82, 101.3, 98.37, 109.39, 179.14, 158.73, 112.25, 144.53, 160.25, 133.71, 89.48, 71.43, 84.87, 106.82, 95.87, 103.69, 97.56, 77.9, 92.55, 111.13, 78.56, 82.73, 72.94, 71.33, 73.22, 95.56, 117.87, 130.96, 123.83, 69.85, 83.99, 89.16, 112.19, 109.55, 88.58, 95.54, 79.54, 97.47, 111.49, 85.86, 70.37, 97.85, 99.71, 84.98, 95.91, 89.97, 62.88, 69.23, 76.14, 58.23, 70.69, 52.3, 69.96, 65.8, 61.14, 73.73, 87.86, 81.76, 68.95, 76.69, 56.07, 62.87, 80.86, 152.95, 84.71, 107.34, 88.07, 85.22, 57.08, 82.84, 76.64, 159.82, 126.56, 98.14, 69.6, 91.89, 85.24, 80.43, 190.94, 224.71, 174.39, 354.93, 515.67, 769.05, 568.03, 348.36, 258.78, 239.96, 180.88, 174.85, 140.18, 306.78, 288.28, 168.68, 236.81, 146.74, 330.48, 185.34, 183.58, 159.78, 211.81, 238.2, 200.76, 294.21, 356.01, 240.14, 279.83, 341.85, 537.68, 386.28, 304.68, 246.36, 197.98, 244.31, 265.81, 185.84, 213.91, 221.47, 177.88, 171.96, 158.19, 193.15, 164.07, 128.08, 127.69, 117.8, 190.07, 130.28, 210.72, 123.43, 154.96, 184.03, 125.13, 167.82, 99.76, 106.35, 143.5, 116.9, 132.8, 90.6, 104.27, 119.18, 117.82, 133.11, 154.2, 118.08, 121.59, 164.09, 134.32, 92.61, 84.56, 115.06, 139.58, 100.36, 100.82, 97.84, 179.88, 103.11, 120.88, 106.66, 116.02, 98.89, 140.32, 227.71, 306.92, 203.31, 203.62, 243.72, 232.34, 245.73, 201.62, 212.57, 165.69, 151.32, 242.48, 218.63, 210.76, 185.65, 227.9, 237.69, 295.57, 244.43, 162.75, 187.8, 179.91, 193.25, 152.51, 164.57, 155.53, 253.28, 207.38, 184.74, 223.79, 145.83, 213.67, 154.66, 117.26, 119.17, 124.24, 105.15, 131.03, 136.49, 102.32, 120.69, 305.65, 257.31, 243.47, 209.84, 169.5, 131.75, 127.34, 124.33, 87.91, 77.88, 113.99, 107.78, 169.97, 157.46, 122.34, 126.8, 105.42, 112.49, 135.33, 149.76, 137.62, 142.2, 176.33, 141.94, 154.21, 150.13, 166.21, 128.76, 179.96, 279.74, 168.14, 212.45, 242.5, 159.4, 130.44, 149.8, 142.14, 128.0, 129.29, 102.16, 107.65, 162.3, 129.85, 201.44, 136.54, 157.67, 94.19, 86.6, 89.09, 111.42, 92.89, 119.48, 175.21, 180.14, 194.43, 177.84, 139.67, 103.18, 128.47, 210.65, 166.61, 106.34, 156.25, 169.71, 175.28, 180.24, 185.12, 174.52, 123.43, 161.7, 223.84, 225.95, 294.35, 262.66, 377.46, 319.31, 284.01, 269.25, 321.59, 330.63, 193.7, 176.28, 158.85, 136.76, 216.47, 222.94, 311.52, 327.11, 323.18, 294.41, 216.96, 299.88, 223.58, 243.02, 194.07, 283.85, 319.58, 261.87, 332.58, 288.88, 540.71, 441.12, 346.56, 363.96, 452.66, 567.85, 569.13, 434.74, 361.6, 327.44, 331.26, 565.08, 354.13, 454.25, 470.15, 399.17, 353.47, 373.61, 397.1, 467.64, 405.25, 459.84, 477.5, 640.98, 598.85, 550.15, 591.76, 432.21, 353.59, 409.15, 325.52, 356.88, 250.36, 323.41, 387.49, 405.79, 352.04, 431.46, 613.46, 614.49, 423.05, 357.8, 413.15, 370.26, 416.44, 488.0, 318.65, 289.21, 710.38, 410.42, 644.95, 587.52, 544.19, 590.2, 456.79, 438.85, 348.54, 312.78, 255.19, 283.92, 310.9, 227.17, 230.32, 237.63, 232.98, 299.4, 225.72, 237.47, 297.36, 328.41, 244.87, 236.55, 348.25, 320.62, 320.38, 347.5, 340.92, 322.41, 278.02, 451.68, 282.92, 406.99, 508.84, 420.36, 394.24, 364.32, 480.65, 534.33, 504.51, 439.49, 410.61, 328.77, 374.75, 416.17, 374.49, 446.06, 462.77, 393.73, 505.16, 419.67, 518.98, 419.8, 312.6, 346.5, 302.53, 319.22, 230.43, 184.29, 261.87, 267.71, 215.13, 284.11, 338.33, 525.17, 338.42, 458.27, 497.52, 319.34, 307.39, 265.7, 422.18, 372.72, 465.72, 299.42, 403.08, 478.99, 390.52, 320.13, 374.48, 519.71, 602.99, 476.79, 408.21, 431.45, 558.48, 499.12],
+      data:{labels:["2023-12-06", "2023-12-07", "2023-12-08", "2023-12-11", "2023-12-12", "2023-12-13", "2023-12-14", "2023-12-15", "2023-12-18", "2023-12-19", "2023-12-20", "2023-12-21", "2023-12-22", "2023-12-25", "2023-12-26", "2023-12-27", "2023-12-28", "2023-12-29", "2024-01-02", "2024-01-03", "2024-01-04", "2024-01-05", "2024-01-08", "2024-01-09", "2024-01-10", "2024-01-11", "2024-01-12", "2024-01-15", "2024-01-16", "2024-01-17", "2024-01-18", "2024-01-19", "2024-01-22", "2024-01-23", "2024-01-24", "2024-01-25", "2024-01-26", "2024-01-29", "2024-01-30", "2024-01-31", "2024-02-01", "2024-02-02", "2024-02-05", "2024-02-06", "2024-02-07", "2024-02-08", "2024-02-19", "2024-02-20", "2024-02-21", "2024-02-22", "2024-02-23", "2024-02-26", "2024-02-27", "2024-02-28", "2024-02-29", "2024-03-01", "2024-03-04", "2024-03-05", "2024-03-06", "2024-03-07", "2024-03-08", "2024-03-11", "2024-03-12", "2024-03-13", "2024-03-14", "2024-03-15", "2024-03-18", "2024-03-19", "2024-03-20", "2024-03-21", "2024-03-22", "2024-03-25", "2024-03-26", "2024-03-27", "2024-03-28", "2024-03-29", "2024-04-01", "2024-04-02", "2024-04-03", "2024-04-08", "2024-04-09", "2024-04-10", "2024-04-11", "2024-04-12", "2024-04-15", "2024-04-16", "2024-04-17", "2024-04-18", "2024-04-19", "2024-04-22", "2024-04-23", "2024-04-24", "2024-04-25", "2024-04-26", "2024-04-29", "2024-04-30", "2024-05-06", "2024-05-07", "2024-05-08", "2024-05-09", "2024-05-10", "2024-05-13", "2024-05-14", "2024-05-15", "2024-05-16", "2024-05-17", "2024-05-20", "2024-05-21", "2024-05-22", "2024-05-23", "2024-05-24", "2024-05-27", "2024-05-28", "2024-05-29", "2024-05-30", "2024-05-31", "2024-06-03", "2024-06-04", "2024-06-05", "2024-06-06", "2024-06-07", "2024-06-11", "2024-06-12", "2024-06-13", "2024-06-14", "2024-06-17", "2024-06-18", "2024-06-19", "2024-06-20", "2024-06-21", "2024-06-24", "2024-06-25", "2024-06-26", "2024-06-27", "2024-06-28", "2024-07-01", "2024-07-02", "2024-07-03", "2024-07-04", "2024-07-05", "2024-07-08", "2024-07-09", "2024-07-10", "2024-07-11", "2024-07-12", "2024-07-15", "2024-07-16", "2024-07-17", "2024-07-18", "2024-07-19", "2024-07-22", "2024-07-23", "2024-07-24", "2024-07-25", "2024-07-26", "2024-07-29", "2024-07-30", "2024-07-31", "2024-08-01", "2024-08-02", "2024-08-05", "2024-08-06", "2024-08-07", "2024-08-08", "2024-08-09", "2024-08-12", "2024-08-13", "2024-08-14", "2024-08-15", "2024-08-16", "2024-08-19", "2024-08-20", "2024-08-21", "2024-08-22", "2024-08-23", "2024-08-26", "2024-08-27", "2024-08-28", "2024-08-29", "2024-08-30", "2024-09-02", "2024-09-03", "2024-09-04", "2024-09-05", "2024-09-06", "2024-09-09", "2024-09-10", "2024-09-11", "2024-09-12", "2024-09-13", "2024-09-18", "2024-09-19", "2024-09-20", "2024-09-23", "2024-09-24", "2024-09-25", "2024-09-26", "2024-09-27", "2024-09-30", "2024-10-08", "2024-10-09", "2024-10-10", "2024-10-11", "2024-10-14", "2024-10-15", "2024-10-16", "2024-10-17", "2024-10-18", "2024-10-21", "2024-10-22", "2024-10-23", "2024-10-24", "2024-10-25", "2024-10-28", "2024-10-29", "2024-10-30", "2024-10-31", "2024-11-01", "2024-11-04", "2024-11-05", "2024-11-06", "2024-11-07", "2024-11-08", "2024-11-11", "2024-11-12", "2024-11-13", "2024-11-14", "2024-11-15", "2024-11-18", "2024-11-19", "2024-11-20", "2024-11-21", "2024-11-22", "2024-11-25", "2024-11-26", "2024-11-27", "2024-11-28", "2024-11-29", "2024-12-02", "2024-12-03", "2024-12-04", "2024-12-05", "2024-12-06", "2024-12-09", "2024-12-10", "2024-12-11", "2024-12-12", "2024-12-13", "2024-12-16", "2024-12-17", "2024-12-18", "2024-12-19", "2024-12-20", "2024-12-23", "2024-12-24", "2024-12-25", "2024-12-26", "2024-12-27", "2024-12-30", "2024-12-31", "2025-01-02", "2025-01-03", "2025-01-06", "2025-01-07", "2025-01-08", "2025-01-09", "2025-01-10", "2025-01-13", "2025-01-14", "2025-01-15", "2025-01-16", "2025-01-17", "2025-01-20", "2025-01-21", "2025-01-22", "2025-01-23", "2025-01-24", "2025-01-27", "2025-02-05", "2025-02-06", "2025-02-07", "2025-02-10", "2025-02-11", "2025-02-12", "2025-02-13", "2025-02-14", "2025-02-17", "2025-02-18", "2025-02-19", "2025-02-20", "2025-02-21", "2025-02-24", "2025-02-25", "2025-02-26", "2025-02-27", "2025-02-28", "2025-03-03", "2025-03-04", "2025-03-05", "2025-03-06", "2025-03-07", "2025-03-10", "2025-03-11", "2025-03-12", "2025-03-13", "2025-03-14", "2025-03-17", "2025-03-18", "2025-03-19", "2025-03-20", "2025-03-21", "2025-03-24", "2025-03-25", "2025-03-26", "2025-03-27", "2025-03-28", "2025-03-31", "2025-04-01", "2025-04-02", "2025-04-03", "2025-04-07", "2025-04-08", "2025-04-09", "2025-04-10", "2025-04-11", "2025-04-14", "2025-04-15", "2025-04-16", "2025-04-17", "2025-04-18", "2025-04-21", "2025-04-22", "2025-04-23", "2025-04-24", "2025-04-25", "2025-04-28", "2025-04-29", "2025-04-30", "2025-05-06", "2025-05-07", "2025-05-08", "2025-05-09", "2025-05-12", "2025-05-13", "2025-05-14", "2025-05-15", "2025-05-16", "2025-05-19", "2025-05-20", "2025-05-21", "2025-05-22", "2025-05-23", "2025-05-26", "2025-05-27", "2025-05-28", "2025-05-29", "2025-05-30", "2025-06-03", "2025-06-04", "2025-06-05", "2025-06-06", "2025-06-09", "2025-06-10", "2025-06-11", "2025-06-12", "2025-06-13", "2025-06-16", "2025-06-17", "2025-06-18", "2025-06-19", "2025-06-20", "2025-06-23", "2025-06-24", "2025-06-25", "2025-06-26", "2025-06-27", "2025-06-30", "2025-07-01", "2025-07-02", "2025-07-03", "2025-07-04", "2025-07-07", "2025-07-08", "2025-07-09", "2025-07-10", "2025-07-11", "2025-07-14", "2025-07-15", "2025-07-16", "2025-07-17", "2025-07-18", "2025-07-21", "2025-07-22", "2025-07-23", "2025-07-24", "2025-07-25", "2025-07-28", "2025-07-29", "2025-07-30", "2025-07-31", "2025-08-01", "2025-08-04", "2025-08-05", "2025-08-06", "2025-08-07", "2025-08-08", "2025-08-11", "2025-08-12", "2025-08-13", "2025-08-14", "2025-08-15", "2025-08-18", "2025-08-19", "2025-08-20", "2025-08-21", "2025-08-22", "2025-08-25", "2025-08-26", "2025-08-27", "2025-08-28", "2025-08-29", "2025-09-01", "2025-09-02", "2025-09-03", "2025-09-04", "2025-09-05", "2025-09-08", "2025-09-09", "2025-09-10", "2025-09-11", "2025-09-12", "2025-09-15", "2025-09-16", "2025-09-17", "2025-09-18", "2025-09-19", "2025-09-22", "2025-09-23", "2025-09-24", "2025-09-25", "2025-09-26", "2025-09-29", "2025-09-30", "2025-10-09", "2025-10-10", "2025-10-13", "2025-10-14", "2025-10-15", "2025-10-16", "2025-10-17", "2025-10-20", "2025-10-21", "2025-10-22", "2025-10-23", "2025-10-24", "2025-10-27", "2025-10-28", "2025-10-29", "2025-10-30", "2025-10-31", "2025-11-03", "2025-11-04", "2025-11-05", "2025-11-06", "2025-11-07", "2025-11-10", "2025-11-11", "2025-11-12", "2025-11-13", "2025-11-14", "2025-11-17", "2025-11-18", "2025-11-19", "2025-11-20", "2025-11-21", "2025-11-24", "2025-11-25", "2025-11-26", "2025-11-27", "2025-11-28", "2025-12-01", "2025-12-02", "2025-12-03", "2025-12-04", "2025-12-05", "2025-12-08", "2025-12-09", "2025-12-10", "2025-12-11", "2025-12-12", "2025-12-15", "2025-12-16", "2025-12-17", "2025-12-18", "2025-12-19", "2025-12-22", "2025-12-23", "2025-12-24", "2025-12-25", "2025-12-26"], datasets:[{
+        label:'日成交额（亿元）', data:[300.54, 187.51, 137.8, 140.25, 86.56, 114.06, 106.16, 136.99, 148.87, 100.02, 96.63, 147.21, 185.98, 94.56, 92.17, 94.84, 244.25, 146.68, 121.77, 103.92, 121.5, 139.35, 116.6, 134.27, 139.27, 230.68, 168.72, 105.96, 132.74, 131.15, 155.09, 134.8, 173.38, 126.59, 118.96, 134.67, 121.75, 131.28, 123.85, 187.49, 111.07, 130.46, 165.14, 166.01, 157.88, 138.9, 119.29, 103.78, 144.99, 97.29, 110.32, 151.7, 139.44, 216.85, 209.35, 158.87, 152.39, 146.6, 108.62, 114.65, 89.88, 305.52, 243.38, 154.22, 166.8, 182.26, 205.66, 138.97, 103.89, 99.78, 124.86, 99.33, 134.53, 116.71, 107.91, 99.22, 164.87, 183.0, 198.62, 174.0, 165.03, 126.27, 126.12, 113.7, 142.94, 152.6, 117.56, 134.11, 124.98, 102.75, 98.59, 106.04, 122.37, 159.04, 221.39, 132.31, 172.65, 115.59, 88.57, 140.77, 114.88, 109.71, 78.17, 82.69, 86.76, 95.73, 113.08, 82.55, 122.67, 97.03, 87.42, 78.99, 65.81, 134.87, 108.28, 100.4, 135.82, 101.3, 98.37, 109.39, 179.14, 158.73, 112.25, 144.53, 160.25, 133.71, 89.48, 71.43, 84.87, 106.82, 95.87, 103.69, 97.56, 77.9, 92.55, 111.13, 78.56, 82.73, 72.94, 71.33, 73.22, 95.56, 117.87, 130.96, 123.83, 69.85, 83.99, 89.16, 112.19, 109.55, 88.58, 95.54, 79.54, 97.47, 111.49, 85.86, 70.37, 97.85, 99.71, 84.98, 95.91, 89.97, 62.88, 69.23, 76.14, 58.23, 70.69, 52.3, 69.96, 65.8, 61.14, 73.73, 87.86, 81.76, 68.95, 76.69, 56.07, 62.87, 80.86, 152.95, 84.71, 107.34, 88.07, 85.22, 57.08, 82.84, 76.64, 159.82, 126.56, 98.14, 69.6, 91.89, 85.24, 80.43, 190.94, 224.71, 174.39, 354.93, 515.67, 769.05, 568.03, 348.36, 258.78, 239.96, 180.88, 174.85, 140.18, 306.78, 288.28, 168.68, 236.81, 146.74, 330.48, 185.34, 183.58, 159.78, 211.81, 238.2, 200.76, 294.21, 356.01, 240.14, 279.83, 341.85, 537.68, 386.28, 304.68, 246.36, 197.98, 244.31, 265.81, 185.84, 213.91, 221.47, 177.88, 171.96, 158.19, 193.15, 164.07, 128.08, 127.69, 117.8, 190.07, 130.28, 210.72, 123.43, 154.96, 184.03, 125.13, 167.82, 99.76, 106.35, 143.5, 116.9, 132.8, 90.6, 104.27, 119.18, 117.82, 133.11, 154.2, 118.08, 121.59, 164.09, 134.32, 92.61, 84.56, 115.06, 139.58, 100.36, 100.82, 97.84, 179.88, 103.11, 120.88, 106.66, 116.02, 98.89, 140.32, 227.71, 306.92, 203.31, 203.62, 243.72, 232.34, 245.73, 201.62, 212.57, 165.69, 151.32, 242.48, 218.63, 210.76, 185.65, 227.9, 237.69, 295.57, 244.43, 162.75, 187.8, 179.91, 193.25, 152.51, 164.57, 155.53, 253.28, 207.38, 184.74, 223.79, 145.83, 213.67, 154.66, 117.26, 119.17, 124.24, 105.15, 131.03, 136.49, 102.32, 120.69, 305.65, 257.31, 243.47, 209.84, 169.5, 131.75, 127.34, 124.33, 87.91, 77.88, 113.99, 107.78, 169.97, 157.46, 122.34, 126.8, 105.42, 112.49, 135.33, 149.76, 137.62, 142.2, 176.33, 141.94, 154.21, 150.13, 166.21, 128.76, 179.96, 279.74, 168.14, 212.45, 242.5, 159.4, 130.44, 149.8, 142.14, 128.0, 129.29, 102.16, 107.65, 162.3, 129.85, 201.44, 136.54, 157.67, 94.19, 86.6, 89.09, 111.42, 92.89, 119.48, 175.21, 180.14, 194.43, 177.84, 139.67, 103.18, 128.47, 210.65, 166.61, 106.34, 156.25, 169.71, 175.28, 180.24, 185.12, 174.52, 123.43, 161.7, 223.84, 225.95, 294.35, 262.66, 377.46, 319.31, 284.01, 269.25, 321.59, 330.63, 193.7, 176.28, 158.85, 136.76, 216.47, 222.94, 311.52, 327.11, 323.18, 294.41, 216.96, 299.88, 223.58, 243.02, 194.07, 283.85, 319.58, 261.87, 332.58, 288.88, 540.71, 441.12, 346.56, 363.96, 452.66, 567.85, 569.13, 434.74, 361.6, 327.44, 331.26, 565.08, 354.13, 454.25, 470.15, 399.17, 353.47, 373.61, 397.1, 467.64, 405.25, 459.84, 477.5, 640.98, 598.85, 550.15, 591.76, 432.21, 353.59, 409.15, 325.52, 356.88, 250.36, 323.41, 387.49, 405.79, 352.04, 431.46, 613.46, 614.49, 423.05, 357.8, 413.15, 370.26, 416.44, 488.0, 318.65, 289.21, 710.38, 410.42, 644.95, 587.52, 544.19, 590.2, 456.79, 438.85, 348.54, 312.78, 255.19, 283.92, 310.9, 227.17, 230.32, 237.63, 232.98, 299.4, 225.72, 237.47, 297.36, 328.41, 244.87, 236.55, 348.25, 320.62, 320.38, 347.5, 340.92, 322.41, 278.02, 451.68],
         backgroundColor:'rgba(21,101,192,0.4)', borderRadius:1
       }]},
       options: baseOpts('亿元')
