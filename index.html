@@ -202,8 +202,8 @@
 <!-- 顶栏 -->
 <div class="topbar">
   <div class="topbar-title">⚗️ 碳酸锂监测</div>
-  <div class="ticker-strip"><span class="ticker-item"><span class="ticker-label">电池级现货</span> <span class="ticker-val">15.75万元/吨</span></span><span class="ticker-item"><span class="ticker-label">GFEX LC2605</span> <span class="ticker-val">156,960元/吨</span> <span style='color:#e74c3c'>+0.01%</span></span><span class="ticker-item"><span class="ticker-label">DXY</span> <span class="ticker-val">100.03</span> <span style='color:#888'>-0.00%</span></span><span class="ticker-item"><span class="ticker-label">USD/CNY</span> <span class="ticker-val">6.8816</span></span></div>
-  <div class="topbar-meta">更新于 2026-04-06 11:46:11</div>
+  <div class="ticker-strip"><span class="ticker-item"><span class="ticker-label">电池级现货</span> <span class="ticker-val">15.75万元/吨</span></span><span class="ticker-item"><span class="ticker-label">GFEX LC2605</span> <span class="ticker-val">156,960元/吨</span> <span style='color:#e74c3c'>+0.01%</span></span><span class="ticker-item"><span class="ticker-label">DXY</span> <span class="ticker-val">100.13</span> <span style='color:#e74c3c'>+0.10%</span></span><span class="ticker-item"><span class="ticker-label">USD/CNY</span> <span class="ticker-val">6.8816</span></span></div>
+  <div class="topbar-meta">更新于 2026-04-06 12:52:40</div>
 </div>
 
 <!-- 主体布局 -->
@@ -229,7 +229,7 @@
   <!-- 现货价格卡片 -->
   <div class="card-row">
     <div class="price-card main-price">
-      <div class="price-label">电池级碳酸锂 现货 <span class="src-tag src-ai">🔍 AI搜索·生意社/Mysteel/建信期货</span></div>
+      <div class="price-label">电池级碳酸锂 现货 <span class="src-tag src-ai">🔍 AI搜索·生意社, SMM</span></div>
       <div class="price-value">15.75 <span class="price-unit">万元/吨</span></div>
       <div class="price-meta">2026-04-06</div>
       <div style="height:55px;margin-top:6px;"><canvas id="spark_battery"></canvas></div>
@@ -237,19 +237,19 @@
     <div class="price-card">
       <div class="price-label">工业级碳酸锂 现货</div>
       <div class="price-value">15.40 <span class="price-unit">万元/吨</span></div>
-      <div class="price-meta"><span class="src-tag src-ai">🔍 AI搜索·生意社/Mysteel/建信期货</span></div>
+      <div class="price-meta"><span class="src-tag src-ai">🔍 AI搜索·生意社, SMM</span></div>
       <div style="height:55px;margin-top:6px;"><canvas id="spark_industry"></canvas></div>
     </div>
     <div class="price-card">
       <div class="price-label">电池级氢氧化锂 现货</div>
-      <div class="price-value">14.80 <span class="price-unit">万元/吨</span></div>
-      <div class="price-meta"><span class="src-tag src-ai">🔍 AI搜索·生意社/Mysteel/建信期货</span></div>
+      <div class="price-value">15.10 <span class="price-unit">万元/吨</span></div>
+      <div class="price-meta"><span class="src-tag src-ai">🔍 AI搜索·生意社, SMM</span></div>
       <div style="height:55px;margin-top:6px;"><canvas id="spark_hydroxide"></canvas></div>
     </div>
     <div class="price-card">
       <div class="price-label">锂精矿 SC6</div>
-      <div class="price-value">2,205 <span class="price-unit">USD/吨</span></div>
-      <div class="price-meta"><span class="src-tag src-ai">🔍 AI搜索·生意社/Mysteel/建信期货</span></div>
+      <div class="price-value">2,265 <span class="price-unit">USD/吨</span></div>
+      <div class="price-meta"><span class="src-tag src-ai">🔍 AI搜索·生意社, SMM</span></div>
       <div style="height:55px;margin-top:6px;"><canvas id="spark_spodumene"></canvas></div>
     </div>
   </div>
@@ -272,8 +272,8 @@
       <div class="price-label">美元指数 DXY
         <span class="src-tag src-api">📡 Yahoo Finance</span>
       </div>
-      <div class="price-value">100.03</div>
-      <div class="price-meta" style="color:#888">-0.00%</div>
+      <div class="price-value">100.13</div>
+      <div class="price-meta" style="color:#e74c3c">+0.10%</div>
     </div>
     <div class="price-card">
       <div class="price-label">美元/人民币
@@ -425,7 +425,7 @@
       data: {
         labels: ["03-30", "03-31", "04-01", "04-02", "04-03", "04-04", "04-05", "04-06"],
         datasets: [{
-          data: [15.65, null, 15.125, 14.79, null, 15.1, 14.65, 14.8],
+          data: [15.65, null, 15.125, 14.79, null, 15.1, 14.65, 15.1],
           borderColor: '#2980b9',
           backgroundColor: '#2980b918',
           tension: 0.3, pointRadius: 0, fill: true,
@@ -453,7 +453,7 @@
       data: {
         labels: ["03-30", "03-31", "04-01", "04-02", "04-03", "04-04", "04-05", "04-06"],
         datasets: [{
-          data: [2080, 2360, null, 2360, 2205, 2265, 2265, 2205],
+          data: [2080, 2360, null, 2360, 2205, 2265, 2265, 2265],
           borderColor: '#8e44ad',
           backgroundColor: '#8e44ad18',
           tension: 0.3, pointRadius: 0, fill: true,
@@ -505,12 +505,12 @@
     
 <div class="panel" id="p2">
   <div class="panel-title">📰 产业链资讯</div>
-  <div class="ai-summary">**碳酸锂/锂电产业链资讯整理与判断**<br><br>**1. 价格与市场**<br>今日资讯未直接提及碳酸锂或锂精矿的现货及期货价格变动。电动车市场竞争激烈，比亚迪推出2.2万美元起售、支持5分钟快充的新车型，展现强大价格竞争力。优步提供高达6500美元的电动车补贴，以刺激司机转向电动车。欧洲电动车市场表现强劲，并呼吁美国市场引入更多平价电动车型。<br><br>**2. 供给动态**<br>今日资讯中未提及锂矿山或锂盐厂的具体产量、开停产、扩产或投产动态，该领域信息暂时缺失。Stellantis考虑在加拿大工厂生产中国零跑电动车，表明全球供应链可能重组以满足电动车生产需求。<br><br>**3. 需求动态**<br>全球电动车需求持续旺盛且多元化，涵盖电动摩托车、港口电动卡车、大型电动挖掘机、电动渡轮等商用领域。乘用车市场表现尤为突出，比亚迪3月海外新能源车销量达12万辆；丰田电动SUV在美国第一季度销量超越福特，成为畅销车型；现代和起亚也预告或推出新的IONIQ电动车型。汽油价格上涨也促使消费者加速转向电动车。此外，储能需求也在快速增长，Qcells倡导在每户新居内置太阳能+储能系统，充电基础设施建设（如XCharge NA）同步推进，共同支撑锂电池需求。<br><br>**4. 政策与地缘**<br>美国联邦能源管理委员会（FERC）报告显示，2025年美国新增发电装机容量的88%来自可再生能源，这一趋势将大幅拉动对储能电池的需求。优步扩大全国范围的电动车补贴计划，进一步鼓励电动车普及。Stellantis考虑引入中国电动车生产，反映了国际合作和技术转移的趋势。<br><br>**综合判断**<br>今日资讯显示全球电动车及储能市场需求强劲且持续增长，但缺乏锂资源供给端的具体信息。在强劲需求驱动下，预计短期内碳酸锂价格将获得有力支撑，或保持相对稳定并有偏强运行的可能。</div>
+  <div class="ai-summary">以下是今日碳酸锂/锂电产业链相关资讯的整理：<br><br>**价格与市场**<br>多个品牌（如Lectric、EGO、Segway、Anker、EcoFlow、Jackery）正在进行电动自行车、割草机、便携电源等产品的促销和闪购活动，提供高达720美元或67%的折扣，显示终端消费市场竞争激烈，价格驱动明显。比亚迪新款电动汽车以2.2万美元起售的低价吸引消费者。欧洲市场亦强调平价电动车对销量的推动作用，多款售价在2.8万欧元左右的车型有望进入美国市场。<br><br>**供给动态**<br>电动汽车充电基础设施持续扩张，XCharge NA与JOJO在伊利诺伊州启动快速充电站。Stellantis计划在其闲置的加拿大工厂生产中国零跑电动车，预示着全球EV产能的整合与扩张。重型电动设备如小松PC9000-12电动挖掘机正走向全球市场，洛杉矶港也引入电动码头卡车。可再生能源领域，Qcells倡导新房标配太阳能+储能系统，美国2025年新增发电容量中可再生能源占比高达88%，表明储能需求潜力巨大。<br><br>**需求动态**<br>全球电动车需求旺盛。比亚迪3月份海外新能源汽车销量达12万辆，并推出支持5分钟快充的新款EV。丰田凭借一款电动SUV在Q1美国市场销量超越福特，其电动SUV已成为美国最畅销电动车之一。VinFast、现代、起亚等品牌也积极推出新款电动摩托车、IONIQ系列EV及纽约电动出租车。高油价促使消费者转向电动车，同时，Uber提供高达6500美元的电动车补贴，进一步刺激了市场需求。家户太阳能+电池+EV的一体化应用也日益普及。<br><br>**政策与地缘**<br>政策和市场激励措施正推动电动车普及。Uber在美国全国范围内扩大电动车补贴计划，为司机提供高达6500美元的激励。Stellantis考虑利用其加拿大闲置工厂生产中国零跑电动汽车，这可能涉及国际合作与产能调整。同时，美国联邦能源管理委员会报告显示2025年美国新增发电容量中可再生能源占比高达88%，反映出对清洁能源的政策倾斜和投资趋势。<br><br>**综合判断**<br>综合来看，下游电动汽车和储能市场的需求持续强劲，且多项补贴和促销活动进一步刺激了消费。虽然锂矿和锂盐的具体供需数据缺失，但终端需求端的增长态势预示着对碳酸锂的需求将保持旺盛。短期内，碳酸锂价格有望保持稳定或略有上行。</div>
   <div class="news-list" style="margin-top:14px;">
     
     <div class="news-item">
       <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/04/05/vinfast-prepares-to-enter-the-worlds-largest-motorcycle-market/" target="_blank" class="news-title">VinFast准备进军全球最大摩托车市场</a>
+        <a href="https://electrek.co/2026/04/05/vinfast-prepares-to-enter-the-worlds-largest-motorcycle-market/" target="_blank" class="news-title">VinFast拟进军全球最大摩托车市场</a>
         <div class='news-orig'>VinFast prepares to enter the world’s largest motorcycle market</div>
       </div>
       <span class="news-meta"><b>Electrek</b> · Sun, 05 Apr 2026</span>
@@ -524,84 +524,84 @@
     </div>
     <div class="news-item">
       <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/04/04/port-of-la-turns-to-electric-terminal-trucks-to-to-slash-dwell-times/" target="_blank" class="news-title">洛杉矶港采用电动码头卡车缩短停留时间</a>
+        <a href="https://electrek.co/2026/04/04/port-of-la-turns-to-electric-terminal-trucks-to-to-slash-dwell-times/" target="_blank" class="news-title">洛杉矶港采用电动码头卡车以缩短停留时间</a>
         <div class='news-orig'>Port of LA turns to electric terminal trucks to to slash dwell times</div>
       </div>
       <span class="news-meta"><b>Electrek</b> · Sat, 04 Apr 2026</span>
     </div>
     <div class="news-item">
       <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/04/04/biggest-ever-komatsu-pc9000-12-electric-excavator-goes-global/" target="_blank" class="news-title">史上最大小松PC9000-12电动挖掘机走向全球</a>
+        <a href="https://electrek.co/2026/04/04/biggest-ever-komatsu-pc9000-12-electric-excavator-goes-global/" target="_blank" class="news-title">史上最大小松PC9000-12电动挖掘机全球上市</a>
         <div class='news-orig'>Biggest ever Komatsu PC9000-12 electric excavator goes global</div>
       </div>
       <span class="news-meta"><b>Electrek</b> · Sat, 04 Apr 2026</span>
     </div>
     <div class="news-item">
       <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/04/03/xcharge-na-jojo-launch-ev-fast-chargers-in-illinois-first-sites-live/" target="_blank" class="news-title">XCharge北美与JOJO在伊利诺伊州推出电动汽车快充站，首批站点已上线</a>
+        <a href="https://electrek.co/2026/04/03/xcharge-na-jojo-launch-ev-fast-chargers-in-illinois-first-sites-live/" target="_blank" class="news-title">XCharge北美与JOJO在伊利诺伊州推出电动汽车快充站，首批站点上线</a>
         <div class='news-orig'>XCharge NA + JOJO launch EV fast chargers in Illinois – first sites live</div>
       </div>
       <span class="news-meta"><b>Electrek</b> · Fri, 03 Apr 2026</span>
     </div>
     <div class="news-item">
       <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/04/03/podcast-ev-deliveries-from-tesla-rivian-toyota-electric-pickup-truck-and-more/" target="_blank" class="news-title">播客：特斯拉、Rivian、丰田电动皮卡等电动汽车交付动态</a>
+        <a href="https://electrek.co/2026/04/03/podcast-ev-deliveries-from-tesla-rivian-toyota-electric-pickup-truck-and-more/" target="_blank" class="news-title">播客：特斯拉、Rivian、丰田电动皮卡等电动汽车交付情况</a>
         <div class='news-orig'>Podcast: EV deliveries from Tesla, Rivian, Toyota electric pickup truck, and more</div>
       </div>
       <span class="news-meta"><b>Electrek</b> · Fri, 03 Apr 2026</span>
     </div>
     <div class="news-item">
       <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/04/03/lectric-april-showers-e-bike-sale-ecoflow-anker-solix-flash-sales-power-station-more/" target="_blank" class="news-title">Lectric四月雨季电动自行车促销省高达720美元，EcoFlow与Anker SOLIX储能站限时抢购最高可省67%</a>
+        <a href="https://electrek.co/2026/04/03/lectric-april-showers-e-bike-sale-ecoflow-anker-solix-flash-sales-power-station-more/" target="_blank" class="news-title">Lectric四月电动自行车特卖最高省720美元，EcoFlow+Anker SOLIX储能站限时抢购最高省67%及更多优惠</a>
         <div class='news-orig'>Lectric April Showers e-bike sale offers up to $720 savings, EcoFlow + Anker SOLIX flash sales with up to 67% power station savings, more</div>
       </div>
       <span class="news-meta"><b>Electrek</b> · Fri, 03 Apr 2026</span>
     </div>
     <div class="news-item">
       <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/04/03/oil-crisis-ev-savings-cant-afford-not-to-drive-electric/" target="_blank" class="news-title">石油危机让司机们认识到，不得不开电动车</a>
+        <a href="https://electrek.co/2026/04/03/oil-crisis-ev-savings-cant-afford-not-to-drive-electric/" target="_blank" class="news-title">石油危机让司机意识到，他们开不起燃油车了</a>
         <div class='news-orig'>The oil crisis is making drivers realize they can’t afford not to drive electric</div>
       </div>
       <span class="news-meta"><b>Electrek</b> · Fri, 03 Apr 2026</span>
     </div>
     <div class="news-item">
       <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/04/03/byds-new-ev-lures-buyers-with-5-min-charging-low-prices/" target="_blank" class="news-title">比亚迪新电动车以5分钟充电和2.2万美元起售价吸引买家</a>
+        <a href="https://electrek.co/2026/04/03/byds-new-ev-lures-buyers-with-5-min-charging-low-prices/" target="_blank" class="news-title">比亚迪新电动汽车凭5分钟快充和2.2万美元起售价吸引买家</a>
         <div class='news-orig'>BYD’s new EV is luring in buyers with 5 minute charging and prices starting at $22,000</div>
       </div>
       <span class="news-meta"><b>Electrek</b> · Fri, 03 Apr 2026</span>
     </div>
     <div class="news-item">
       <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/04/03/home-solar-battery-ev-one-gmc-sierra-ev-driver-shares-their-experience/" target="_blank" class="news-title">家用太阳能+电池+电动车：一位GMC Sierra电动皮卡车主分享体验</a>
+        <a href="https://electrek.co/2026/04/03/home-solar-battery-ev-one-gmc-sierra-ev-driver-shares-their-experience/" target="_blank" class="news-title">家用太阳能+电池+电动汽车，一位GMC Sierra电动汽车车主分享经验</a>
         <div class='news-orig'>Home solar + battery + EV, one GMC Sierra EV driver shares their experience</div>
       </div>
       <span class="news-meta"><b>Electrek</b> · Fri, 03 Apr 2026</span>
     </div>
     <div class="news-item">
       <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/04/02/qcells-wants-solar-storage-built-into-every-new-home/" target="_blank" class="news-title">Qcells希望所有新建住宅都集成太阳能+储能系统</a>
+        <a href="https://electrek.co/2026/04/02/qcells-wants-solar-storage-built-into-every-new-home/" target="_blank" class="news-title">Qcells希望将太阳能+储能系统内置到每座新住宅中</a>
         <div class='news-orig'>Qcells wants solar + storage built into every new home</div>
       </div>
       <span class="news-meta"><b>Electrek</b> · Thu, 02 Apr 2026</span>
     </div>
     <div class="news-item">
       <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/04/02/stellantis-leapmotor-chinese-evs-brampton-canada-plant/" target="_blank" class="news-title">斯泰兰蒂斯计划在其闲置加拿大工厂生产中国零跑电动车</a>
+        <a href="https://electrek.co/2026/04/02/stellantis-leapmotor-chinese-evs-brampton-canada-plant/" target="_blank" class="news-title">斯泰兰蒂斯拟在其闲置的加拿大工厂生产中国零跑电动汽车</a>
         <div class='news-orig'>Stellantis wants to build Chinese Leapmotor EVs at its idled Canadian plant</div>
       </div>
       <span class="news-meta"><b>Electrek</b> · Thu, 02 Apr 2026</span>
     </div>
     <div class="news-item">
       <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/04/02/ego-zero-turn-riding-mower-4800-low-segway-electric-scooter-anker-exclusive-more/" target="_blank" class="news-title">EGO零转向骑乘式割草机+6电池+充电器创4800美元新低，Segway电动滑板车亚马逊优惠，Anker独家产品及更多</a>
+        <a href="https://electrek.co/2026/04/02/ego-zero-turn-riding-mower-4800-low-segway-electric-scooter-anker-exclusive-more/" target="_blank" class="news-title">EGO零转弯骑乘式割草机+6块电池和壁式充电器新低价4800美元，Segway电动滑板车亚马逊优惠，Anker独家折扣及更多</a>
         <div class='news-orig'>EGO zero-turn riding mower + 6x batteries and wall charger new $4,800 low, Segway e-scooter Amazon deals, Anker exclusive, more</div>
       </div>
       <span class="news-meta"><b>Electrek</b> · Thu, 02 Apr 2026</span>
     </div>
     <div class="news-item">
       <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/04/02/kia-unveils-first-of-its-kind-pv5-wav-new-york-ev-taxi/" target="_blank" class="news-title">起亚发布“首创”PV5 WAV型纽约电动出租车</a>
+        <a href="https://electrek.co/2026/04/02/kia-unveils-first-of-its-kind-pv5-wav-new-york-ev-taxi/" target="_blank" class="news-title">起亚发布“首创”PV5 WAV纽约电动出租车</a>
         <div class='news-orig'>Kia unveils ‘first-of-its-kind’ PV5 WAV New York EV taxi</div>
       </div>
       <span class="news-meta"><b>Electrek</b> · Thu, 02 Apr 2026</span>
@@ -615,28 +615,28 @@
     </div>
     <div class="news-item">
       <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/04/02/hyundai-previews-two-new-ioniq-evs-cryptic-video/" target="_blank" class="news-title">现代通过神秘视频预告两款全新IONIQ电动车</a>
+        <a href="https://electrek.co/2026/04/02/hyundai-previews-two-new-ioniq-evs-cryptic-video/" target="_blank" class="news-title">现代在神秘视频中预告两款全新IONIQ电动汽车</a>
         <div class='news-orig'>Hyundai previews two new IONIQ EVs in cryptic video</div>
       </div>
       <span class="news-meta"><b>Electrek</b> · Thu, 02 Apr 2026</span>
     </div>
     <div class="news-item">
       <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/04/02/candelas-new-p-12-business-electric-ferry-is-luxury-soaring-just-above-the-waves/" target="_blank" class="news-title">Candela新款P-12商务电动渡轮如奢华飞艇掠过水面</a>
+        <a href="https://electrek.co/2026/04/02/candelas-new-p-12-business-electric-ferry-is-luxury-soaring-just-above-the-waves/" target="_blank" class="news-title">Candela新款P-12商务电动渡轮如豪华飞艇掠过水面</a>
         <div class='news-orig'>Candela’s new P-12 Business electric ferry is luxury soaring just above the waves</div>
       </div>
       <span class="news-meta"><b>Electrek</b> · Thu, 02 Apr 2026</span>
     </div>
     <div class="news-item">
       <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/04/02/uber-expands-ev-grant-nationwide-driver-incentives/" target="_blank" class="news-title">Uber全国推广电动车补贴计划，为司机提供高达6500美元奖励</a>
+        <a href="https://electrek.co/2026/04/02/uber-expands-ev-grant-nationwide-driver-incentives/" target="_blank" class="news-title">Uber全国推广电动汽车补贴，为司机提供最高6500美元奖励</a>
         <div class='news-orig'>Uber expands EV grant nationwide, offering drivers up to $6,500 in incentives</div>
       </div>
       <span class="news-meta"><b>Electrek</b> · Thu, 02 Apr 2026</span>
     </div>
     <div class="news-item">
       <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/04/01/byd-sold-120000-nevs-overseas-claiming-this-is-just-the-start/" target="_blank" class="news-title">比亚迪3月海外新能源车销量达12万辆，但这家电动车巨头称这只是开始</a>
+        <a href="https://electrek.co/2026/04/01/byd-sold-120000-nevs-overseas-claiming-this-is-just-the-start/" target="_blank" class="news-title">比亚迪3月海外新能源汽车销量达12万辆，但这家电动汽车巨头称这只是开始</a>
         <div class='news-orig'>BYD sold 120,000 NEVs overseas in March, but the EV giant says this is just the start</div>
       </div>
       <span class="news-meta"><b>Electrek</b> · Wed, 01 Apr 2026</span>
@@ -650,70 +650,70 @@
     </div>
     <div class="news-item">
       <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/04/01/toyotas-electric-suv-suddenly-one-of-americas-top-selling-evs/" target="_blank" class="news-title">丰田电动SUV突然成为美国最畅销电动车之一</a>
+        <a href="https://electrek.co/2026/04/01/toyotas-electric-suv-suddenly-one-of-americas-top-selling-evs/" target="_blank" class="news-title">丰田电动SUV突然成为美国最畅销电动汽车之一</a>
         <div class='news-orig'>Toyota’s electric SUV is suddenly one of America’s top-selling EVs</div>
       </div>
       <span class="news-meta"><b>Electrek</b> · Wed, 01 Apr 2026</span>
     </div>
     <div class="news-item">
       <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/04/01/arc-boats-new-high-octane-package-makes-your-boat-worse-for-april-fools/" target="_blank" class="news-title">Arc Boats“高性能套装”让你的船更差劲，愚人节特供</a>
+        <a href="https://electrek.co/2026/04/01/arc-boats-new-high-octane-package-makes-your-boat-worse-for-april-fools/" target="_blank" class="news-title">Arc Boats新款“高性能套件”让你的船更糟，愚人节特供</a>
         <div class='news-orig'>Arc Boats’ new ‘high-octane package’ makes your boat worse for April Fools</div>
       </div>
       <span class="news-meta"><b>Electrek</b> · Wed, 01 Apr 2026</span>
     </div>
     <div class="news-item">
       <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/04/01/lectric-xpress-xpeak2-e-bike-flash-sale-ego-pressure-washer-jackery-easter-sale-power-stations-more/" target="_blank" class="news-title">Lectric XPress+XPeak2电动自行车今日限时闪购，EGO 3200PSI高压清洗机，Jackery复活节储能站促销及更多</a>
+        <a href="https://electrek.co/2026/04/01/lectric-xpress-xpeak2-e-bike-flash-sale-ego-pressure-washer-jackery-easter-sale-power-stations-more/" target="_blank" class="news-title">Lectric XPress+XPeak2电动自行车今日限时抢购，EGO 3200 PSI高压清洗机，Jackery复活节储能站促销及更多</a>
         <div class='news-orig'>Lectric XPress + XPeak2 e-bike flash sale for today only, EGO 3,200 PSI pressure washer, Jackery Easter Sale on power stations, more</div>
       </div>
       <span class="news-meta"><b>Electrek</b> · Wed, 01 Apr 2026</span>
     </div>
     <div class="news-item">
       <div class="news-title-wrap">
-        <a href="https://insideevs.com/features/792025/4-european-evs-that-would-probably-do-well-in-us/" target="_blank" class="news-title">欧洲电动汽车市场表现出色，我认为这4款欧洲电动车在美国会大受欢迎</a>
+        <a href="https://insideevs.com/features/792025/4-european-evs-that-would-probably-do-well-in-us/" target="_blank" class="news-title">欧洲电动汽车市场表现出色，我认为这4款欧洲电动汽车在美国会很受欢迎</a>
         <div class='news-orig'>Europe's EV Market Is Doing Great. I Think These 4 European EVs Would Do Well In America</div>
       </div>
       <span class="news-meta"><b>InsideEVs</b> · Sun, 05 Apr 2026</span>
     </div>
     <div class="news-item">
       <div class="news-title-wrap">
-        <a href="https://insideevs.com/news/792093/mercedes-amg-gt-ev-drift/" target="_blank" class="news-title">梅赛德斯-AMG不希望其新款电动车有“电动车”的感觉</a>
+        <a href="https://insideevs.com/news/792093/mercedes-amg-gt-ev-drift/" target="_blank" class="news-title">梅赛德斯-AMG不希望其新款电动汽车有电动汽车的感觉</a>
         <div class='news-orig'>Mercedes-AMG Doesn’t Want Its New EV To Feel Like An EV</div>
       </div>
       <span class="news-meta"><b>InsideEVs</b> · Sun, 05 Apr 2026</span>
     </div>
     <div class="news-item">
       <div class="news-title-wrap">
-        <a href="https://insideevs.com/news/792049/evs-vs-hybrid-depreciation/" target="_blank" class="news-title">电动车折旧率依然残酷，但混合动力车应给我们带来希望</a>
+        <a href="https://insideevs.com/news/792049/evs-vs-hybrid-depreciation/" target="_blank" class="news-title">电动汽车折旧依然残酷，但混合动力汽车应能带来希望</a>
         <div class='news-orig'>EV Depreciation Is Still Brutal. But Hybrids Should Give Us Hope</div>
       </div>
       <span class="news-meta"><b>InsideEVs</b> · Fri, 03 Apr 2026</span>
     </div>
     <div class="news-item">
       <div class="news-title-wrap">
-        <a href="https://insideevs.com/news/792060/geely-galaxy-m9-test-edmunds/" target="_blank" class="news-title">“中国汽车已准备好在美国大展拳脚”：吉利SUV新测试中碾压所有美国竞争对手</a>
+        <a href="https://insideevs.com/news/792060/geely-galaxy-m9-test-edmunds/" target="_blank" class="news-title">“中国汽车已准备好在美国大放异彩”：吉利SUV在新测试中力压所有美国竞争对手</a>
         <div class='news-orig'>'Chinese Cars Are Ready For Prime Time In America': Geely SUV Crushes Every U.S. Competitor In New Test</div>
       </div>
       <span class="news-meta"><b>InsideEVs</b> · Fri, 03 Apr 2026</span>
     </div>
     <div class="news-item">
       <div class="news-title-wrap">
-        <a href="https://insideevs.com/news/791930/byd-charging-network-5000-flash/" target="_blank" class="news-title">比亚迪已建成5000座兆瓦级“闪充”充电站</a>
+        <a href="https://insideevs.com/news/791930/byd-charging-network-5000-flash/" target="_blank" class="news-title">比亚迪已建成5000座兆瓦级“闪电”充电站</a>
         <div class='news-orig'>BYD Has Already Built 5,000 Of Its New Megawatt 'Flash' Charging Stations</div>
       </div>
       <span class="news-meta"><b>InsideEVs</b> · Fri, 03 Apr 2026</span>
     </div>
     <div class="news-item">
       <div class="news-title-wrap">
-        <a href="https://insideevs.com/news/791999/tesla-unsold-inventory-record-q1-2026/" target="_blank" class="news-title">特斯拉积压创纪录的5万辆未售电动车</a>
+        <a href="https://insideevs.com/news/791999/tesla-unsold-inventory-record-q1-2026/" target="_blank" class="news-title">特斯拉积压5万辆电动汽车，创历史新高</a>
         <div class='news-orig'>Tesla Is Sitting On A Record 50,000 Unsold EVs</div>
       </div>
       <span class="news-meta"><b>InsideEVs</b> · Fri, 03 Apr 2026</span>
     </div>
     <div class="news-item">
       <div class="news-title-wrap">
-        <a href="https://insideevs.com/news/791986/rivian-outsold-ford-evs-q1-2026/" target="_blank" class="news-title">尽管电动车市场艰难，Rivian电动车销量仍实现同比增长</a>
+        <a href="https://insideevs.com/news/791986/rivian-outsold-ford-evs-q1-2026/" target="_blank" class="news-title">尽管电动汽车市场艰难，Rivian电动汽车销量仍同比增长</a>
         <div class='news-orig'>Rivian's EV Sales Are Up Year-Over-Year Despite A Tough EV Market</div>
       </div>
       <span class="news-meta"><b>InsideEVs</b> · Fri, 03 Apr 2026</span>
@@ -728,56 +728,56 @@
     <div class="marginal-card">
       <div class="marginal-header">
         <span class="marginal-title">津巴布韦锂矿</span>
-        <span style="background:#f39c12;color:#fff;padding:2px 8px;border-radius:3px;font-size:11px;">中性</span>
+        <span style="background:#e74c3c;color:#fff;padding:2px 8px;border-radius:3px;font-size:11px;">利空</span>
       </div>
-      <div class="marginal-summary">津巴布韦于2026年2月25日突然实施锂精矿及所有原矿出口禁令，提前了原定2027年的计划，旨在推动本土加工增值。此举预计将扰乱全球供应链，并可能推高锂价。华友钴业的Arcadia锂矿已建成硫酸锂加工厂。</div>
-      <div class='marginal-event'>📌 津巴布韦于2026年2月25日立即禁止锂精矿及所有原矿出口，并无限期执行。</div>
-      <div class='marginal-impact'>📊 预计将加剧全球锂辉石供应紧张，短期内对碳酸锂价格产生支撑作用，推动价格上涨。</div>
+      <div class="marginal-summary">津巴布韦2026年2月突然实施锂精矿出口禁令，加速本地化加工，冲击全球供应链。华友Arcadia硫酸锂厂预计2026年Q1投产，赣锋Bikita也正研究建厂。</div>
+      <div class='marginal-event'>📌 津巴布韦政府于2026年2月起立即禁止所有未加工矿物和锂精矿出口，旨在加速矿产本地化增值，此举早于原定2027年的计划。</div>
+      <div class='marginal-impact'>📊 该禁令预计将加剧全球锂辉石供应链的紧张，导致短期内碳酸锂价格上涨。</div>
     </div>
     <div class="marginal-card">
       <div class="marginal-header">
         <span class="marginal-title">宁德宜春枧下窝矿</span>
         <span style="background:#f39c12;color:#fff;padding:2px 8px;border-radius:3px;font-size:11px;">中性</span>
       </div>
-      <div class="marginal-summary">宁德时代宜春枧下窝锂矿已于2025年底获得采矿许可证，但截至2026年3月，仍处于政府审批复产流程中，尚未全面恢复开采。</div>
-      <div class='marginal-event'>📌 宁德时代于2026年3月表示，宜春锂矿已于2025年底取得采矿证，但仍在办理复产审批手续。</div>
-      <div class='marginal-impact'>📊 矿区持续未全面复产，导致锂供应趋紧，对碳酸锂价格形成支撑作用。</div>
+      <div class="marginal-summary">宁德时代宜春枧下窝锂矿已于2025年底获得采矿许可证，但目前仍在进行复产流程，涉及政府审批手续。全面恢复生产预计仍需较长时间，乐观估计2026年6月前后才能恢复。</div>
+      <div class='marginal-event'>📌 宁德时代管理层于2026年3月9日确认宜春锂矿已于2025年底获得采矿证，但复产流程仍在进行中，涉及政府审批手续。</div>
+      <div class='marginal-impact'>📊 鉴于复产流程仍需时日，枧下窝锂矿短期内难以恢复大规模供应，这将对碳酸锂市场供应量增长造成延迟，从而可能在中短期内支撑碳酸锂价格。</div>
     </div>
     <div class="marginal-card">
       <div class="marginal-header">
         <span class="marginal-title">智利锂国有化</span>
-        <span style="background:#f39c12;color:#fff;padding:2px 8px;border-radius:3px;font-size:11px;">中性</span>
+        <span style="background:#27ae60;color:#fff;padding:2px 8px;border-radius:3px;font-size:11px;">利多</span>
       </div>
-      <div class="marginal-summary">智利国有铜业公司Codelco与SQM的锂合资企业NovaAndino Litio SpA已于2026年3月初正式完成，此前智利最高法院驳回了SQM股东天齐锂业的上诉。该合作确保了阿塔卡马盐滩锂资源开采至2060年，Codelco将在2031年接管运营。智利新政府于2026年3月上任，但锂政策框架保持不变，旨在加强国家对关键锂资源的控制并提高产量。</div>
-      <div class='marginal-event'>📌 智利最高法院驳回SQM股东天齐锂业的上诉，Codelco与SQM的锂合资企业NovaAndino Litio SpA于2026年3月初正式完成。</div>
-      <div class='marginal-impact'>📊 该合作的完成和预计的产量增长有望提供长期供应确定性，通过预防未来供应短缺来稳定碳酸锂价格。</div>
+      <div class="marginal-summary">智利锂国有化进程取得实质性进展。智利国家铜业公司（Codelco）与智利化工矿业公司（SQM）成立合资企业Nova Andino Litio SpA，统一运营阿塔卡马盐湖锂资源至2060年。智利新政府上任，释放更亲市场信号，但国有化战略框架未变，并计划增加新的锂矿项目。</div>
+      <div class='marginal-event'>📌 2025年12月，Codelco与SQM成立合资企业Nova Andino Litio SpA，标志着智利国家锂战略的核心制度落地。</div>
+      <div class='marginal-impact'>📊 智利国家对锂资源控制权的加强以及南美“锂三角”达成的价格托底协议，预计将对全球碳酸锂价格形成支撑，并可能推高价格。</div>
     </div>
     <div class="marginal-card">
       <div class="marginal-header">
         <span class="marginal-title">阿根廷锂三角</span>
         <span style="background:#27ae60;color:#fff;padding:2px 8px;border-radius:3px;font-size:11px;">利多</span>
       </div>
-      <div class="marginal-summary">米莱政府推动的冰川法改革和投资激励措施正吸引锂矿投资，Lithium Argentina产量强劲增长并计划扩产，机构上调其股价。</div>
-      <div class='marginal-event'>📌 阿根廷参议院于2026年2月通过了旨在放宽冰川保护法限制的改革，以吸引更多矿业投资，该法案目前正提交至众议院进行审议。</div>
-      <div class='marginal-impact'>📊 政策利好和生产增长预期将支撑碳酸锂价格，但外汇管制等挑战仍需关注。</div>
+      <div class="marginal-summary">阿根廷锂矿开发强劲，2025年产量大增。米莱政府推投资激励。Arcadium、Lithium Argentina积极扩产，公布2026年计划。南美“锂三角”或签“锂欧佩克”协议设价格底线。阿美签署矿产协议，不排斥中国投资。</div>
+      <div class='marginal-event'>📌 南美“锂三角”国家据传于2026年1月签署“锂欧佩克”协议以设定碳酸锂价格底线，同时主要锂矿公司在阿根廷积极推进扩产计划，并公布了2025年业绩及2026年展望。</div>
+      <div class='marginal-impact'>📊 有望推动碳酸锂价格上涨，并为市场提供价格支撑，利好阿根廷锂矿开发投资。</div>
     </div>
     <div class="marginal-card">
       <div class="marginal-header">
         <span class="marginal-title">澳矿产量/停复产</span>
-        <span style="background:#e74c3c;color:#fff;padding:2px 8px;border-radius:3px;font-size:11px;">利空</span>
+        <span style="background:#f39c12;color:#fff;padding:2px 8px;border-radius:3px;font-size:11px;">中性</span>
       </div>
-      <div class="marginal-summary">近期，澳大利亚锂矿行业呈现复杂局面。尽管Core Lithium宣布芬尼斯锂矿项目复产，Pilbara Minerals也计划于2026年7月重启Ngungaju工厂，Liontown Resources的Kathleen Valley项目产量持续提升。然而，澳大利亚正面临柴油供应短缺的风险，可能导致锂矿生产受冲击，预计减产影响将在2026年4月底至5月显现，对整体锂供应构成挑战。</div>
-      <div class='marginal-event'>📌 澳大利亚面临柴油供应短缺风险，可能导致锂矿减产，对全球锂供应构成挑战。</div>
-      <div class='marginal-impact'>📊 预计将对全球碳酸锂供应产生负面影响，从而对碳酸锂价格形成支撑。</div>
+      <div class="marginal-summary">澳大利亚锂矿近期动态复杂。Core Lithium宣布其Finniss项目将于2026年第三季度重启。然而，受中东冲突和热带气旋影响，澳大利亚面临柴油供应短缺，这可能导致包括锂矿在内的采矿业运营受冲击，约30%的全球锂供应面临减产风险。尽管面临短期挑战，澳大利亚锂矿预计在2026年将实现整体产量反弹。</div>
+      <div class='marginal-event'>📌 澳大利亚锂矿因柴油短缺面临减产风险，而Core Lithium宣布其Finniss项目将于2026年第三季度复产。</div>
+      <div class='marginal-impact'>📊 短期内，柴油短缺可能加剧锂精矿供应紧张，从而对碳酸锂价格形成支撑。Core Lithium的复产计划以及澳大利亚政府的产业扶持政策，则有望在2026年后期及长期稳定并增加锂矿供应，对未来碳酸锂价格起到平衡作用。</div>
     </div>
     <div class="marginal-card">
       <div class="marginal-header">
         <span class="marginal-title">国内政策动向</span>
         <span style="background:#27ae60;color:#fff;padding:2px 8px;border-radius:3px;font-size:11px;">利多</span>
       </div>
-      <div class="marginal-summary">2026年3-4月，中国新能源汽车补贴和购置税政策调整，更注重技术导向；工信部发布第九批锂电池白名单，推动行业规范化。此外，废旧动力电池回收新规生效，加强全链条管理。锂资源方面，津巴布韦锂矿出口禁令及国内部分矿山换证，叠加储能需求旺盛，预计碳酸锂市场供需趋紧，价格重心上移。</div>
-      <div class='marginal-event'>📌 2026年4月1日，工业和信息化部等多部门联合发布的《新能源汽车废旧动力电池回收和综合利用管理暂行办法》正式生效，标志着行业进入全链条规范化管理新阶段。</div>
-      <div class='marginal-impact'>📊 受锂资源供给趋紧（如津巴布韦出口禁令、国内矿山换证）和下游储能需求旺盛等因素影响，预计碳酸锂价格将面临上行压力，市场将呈现紧平衡状态。</div>
+      <div class="marginal-summary">中国在2026年3月至4月期间，出台并实施了多项涉及新能源、锂电和碳酸锂的重要政策。4月1日起，号称“史上最严”的动力电池回收新规正式实施，旨在强化全链条闭环管理和回收责任。同时，市场监管总局发文整治锂电池和新能源汽车领域的恶性价格战。此外，自4月1日起电池产品出口退税率开始下调，引发了第一季度的“抢出口”潮，对碳酸锂价格产生短期提振。</div>
+      <div class='marginal-event'>📌 2026年4月1日起，《新能源汽车废旧动力电池回收和综合利用管理暂行办法》正式实施，标志着动力电池回收进入强制规范阶段。</div>
+      <div class='marginal-impact'>📊 电池出口退税率下调引发的“抢出口”短期内提振了碳酸锂需求和价格。长期来看，新的回收政策有助于提高锂资源利用率，保障资源供给；而整治恶性价格战的政策则有利于行业健康发展和价格稳定，对碳酸锂价格形成支撑。</div>
     </div>
   </div>
   <div style='margin-top:14px;'><div class='section-label'>手动补充</div>
@@ -1217,34 +1217,66 @@
     <tr>
       <td>Pilbara Minerals</td>
       <td><span class="tag-region">澳大利亚</span></td>
-      <td>224800 吨锂精矿</td>
-      <td>2025Q3</td>
+      <td>224800 吨锂辉石精矿</td>
+      <td>2025Q3 (FY26 Q1)</td>
       <td style="color:#e74c3c">+2.10%</td>
-      <td class="note">Pilgangoora运营产出，同比增长2.1%。此为FY26 Q1（2025年7-9月）数据。</td>
+      <td class="note">截至2025年9月30日的季度产量，同比增长2.1%。</td>
     </tr>
     <tr>
       <td>Greenbushes</td>
       <td><span class="tag-region">澳大利亚</span></td>
       <td>352000 吨锂辉石精矿</td>
+      <td>2025Q4 (FY26 Q2)</td>
+      <td style="color:#888">—</td>
+      <td class="note">截至2025年12月31日的季度产量，环比增长10%。</td>
+    </tr>
+    <tr>
+      <td>Core Lithium</td>
+      <td><span class="tag-region">澳大利亚</span></td>
+      <td>None None</td>
       <td>2025Q4</td>
       <td style="color:#888">—</td>
-      <td class="note">产量环比增长10%。化学级锂精矿三号工厂（CGP3）于2025年12月投产。</td>
+      <td class="note">公司在2025年12月季度报告中宣布优化矿山计划，预计在一个月内交付首批矿石，此前已暂停加工业务，因此未报告该季度产量数据。</td>
     </tr>
     <tr>
       <td>Liontown</td>
       <td><span class="tag-region">澳大利亚</span></td>
       <td>105342 干吨锂辉石精矿</td>
-      <td>2025Q4</td>
+      <td>2025Q4 (FY26 Q2)</td>
       <td style="color:#888">—</td>
-      <td class="note">产量环比增长21%。Kathleen Valley项目已全面转为地下开采。</td>
+      <td class="note">截至2025年12月31日的季度产量，环比增长21%。</td>
     </tr>
     <tr>
       <td>SQM</td>
       <td><span class="tag-region">智利</span></td>
       <td>66000 吨碳酸锂当量</td>
       <td>2025Q4</td>
-      <td style="color:#e74c3c">+33.00%</td>
-      <td class="note">锂业务销售量创历史新高，同比增长33%-50%以上。</td>
+      <td style="color:#e74c3c">+50.00%</td>
+      <td class="note">2025年第四季度锂产品销售量，同比增长超过50%。</td>
+    </tr>
+    <tr>
+      <td>Albemarle</td>
+      <td><span class="tag-region">智利</span></td>
+      <td>None None</td>
+      <td>2025Q4</td>
+      <td style="color:#888">—</td>
+      <td class="note">公司2025年第四季度能源存储部门净销售额增长23%，销量增长17%，但未提供具体季度锂产量数据。公司2025年全年能源存储销量达到23.5万吨碳酸锂当量，同比增长14%。</td>
+    </tr>
+    <tr>
+      <td>Arcadium</td>
+      <td><span class="tag-region">阿根廷</span></td>
+      <td>None None</td>
+      <td>None</td>
+      <td style="color:#888">—</td>
+      <td class="note">公司最近的季度报告为2024年第四季度，未找到2025年第四季度或2026年第一季度的产量数据。该公司正在暂停或推迟部分扩产项目。</td>
+    </tr>
+    <tr>
+      <td>盐湖股份</td>
+      <td><span class="tag-region">国内-青海</span></td>
+      <td>14900 吨碳酸锂</td>
+      <td>2025Q4</td>
+      <td style="color:#888">—</td>
+      <td class="note">2025年全年碳酸锂产量为4.65万吨，前三季度产量为3.16万吨，由此推算第四季度产量为1.49万吨。</td>
     </tr></tbody>
   </table>
   
@@ -1272,7 +1304,7 @@
   <div class="card-row">
     <div class="stat-card">
       <div class="stat-label">新能源乘用车销量</div>
-      <div class="stat-value">112.6 <span class="unit-small">万辆</span></div>
+      <div class="stat-value">112.0 <span class="unit-small">万辆</span></div>
       <div class="stat-sub" style="color:#888">同比 0.00%</div>
     </div>
     <div class="stat-card">
@@ -1285,7 +1317,7 @@
     </div>
     <div class="stat-card">
       <div class="stat-label">新能源渗透率</div>
-      <div class="stat-value">—</div>
+      <div class="stat-value">47.3%</div>
     </div>
   </div>
 
@@ -1306,11 +1338,11 @@
     </div>
     <div class="stat-card">
       <div class="stat-label">宁德时代市占</div>
-      <div class="stat-value">49.1%</div>
+      <div class="stat-value">52.7%</div>
     </div>
   </div>
 
-  <div class="section-label" style="margin-top:16px;">储能（2026-02 · CESA储能应用分会数据库）</div>
+  <div class="section-label" style="margin-top:16px;">储能（2026-02 · CNESA）</div>
   <div class="card-row">
     <div class="stat-card">
       <div class="stat-label">当月新增装机</div>
@@ -1323,7 +1355,7 @@
     </div>
     <div class="stat-card">
       <div class="stat-label">欧洲BEV（2026-02）</div>
-      <div class="stat-value">19.0 <span class="unit-small">万辆</span></div>
+      <div class="stat-value">15.8 <span class="unit-small">万辆</span></div>
       <div class="stat-sub" style="color:#e74c3c">同比 +16.00%</div>
     </div>
   </div>
@@ -1366,7 +1398,7 @@
 
   <div class="card-row" style="margin-top:10px;">
     <div class="price-card main-price">
-      <div class="price-label">SMM碳酸锂社会库存 2026-04-02 <span class="src-tag src-ai">🔍 AI搜索·SMM</span></div>
+      <div class="price-label">SMM碳酸锂社会库存 2026-04-03 <span class="src-tag src-ai">🔍 AI搜索·SMM</span></div>
       <div class="price-value">100,349 <span class="price-unit">吨</span></div>
       <div class="price-meta">
         周环比：<span style="color:#e74c3c">860吨</span>
@@ -1398,7 +1430,7 @@
     var labels = ["03-19", "03-20", "03-26", "03-27", "03-28", "03-30", "03-31", "04-01", "04-02", "04-03", "04-04", "04-05", "04-06"];
     var smm    = [98959, 98959, 99500, 99489, 99489, 99489, null, 99489, 100349, 100349, null, null, null];
     var gfex   = [38476.0, 35316.0, 22636.0, 22636.0, 62128.0, 35316.0, 22636.0, 42476.0, null, null, 42476.0, null, null];
-    var port   = [null, 18.5, 19.3, 19.3, 19.3, null, null, 15.5, 15.5, 18.5, 15.5, 15.5, null];
+    var port   = [null, 18.5, 19.3, 19.3, 19.3, null, null, 15.5, 15.5, 15.5, 15.5, 15.5, null];
     new Chart(document.getElementById('invFullHistChart'), {
       type: 'line',
       data: {
@@ -1422,7 +1454,7 @@
           
           {
             label: '港口锂精矿库存（万吨，右轴）',
-            data: [null, 18.5, 19.3, 19.3, 19.3, null, null, 15.5, 15.5, 18.5, 15.5, 15.5, null],
+            data: [null, 18.5, 19.3, 19.3, 19.3, null, null, 15.5, 15.5, 15.5, 15.5, 15.5, null],
             borderColor: '#27ae60', backgroundColor: 'rgba(39,174,96,0.07)',
             tension: 0.3, pointRadius: 3, fill: false, spanGaps: true, borderDash: [4,3],
             yAxisID: 'y2',
@@ -1672,7 +1704,7 @@
   <div class="section-label" style="margin-top:16px;">GFEX LC期货主力成交量（日度，手）— 2022年至今</div>
   <canvas id="fvChart" style="max-height:160px;"></canvas>
 
-  <div class="data-source">数据来源：akshare（新浪财经·A股历史）+ 新浪财经·GFEX · 更新于 2026-04-06 11:52:09</div>
+  <div class="data-source">数据来源：akshare（新浪财经·A股历史）+ 新浪财经·GFEX · 更新于 2026-04-06 12:58:27</div>
 
   <script>
   (function(){
