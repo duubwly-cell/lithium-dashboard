@@ -202,8 +202,8 @@
 <!-- 顶栏 -->
 <div class="topbar">
   <div class="topbar-title">⚗️ 碳酸锂监测</div>
-  <div class="ticker-strip"><span class="ticker-item"><span class="ticker-label">电池级现货</span> <span class="ticker-val">—</span></span><span class="ticker-item"><span class="ticker-label">GFEX LC2605</span> <span class="ticker-val">158,320元/吨</span> <span style='color:#e74c3c'>+0.08%</span></span><span class="ticker-item"><span class="ticker-label">DXY</span> <span class="ticker-val">99.03</span> <span style='color:#27ae60'>-0.61%</span></span><span class="ticker-item"><span class="ticker-label">USD/CNY</span> <span class="ticker-val">6.8282</span></span></div>
-  <div class="topbar-meta">更新于 2026-04-09 04:41:21</div>
+  <div class="ticker-strip"><span class="ticker-item"><span class="ticker-label">电池级现货</span> <span class="ticker-val">15.85万元/吨</span></span><span class="ticker-item"><span class="ticker-label">GFEX LC2605</span> <span class="ticker-val">158,320元/吨</span> <span style='color:#e74c3c'>+0.08%</span></span><span class="ticker-item"><span class="ticker-label">DXY</span> <span class="ticker-val">99.08</span> <span style='color:#27ae60'>-0.56%</span></span><span class="ticker-item"><span class="ticker-label">USD/CNY</span> <span class="ticker-val">6.8567</span></span></div>
+  <div class="topbar-meta">更新于 2026-04-09 08:46:53</div>
 </div>
 
 <!-- 主体布局 -->
@@ -229,27 +229,27 @@
   <!-- 现货价格卡片 -->
   <div class="card-row">
     <div class="price-card main-price">
-      <div class="price-label">电池级碳酸锂 现货 <span class="src-tag src-empty">⚠️ 待填写</span></div>
-      <div class="price-value">— <span class="price-unit">万元/吨</span></div>
+      <div class="price-label">电池级碳酸锂 现货 <span class="src-tag src-ai">🔍 AI搜索·SMM/生意社</span></div>
+      <div class="price-value">15.85 <span class="price-unit">万元/吨</span></div>
       <div class="price-meta">2026-04-09</div>
       <div style="height:55px;margin-top:6px;"><canvas id="spark_battery"></canvas></div>
     </div>
     <div class="price-card">
       <div class="price-label">工业级碳酸锂 现货</div>
-      <div class="price-value">— <span class="price-unit">万元/吨</span></div>
-      <div class="price-meta"><span class="src-tag src-empty">⚠️ 待填写</span></div>
+      <div class="price-value">15.50 <span class="price-unit">万元/吨</span></div>
+      <div class="price-meta"><span class="src-tag src-ai">🔍 AI搜索·SMM/生意社</span></div>
       <div style="height:55px;margin-top:6px;"><canvas id="spark_industry"></canvas></div>
     </div>
     <div class="price-card">
       <div class="price-label">电池级氢氧化锂 现货</div>
-      <div class="price-value">— <span class="price-unit">万元/吨</span></div>
-      <div class="price-meta"><span class="src-tag src-empty">⚠️ 待填写</span></div>
+      <div class="price-value">14.80 <span class="price-unit">万元/吨</span></div>
+      <div class="price-meta"><span class="src-tag src-ai">🔍 AI搜索·SMM/生意社</span></div>
       <div style="height:55px;margin-top:6px;"><canvas id="spark_hydroxide"></canvas></div>
     </div>
     <div class="price-card">
       <div class="price-label">锂精矿 SC6</div>
       <div class="price-value">— <span class="price-unit">USD/吨</span></div>
-      <div class="price-meta"><span class="src-tag src-empty">⚠️ 待填写</span></div>
+      <div class="price-meta"><span class="src-tag src-ai">🔍 AI搜索·SMM/生意社</span></div>
       <div style="height:55px;margin-top:6px;"><canvas id="spark_spodumene"></canvas></div>
     </div>
   </div>
@@ -272,19 +272,19 @@
       <div class="price-label">美元指数 DXY
         <span class="src-tag src-api">📡 Yahoo Finance</span>
       </div>
-      <div class="price-value">99.03</div>
-      <div class="price-meta" style="color:#27ae60">-0.61%</div>
+      <div class="price-value">99.08</div>
+      <div class="price-meta" style="color:#27ae60">-0.56%</div>
     </div>
     <div class="price-card">
       <div class="price-label">美元/人民币
         <span class="src-tag src-api">📡 Yahoo Finance</span>
       </div>
-      <div class="price-value">6.8282</div>
-      <div class="price-meta" style="color:#27ae60">-0.79%</div>
+      <div class="price-value">6.8567</div>
+      <div class="price-meta" style="color:#27ae60">-0.37%</div>
     </div>
   </div>
 
-  <div class="warn-box">⚠️ 现货价格暂无数据，请在 data/manual.json → spot_prices 手动填写</div>
+  ''
 
   
   <div class="section-label" style="margin-top:18px;">价格历史走势（近1年）</div>
@@ -294,9 +294,9 @@
   <script>
   (function(){
     var labels    = ["04-09", "04-10", "04-11", "04-14", "04-15", "04-16", "04-17", "04-18", "04-21", "04-22", "04-23", "04-24", "04-25", "04-28", "04-29", "04-30", "05-06", "05-07", "05-08", "05-09", "05-12", "05-13", "05-14", "05-15", "05-16", "05-19", "05-20", "05-21", "05-22", "05-23", "05-26", "05-27", "05-28", "05-29", "05-30", "06-03", "06-04", "06-05", "06-06", "06-09", "06-10", "06-11", "06-12", "06-13", "06-16", "06-17", "06-18", "06-19", "06-20", "06-23", "06-24", "06-25", "06-26", "06-27", "06-30", "07-01", "07-02", "07-03", "07-04", "07-07", "07-08", "07-09", "07-10", "07-11", "07-14", "07-15", "07-16", "07-17", "07-18", "07-21", "07-22", "07-23", "07-24", "07-25", "07-28", "07-29", "07-30", "07-31", "08-01", "08-04", "08-05", "08-06", "08-07", "08-08", "08-11", "08-12", "08-13", "08-14", "08-15", "08-18", "08-19", "08-20", "08-21", "08-22", "08-25", "08-26", "08-27", "08-28", "08-29", "09-01", "09-02", "09-03", "09-04", "09-05", "09-08", "09-09", "09-10", "09-11", "09-12", "09-15", "09-16", "09-17", "09-18", "09-19", "09-22", "09-23", "09-24", "09-25", "09-26", "09-29", "09-30", "10-09", "10-10", "10-13", "10-14", "10-15", "10-16", "10-17", "10-20", "10-21", "10-22", "10-23", "10-24", "10-27", "10-28", "10-29", "10-30", "10-31", "11-03", "11-04", "11-05", "11-06", "11-07", "11-10", "11-11", "11-12", "11-13", "11-14", "11-17", "11-18", "11-19", "11-20", "11-21", "11-24", "11-25", "11-26", "11-27", "11-28", "12-01", "12-02", "12-03", "12-04", "12-05", "12-08", "12-09", "12-10", "12-11", "12-12", "12-15", "12-16", "12-17", "12-18", "12-19", "12-22", "12-23", "12-24", "12-25", "12-26", "12-29", "12-30", "12-31", "01-05", "01-06", "01-07", "01-08", "01-09", "01-12", "01-13", "01-14", "01-15", "01-16", "01-19", "01-20", "01-21", "01-22", "01-23", "01-26", "01-27", "01-28", "01-29", "01-30", "02-02", "02-03", "02-04", "02-05", "02-06", "02-09", "02-10", "02-11", "02-12", "02-13", "02-24", "02-25", "02-26", "02-27", "03-02", "03-03", "03-04", "03-05", "03-06", "03-09", "03-10", "03-11", "03-12", "03-13", "03-16", "03-17", "03-18", "03-19", "03-20", "03-23", "03-24", "03-25", "03-26", "03-27", "03-30", "03-31", "04-01", "04-02", "04-03", "04-07", "04-08"];
-    var battery   = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 16.45, 16.3, 16.1, 15.95, 15.8, 15.9, 159000];
-    var industry  = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 16.1, 15.95, 15.7, 15.6, 15.5, 15.55, 155500];
-    var hydroxide = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 15.65, null, 15.125, 14.79, 15.1, 14.8, 146700];
+    var battery   = [15.85, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 16.45, 16.3, 16.1, 15.95, 15.8, 15.9, 159000];
+    var industry  = [15.5, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 16.1, 15.95, 15.7, 15.6, 15.5, 15.55, 155500];
+    var hydroxide = [14.8, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 15.65, null, 15.125, 14.79, 15.1, 14.8, 146700];
     var spodumene = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 2080, 2360, null, 2360, 2205, 2285, null];
     new Chart(document.getElementById('priceHistChart'), {
       type: 'line',
@@ -367,9 +367,9 @@
     new Chart(el, {
       type: 'line',
       data: {
-        labels: ["03-30", "03-31", "04-01", "04-02", "04-03", "04-04", "04-05", "04-06", "04-07", "04-08"],
+        labels: ["03-30", "03-31", "04-01", "04-02", "04-03", "04-04", "04-05", "04-06", "04-07", "04-08", "04-09"],
         datasets: [{
-          data: [16.45, 16.3, 16.1, 15.95, 15.8, 15.8, 15.8, 15.75, 15.9, 159000],
+          data: [16.45, 16.3, 16.1, 15.95, 15.8, 15.8, 15.8, 15.75, 15.9, 159000, 15.85],
           borderColor: '#e74c3c',
           backgroundColor: '#e74c3c18',
           tension: 0.3, pointRadius: 0, fill: true,
@@ -395,9 +395,9 @@
     new Chart(el, {
       type: 'line',
       data: {
-        labels: ["03-30", "03-31", "04-01", "04-02", "04-03", "04-04", "04-05", "04-06", "04-07", "04-08"],
+        labels: ["03-30", "03-31", "04-01", "04-02", "04-03", "04-04", "04-05", "04-06", "04-07", "04-08", "04-09"],
         datasets: [{
-          data: [16.1, 15.95, 15.7, 15.6, 15.5, 15.5, 15.5, 15.4, 15.55, 155500],
+          data: [16.1, 15.95, 15.7, 15.6, 15.5, 15.5, 15.5, 15.4, 15.55, 155500, 15.5],
           borderColor: '#e67e22',
           backgroundColor: '#e67e2218',
           tension: 0.3, pointRadius: 0, fill: true,
@@ -423,9 +423,9 @@
     new Chart(el, {
       type: 'line',
       data: {
-        labels: ["03-30", "03-31", "04-01", "04-02", "04-03", "04-04", "04-05", "04-06", "04-07", "04-08"],
+        labels: ["03-30", "03-31", "04-01", "04-02", "04-03", "04-04", "04-05", "04-06", "04-07", "04-08", "04-09"],
         datasets: [{
-          data: [15.65, null, 15.125, 14.79, 15.1, 15.1, 14.65, 14.8, 14.8, 146700],
+          data: [15.65, null, 15.125, 14.79, 15.1, 15.1, 14.65, 14.8, 14.8, 146700, 14.8],
           borderColor: '#2980b9',
           backgroundColor: '#2980b918',
           tension: 0.3, pointRadius: 0, fill: true,
@@ -451,9 +451,9 @@
     new Chart(el, {
       type: 'line',
       data: {
-        labels: ["03-30", "03-31", "04-01", "04-02", "04-03", "04-04", "04-05", "04-06", "04-07", "04-08"],
+        labels: ["03-30", "03-31", "04-01", "04-02", "04-03", "04-04", "04-05", "04-06", "04-07", "04-08", "04-09"],
         datasets: [{
-          data: [2080, 2360, null, 2360, 2205, 2265, 2265, 2280, 2285, null],
+          data: [2080, 2360, null, 2360, 2205, 2265, 2265, 2280, 2285, null, null],
           borderColor: '#8e44ad',
           backgroundColor: '#8e44ad18',
           tension: 0.3, pointRadius: 0, fill: true,
@@ -505,75 +505,82 @@
     
 <div class="panel" id="p2">
   <div class="panel-title">📰 产业链资讯</div>
-  <div class="ai-summary">以下是今日碳酸锂/锂电产业链相关资讯的要点整理：<br><br>1.  **价格与市场**<br>    今日资讯中没有直接提及碳酸锂/锂精矿的现货或期货价格变动。然而，电动汽车市场动态显示，福特等品牌正大幅折扣电动车并提供免费充电，这可能反映新车销售面临一定压力。与此同时，二手电动车销量创下新纪录，预示着市场将迎来更大的增长浪潮，反映消费者对成本效益的关注。<br><br>2.  **供给动态**<br>    今日资讯未提供锂矿山、锂盐厂的产量、开停产或投产等直接供给侧信息。BYD首席科学家指出固态电池研发已进入“关键阶段”，但此为未来技术展望，非当前锂资源供给动态。<br><br>3.  **需求动态**<br>    电动车需求方面呈现多元化增长。现代、丰田、大众等多家车企正在积极推出新款电动SUV、高性能电动车和豪华电动车型，比亚迪的豪华电动车也将进军海外市场。商业用途的电动拖拉机也在港口等领域获得应用。此外，充电基础设施正在全球范围内加快建设，例如美国多地正投资解决电动汽车充电缺口并更换故障充电桩。<br><br>4.  **政策与地缘**<br>    美国密歇根州已投入5100万美元解决电动汽车充电基础设施的短缺问题，体现了政府对电动汽车推广的政策支持。地缘政治方面，关于“美国在伊朗的战争推高了汽油价格”的报道，可能会促使消费者更多考虑电动汽车及家庭太阳能解决方案，间接利好新能源产业发展。<br><br>**综合判断：**<br>当前资讯显示电动汽车市场在产品多样化、充电基础设施建设和二手车流通方面持续扩张，需求端整体保持增长态势。尽管有新车降价促销，但多种积极因素或能支撑碳酸锂需求，短期内碳酸锂价格可能受到需求侧的持续支撑。</div>
+  <div class="ai-summary">以下是今日碳酸锂/锂电产业链相关资讯的整理与判断：<br><br>**1. 价格与市场**<br>福特正大幅折扣电动车并提供免费充电设备，旨在刺激销售。二手电动车销量创下新纪录，预示未来将有更大市场浪潮。市场对经济实惠的二手电动车需求旺盛，多篇文章提供了高性价比的选择。这些动态表明电动车市场正从高端向大众普及，价格敏感性增加，可能间接影响电池及上游材料需求结构。<br><br>**2. 供给动态**<br>本次资讯中未提及锂矿或锂盐厂的产量、开停产或投产等具体供给动态。唯一相关的是比亚迪首席科学家指出固态电池技术已达“关键阶段”，这预示着电池技术路线的未来发展潜力，但短期内对现有锂材料供给影响有限。<br><br>**3. 需求动态**<br>全球电动车市场持续活跃，多款新型电动车即将亮相或发布，包括捷尼赛思豪华电动SUV、现代高性能电动车、丰田及大众的电动SUV概念车以及比亚迪的豪华电动车出海。商用电动车（如港口牵引车）和小型电池应用（如便携式储能、电动自行车）的需求也在增长。充电基础设施不断完善，例如兆瓦级充电桩的落地，进一步支持电动车普及。此外，燃油价格上涨及地缘政治因素正在推动家庭光伏和储能的需求增长。<br><br>**4. 政策与地缘**<br>受伊朗地区冲突影响，美国汽油价格上涨，这进一步强化了市场对居家光伏发电和电动车替代燃油的需求。此次资讯中未直接涉及具体的国内外锂电产业政策或资源国地缘政治动态。<br><br>**综合判断:**<br>需求侧信息积极，新型电动车不断推出、充电设施完善以及二手电动车市场活跃，共同支撑了锂电消费增长。然而，供给侧和锂价的直接信息缺失，且市场折扣和二手车热销可能反映一定的竞争压力。考虑到需求端持续增长的积极信号，短期内碳酸锂价格或将得到一定支撑，可能维持相对稳定或小幅震荡。</div>
   <div class="news-list" style="margin-top:14px;">
     
     <div class="news-item">
       <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/04/08/hyundais-ev-hot-hatch-almost-here-best-look-video/" target="_blank" class="news-title">现代电动高性能掀背车本月首秀：最佳预览 [视频]</a>
+        <a href="https://electrek.co/2026/04/08/genesis-gv90-interior-leaks-next-level-luxury-big-screens/" target="_blank" class="news-title">创世纪GV90内饰泄露，展现极致奢华和巨型屏幕</a>
+        <div class='news-orig'>The Genesis GV90 interior leaks, revealing next-level luxury and massive screens</div>
+      </div>
+      <span class="news-meta"><b>Electrek</b> · Wed, 08 Apr 2026</span>
+    </div>
+    <div class="news-item">
+      <div class="news-title-wrap">
+        <a href="https://electrek.co/2026/04/08/hyundais-ev-hot-hatch-almost-here-best-look-video/" target="_blank" class="news-title">现代电动钢炮本月首发：高清谍照曝光 [视频]</a>
         <div class='news-orig'>Hyundai’s EV hot hatch will make its big debut this month: Here’s our best look at it [Video]</div>
       </div>
       <span class="news-meta"><b>Electrek</b> · Wed, 08 Apr 2026</span>
     </div>
     <div class="news-item">
       <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/04/08/ecoflow-earth-day-mega-sale-power-station-flash-sale-trail-plus-300-dc-launch-ego-more/" target="_blank" class="news-title">EcoFlow地球日大促：移动电源最高省62%，24小时闪购，TRAIL Plus 300 DC新品优惠，EGO工具等</a>
+        <a href="https://electrek.co/2026/04/08/ecoflow-earth-day-mega-sale-power-station-flash-sale-trail-plus-300-dc-launch-ego-more/" target="_blank" class="news-title">EcoFlow地球日大促：充电站最高省62% + 24小时闪购 + TRAIL Plus 300直流新品优惠、EGO工具等</a>
         <div class='news-orig'>EcoFlow Earth Day Mega Sale with up to 62% power station savings + 24-hour flash sale + TRAIL Plus 300 DC launch deals, EGO tools, more</div>
       </div>
       <span class="news-meta"><b>Electrek</b> · Wed, 08 Apr 2026</span>
     </div>
     <div class="news-item">
       <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/04/08/byds-chief-scientist-solid-state-ev-batteries-critical-stage/" target="_blank" class="news-title">比亚迪首席科学家：固态电动汽车电池进入“关键阶段”，但仍有发展空间</a>
+        <a href="https://electrek.co/2026/04/08/byds-chief-scientist-solid-state-ev-batteries-critical-stage/" target="_blank" class="news-title">比亚迪首席科学家称固态电池达“关键阶段”，但事情没那么简单</a>
         <div class='news-orig'>BYD’s chief scientist says solid-state EV batteries hit a ‘critical stage,’ but there’s more to it</div>
       </div>
       <span class="news-meta"><b>Electrek</b> · Wed, 08 Apr 2026</span>
     </div>
     <div class="news-item">
       <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/04/08/tesla-supercharger-for-business-configurator-pricing/" target="_blank" class="news-title">特斯拉商务超级充电桩工具揭示94万美元总价</a>
+        <a href="https://electrek.co/2026/04/08/tesla-supercharger-for-business-configurator-pricing/" target="_blank" class="news-title">特斯拉新款商用超级充电站工具揭示94万美元总价</a>
         <div class='news-orig'>Tesla’s new Supercharger for Business tool reveals $940,000 all-in price</div>
       </div>
       <span class="news-meta"><b>Electrek</b> · Wed, 08 Apr 2026</span>
     </div>
     <div class="news-item">
       <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/04/08/musk-tesla-fsd-10x-safer-claim-doesnt-hold-up/" target="_blank" class="news-title">马斯克谎称特斯拉FSD比人类安全10倍，抱怨诉讼缠身</a>
+        <a href="https://electrek.co/2026/04/08/musk-tesla-fsd-10x-safer-claim-doesnt-hold-up/" target="_blank" class="news-title">马斯克谎称特斯拉FSD比人类安全10倍，抱怨被起诉</a>
         <div class='news-orig'>Musk falsely claims Tesla FSD is 10X safer than humans, complains about lawsuits</div>
       </div>
       <span class="news-meta"><b>Electrek</b> · Wed, 08 Apr 2026</span>
     </div>
     <div class="news-item">
       <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/04/08/hyundai-enter-rugged-new-territory-suv/" target="_blank" class="news-title">现代准备以这款越野SUV概念车进军崎岖新领域</a>
+        <a href="https://electrek.co/2026/04/08/hyundai-enter-rugged-new-territory-suv/" target="_blank" class="news-title">现代准备凭借这款越野SUV概念车进军崎岖新领域</a>
         <div class='news-orig'>Hyundai prepares to enter rugged new territory with this off-road SUV concept</div>
       </div>
       <span class="news-meta"><b>Electrek</b> · Wed, 08 Apr 2026</span>
     </div>
     <div class="news-item">
       <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/04/08/toyotas-updated-electric-suv-sleeper-hit/" target="_blank" class="news-title">丰田更新款电动SUV正成为“黑马”热销车型</a>
+        <a href="https://electrek.co/2026/04/08/toyotas-updated-electric-suv-sleeper-hit/" target="_blank" class="news-title">丰田更新版电动SUV正悄然走红</a>
         <div class='news-orig'>Toyota’s updated electric SUV is turning into a sleeper hit</div>
       </div>
       <span class="news-meta"><b>Electrek</b> · Wed, 08 Apr 2026</span>
     </div>
     <div class="news-item">
       <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/04/07/sneak-peek-of-roves-2nd-full-service-ev-charger-in-costa-mesa-open-wed/" target="_blank" class="news-title">Rove科斯塔梅萨第二家“全服务”电动汽车充电站抢先看，周三开放</a>
+        <a href="https://electrek.co/2026/04/07/sneak-peek-of-roves-2nd-full-service-ev-charger-in-costa-mesa-open-wed/" target="_blank" class="news-title">Rove在科斯塔梅萨的第二个“全服务”电动汽车充电站曝光，周三开放</a>
         <div class='news-orig'>Sneak peek of Rove’s 2nd ‘full service’ EV charger in Costa Mesa, open Wed</div>
       </div>
       <span class="news-meta"><b>Electrek</b> · Tue, 07 Apr 2026</span>
     </div>
     <div class="news-item">
       <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/04/07/used-evs-just-hit-a-sales-record-a-much-bigger-wave-is-coming/" target="_blank" class="news-title">二手电动汽车销量创纪录——更大的浪潮即将来临</a>
+        <a href="https://electrek.co/2026/04/07/used-evs-just-hit-a-sales-record-a-much-bigger-wave-is-coming/" target="_blank" class="news-title">二手电动汽车销量创纪录，更大浪潮即将来临</a>
         <div class='news-orig'>Used EVs just hit a sales record – a much bigger wave is coming</div>
       </div>
       <span class="news-meta"><b>Electrek</b> · Tue, 07 Apr 2026</span>
     </div>
     <div class="news-item">
       <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/04/07/ford-heavily-discounting-evs-offering-free-chargers/" target="_blank" class="news-title">福特大幅折扣电动汽车并免费赠送充电器</a>
+        <a href="https://electrek.co/2026/04/07/ford-heavily-discounting-evs-offering-free-chargers/" target="_blank" class="news-title">福特大幅折扣电动汽车并提供免费充电器</a>
         <div class='news-orig'>Ford is heavily discounting EVs and offering free chargers</div>
       </div>
       <span class="news-meta"><b>Electrek</b> · Tue, 07 Apr 2026</span>
@@ -587,14 +594,14 @@
     </div>
     <div class="news-item">
       <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/04/07/segway-max-g30p-e-scooter-jackery-256wh-explorer-240d-power-station-more/" target="_blank" class="news-title">赛格威Max G30P电动滑板车新低500美元，Jackery Explorer 240D便携电源新低129美元等</a>
+        <a href="https://electrek.co/2026/04/07/segway-max-g30p-e-scooter-jackery-256wh-explorer-240d-power-station-more/" target="_blank" class="news-title">赛格威40英里续航Max G30P电动滑板车跌至500美元新低，Jackery 256Wh Explorer 240D便携充电站跌至129美元新低等</a>
         <div class='news-orig'>Segway 40-mile Max G30P e-scooter new $500 low, Jackery 256Wh Explorer 240D compact power station new $129 low, more</div>
       </div>
       <span class="news-meta"><b>Electrek</b> · Tue, 07 Apr 2026</span>
     </div>
     <div class="news-item">
       <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/04/07/toyotas-3-row-electric-suv-gain-upscale-luxury-sibling/" target="_blank" class="news-title">丰田三排座电动SUV或将迎来豪华版姊妹车型</a>
+        <a href="https://electrek.co/2026/04/07/toyotas-3-row-electric-suv-gain-upscale-luxury-sibling/" target="_blank" class="news-title">丰田三排电动SUV或将迎来高端豪华兄弟车型</a>
         <div class='news-orig'>Toyota’s 3-row electric SUV will likely gain an upscale, luxury sibling</div>
       </div>
       <span class="news-meta"><b>Electrek</b> · Tue, 07 Apr 2026</span>
@@ -608,113 +615,106 @@
     </div>
     <div class="news-item">
       <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/04/07/hyundai-unveil-two-new-ioniq-ev-concepts/" target="_blank" class="news-title">现代即将发布两款IONIQ电动汽车概念车：目前已知信息</a>
+        <a href="https://electrek.co/2026/04/07/hyundai-unveil-two-new-ioniq-ev-concepts/" target="_blank" class="news-title">现代即将发布两款IONIQ电动汽车概念车：目前已知信息汇总</a>
         <div class='news-orig'>Hyundai is about to unveil two new IONIQ EV concepts: Here’s what we know so far</div>
       </div>
       <span class="news-meta"><b>Electrek</b> · Tue, 07 Apr 2026</span>
     </div>
     <div class="news-item">
       <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/04/07/volkswagen-bring-back-familiar-name-luxury-ev-suv/" target="_blank" class="news-title">大众或将复活一经典名称，用于全新豪华电动SUV</a>
+        <a href="https://electrek.co/2026/04/07/volkswagen-bring-back-familiar-name-luxury-ev-suv/" target="_blank" class="news-title">大众或将复活经典名称，用于新款豪华电动SUV</a>
         <div class='news-orig'>Volkswagen may bring back another familiar name for a new luxury electric SUV</div>
       </div>
       <span class="news-meta"><b>Electrek</b> · Tue, 07 Apr 2026</span>
     </div>
     <div class="news-item">
       <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/04/07/royal-enfield-reveals-first-electric-motorcycle-specs-and-theyre-ridiculous/" target="_blank" class="news-title">皇家恩菲尔德公布首款电动摩托车规格，令人惊叹</a>
+        <a href="https://electrek.co/2026/04/07/royal-enfield-reveals-first-electric-motorcycle-specs-and-theyre-ridiculous/" target="_blank" class="news-title">皇家恩菲尔德公布首款电动摩托车规格，令人咋舌</a>
         <div class='news-orig'>Royal Enfield reveals first electric motorcycle specs and they’re ridiculous</div>
       </div>
       <span class="news-meta"><b>Electrek</b> · Tue, 07 Apr 2026</span>
     </div>
     <div class="news-item">
       <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/04/07/new-electric-4x4-roro-tractor-gains-traction-as-ports-plug-in-video/" target="_blank" class="news-title">新型电动4×4滚装拖拉机在港口普及，日益受关注 [视频]</a>
+        <a href="https://electrek.co/2026/04/07/new-electric-4x4-roro-tractor-gains-traction-as-ports-plug-in-video/" target="_blank" class="news-title">新型电动4×4滚装牵引车在港口普及，需求激增 [视频]</a>
         <div class='news-orig'>New electric 4×4 RoRo tractor gains traction as ports plug in [video]</div>
       </div>
       <span class="news-meta"><b>Electrek</b> · Tue, 07 Apr 2026</span>
     </div>
     <div class="news-item">
       <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/04/06/orange-ev-electric-terminal-tractors-clean-up-in-canada/" target="_blank" class="news-title">Orange EV电动码头牵引车在加拿大表现出色</a>
+        <a href="https://electrek.co/2026/04/06/orange-ev-electric-terminal-tractors-clean-up-in-canada/" target="_blank" class="news-title">Orange EV电动港口牵引车在加拿大表现出色</a>
         <div class='news-orig'>Orange EV electric terminal tractors clean up in Canada</div>
       </div>
       <span class="news-meta"><b>Electrek</b> · Tue, 07 Apr 2026</span>
     </div>
     <div class="news-item">
       <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/04/06/us-war-in-iran-is-pushing-up-gas-prices-and-making-a-case-for-home-solar/" target="_blank" class="news-title">美伊战争推高油价，家用太阳能前景看好</a>
+        <a href="https://electrek.co/2026/04/06/us-war-in-iran-is-pushing-up-gas-prices-and-making-a-case-for-home-solar/" target="_blank" class="news-title">美国对伊朗战争推高汽油价格，凸显家用太阳能优势</a>
         <div class='news-orig'>US war in Iran is pushing up gas prices and making a case for home solar</div>
       </div>
       <span class="news-meta"><b>Electrek</b> · Mon, 06 Apr 2026</span>
     </div>
     <div class="news-item">
       <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/04/06/broken-ev-chargers-this-program-replaces-them-for-free/" target="_blank" class="news-title">电动汽车充电桩故障？此项目免费更换</a>
-        <div class='news-orig'>Broken EV chargers? This program replaces them for free</div>
+        <a href="https://insideevs.com/news/792425/alpitronic-hyc-1000-megawatt-ev-charger/" target="_blank" class="news-title">“兆瓦级”电动汽车充电器登陆美国，但存在问题</a>
+        <div class='news-orig'>'Megawatt' EV Chargers Have Landed In The U.S., But There’s A Problem</div>
       </div>
-      <span class="news-meta"><b>Electrek</b> · Mon, 06 Apr 2026</span>
+      <span class="news-meta"><b>InsideEVs</b> · Wed, 08 Apr 2026</span>
     </div>
     <div class="news-item">
       <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/04/06/kia-launches-most-affordable-ev-lower-prices-than-expected/" target="_blank" class="news-title">起亚推出最实惠电动汽车，价格低于预期</a>
-        <div class='news-orig'>Kia launches its most affordable EV at lower prices than expected</div>
-      </div>
-      <span class="news-meta"><b>Electrek</b> · Mon, 06 Apr 2026</span>
-    </div>
-    <div class="news-item">
-      <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/04/06/michigan-just-unlocked-51m-to-fix-ev-charging-gaps/" target="_blank" class="news-title">密歇根州拨款5100万美元解决电动汽车充电缺口</a>
-        <div class='news-orig'>Michigan just unlocked $51M to fix EV charging gaps</div>
-      </div>
-      <span class="news-meta"><b>Electrek</b> · Mon, 06 Apr 2026</span>
-    </div>
-    <div class="news-item">
-      <div class="news-title-wrap">
-        <a href="https://insideevs.com/features/764116/best-used-evs-2025/" target="_blank" class="news-title">2026年最佳二手电动汽车：可靠实惠，满足各类买家</a>
+        <a href="https://insideevs.com/features/764116/best-used-evs-2025/" target="_blank" class="news-title">2026年最佳二手电动汽车：可靠、实惠的选择</a>
         <div class='news-orig'>The Best Used EVs In 2026: Reliable, Affordable Options For Every Shopper</div>
       </div>
       <span class="news-meta"><b>InsideEVs</b> · Fri, 27 Jun 2025</span>
     </div>
     <div class="news-item">
       <div class="news-title-wrap">
-        <a href="https://insideevs.com/features/766543/best-used-electric-suvs/" target="_blank" class="news-title">7款优质二手电动SUV：享新车技术，免新车价格</a>
+        <a href="https://insideevs.com/features/766543/best-used-electric-suvs/" target="_blank" class="news-title">7款优秀二手电动SUV：体验新电动车技术，无需新车价格</a>
         <div class='news-orig'>7 Great Used Electric SUVs: Get New EV Tech Without New Car Prices</div>
       </div>
       <span class="news-meta"><b>InsideEVs</b> · Mon, 21 Jul 2025</span>
     </div>
     <div class="news-item">
       <div class="news-title-wrap">
-        <a href="https://insideevs.com/features/766310/best-cheap-used-evs-2025/" target="_blank" class="news-title">2026年最佳平价二手电动汽车：顶级预算友好型优惠</a>
+        <a href="https://insideevs.com/features/766310/best-cheap-used-evs-2025/" target="_blank" class="news-title">2026年最佳平价二手电动汽车：顶级预算友好型电动汽车优惠</a>
         <div class='news-orig'>The Best Cheap Used EVs In 2026: Top Budget-Friendly EV Deals</div>
       </div>
       <span class="news-meta"><b>InsideEVs</b> · Tue, 22 Jul 2025</span>
     </div>
     <div class="news-item">
       <div class="news-title-wrap">
-        <a href="https://insideevs.com/news/792338/walmart-ev-charging-development/" target="_blank" class="news-title">沃尔玛直流快充网络已拥有数百个充电口</a>
+        <a href="https://insideevs.com/news/792338/walmart-ev-charging-development/" target="_blank" class="news-title">沃尔玛直流快充网络已拥有数百个充电端口</a>
         <div class='news-orig'>Walmart’s DC Fast Charging Network Already Has Hundreds Of Ports</div>
       </div>
       <span class="news-meta"><b>InsideEVs</b> · Wed, 08 Apr 2026</span>
     </div>
     <div class="news-item">
       <div class="news-title-wrap">
-        <a href="https://insideevs.com/news/792327/polestar-21000-usd-tesla-incentive-stackable/" target="_blank" class="news-title">Polestar欲以2.1万美元巨额优惠吸引特斯拉车主“跳槽”</a>
+        <a href="https://insideevs.com/news/792327/polestar-21000-usd-tesla-incentive-stackable/" target="_blank" class="news-title">Polestar推出2.1万美元巨额折扣，欲吸引特斯拉车主“跳槽”</a>
         <div class='news-orig'>Polestar Wants Tesla Owners To Jump Ship With A Massive $21,000 Discount</div>
       </div>
       <span class="news-meta"><b>InsideEVs</b> · Wed, 08 Apr 2026</span>
     </div>
     <div class="news-item">
       <div class="news-title-wrap">
-        <a href="https://insideevs.com/news/792296/bmw-i7-neue-klasse-rimac-batteries/" target="_blank" class="news-title">下一代宝马i7电池来源出人意料</a>
+        <a href="https://insideevs.com/news/792296/bmw-i7-neue-klasse-rimac-batteries/" target="_blank" class="news-title">下一代宝马i7的电池将来自意想不到的供应商</a>
         <div class='news-orig'>The Next BMW i7 Will Get Its Batteries From An Unexpected Source</div>
       </div>
       <span class="news-meta"><b>InsideEVs</b> · Tue, 07 Apr 2026</span>
     </div>
     <div class="news-item">
       <div class="news-title-wrap">
-        <a href="https://insideevs.com/news/792274/lynk-co-10-charging-test/" target="_blank" class="news-title">这款新电动汽车9分钟内即可充满电</a>
+        <a href="https://insideevs.com/news/792274/lynk-co-10-charging-test/" target="_blank" class="news-title">这款新电动汽车可在9分钟内充满大部分电量</a>
         <div class='news-orig'>This New Electric Car Nearly Fills Its Battery In Under 9 Minutes</div>
+      </div>
+      <span class="news-meta"><b>InsideEVs</b> · Tue, 07 Apr 2026</span>
+    </div>
+    <div class="news-item">
+      <div class="news-title-wrap">
+        <a href="https://insideevs.com/news/792241/tesla-korea-sales-spike-march/" target="_blank" class="news-title">特斯拉在韩国销量飙升，揭示电动汽车买家需求</a>
+        <div class='news-orig'>Tesla’s Huge Sales Spike In Korea Shows What EV Buyers Still Want</div>
       </div>
       <span class="news-meta"><b>InsideEVs</b> · Tue, 07 Apr 2026</span>
     </div>
@@ -728,56 +728,56 @@
     <div class="marginal-card">
       <div class="marginal-header">
         <span class="marginal-title">津巴布韦锂矿</span>
-        <span style="background:#888;color:#fff;padding:2px 8px;border-radius:3px;font-size:11px;">未知</span>
+        <span style="background:#f39c12;color:#fff;padding:2px 8px;border-radius:3px;font-size:11px;">中性</span>
       </div>
-      <div class="marginal-summary">未能找到关于津巴布韦锂矿出口禁令政策、赣锋Bikita矿和华友Arcadia矿在2026年3月至4月的最新进展和重要事件。</div>
-      
-      <div class='marginal-impact'>📊 由于缺乏最新信息，无法判断对碳酸锂价格的影响。</div>
+      <div class="marginal-summary">津巴布韦政府于2026年4月公布了取消锂精矿出口禁令的严格条件，包括实施出口配额、征收10%的出口税，并要求企业承诺在2027年1月前建设锂硫酸盐工厂，以促进本地化加工。华友Arcadia矿预计在2026年第一季度开始生产锂硫酸盐。中矿资源Bikita矿正在与政府协商恢复出口。</div>
+      <div class='marginal-event'>📌 津巴布韦政府公布了取消锂精矿出口禁令的严格条件，包括实施出口配额和要求建设本地加工设施。</div>
+      <div class='marginal-impact'>📊 津巴布韦的出口限制、配额管理和税费增加可能在短期内对全球锂精矿供应造成不确定性，并推高锂产品生产成本，对碳酸锂价格形成一定支撑。</div>
     </div>
     <div class="marginal-card">
       <div class="marginal-header">
         <span class="marginal-title">宁德宜春枧下窝矿</span>
-        <span style="background:#888;color:#fff;padding:2px 8px;border-radius:3px;font-size:11px;">未知</span>
+        <span style="background:#f39c12;color:#fff;padding:2px 8px;border-radius:3px;font-size:11px;">中性</span>
       </div>
-      <div class="marginal-summary">当前搜索结果未发现宁德时代宜春枧下窝锂矿在最近30天内（或2026年以来）有公开报道的重要新进展或动态。相关项目可能处于稳定建设或开采阶段，暂无新的公开信息披露。</div>
-      
-      <div class='marginal-impact'>📊 由于缺乏最新公开信息，无法判断其对碳酸锂价格的短期影响。</div>
+      <div class="marginal-summary">宁德时代宜春枧下窝锂矿已于2025年底获得采矿许可证，但截至2026年3月，复产流程仍在进行中，尚待完成后续政府审批手续。该矿自2025年8月因采矿证到期而停产，期间进行了矿种变更和环境影响评价公示等审批环节。</div>
+      <div class='marginal-event'>📌 宁德时代于2026年3月9日披露，其江西宜春锂矿已于2025年底取得采矿许可证，目前正在推进复产所需的政府审批流程。</div>
+      <div class='marginal-impact'>📊 若枧下窝锂矿未来成功复产并稳定供应，将增加市场锂资源供给，可能对碳酸锂价格形成下行压力。</div>
     </div>
     <div class="marginal-card">
       <div class="marginal-header">
         <span class="marginal-title">智利锂国有化</span>
-        <span style="background:#888;color:#fff;padding:2px 8px;border-radius:3px;font-size:11px;">未知</span>
+        <span style="background:#27ae60;color:#fff;padding:2px 8px;border-radius:3px;font-size:11px;">利多</span>
       </div>
-      <div class="marginal-summary">数据获取失败</div>
-      
-      
+      <div class="marginal-summary">智利国家铜业公司Codelco与SQM的锂业务合资企业Nova Andino Litio SpA已于2026年4月7日正式完成合并，获得智利最高法院批准，将阿塔卡马盐湖锂资源运营至2060年。国家拥有多数股权并设定增产目标。</div>
+      <div class='marginal-event'>📌 2026年4月7日，SQM宣布与智利国家铜业公司Codelco的锂业务合并已全面完成，智利最高法院驳回了天齐锂业的上诉。</div>
+      <div class='marginal-impact'>📊 该协议的最终落实和未来增产计划的明确，有望确保智利锂资源的长期稳定供应，对全球碳酸锂价格具有中性偏利空的影响。</div>
     </div>
     <div class="marginal-card">
       <div class="marginal-header">
         <span class="marginal-title">阿根廷锂三角</span>
-        <span style="background:#888;color:#fff;padding:2px 8px;border-radius:3px;font-size:11px;">未知</span>
+        <span style="background:#27ae60;color:#fff;padding:2px 8px;border-radius:3px;font-size:11px;">利多</span>
       </div>
-      <div class="marginal-summary">数据获取失败</div>
-      
-      
+      <div class="marginal-summary">米莱政府的结构性改革和投资激励政策提振了阿根廷锂矿行业的信心。主要锂矿公司计划在2026年扩大生产并推进新项目，市场普遍预期碳酸锂价格将大幅反弹，但基础设施建设仍是挑战。</div>
+      <div class='marginal-event'>📌 阿根廷政府通过2026年预算案，并于2026年1月2日启动以通胀挂钩的汇率新政，同时积极推广大型投资激励制度（RIGI）以吸引外资，其中包括锂矿在内的战略性行业。</div>
+      <div class='marginal-impact'>📊 预计将对碳酸锂价格产生积极支撑作用，主要生产商预计2026年第一季度平均实现价格将大幅攀升，全年产量目标上调。</div>
     </div>
     <div class="marginal-card">
       <div class="marginal-header">
         <span class="marginal-title">澳矿产量/停复产</span>
-        <span style="background:#888;color:#fff;padding:2px 8px;border-radius:3px;font-size:11px;">未知</span>
+        <span style="background:#27ae60;color:#fff;padding:2px 8px;border-radius:3px;font-size:11px;">利多</span>
       </div>
-      <div class="marginal-summary">数据获取失败</div>
-      
-      
+      <div class="marginal-summary">澳大利亚锂矿行业近期呈现积极复苏态势。Core Lithium和Pilbara Minerals因锂辉石价格回升而重启或计划重启停产矿区，Liontown Resources的Kathleen Valley项目已全面转入地下开采并持续增产。预计2026年澳锂产量将反弹，市场需求依然强劲。</div>
+      <div class='marginal-event'>📌 Core Lithium于2026年4月7日宣布立即重启Finniss锂矿Grants露天矿的开采，预计2026年第四季度首次发货。</div>
+      <div class='marginal-impact'>📊 澳洲锂矿的复产和增产将在全球需求增长的背景下增加供应，预计对碳酸锂价格形成支撑并有助于市场稳定。</div>
     </div>
     <div class="marginal-card">
       <div class="marginal-header">
         <span class="marginal-title">国内政策动向</span>
-        <span style="background:#888;color:#fff;padding:2px 8px;border-radius:3px;font-size:11px;">未知</span>
+        <span style="background:#f39c12;color:#fff;padding:2px 8px;border-radius:3px;font-size:11px;">中性</span>
       </div>
-      <div class="marginal-summary">由于搜索工具未能检索到最新的政策动态信息，目前无法提供中国碳酸锂、锂电及新能源汽车补贴、电池白名单和锂资源管理政策在2026年3月至4月的具体进展。</div>
-      
-      <div class='marginal-impact'>📊 目前无法评估对碳酸锂价格的影响，因相关政策信息未能获取。</div>
+      <div class="marginal-summary">中国近期出台多项政策，旨在规范新能源汽车、动力电池及锂资源相关产业。主要包括实施“史上最严”动力电池回收新规，强化全链条溯源管理和技术标准；对新能源汽车补贴进行调整，更侧重技术导向，并推出汽车“以旧换新”补贴政策；同时，为遏制产能过剩和低价竞争，中国将分阶段取消电池产品出口退税。此外，工信部公布了第九批锂电池白名单，发改委和能源局也完善了发电侧容量电价机制以支持新型储能发展。</div>
+      <div class='marginal-event'>📌 中国正式实施“史上最严”动力电池回收新规，强化全链条溯源监管和技术门槛，并于2026年4月1日起分阶段取消电池产品出口退税。</div>
+      <div class='marginal-impact'>📊 短期内，电池出口退税取消可能引发抢出口，叠加储能需求增长，碳酸锂价格或维持偏强震荡；中长期看，动力电池回收体系的完善将增加锂资源供给，同时电池产业“反内卷”政策旨在优化产能，可能对碳酸锂价格形成利空。</div>
     </div>
   </div>
   <div style='margin-top:14px;'><div class='section-label'>手动补充</div>
@@ -926,22 +926,22 @@
     <tr>
       <td>PLS.AX</td>
       <td>Pilbara Minerals</td>
-      <td class="text-right">5.28</td>
-      <td class="text-right" style="color:#e74c3c">+1.73%</td>
+      <td class="text-right">5.29</td>
+      <td class="text-right" style="color:#e74c3c">+0.19%</td>
       <td><span class="tag-cat">锂精矿</span></td>
     </tr>
     <tr>
       <td>LTR.AX</td>
       <td>Liontown Resources</td>
-      <td class="text-right">1.87</td>
-      <td class="text-right" style="color:#e74c3c">+8.41%</td>
+      <td class="text-right">1.85</td>
+      <td class="text-right" style="color:#27ae60">-0.80%</td>
       <td><span class="tag-cat">锂精矿</span></td>
     </tr>
     <tr>
       <td>IGO.AX</td>
       <td>IGO Limited</td>
-      <td class="text-right">8.28</td>
-      <td class="text-right" style="color:#e74c3c">+0.85%</td>
+      <td class="text-right">8.24</td>
+      <td class="text-right" style="color:#27ae60">-0.48%</td>
       <td><span class="tag-cat">锂精矿</span></td>
     </tr></tbody>
   </table>
@@ -968,10 +968,10 @@
     </div>
     <div class="stat-card">
       <div class="stat-label">江西（云母）</div>
-      <div class="stat-value">—</div>
+      <div class="stat-value">28.0%</div>
     </div>
   </div>
-  <div class="data-source">来源：未能获取（可能需要订阅SMM、百川盈孚等机构的付费报告） · None</div>
+  <div class="data-source">来源：SMM, 一德期货, 中辉期货 · 2026-04-07</div>
   
   <div class="section-label" style="margin-top:16px;">分品种开工率（2026-03，国金数据）</div>
   <div class="card-row">
@@ -1213,7 +1213,39 @@
   <div class="section-label" style="margin-top:16px;">主要矿山产量</div>
   <table class="data-table">
     <thead><tr><th>公司</th><th>地区</th><th>产量</th><th>季度</th><th>同比</th><th>备注</th></tr></thead>
-    <tbody><tr><td colspan='6' class='empty'>暂无数据</td></tr></tbody>
+    <tbody>
+    <tr>
+      <td>Pilbara Minerals</td>
+      <td><span class="tag-region">澳大利亚</span></td>
+      <td>224.8 千吨锂辉石精矿</td>
+      <td>2025Q3</td>
+      <td style="color:#e74c3c">+2.10%</td>
+      <td class="note">指截至2025年9月30日的季度（2026财年第一季度）的产量，较2024年同期增长2.1%。</td>
+    </tr>
+    <tr>
+      <td>Liontown</td>
+      <td><span class="tag-region">澳大利亚</span></td>
+      <td>87172 吨干公吨锂辉石精矿</td>
+      <td>2025Q3</td>
+      <td style="color:#888">—</td>
+      <td class="note">指截至2025年9月30日的季度（2026财年第三季度）的产量。</td>
+    </tr>
+    <tr>
+      <td>SQM</td>
+      <td><span class="tag-region">智利</span></td>
+      <td>66.2 千吨锂产品销售量</td>
+      <td>2025Q4</td>
+      <td style="color:#e74c3c">+33.00%</td>
+      <td class="note">指截至2025年12月31日的季度，锂销售量同比增长33%。</td>
+    </tr>
+    <tr>
+      <td>Arcadium Lithium</td>
+      <td><span class="tag-region">阿根廷</span></td>
+      <td>{'spodumene': 54100, 'lithium_hydroxide_carbonate': 13450} 吨干公吨（锂辉石）；吨（氢氧化锂/碳酸锂）</td>
+      <td>2024Q4</td>
+      <td style="color:#888">—</td>
+      <td class="note">此为截至2024年12月31日的季度数据。Arcadium Lithium于2025年3月被力拓收购。全年总销售额（以碳酸锂当量计）略有下降，主要由于Mt Cattlin产量减少导致锂辉石销售下降。</td>
+    </tr></tbody>
   </table>
   
   <div class="section-label" style="margin-top:16px;">进口量（—）</div>
@@ -1236,12 +1268,12 @@
 <div class="panel" id="p5">
   <div class="panel-title">🚗 需求端</div>
 
-  <div class="section-label">国内新能源车（— · —）</div>
+  <div class="section-label">国内新能源车（2026-03 · 乘联会）</div>
   <div class="card-row">
     <div class="stat-card">
       <div class="stat-label">新能源乘用车销量</div>
-      <div class="stat-value">— <span class="unit-small">万辆</span></div>
-      <div class="stat-sub" style="color:#888">同比 —</div>
+      <div class="stat-value">112.6 <span class="unit-small">万辆</span></div>
+      <div class="stat-sub" style="color:#888">同比 0.00%</div>
     </div>
     <div class="stat-card">
       <div class="stat-label">纯电 BEV</div>
@@ -1253,46 +1285,46 @@
     </div>
     <div class="stat-card">
       <div class="stat-label">新能源渗透率</div>
-      <div class="stat-value">—</div>
+      <div class="stat-value">48.5%</div>
     </div>
   </div>
 
-  <div class="section-label" style="margin-top:16px;">动力电池（None · CABIA）</div>
+  <div class="section-label" style="margin-top:16px;">动力电池（2026-02 · CABIA）</div>
   <div class="card-row">
     <div class="stat-card">
       <div class="stat-label">总装机量</div>
-      <div class="stat-value">— <span class="unit-small">GWh</span></div>
-      <div class="stat-sub" style="color:#888">同比 —</div>
+      <div class="stat-value">26.3 <span class="unit-small">GWh</span></div>
+      <div class="stat-sub" style="color:#27ae60">同比 -24.60%</div>
     </div>
     <div class="stat-card">
       <div class="stat-label">磷酸铁锂 LFP</div>
-      <div class="stat-value">— <span class="unit-small">GWh</span></div>
+      <div class="stat-value">20.6 <span class="unit-small">GWh</span></div>
     </div>
     <div class="stat-card">
       <div class="stat-label">三元 NCM</div>
-      <div class="stat-value">— <span class="unit-small">GWh</span></div>
+      <div class="stat-value">5.7 <span class="unit-small">GWh</span></div>
     </div>
     <div class="stat-card">
       <div class="stat-label">宁德时代市占</div>
-      <div class="stat-value">—</div>
+      <div class="stat-value">50.1%</div>
     </div>
   </div>
 
-  <div class="section-label" style="margin-top:16px;">储能（None · CNESA/国家能源局 (数据尚未发布)）</div>
+  <div class="section-label" style="margin-top:16px;">储能（2026-02 · CNESA）</div>
   <div class="card-row">
     <div class="stat-card">
       <div class="stat-label">当月新增装机</div>
-      <div class="stat-value">— <span class="unit-small">GWh</span></div>
-      <div class="stat-sub" style="color:#888">同比 —</div>
+      <div class="stat-value">10.1 <span class="unit-small">GWh</span></div>
+      <div class="stat-sub" style="color:#e74c3c">同比 +242.15%</div>
     </div>
     <div class="stat-card">
       <div class="stat-label">累计装机</div>
-      <div class="stat-value">— <span class="unit-small">GWh</span></div>
+      <div class="stat-value">398 <span class="unit-small">GWh</span></div>
     </div>
     <div class="stat-card">
-      <div class="stat-label">欧洲BEV（—）</div>
-      <div class="stat-value">— <span class="unit-small">万辆</span></div>
-      <div class="stat-sub" style="color:#888">同比 —</div>
+      <div class="stat-label">欧洲BEV（2026-02）</div>
+      <div class="stat-value">19.0 <span class="unit-small">万辆</span></div>
+      <div class="stat-sub" style="color:#e74c3c">同比 +16.00%</div>
     </div>
   </div>
   
@@ -1334,11 +1366,11 @@
 
   <div class="card-row" style="margin-top:10px;">
     <div class="price-card main-price">
-      <div class="price-label">SMM碳酸锂社会库存  <span class="src-tag src-empty">⚠️ 待填写</span></div>
-      <div class="price-value">— <span class="price-unit">吨</span></div>
+      <div class="price-label">SMM碳酸锂社会库存 2026-04-03 <span class="src-tag src-ai">🔍 AI搜索·SMM</span></div>
+      <div class="price-value">100,349 <span class="price-unit">吨</span></div>
       <div class="price-meta">
-        周环比：<span style="color:#888">—</span>
-        &nbsp;—
+        周环比：<span style="color:#e74c3c">860吨</span>
+        &nbsp;+0.90%
       </div>
     </div>
     <div class="price-card">
@@ -1350,8 +1382,8 @@
     </div>
     <div class="price-card">
       <div class="price-label">港口锂精矿库存</div>
-      <div class="price-value">— <span class="price-unit">万吨</span></div>
-      <div class="price-meta">None · None</div>
+      <div class="price-value">9.40 <span class="price-unit">万吨</span></div>
+      <div class="price-meta">None · 2026-04-03</div>
     </div>
   </div>
   <div class="data-source">氢氧化锂库存：—吨</div>
@@ -1365,8 +1397,8 @@
   (function(){
     var labels = ["03-19", "03-20", "03-26", "03-27", "03-28", "03-30", "03-31", "04-01", "04-02", "04-03", "04-04", "04-05", "04-06", "04-07", "04-08", "04-09"];
     var smm    = [98959, 98959, 99500, 99489, 99489, 99489, null, 99489, 100349, 100349, null, null, null, null, null, null];
-    var gfex   = [38476.0, 35316.0, 22636.0, 22636.0, 62128.0, 35316.0, 22636.0, 42476.0, 47308.0, 43016.0, 42476.0, null, null, null, 47308.0, 47308.0];
-    var port   = [null, 18.5, 19.3, 19.3, 19.3, null, null, 15.5, 10, 15.5, 15.5, 15.5, null, null, null, null];
+    var gfex   = [38476.0, 35316.0, 22636.0, 22636.0, 62128.0, 35316.0, 22636.0, 42476.0, 47308.0, 47308.0, 42476.0, null, null, null, 47308.0, 47308.0];
+    var port   = [null, 18.5, 19.3, 19.3, 19.3, null, null, 15.5, 10, 9.4, 15.5, 15.5, null, null, null, null];
     new Chart(document.getElementById('invFullHistChart'), {
       type: 'line',
       data: {
@@ -1382,7 +1414,7 @@
           
           {
             label: 'GFEX注册仓单（吨）',
-            data: [38476.0, 35316.0, 22636.0, 22636.0, 62128.0, 35316.0, 22636.0, 42476.0, 47308.0, 43016.0, 42476.0, null, null, null, 47308.0, 47308.0],
+            data: [38476.0, 35316.0, 22636.0, 22636.0, 62128.0, 35316.0, 22636.0, 42476.0, 47308.0, 47308.0, 42476.0, null, null, null, 47308.0, 47308.0],
             borderColor: '#8e44ad', backgroundColor: 'rgba(142,68,173,0.07)',
             tension: 0.3, pointRadius: 3, fill: false, spanGaps: true,
             yAxisID: 'y',
@@ -1390,7 +1422,7 @@
           
           {
             label: '港口锂精矿库存（万吨，右轴）',
-            data: [null, 18.5, 19.3, 19.3, 19.3, null, null, 15.5, 10, 15.5, 15.5, 15.5, null, null, null, null],
+            data: [null, 18.5, 19.3, 19.3, 19.3, null, null, 15.5, 10, 9.4, 15.5, 15.5, null, null, null, null],
             borderColor: '#27ae60', backgroundColor: 'rgba(39,174,96,0.07)',
             tension: 0.3, pointRadius: 3, fill: false, spanGaps: true, borderDash: [4,3],
             yAxisID: 'y2',
@@ -1543,7 +1575,7 @@
   <div class="panel-title">📈 GFEX期货曲线</div>
   <div class="stat-row">
     <span>期限结构：<strong style="color:#27ae60">backwardation（近期升水）</strong></span>
-    
+    <span style='margin-left:20px;'>现货参考：<strong>15.85 万元/吨（158,500 元/吨）</strong></span>
   </div>
 
   <div style="height:280px;margin-top:12px;">
@@ -1558,7 +1590,7 @@
   (function(){
     var labels  = ["LC2604", "LC2605", "LC2606", "LC2607", "LC2608", "LC2609", "LC2610", "LC2611", "LC2612", "LC2701", "LC2702", "LC2703"];
     var prices  = [162000.0, 158320.0, 158700.0, 158620.0, 159280.0, 159620.0, 158540.0, 159000.0, 159320.0, 158960.0, 160000.0, 153440.0];
-    var bases   = [null, null, null, null, null, null, null, null, null, null, null, null];
+    var bases   = [-3500.0, 180.0, -200.0, -120.0, -780.0, -1120.0, -40.0, -500.0, -820.0, -460.0, -1500.0, 5060.0];
     var volumes = [2803, 185821, 22463, 117812, 14694, 241459, 9920, 13458, 12512, 7137, 748, 54];
 
     new Chart(document.getElementById('futuresCurveChart'), {
@@ -1640,7 +1672,7 @@
   <div class="section-label" style="margin-top:16px;">GFEX LC期货主力成交量（日度，手）— 2022年至今</div>
   <canvas id="fvChart" style="max-height:160px;"></canvas>
 
-  <div class="data-source">数据来源：akshare（新浪财经·A股历史）+ 新浪财经·GFEX · 更新于 2026-04-09 04:46:21</div>
+  <div class="data-source">数据来源：akshare（新浪财经·A股历史）+ 新浪财经·GFEX · 更新于 2026-04-09 08:52:51</div>
 
   <script>
   (function(){
