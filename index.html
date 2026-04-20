@@ -202,8 +202,8 @@
 <!-- 顶栏 -->
 <div class="topbar">
   <div class="topbar-title">⚗️ 碳酸锂监测</div>
-  <div class="ticker-strip"><span class="ticker-item"><span class="ticker-label">电池级现货</span> <span class="ticker-val">17.25万元/吨</span></span><span class="ticker-item"><span class="ticker-label">GFEX LC2609</span> <span class="ticker-val">180,200元/吨</span> <span style='color:#e74c3c'>+0.01%</span></span><span class="ticker-item"><span class="ticker-label">DXY</span> <span class="ticker-val">98.30</span> <span style='color:#e74c3c'>+0.21%</span></span><span class="ticker-item"><span class="ticker-label">USD/CNY</span> <span class="ticker-val">6.8206</span></span></div>
-  <div class="topbar-meta">更新于 2026-04-20 16:41:26</div>
+  <div class="ticker-strip"><span class="ticker-item"><span class="ticker-label">电池级现货</span> <span class="ticker-val">—</span></span><span class="ticker-item"><span class="ticker-label">GFEX LC2609</span> <span class="ticker-val">180,200元/吨</span> <span style='color:#e74c3c'>+0.01%</span></span><span class="ticker-item"><span class="ticker-label">DXY</span> <span class="ticker-val">98.27</span> <span style='color:#e74c3c'>+0.17%</span></span><span class="ticker-item"><span class="ticker-label">USD/CNY</span> <span class="ticker-val">6.8169</span></span></div>
+  <div class="topbar-meta">更新于 2026-04-20 20:49:13</div>
 </div>
 
 <!-- 主体布局 -->
@@ -229,27 +229,27 @@
   <!-- 现货价格卡片 -->
   <div class="card-row">
     <div class="price-card main-price">
-      <div class="price-label">电池级碳酸锂 现货 <span class="src-tag src-ai">🔍 AI搜索·SMM</span></div>
-      <div class="price-value">17.25 <span class="price-unit">万元/吨</span></div>
+      <div class="price-label">电池级碳酸锂 现货 <span class="src-tag src-empty">⚠️ 待填写</span></div>
+      <div class="price-value">— <span class="price-unit">万元/吨</span></div>
       <div class="price-meta">2026-04-20</div>
       <div style="height:55px;margin-top:6px;"><canvas id="spark_battery"></canvas></div>
     </div>
     <div class="price-card">
       <div class="price-label">工业级碳酸锂 现货</div>
-      <div class="price-value">16.75 <span class="price-unit">万元/吨</span></div>
-      <div class="price-meta"><span class="src-tag src-ai">🔍 AI搜索·SMM</span></div>
+      <div class="price-value">— <span class="price-unit">万元/吨</span></div>
+      <div class="price-meta"><span class="src-tag src-empty">⚠️ 待填写</span></div>
       <div style="height:55px;margin-top:6px;"><canvas id="spark_industry"></canvas></div>
     </div>
     <div class="price-card">
       <div class="price-label">电池级氢氧化锂 现货</div>
-      <div class="price-value">16.94 <span class="price-unit">万元/吨</span></div>
-      <div class="price-meta"><span class="src-tag src-ai">🔍 AI搜索·SMM</span></div>
+      <div class="price-value">— <span class="price-unit">万元/吨</span></div>
+      <div class="price-meta"><span class="src-tag src-empty">⚠️ 待填写</span></div>
       <div style="height:55px;margin-top:6px;"><canvas id="spark_hydroxide"></canvas></div>
     </div>
     <div class="price-card">
       <div class="price-label">锂精矿 SC6</div>
-      <div class="price-value">2,415 <span class="price-unit">USD/吨</span></div>
-      <div class="price-meta"><span class="src-tag src-ai">🔍 AI搜索·SMM</span></div>
+      <div class="price-value">— <span class="price-unit">USD/吨</span></div>
+      <div class="price-meta"><span class="src-tag src-empty">⚠️ 待填写</span></div>
       <div style="height:55px;margin-top:6px;"><canvas id="spark_spodumene"></canvas></div>
     </div>
   </div>
@@ -272,19 +272,19 @@
       <div class="price-label">美元指数 DXY
         <span class="src-tag src-api">📡 Yahoo Finance</span>
       </div>
-      <div class="price-value">98.30</div>
-      <div class="price-meta" style="color:#e74c3c">+0.21%</div>
+      <div class="price-value">98.27</div>
+      <div class="price-meta" style="color:#e74c3c">+0.17%</div>
     </div>
     <div class="price-card">
       <div class="price-label">美元/人民币
         <span class="src-tag src-api">📡 Yahoo Finance</span>
       </div>
-      <div class="price-value">6.8206</div>
-      <div class="price-meta" style="color:#27ae60">-0.01%</div>
+      <div class="price-value">6.8169</div>
+      <div class="price-meta" style="color:#27ae60">-0.06%</div>
     </div>
   </div>
 
-  ''
+  <div class="warn-box">⚠️ 现货价格暂无数据，请在 data/manual.json → spot_prices 手动填写</div>
 
   
   <div class="section-label" style="margin-top:18px;">价格历史走势（近1年）</div>
@@ -505,219 +505,9 @@
     
 <div class="panel" id="p2">
   <div class="panel-title">📰 产业链资讯</div>
-  <div class="ai-summary">1.  **价格与市场**<br>    英国电动汽车因中国品牌竞争而变得比燃油车更便宜，全球电动汽车市场价格战仍在持续。多款电动汽车提供高达1万美元的折扣以刺激销售，旨在提升消费者购买意愿。大众和丰田在中国市场推出了价格极具竞争力的电动SUV，最低售价可达1.5万美元，进一步推动了电动车平价化趋势。<br><br>2.  **供给动态**<br>    北美地区迎来了其首个新型锂精炼厂的投产，这标志着该区域在锂资源加工能力上的提升。目前，关于锂矿山开采、锂盐厂产量、停产或投产的具体大规模变动资讯较少。<br><br>3.  **需求动态**<br>    高油价正显著推动全球电动汽车（EV）销量增长，尤其在欧洲和亚洲市场表现强劲。中国市场需求旺盛，丰田一款售价1.5万美元的电动SUV在一年内交付量已超过8万辆，现代和起亚也积极推出新款电动车型以满足市场需求。此外，家庭储能、电动自行车和电动重卡等多元化应用领域对锂电池的需求也在持续发展，但美国电动汽车市场仍面临挑战，部分初创公司正经历关键考验。<br><br>4.  **政策与地缘**<br>    目前资讯中没有直接提及具体的国内政策或海外资源国地缘政治动态。但有分析指出，高油价正普遍刺激全球电动汽车需求，美国市场虽有增长但基础仍显不稳，可能预示其在电动化转型上的政策或市场策略或将面临调整。<br><br>**综合判断**<br>综合来看，下游电动汽车市场的价格竞争激烈，但全球范围内的电动汽车及储能等多元化需求增长强劲。短期内，锂碳酸锂价格可能会在高需求支撑下保持相对稳定，但下游的降价压力可能会对其涨幅形成一定制约。</div>
+  <div class="ai-summary">暂无相关资讯。</div>
   <div class="news-list" style="margin-top:14px;">
-    
-    <div class="news-item">
-      <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/04/19/survey-sunday-how-much-pain-at-the-pump-will-it-take-to-switch-to-ev/" target="_blank" class="news-title">调查：多少油价之痛才能促使转向电动汽车？</a>
-        <div class='news-orig'>Survey Sunday: how much pain at the pump will it take to switch to EV?</div>
-      </div>
-      <span class="news-meta"><b>Electrek</b> · Sun, 19 Apr 2026</span>
-    </div>
-    <div class="news-item">
-      <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/04/18/tesla-model-x-solar-charging-atacama-desert-chile-pan-american-highway/" target="_blank" class="news-title">特斯拉车主沙漠电量耗尽后用紧急太阳能慢充</a>
-        <div class='news-orig'>Tesla owner uses emergency solar to trickle charge after running out of battery in desert</div>
-      </div>
-      <span class="news-meta"><b>Electrek</b> · Sun, 19 Apr 2026</span>
-    </div>
-    <div class="news-item">
-      <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/04/18/youtuber-buys-stripped-tesla-model-3-go-kart-2000-212-miles-range/" target="_blank" class="news-title">YouTuber花2000美元买改装版特斯拉Model 3“卡丁车”，仍有212英里续航</a>
-        <div class='news-orig'>YouTuber buys stripped Tesla Model 3 ‘go-kart’ for $2,000 — it still has 212-mile range</div>
-      </div>
-      <span class="news-meta"><b>Electrek</b> · Sat, 18 Apr 2026</span>
-    </div>
-    <div class="news-item">
-      <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/04/18/a-1380-hp-volvo-xc-hybrid-the-new-zeekr-8x-makes-it-feel-inevitable/" target="_blank" class="news-title">1380马力沃尔沃XC混动？极氪8X让其成为必然</a>
-        <div class='news-orig'>A 1,380 hp Volvo XC hybrid? The new Zeekr 8X makes it feel inevitable</div>
-      </div>
-      <span class="news-meta"><b>Electrek</b> · Sat, 18 Apr 2026</span>
-    </div>
-    <div class="news-item">
-      <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/04/18/yozma-in10-review-1200-somehow-buys-a-40mph-ultra-capable-mini-electric-dirtbike/" target="_blank" class="news-title">Yozma IN10评测：1200美元买到40英里/小时超强迷你电动越野摩托</a>
-        <div class='news-orig'>Yozma IN10 Review: $1200 somehow buys a 40mph ultra-capable mini electric dirtbike</div>
-      </div>
-      <span class="news-meta"><b>Electrek</b> · Sat, 18 Apr 2026</span>
-    </div>
-    <div class="news-item">
-      <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/04/18/in-the-uk-evs-are-cheaper-than-petrol-cars-thanks-to-chinese-competition/" target="_blank" class="news-title">英国电动汽车比燃油车便宜，得益于中国车企竞争</a>
-        <div class='news-orig'>In the UK, EVs are cheaper than petrol cars, thanks to Chinese competition</div>
-      </div>
-      <span class="news-meta"><b>Electrek</b> · Sat, 18 Apr 2026</span>
-    </div>
-    <div class="news-item">
-      <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/04/18/backup-power-is-the-least-interesting-thing-your-home-battery-can-do/" target="_blank" class="news-title">家用电池的备用电源功能最不值得关注[更新]</a>
-        <div class='news-orig'>Backup power is the LEAST interesting thing your home battery can do [update]</div>
-      </div>
-      <span class="news-meta"><b>Electrek</b> · Sat, 18 Apr 2026</span>
-    </div>
-    <div class="news-item">
-      <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/04/17/north-america-just-got-its-first-new-kind-of-lithium-refinery/" target="_blank" class="news-title">北美建成首个新型锂精炼厂</a>
-        <div class='news-orig'>North America just got its first new kind of lithium refinery</div>
-      </div>
-      <span class="news-meta"><b>Electrek</b> · Fri, 17 Apr 2026</span>
-    </div>
-    <div class="news-item">
-      <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/04/17/ev-deals-up-to-10000-discounts/" target="_blank" class="news-title">这些电动汽车优惠不容错过，折扣高达1万美元</a>
-        <div class='news-orig'>These EV deals are hard to pass up with up to $10,000 in discounts</div>
-      </div>
-      <span class="news-meta"><b>Electrek</b> · Fri, 17 Apr 2026</span>
-    </div>
-    <div class="news-item">
-      <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/04/17/podcast-gm-energy-tesla-hw3-reckoning-ford-reshuffles-evs-donut-lab-probs-more/" target="_blank" class="news-title">播客：通用能源、特斯拉HW3清算、福特重组电动车、Donut Lab问题等</a>
-        <div class='news-orig'>Podcast: GM Energy, Tesla HW3 reckoning, Ford reshuffles EVs, Donut Lab probs, more</div>
-      </div>
-      <span class="news-meta"><b>Electrek</b> · Fri, 17 Apr 2026</span>
-    </div>
-    <div class="news-item">
-      <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/04/17/hyundais-first-erev-spotted-interesting-design-debut/" target="_blank" class="news-title">现代首款EREV首发前曝光，设计独特</a>
-        <div class='news-orig'>Hyundai’s first EREV spotted with an interesting design ahead of its debut</div>
-      </div>
-      <span class="news-meta"><b>Electrek</b> · Fri, 17 Apr 2026</span>
-    </div>
-    <div class="news-item">
-      <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/04/17/aventon-aventure-m-mid-drive-all-terrain-e-bike-anker-eufy-solar-security-more/" target="_blank" class="news-title">Aventon促销扩展：Aventure M中置全地形电自行车新低2699美元，Anker eufy独家太阳能安防优惠等</a>
-        <div class='news-orig'>Aventon expands sale with Aventure M mid-drive all-terrain e-bike at new $2,699 low, Anker eufy exclusive solar security deals, more</div>
-      </div>
-      <span class="news-meta"><b>Electrek</b> · Fri, 17 Apr 2026</span>
-    </div>
-    <div class="news-item">
-      <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/04/17/volkswagen-launches-high-tech-electric-suv-china-35000/" target="_blank" class="news-title">大众高科技电动SUV在中国上市，售价低于3.5万美元</a>
-        <div class='news-orig'>Volkswagen’s high-tech electric SUV launches in China for under $35,000</div>
-      </div>
-      <span class="news-meta"><b>Electrek</b> · Fri, 17 Apr 2026</span>
-    </div>
-    <div class="news-item">
-      <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/04/17/toyota-shuts-down-idea-of-rav4-ev-says-to-try-this-electric-suv/" target="_blank" class="news-title">丰田否决RAV4电动版，建议尝试另一款电动SUV</a>
-        <div class='news-orig'>Toyota shuts down the idea of a RAV4 EV, says to try this electric SUV instead</div>
-      </div>
-      <span class="news-meta"><b>Electrek</b> · Fri, 17 Apr 2026</span>
-    </div>
-    <div class="news-item">
-      <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/04/17/donut-labs-miracle-solid-state-battery-is-fraud-says-insider-donut-lab-denies/" target="_blank" class="news-title">知情人士称Donut Lab“奇迹”固态电池系欺诈，Donut Lab否认</a>
-        <div class='news-orig'>Donut Lab’s ‘miracle’ solid-state battery is fraud, says insider, Donut Lab denies</div>
-      </div>
-      <span class="news-meta"><b>Electrek</b> · Fri, 17 Apr 2026</span>
-    </div>
-    <div class="news-item">
-      <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/04/17/gas-prices-got-you-down-learn-about-evs-at-drive-electric-events-this-week/" target="_blank" class="news-title">油价让你烦恼？本周电动车驾驶活动了解电动汽车</a>
-        <div class='news-orig'>Gas prices got you down? Learn about EVs at Drive Electric events this week</div>
-      </div>
-      <span class="news-meta"><b>Electrek</b> · Fri, 17 Apr 2026</span>
-    </div>
-    <div class="news-item">
-      <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/04/17/kia-launching-new-high-volume-ev-suv-following-ev5/" target="_blank" class="news-title">继EV5成功后，起亚将推出新的高销量电动SUV</a>
-        <div class='news-orig'>Kia is launching a new high-volume electric SUV following the EV5’s success</div>
-      </div>
-      <span class="news-meta"><b>Electrek</b> · Fri, 17 Apr 2026</span>
-    </div>
-    <div class="news-item">
-      <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/04/17/major-e-bike-company-set-to-launch-semi-solid-state-battery-electric-bicycle/" target="_blank" class="news-title">主要电动自行车公司将推出半固态电池电动自行车</a>
-        <div class='news-orig'>Major e-bike company set to launch semi-solid-state battery electric bicycles</div>
-      </div>
-      <span class="news-meta"><b>Electrek</b> · Fri, 17 Apr 2026</span>
-    </div>
-    <div class="news-item">
-      <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/04/16/volvo-updates-its-electric-semi-truck-lineup-with-up-to-700-km-range/" target="_blank" class="news-title">沃尔沃更新电动半挂卡车系列，续航可达700公里</a>
-        <div class='news-orig'>Volvo updates its electric semi truck lineup with up to 700 km range</div>
-      </div>
-      <span class="news-meta"><b>Electrek</b> · Fri, 17 Apr 2026</span>
-    </div>
-    <div class="news-item">
-      <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/04/16/hyundais-ev-hot-hatch-spotted-racing-days-before-debut-video/" target="_blank" class="news-title">现代电动小钢炮发布前几天街头疾驰曝光[视频]</a>
-        <div class='news-orig'>Hyundai’s electric hot hatch spotted racing down the street days before debut [Video]</div>
-      </div>
-      <span class="news-meta"><b>Electrek</b> · Thu, 16 Apr 2026</span>
-    </div>
-    <div class="news-item">
-      <div class="news-title-wrap">
-        <a href="https://electrek.co/2026/04/16/toyotas-15k-ev-surpasses-80000-deliveries-china-one-year/" target="_blank" class="news-title">丰田1.5万美元电动SUV在中国上市首年交付超8万辆</a>
-        <div class='news-orig'>Toyota’s $15,000 electric SUV surpasses 80,000 deliveries in China in its first year</div>
-      </div>
-      <span class="news-meta"><b>Electrek</b> · Thu, 16 Apr 2026</span>
-    </div>
-    <div class="news-item">
-      <div class="news-title-wrap">
-        <a href="https://insideevs.com/news/793347/high-gas-prices-ev-sales-america-2026/" target="_blank" class="news-title">高油价助推全球电动汽车销量，美国会被抛弃吗？</a>
-        <div class='news-orig'>High Gas Prices Are Boosting EV Sales Around The World. Will The U.S. Be Left Out?</div>
-      </div>
-      <span class="news-meta"><b>InsideEVs</b> · Sun, 19 Apr 2026</span>
-    </div>
-    <div class="news-item">
-      <div class="news-title-wrap">
-        <a href="https://insideevs.com/features/793324/rivian-slate-lucid-update-2026/" target="_blank" class="news-title">生死存亡：电动汽车初创公司Rivian、Lucid和Slate如何度过最重要一年</a>
-        <div class='news-orig'>Do Or Die: How EV Startups Rivian, Lucid, And Slate Are Navigating Their Most Important Year Yet</div>
-      </div>
-      <span class="news-meta"><b>InsideEVs</b> · Sat, 18 Apr 2026</span>
-    </div>
-    <div class="news-item">
-      <div class="news-title-wrap">
-        <a href="https://insideevs.com/news/793169/tesla-model-y-lfp-high-mileage-degradation-test/" target="_blank" class="news-title">认为快充损害电动车电池？看看这辆11.1万英里特斯拉Model Y</a>
-        <div class='news-orig'>Think Fast-Charging Ruins EV Batteries? Look At This 111,000-Mile Tesla Model Y</div>
-      </div>
-      <span class="news-meta"><b>InsideEVs</b> · Sat, 18 Apr 2026</span>
-    </div>
-    <div class="news-item">
-      <div class="news-title-wrap">
-        <a href="https://insideevs.com/news/793283/renault-4-ev-soft-top-plein-sud/" target="_blank" class="news-title">最酷复古电动车增新功能，使其更酷</a>
-        <div class='news-orig'>One Of The Coolest Retro EVs Gets A New Feature That Makes It Even Cooler</div>
-      </div>
-      <span class="news-meta"><b>InsideEVs</b> · Fri, 17 Apr 2026</span>
-    </div>
-    <div class="news-item">
-      <div class="news-title-wrap">
-        <a href="https://insideevs.com/news/793256/verge-ts-pro-gen2-solid-state-cooling-pack-configuration/" target="_blank" class="news-title">全球首款固态电池电动自行车，配备微型PC风扇散热</a>
-        <div class='news-orig'>The World’s First Solid-State Electric Bike Has Tiny PC Fans For Cooling</div>
-      </div>
-      <span class="news-meta"><b>InsideEVs</b> · Fri, 17 Apr 2026</span>
-    </div>
-    <div class="news-item">
-      <div class="news-title-wrap">
-        <a href="https://insideevs.com/news/793207/hyundai-ceo-evs-gas-prices-march-2026/" target="_blank" class="news-title">CEO称高油价已助现代销售更多电动汽车</a>
-        <div class='news-orig'>High Gas Prices Are Already Helping Hyundai Sell More EVs, CEO Says</div>
-      </div>
-      <span class="news-meta"><b>InsideEVs</b> · Thu, 16 Apr 2026</span>
-    </div>
-    <div class="news-item">
-      <div class="news-title-wrap">
-        <a href="https://insideevs.com/news/793070/car-companies-too-many-batteries/" target="_blank" class="news-title">汽车公司电池过剩，虽有方案但不易实施</a>
-        <div class='news-orig'>Car Companies Have Way Too Many Batteries. They Have A Solution, But It Isn't Easy</div>
-      </div>
-      <span class="news-meta"><b>InsideEVs</b> · Thu, 16 Apr 2026</span>
-    </div>
-    <div class="news-item">
-      <div class="news-title-wrap">
-        <a href="https://insideevs.com/news/793135/nissan-gt-r-r36-no-ev-hybrid/" target="_blank" class="news-title">“不可能”：新日产GT-R不会是电动车，但混动版不可避免</a>
-        <div class='news-orig'>‘No Way’: New Nissan GT-R Won’t Be An EV, But A Hybrid Is Inevitable</div>
-      </div>
-      <span class="news-meta"><b>InsideEVs</b> · Thu, 16 Apr 2026</span>
-    </div>
-    <div class="news-item">
-      <div class="news-title-wrap">
-        <a href="https://insideevs.com/news/793130/ford-skunkworks-ev-tech-hybrids/" target="_blank" class="news-title">福特秘密电动汽车技术也将用于混动车</a>
-        <div class='news-orig'>Ford's Skunkworks EV Tech Will Make It Into Hybrids Too</div>
-      </div>
-      <span class="news-meta"><b>InsideEVs</b> · Thu, 16 Apr 2026</span>
-    </div>
+    <div class="empty">暂无资讯</div>
   </div>
 </div>
     
@@ -728,56 +518,56 @@
     <div class="marginal-card">
       <div class="marginal-header">
         <span class="marginal-title">津巴布韦锂矿</span>
-        <span style="background:#f39c12;color:#fff;padding:2px 8px;border-radius:3px;font-size:11px;">中性</span>
+        <span style="background:#888;color:#fff;padding:2px 8px;border-radius:3px;font-size:11px;">未知</span>
       </div>
-      <div class="marginal-summary">津巴布韦于2026年2月全面禁止锂精矿出口，但在4月放宽政策，允许六家主要生产商（包括赣锋Bikita和华友Arcadia）在承诺建设锂硫酸盐加工厂的前提下获得出口配额。政府旨在推动锂矿本地化加工，2027年起将全面禁止原矿出口。</div>
-      <div class='marginal-event'>📌 津巴布韦政府于2026年4月决定，对包括赣锋Bikita和华友Arcadia在内的六家主要锂精矿生产商实行有条件出口配额制度，取代2月份的全面禁令，但要求企业在2027年1月前建成锂硫酸盐加工厂。</div>
-      <div class='marginal-impact'>📊 短期内缓解了2月份全面禁令可能造成的供应紧张，长期看，将推动津巴布韦锂产品高附加值化，对碳酸锂价格影响中性，取决于加工产能和全球供需。</div>
+      <div class="marginal-summary">数据获取失败</div>
+      
+      
     </div>
     <div class="marginal-card">
       <div class="marginal-header">
         <span class="marginal-title">宁德宜春枧下窝矿</span>
-        <span style="background:#e74c3c;color:#fff;padding:2px 8px;border-radius:3px;font-size:11px;">利空</span>
+        <span style="background:#888;color:#fff;padding:2px 8px;border-radius:3px;font-size:11px;">未知</span>
       </div>
-      <div class="marginal-summary">宁德时代宜春枧下窝锂矿因采矿许可证到期自2025年8月停产。原预计2026年春节前后复产，但由于采矿主矿种变更及复杂审批，最新进展显示复产已推迟至2026年第四季度。</div>
-      <div class='marginal-event'>📌 宁德时代宜春枧下窝锂矿的复产已推迟至2026年第四季度。</div>
-      <div class='marginal-impact'>📊 该矿区长时间停产将减少锂云母供应，对碳酸锂价格形成支撑，可能加剧短期供应紧张。</div>
+      <div class="marginal-summary">数据获取失败</div>
+      
+      
     </div>
     <div class="marginal-card">
       <div class="marginal-header">
         <span class="marginal-title">智利锂国有化</span>
-        <span style="background:#27ae60;color:#fff;padding:2px 8px;border-radius:3px;font-size:11px;">利多</span>
+        <span style="background:#888;color:#fff;padding:2px 8px;border-radius:3px;font-size:11px;">未知</span>
       </div>
-      <div class="marginal-summary">智利锂国有化战略稳步推进，Codelco与SQM合资公司NovaAndino Litio已开始运营Atacama盐湖至2060年。智利发布国家关键矿产战略，并预期锂产量增加。</div>
-      <div class='marginal-event'>📌 Codelco与SQM成立的合资公司NovaAndino Litio正式开始运营，将负责Atacama盐湖的锂矿开采至2060年。</div>
-      <div class='marginal-impact'>📊 智利锂资源供应的长期确定性增加，可能在中长期对全球碳酸锂价格起到稳定作用，缓解市场对供应的担忧。</div>
+      <div class="marginal-summary">数据获取失败</div>
+      
+      
     </div>
     <div class="marginal-card">
       <div class="marginal-header">
         <span class="marginal-title">阿根廷锂三角</span>
-        <span style="background:#27ae60;color:#fff;padding:2px 8px;border-radius:3px;font-size:11px;">利多</span>
+        <span style="background:#888;color:#fff;padding:2px 8px;border-radius:3px;font-size:11px;">未知</span>
       </div>
-      <div class="marginal-summary">阿根廷推出Rigi投资激励制度，吸引140亿美元锂矿投资，多家公司公布扩产计划，预计2026-2030年产能将大幅增长，巩固其全球主要锂生产国地位。</div>
-      <div class='marginal-event'>📌 阿根廷政府推出Rigi大型投资激励制度，提供税收优惠和30年政策稳定承诺，已吸引140亿美元锂矿投资，其中3个项目获批，显著加速了阿根廷锂矿的开发和产能扩张。</div>
-      <div class='marginal-impact'>📊 随着阿根廷锂矿产能的快速增长和大量外资项目的落地，将增加全球锂供应，对碳酸锂价格可能带来中长期下行压力。</div>
+      <div class="marginal-summary">数据获取失败</div>
+      
+      
     </div>
     <div class="marginal-card">
       <div class="marginal-header">
         <span class="marginal-title">澳矿产量/停复产</span>
-        <span style="background:#27ae60;color:#fff;padding:2px 8px;border-radius:3px;font-size:11px;">利多</span>
+        <span style="background:#888;color:#fff;padding:2px 8px;border-radius:3px;font-size:11px;">未知</span>
       </div>
-      <div class="marginal-summary">Core Lithium已决定重启Finniss锂矿项目，将于2026年5月开始采矿，预计第四季度首次发货。Pilbara Minerals计划于2026年7月重启Ngungaju工厂。Liontown Resources在Kathleen Valley完成了向地下采矿的过渡，并实现了产量显著增长。这些复产和增产主要得益于锂价回升。</div>
-      <div class='marginal-event'>📌 Core Lithium宣布其Finniss锂矿项目将于2026年5月重启露天采矿作业，并预计在2026年第四季度实现首次精矿发货，该项目已获得全面资金支持。</div>
-      <div class='marginal-impact'>📊 澳大利亚主要锂矿项目的复产和增产预示着市场供应将增加，这可能在中短期内缓和碳酸锂价格的上涨势头，但鉴于近期锂价回升且需求保持强劲，整体市场将趋于平衡。</div>
+      <div class="marginal-summary">数据获取失败</div>
+      
+      
     </div>
     <div class="marginal-card">
       <div class="marginal-header">
         <span class="marginal-title">国内政策动向</span>
-        <span style="background:#27ae60;color:#fff;padding:2px 8px;border-radius:3px;font-size:11px;">利多</span>
+        <span style="background:#888;color:#fff;padding:2px 8px;border-radius:3px;font-size:11px;">未知</span>
       </div>
-      <div class="marginal-summary">2026年3月至4月，中国新能源政策持续调整。工信部发布第九批锂电池行业规范企业名单，深化“反内卷”政策并于4月起调整电池出口退税，旨在推动产业高质量发展。同时，新能源汽车购置税减免减半，但以旧换新补贴加码且技术门槛提高。锂资源管理趋严，市场驱动下碳酸锂价格已大幅反弹。</div>
-      <div class='marginal-event'>📌 锂电池行业政策转向高质量发展和规范市场竞争，叠加市场驱动，碳酸锂价格在2026年第一季度触底反弹，截至3月底已站上17万元/吨关口。</div>
-      <div class='marginal-impact'>📊 新能源汽车补贴政策结构性调整，同时锂电池产业“反内卷”深化及锂资源管理趋严，共同推动碳酸锂市场从政策驱动转向市场驱动，价格中枢上移，整体利好碳酸锂价格。</div>
+      <div class="marginal-summary">数据获取失败</div>
+      
+      
     </div>
   </div>
   <div style='margin-top:14px;'><div class='section-label'>手动补充</div>
@@ -801,8 +591,8 @@
     <tr>
       <td>002466</td>
       <td>天齐锂业</td>
-      <td class="text-right">—</td>
-      <td class="text-right" style="color:#888">—</td>
+      <td class="text-right">66.82</td>
+      <td class="text-right" style="color:#e74c3c">+0.26%</td>
       <td><span class="tag-cat">锂矿+锂盐</span></td>
     </tr>
     <tr>
@@ -884,15 +674,15 @@
     <tr>
       <td>9696.HK</td>
       <td>天齐锂业H</td>
-      <td class="text-right">57.90</td>
-      <td class="text-right" style="color:#27ae60">-1.19%</td>
+      <td class="text-right">58.25</td>
+      <td class="text-right" style="color:#27ae60">-0.60%</td>
       <td><span class="tag-cat">锂矿+锂盐</span></td>
     </tr>
     <tr>
       <td>1772.HK</td>
       <td>赣锋锂业H</td>
-      <td class="text-right">80.90</td>
-      <td class="text-right" style="color:#27ae60">-1.16%</td>
+      <td class="text-right">80.60</td>
+      <td class="text-right" style="color:#27ae60">-1.53%</td>
       <td><span class="tag-cat">锂盐+电池</span></td>
     </tr>
     <tr>
@@ -926,22 +716,22 @@
     <tr>
       <td>PLS.AX</td>
       <td>Pilbara Minerals</td>
-      <td class="text-right">6.03</td>
-      <td class="text-right" style="color:#27ae60">-0.17%</td>
+      <td class="text-right">6.04</td>
+      <td class="text-right" style="color:#888">0.00%</td>
       <td><span class="tag-cat">锂精矿</span></td>
     </tr>
     <tr>
       <td>LTR.AX</td>
       <td>Liontown Resources</td>
-      <td class="text-right">2.24</td>
-      <td class="text-right" style="color:#e74c3c">+1.82%</td>
+      <td class="text-right">2.23</td>
+      <td class="text-right" style="color:#e74c3c">+1.36%</td>
       <td><span class="tag-cat">锂精矿</span></td>
     </tr>
     <tr>
       <td>IGO.AX</td>
       <td>IGO Limited</td>
-      <td class="text-right">9.01</td>
-      <td class="text-right" style="color:#27ae60">-2.59%</td>
+      <td class="text-right">8.94</td>
+      <td class="text-right" style="color:#27ae60">-3.35%</td>
       <td><span class="tag-cat">锂精矿</span></td>
     </tr></tbody>
   </table>
@@ -971,7 +761,7 @@
       <div class="stat-value">—</div>
     </div>
   </div>
-  <div class="data-source">来源：SMM, 百川盈孚 · 2026-04-16</div>
+  <div class="data-source">来源：None · —</div>
   
   <div class="section-label" style="margin-top:16px;">分品种开工率（2026-03，国金数据）</div>
   <div class="card-row">
@@ -1213,115 +1003,20 @@
   <div class="section-label" style="margin-top:16px;">主要矿山产量</div>
   <table class="data-table">
     <thead><tr><th>公司</th><th>地区</th><th>产量</th><th>季度</th><th>同比</th><th>备注</th></tr></thead>
-    <tbody>
-    <tr>
-      <td>Pilbara Minerals</td>
-      <td><span class="tag-region">澳大利亚</span></td>
-      <td>224.8 千吨锂辉石精矿</td>
-      <td>2025Q3</td>
-      <td style="color:#888">—</td>
-      <td class="note">指2025财年第一季度（9月季度）产量，较上一季度增长2%。</td>
-    </tr>
-    <tr>
-      <td>Greenbushes</td>
-      <td><span class="tag-region">澳大利亚</span></td>
-      <td>352 千吨锂辉石精矿</td>
-      <td>2025Q4</td>
-      <td style="color:#888">—</td>
-      <td class="note">指2026财年第二季度（12月季度）产量（100%权益），环比增长10%。</td>
-    </tr>
-    <tr>
-      <td>Core Lithium</td>
-      <td><span class="tag-region">澳大利亚</span></td>
-      <td>None None</td>
-      <td>2025Q4</td>
-      <td style="color:#888">—</td>
-      <td class="note">公司2025年第四季度没有报告新的生产数据。Grant露天矿的开采工作已于2026年4月开始，目标是在2026年第三季度实现首次精矿生产。公司目前持有约5,000吨锂辉石精矿和75,000吨锂粉矿库存待售。</td>
-    </tr>
-    <tr>
-      <td>Liontown</td>
-      <td><span class="tag-region">澳大利亚</span></td>
-      <td>105342 干公吨锂辉石精矿</td>
-      <td>2025Q4</td>
-      <td style="color:#888">—</td>
-      <td class="note">指2026财年第二季度（12月季度）产量，环比增长21%。</td>
-    </tr>
-    <tr>
-      <td>SQM</td>
-      <td><span class="tag-region">智利</span></td>
-      <td>66000 吨</td>
-      <td>2025Q4</td>
-      <td style="color:#888">—</td>
-      <td class="note">Nova Andino Litio（原SQM Salar，智利业务）在2025年第四季度实现了创纪录的锂产量，同比增幅超过50%。</td>
-    </tr>
-    <tr>
-      <td>Albemarle</td>
-      <td><span class="tag-region">智利</span></td>
-      <td>None None</td>
-      <td>2025Q4</td>
-      <td style="color:#888">—</td>
-      <td class="note">公司2025年智利业务年度产量约为52,000吨碳酸锂当量。目前尚未公布智利地区2025年第四季度或2026年第一季度的具体季度产量数据。公司计划于2026年5月6日发布2026年第一季度财报。</td>
-    </tr>
-    <tr>
-      <td>Arcadium</td>
-      <td><span class="tag-region">阿根廷</span></td>
-      <td>{'lithium_hydroxide_carbonate': 13450, 'spodumene': 54100} {'lithium_hydroxide_carbonate': '产品公吨', 'spodumene': '干公吨'}</td>
-      <td>2024Q4</td>
-      <td style="color:#888">—</td>
-      <td class="note">Arcadium Lithium于2025年3月6日被力拓收购。此数据为其作为独立公司发布的最后一份季度报告中的产量数据。锂化合物和氢氧化物销量同比增长。</td>
-    </tr>
-    <tr>
-      <td>天齐锂业雅安</td>
-      <td><span class="tag-region">国内</span></td>
-      <td>None None</td>
-      <td>2025Q4</td>
-      <td style="color:#888">—</td>
-      <td class="note">天齐锂业2025年年报显示公司实现扭亏为盈，但未披露雅安工厂的具体季度产量数据。公司整体锂化工产品产能在2025年末合计将达到12.26万吨/年，其中部分项目处于爬坡阶段。</td>
-    </tr>
-    <tr>
-      <td>盐湖股份</td>
-      <td><span class="tag-region">国内-青海</span></td>
-      <td>19500 吨碳酸锂</td>
-      <td>2026Q1</td>
-      <td style="color:#888">—</td>
-      <td class="note">2026年第一季度碳酸锂产量，同比增长129%。</td>
-    </tr>
-    <tr>
-      <td>永兴材料</td>
-      <td><span class="tag-region">国内-江西</span></td>
-      <td>None None</td>
-      <td>2025Q4</td>
-      <td style="color:#888">—</td>
-      <td class="note">截至2026年3月27日，公司碳酸锂冶炼产能为3万吨/年。公司未披露2025年第四季度或2026年第一季度的具体产量数据，仅提及2024年碳酸锂销量为2.6万吨。</td>
-    </tr></tbody>
+    <tbody><tr><td colspan='6' class='empty'>暂无数据</td></tr></tbody>
   </table>
   
-  <div class="section-label" style="margin-top:16px;">进口量（—）</div>
-  <div class="card-row">
-    <div class="stat-card">
-      <div class="stat-label">锂矿石进口量</div>
-      <div class="stat-value">— <span class="unit-small">吨</span></div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-label">碳酸锂进口量</div>
-      <div class="stat-value">— <span class="unit-small">吨</span></div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-label">同比变化</div>
-      <div class="stat-value" style="color:#888">—</div>
-    </div>
-  </div>
 </div>
     
 <div class="panel" id="p5">
   <div class="panel-title">🚗 需求端</div>
 
-  <div class="section-label">国内新能源车（2026-03 · 乘联会）</div>
+  <div class="section-label">国内新能源车（— · —）</div>
   <div class="card-row">
     <div class="stat-card">
       <div class="stat-label">新能源乘用车销量</div>
-      <div class="stat-value">84.8 <span class="unit-small">万辆</span></div>
-      <div class="stat-sub" style="color:#27ae60">同比 -14.40%</div>
+      <div class="stat-value">— <span class="unit-small">万辆</span></div>
+      <div class="stat-sub" style="color:#888">同比 —</div>
     </div>
     <div class="stat-card">
       <div class="stat-label">纯电 BEV</div>
@@ -1333,46 +1028,46 @@
     </div>
     <div class="stat-card">
       <div class="stat-label">新能源渗透率</div>
-      <div class="stat-value">51.5%</div>
+      <div class="stat-value">—</div>
     </div>
   </div>
 
-  <div class="section-label" style="margin-top:16px;">动力电池（2026-03 · CABIA）</div>
+  <div class="section-label" style="margin-top:16px;">动力电池（— · CABIA）</div>
   <div class="card-row">
     <div class="stat-card">
       <div class="stat-label">总装机量</div>
-      <div class="stat-value">56.5 <span class="unit-small">GWh</span></div>
-      <div class="stat-sub" style="color:#27ae60">同比 -0.10%</div>
+      <div class="stat-value">— <span class="unit-small">GWh</span></div>
+      <div class="stat-sub" style="color:#888">同比 —</div>
     </div>
     <div class="stat-card">
       <div class="stat-label">磷酸铁锂 LFP</div>
-      <div class="stat-value">45.8 <span class="unit-small">GWh</span></div>
+      <div class="stat-value">— <span class="unit-small">GWh</span></div>
     </div>
     <div class="stat-card">
       <div class="stat-label">三元 NCM</div>
-      <div class="stat-value">10.7 <span class="unit-small">GWh</span></div>
+      <div class="stat-value">— <span class="unit-small">GWh</span></div>
     </div>
     <div class="stat-card">
       <div class="stat-label">宁德时代市占</div>
-      <div class="stat-value">45.5%</div>
+      <div class="stat-value">—</div>
     </div>
   </div>
 
-  <div class="section-label" style="margin-top:16px;">储能（2026-03 · CNESA）</div>
+  <div class="section-label" style="margin-top:16px;">储能（— · —）</div>
   <div class="card-row">
     <div class="stat-card">
       <div class="stat-label">当月新增装机</div>
-      <div class="stat-value">9.7 <span class="unit-small">GWh</span></div>
-      <div class="stat-sub" style="color:#e74c3c">同比 +105.32%</div>
+      <div class="stat-value">— <span class="unit-small">GWh</span></div>
+      <div class="stat-sub" style="color:#888">同比 —</div>
     </div>
     <div class="stat-card">
       <div class="stat-label">累计装机</div>
       <div class="stat-value">— <span class="unit-small">GWh</span></div>
     </div>
     <div class="stat-card">
-      <div class="stat-label">欧洲BEV（2026-03）</div>
-      <div class="stat-value">24.0 <span class="unit-small">万辆</span></div>
-      <div class="stat-sub" style="color:#e74c3c">同比 +51.30%</div>
+      <div class="stat-label">欧洲BEV（—）</div>
+      <div class="stat-value">— <span class="unit-small">万辆</span></div>
+      <div class="stat-sub" style="color:#888">同比 —</div>
     </div>
   </div>
   
@@ -1414,24 +1109,24 @@
 
   <div class="card-row" style="margin-top:10px;">
     <div class="price-card main-price">
-      <div class="price-label">SMM碳酸锂社会库存 2026-04-09 <span class="src-tag src-ai">🔍 AI搜索·<a href="https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFgk0C92p_xruBMP6B2Y7-ICKSPobPYGuO-3i6Pjs2SI8fp2M3HGJSyW8ejEgER6n0XO4OwtAPjRM74SqcbWj60ovf9vBb3W2ybLcJEvzRkYr0FHft4cJt4K_pmV4wpBh0k_FHfdtf78RvUGA==" target="_blank" style="color:inherit">vertexaisearch.cloud.google.com</a></span></div>
-      <div class="price-value">101,802 <span class="price-unit">吨</span></div>
+      <div class="price-label">SMM碳酸锂社会库存  <span class="src-tag src-empty">⚠️ 待填写</span></div>
+      <div class="price-value">— <span class="price-unit">吨</span></div>
       <div class="price-meta">
-        周环比：<span style="color:#e74c3c">1,453吨</span>
-        &nbsp;+1.45%
+        周环比：<span style="color:#888">—</span>
+        &nbsp;—
       </div>
     </div>
     <div class="price-card">
-      <div class="price-label">GFEX注册仓单 20260420
+      <div class="price-label">GFEX注册仓单 None
         <span class="src-tag src-api">📡 akshare·GFEX</span>
       </div>
-      <div class="price-value">30,688 <span class="price-unit">手</span></div>
-      <div class="price-meta">手（1手=2吨）</div>
+      <div class="price-value">— <span class="price-unit">手</span></div>
+      <div class="price-meta">1手=2吨</div>
     </div>
     <div class="price-card">
       <div class="price-label">港口锂精矿库存</div>
-      <div class="price-value">17.40 <span class="price-unit">万吨</span></div>
-      <div class="price-meta">None · 2026-04-16</div>
+      <div class="price-value">— <span class="price-unit">万吨</span></div>
+      <div class="price-meta"> · </div>
     </div>
   </div>
   <div class="data-source">氢氧化锂库存：—吨</div>
@@ -1446,7 +1141,7 @@
     var labels = ["03-19", "03-20", "03-26", "03-27", "03-28", "03-30", "03-31", "04-01", "04-02", "04-03", "04-04", "04-05", "04-06", "04-07", "04-08", "04-09", "04-10", "04-11", "04-12", "04-13", "04-14", "04-16", "04-17", "04-18", "04-19", "04-20"];
     var smm    = [98959, 98959, 99500, 99489, 99489, 99489, null, 99489, 100349, 100349, null, null, null, null, null, 101802, 35170, 101802, 101802, null, null, 102814, 102814, 102814, null, null];
     var gfex   = [38476.0, 35316.0, 22636.0, 22636.0, 62128.0, 35316.0, 22636.0, 42476.0, 50906.0, 49328.0, 42476.0, null, null, null, 47308.0, 61376.0, null, null, null, null, 52406.0, null, null, null, null, null];
-    var port   = [null, 18.5, 19.3, 19.3, 19.3, null, null, 15.5, 14.3, 9.4, 15.5, 15.5, null, null, null, 17.4, 17.4, null, null, 14.3, null, 17.4, 16.4, null, 16.4, 16.4];
+    var port   = [null, 18.5, 19.3, 19.3, 19.3, null, null, 15.5, 14.3, 9.4, 15.5, 15.5, null, null, null, 17.4, 17.4, null, null, 14.3, null, 17.4, 16.4, null, 16.4, null];
     new Chart(document.getElementById('invFullHistChart'), {
       type: 'line',
       data: {
@@ -1470,7 +1165,7 @@
           
           {
             label: '港口锂精矿库存（万吨，右轴）',
-            data: [null, 18.5, 19.3, 19.3, 19.3, null, null, 15.5, 14.3, 9.4, 15.5, 15.5, null, null, null, 17.4, 17.4, null, null, 14.3, null, 17.4, 16.4, null, 16.4, 16.4],
+            data: [null, 18.5, 19.3, 19.3, 19.3, null, null, 15.5, 14.3, 9.4, 15.5, 15.5, null, null, null, 17.4, 17.4, null, null, 14.3, null, 17.4, 16.4, null, 16.4, null],
             borderColor: '#27ae60', backgroundColor: 'rgba(39,174,96,0.07)',
             tension: 0.3, pointRadius: 3, fill: false, spanGaps: true, borderDash: [4,3],
             yAxisID: 'y2',
@@ -1623,7 +1318,7 @@
   <div class="panel-title">📈 GFEX期货曲线</div>
   <div class="stat-row">
     <span>期限结构：<strong style="color:#e74c3c">contango（远期升水）</strong></span>
-    <span style='margin-left:20px;'>现货参考：<strong>17.25 万元/吨（172,500 元/吨）</strong></span>
+    
   </div>
 
   <div style="height:280px;margin-top:12px;">
@@ -1638,7 +1333,7 @@
   (function(){
     var labels  = ["LC2604", "LC2605", "LC2606", "LC2607", "LC2608", "LC2609", "LC2610", "LC2611", "LC2612", "LC2701", "LC2702", "LC2703"];
     var prices  = [163400.0, 176220.0, 177100.0, 177800.0, 179900.0, 180200.0, 179520.0, 178900.0, 178320.0, 178700.0, 178380.0, 176820.0];
-    var bases   = [9100.0, -3720.0, -4600.0, -5300.0, -7400.0, -7700.0, -7020.0, -6400.0, -5820.0, -6200.0, -5880.0, -4320.0];
+    var bases   = [null, null, null, null, null, null, null, null, null, null, null, null];
     var volumes = [0, 73627, 25017, 141975, 17300, 435887, 10453, 18065, 14321, 10198, 801, 74];
 
     new Chart(document.getElementById('futuresCurveChart'), {
@@ -1720,7 +1415,7 @@
   <div class="section-label" style="margin-top:16px;">GFEX LC期货主力成交量（日度，手）— 2022年至今</div>
   <canvas id="fvChart" style="max-height:160px;"></canvas>
 
-  <div class="data-source">数据来源：akshare（新浪财经·A股历史）+ 新浪财经·GFEX · 更新于 2026-04-20 16:48:42</div>
+  <div class="data-source">数据来源：akshare（新浪财经·A股历史）+ 新浪财经·GFEX · 更新于 2026-04-20 20:53:17</div>
 
   <script>
   (function(){
