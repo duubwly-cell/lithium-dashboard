@@ -202,8 +202,8 @@
 <!-- 顶栏 -->
 <div class="topbar">
   <div class="topbar-title">⚗️ 碳酸锂监测</div>
-  <div class="ticker-strip"><span class="ticker-item"><span class="ticker-label">电池级现货</span> <span class="ticker-val">—</span></span><span class="ticker-item"><span class="ticker-label">GFEX LC2609</span> <span class="ticker-val">180,200元/吨</span> <span style='color:#e74c3c'>+0.01%</span></span><span class="ticker-item"><span class="ticker-label">DXY</span> <span class="ticker-val">98.07</span> <span style='color:#27ae60'>-0.03%</span></span><span class="ticker-item"><span class="ticker-label">USD/CNY</span> <span class="ticker-val">6.8170</span></span></div>
-  <div class="topbar-meta">更新于 2026-04-21 08:09:05</div>
+  <div class="ticker-strip"><span class="ticker-item"><span class="ticker-label">电池级现货</span> <span class="ticker-val">—</span></span><span class="ticker-item"><span class="ticker-label">GFEX LC2609</span> <span class="ticker-val">177,860元/吨</span> <span style='color:#e74c3c'>+0.01%</span></span><span class="ticker-item"><span class="ticker-label">DXY</span> <span class="ticker-val">—</span></span><span class="ticker-item"><span class="ticker-label">USD/CNY</span> <span class="ticker-val">—</span></span></div>
+  <div class="topbar-meta">更新于 2026-04-21 09:13:34</div>
 </div>
 
 <!-- 主体布局 -->
@@ -260,11 +260,11 @@
       <div class="price-label">GFEX LC2609 最新价
         <span class="src-tag src-api">📡 新浪财经·GFEX</span>
       </div>
-      <div class="price-value">180,200 <span class="price-unit">元/吨</span></div>
+      <div class="price-value">177,860 <span class="price-unit">元/吨</span></div>
       <div class="price-meta">
         <span style="color:#e74c3c">+0.01%</span>
         &nbsp;(20元)
-        &nbsp;· 持仓208,657手 成交435,887手 · 2026-04-20
+        &nbsp;· 持仓46,182手 成交438,773手 · 2026-04-21
       </div>
       <div style="height:55px;margin-top:6px;"><canvas id="spark_futures"></canvas></div>
     </div>
@@ -272,15 +272,15 @@
       <div class="price-label">美元指数 DXY
         <span class="src-tag src-api">📡 Yahoo Finance</span>
       </div>
-      <div class="price-value">98.07</div>
-      <div class="price-meta" style="color:#27ae60">-0.03%</div>
+      <div class="price-value">—</div>
+      <div class="price-meta" style="color:#888">—</div>
     </div>
     <div class="price-card">
       <div class="price-label">美元/人民币
         <span class="src-tag src-api">📡 Yahoo Finance</span>
       </div>
-      <div class="price-value">6.8170</div>
-      <div class="price-meta" style="color:#27ae60">-0.06%</div>
+      <div class="price-value">—</div>
+      <div class="price-meta" style="color:#888">—</div>
     </div>
   </div>
 
@@ -293,11 +293,11 @@
   </div>
   <script>
   (function(){
-    var labels    = ["04-21", "04-22", "04-23", "04-24", "04-25", "04-28", "04-29", "04-30", "05-06", "05-07", "05-08", "05-09", "05-12", "05-13", "05-14", "05-15", "05-16", "05-19", "05-20", "05-21", "05-22", "05-23", "05-26", "05-27", "05-28", "05-29", "05-30", "06-03", "06-04", "06-05", "06-06", "06-09", "06-10", "06-11", "06-12", "06-13", "06-16", "06-17", "06-18", "06-19", "06-20", "06-23", "06-24", "06-25", "06-26", "06-27", "06-30", "07-01", "07-02", "07-03", "07-04", "07-07", "07-08", "07-09", "07-10", "07-11", "07-14", "07-15", "07-16", "07-17", "07-18", "07-21", "07-22", "07-23", "07-24", "07-25", "07-28", "07-29", "07-30", "07-31", "08-01", "08-04", "08-05", "08-06", "08-07", "08-08", "08-11", "08-12", "08-13", "08-14", "08-15", "08-18", "08-19", "08-20", "08-21", "08-22", "08-25", "08-26", "08-27", "08-28", "08-29", "09-01", "09-02", "09-03", "09-04", "09-05", "09-08", "09-09", "09-10", "09-11", "09-12", "09-15", "09-16", "09-17", "09-18", "09-19", "09-22", "09-23", "09-24", "09-25", "09-26", "09-29", "09-30", "10-09", "10-10", "10-13", "10-14", "10-15", "10-16", "10-17", "10-20", "10-21", "10-22", "10-23", "10-24", "10-27", "10-28", "10-29", "10-30", "10-31", "11-03", "11-04", "11-05", "11-06", "11-07", "11-10", "11-11", "11-12", "11-13", "11-14", "11-17", "11-18", "11-19", "11-20", "11-21", "11-24", "11-25", "11-26", "11-27", "11-28", "12-01", "12-02", "12-03", "12-04", "12-05", "12-08", "12-09", "12-10", "12-11", "12-12", "12-15", "12-16", "12-17", "12-18", "12-19", "12-22", "12-23", "12-24", "12-25", "12-26", "12-29", "12-30", "12-31", "01-05", "01-06", "01-07", "01-08", "01-09", "01-12", "01-13", "01-14", "01-15", "01-16", "01-19", "01-20", "01-21", "01-22", "01-23", "01-26", "01-27", "01-28", "01-29", "01-30", "02-02", "02-03", "02-04", "02-05", "02-06", "02-09", "02-10", "02-11", "02-12", "02-13", "02-24", "02-25", "02-26", "02-27", "03-02", "03-03", "03-04", "03-05", "03-06", "03-09", "03-10", "03-11", "03-12", "03-13", "03-16", "03-17", "03-18", "03-19", "03-20", "03-23", "03-24", "03-25", "03-26", "03-27", "03-30", "03-31", "04-01", "04-02", "04-03", "04-07", "04-08", "04-09", "04-10", "04-13", "04-14", "04-15", "04-16", "04-17", "04-20"];
-    var battery   = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 16.45, 16.3, 16.1, 15.95, 15.8, 15.9, 159000, 15.85, 15.5, 15.7, 16.15, 16.6, 16.75, 16.95, 17.25];
-    var industry  = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 16.1, 15.95, 15.7, 15.6, 15.5, 15.55, 155500, 15.35, 15.2, 15.35, 15.75, 16.2, 16.3, 16.6, 16.75];
-    var hydroxide = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 15.65, null, 15.125, 14.79, 15.1, 14.8, 146700, 14.725, 14.6, 14.875, 14.85, 15.2, 15.575, 15.5, 16.94];
-    var spodumene = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 2080, 2360, null, 2360, 2205, 2285, null, null, 2170, 2290, 2295, 2295, 2295, 2325, 2415];
+    var labels    = ["04-21", "04-22", "04-23", "04-24", "04-25", "04-28", "04-29", "04-30", "05-06", "05-07", "05-08", "05-09", "05-12", "05-13", "05-14", "05-15", "05-16", "05-19", "05-20", "05-21", "05-22", "05-23", "05-26", "05-27", "05-28", "05-29", "05-30", "06-03", "06-04", "06-05", "06-06", "06-09", "06-10", "06-11", "06-12", "06-13", "06-16", "06-17", "06-18", "06-19", "06-20", "06-23", "06-24", "06-25", "06-26", "06-27", "06-30", "07-01", "07-02", "07-03", "07-04", "07-07", "07-08", "07-09", "07-10", "07-11", "07-14", "07-15", "07-16", "07-17", "07-18", "07-21", "07-22", "07-23", "07-24", "07-25", "07-28", "07-29", "07-30", "07-31", "08-01", "08-04", "08-05", "08-06", "08-07", "08-08", "08-11", "08-12", "08-13", "08-14", "08-15", "08-18", "08-19", "08-20", "08-21", "08-22", "08-25", "08-26", "08-27", "08-28", "08-29", "09-01", "09-02", "09-03", "09-04", "09-05", "09-08", "09-09", "09-10", "09-11", "09-12", "09-15", "09-16", "09-17", "09-18", "09-19", "09-22", "09-23", "09-24", "09-25", "09-26", "09-29", "09-30", "10-09", "10-10", "10-13", "10-14", "10-15", "10-16", "10-17", "10-20", "10-21", "10-22", "10-23", "10-24", "10-27", "10-28", "10-29", "10-30", "10-31", "11-03", "11-04", "11-05", "11-06", "11-07", "11-10", "11-11", "11-12", "11-13", "11-14", "11-17", "11-18", "11-19", "11-20", "11-21", "11-24", "11-25", "11-26", "11-27", "11-28", "12-01", "12-02", "12-03", "12-04", "12-05", "12-08", "12-09", "12-10", "12-11", "12-12", "12-15", "12-16", "12-17", "12-18", "12-19", "12-22", "12-23", "12-24", "12-25", "12-26", "12-29", "12-30", "12-31", "01-05", "01-06", "01-07", "01-08", "01-09", "01-12", "01-13", "01-14", "01-15", "01-16", "01-19", "01-20", "01-21", "01-22", "01-23", "01-26", "01-27", "01-28", "01-29", "01-30", "02-02", "02-03", "02-04", "02-05", "02-06", "02-09", "02-10", "02-11", "02-12", "02-13", "02-24", "02-25", "02-26", "02-27", "03-02", "03-03", "03-04", "03-05", "03-06", "03-09", "03-10", "03-11", "03-12", "03-13", "03-16", "03-17", "03-18", "03-19", "03-20", "03-23", "03-24", "03-25", "03-26", "03-27", "03-30", "03-31", "04-01", "04-02", "04-03", "04-07", "04-08", "04-09", "04-10", "04-13", "04-14", "04-15", "04-16", "04-17", "04-20", "04-21"];
+    var battery   = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 16.45, 16.3, 16.1, 15.95, 15.8, 15.9, 159000, 15.85, 15.5, 15.7, 16.15, 16.6, 16.75, 16.95, 17.25, null];
+    var industry  = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 16.1, 15.95, 15.7, 15.6, 15.5, 15.55, 155500, 15.35, 15.2, 15.35, 15.75, 16.2, 16.3, 16.6, 16.75, null];
+    var hydroxide = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 15.65, null, 15.125, 14.79, 15.1, 14.8, 146700, 14.725, 14.6, 14.875, 14.85, 15.2, 15.575, 15.5, 16.94, null];
+    var spodumene = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 2080, 2360, null, 2360, 2205, 2285, null, null, 2170, 2290, 2295, 2295, 2295, 2325, 2415, null];
     new Chart(document.getElementById('priceHistChart'), {
       type: 'line',
       data: {
@@ -306,7 +306,7 @@
           
           {
             label: 'LC主力合约（元/吨，右轴）',
-            data: [69000.0, 67840.0, 68980.0, 68300.0, 68180.0, 66960.0, 66260.0, 65960.0, 65260.0, 64160.0, 64280.0, 63020.0, 64040.0, 63220.0, 65200.0, 64120.0, 61800.0, 61180.0, 60860.0, 61100.0, 62140.0, 60960.0, 60100.0, 60920.0, 60380.0, 58860.0, 59800.0, 59940.0, 61080.0, 60100.0, 60440.0, 60700.0, 60760.0, 61740.0, 60480.0, 59800.0, 59780.0, 59860.0, 59880.0, 60060.0, 58900.0, 59120.0, 60700.0, 60880.0, 61500.0, 63300.0, 62260.0, 62780.0, 63960.0, 64080.0, 63280.0, 63660.0, 63880.0, 64400.0, 64180.0, 64280.0, 66480.0, 66660.0, 66420.0, 67960.0, 69960.0, 71280.0, 72880.0, 69380.0, 76680.0, 80520.0, 73120.0, 70840.0, 70600.0, 68280.0, 68920.0, 68920.0, 67840.0, 69620.0, 72300.0, 76960.0, 81000.0, 82520.0, 85100.0, 85300.0, 86900.0, 89240.0, 87540.0, 80980.0, 82760.0, 78960.0, 79380.0, 79020.0, 78860.0, 78140.0, 77180.0, 75560.0, 72620.0, 71880.0, 73420.0, 74260.0, 74800.0, 72900.0, 70720.0, 71000.0, 71160.0, 72680.0, 73180.0, 73640.0, 72880.0, 73960.0, 73420.0, 73660.0, 72880.0, 74040.0, 72880.0, 73920.0, 72800.0, 73340.0, 72740.0, 72280.0, 72680.0, 72940.0, 75080.0, 75780.0, 75940.0, 75980.0, 77120.0, 79940.0, 79520.0, 81900.0, 81640.0, 82900.0, 83400.0, 80780.0, 82280.0, 78560.0, 79140.0, 80500.0, 82300.0, 87240.0, 86540.0, 86580.0, 87840.0, 87360.0, 95200.0, 93520.0, 99300.0, 98980.0, 91020.0, 90480.0, 95400.0, 96340.0, 95820.0, 96420.0, 96940.0, 96560.0, 93660.0, 93700.0, 92160.0, 94840.0, 92800.0, 95980.0, 98880.0, 97720.0, 101060.0, 100600.0, 108620.0, 106160.0, 111400.0, 114380.0, 120360.0, 124720.0, 123520.0, 130520.0, 118820.0, 121580.0, 121580.0, 129980.0, 137940.0, 142300.0, 145000.0, 143420.0, 156060.0, 166980.0, 161940.0, 163220.0, 146200.0, 147260.0, 160500.0, 166740.0, 168780.0, 181520.0, 165680.0, 179600.0, 166280.0, 164820.0, 148200.0, 132440.0, 148100.0, 147220.0, 132780.0, 132920.0, 137000.0, 137340.0, 150260.0, 149420.0, 152640.0, 164120.0, 166480.0, 173660.0, 176040.0, 172020.0, 150860.0, 153060.0, 155860.0, 156160.0, 161060.0, 163000.0, 155040.0, 156980.0, 152080.0, 159620.0, 155320.0, 150120.0, 142600.0, 143860.0, 149040.0, 152940.0, 159120.0, 157200.0, 168440.0, 171620.0, 157500.0, 158640.0, 159120.0, 156980.0, 159420.0, 158320.0, 152420.0, 155440.0, 166500.0, 166840.0, 168680.0, 176020.0, 177580.0, 180200.0],
+            data: [69000.0, 67840.0, 68980.0, 68300.0, 68180.0, 66960.0, 66260.0, 65960.0, 65260.0, 64160.0, 64280.0, 63020.0, 64040.0, 63220.0, 65200.0, 64120.0, 61800.0, 61180.0, 60860.0, 61100.0, 62140.0, 60960.0, 60100.0, 60920.0, 60380.0, 58860.0, 59800.0, 59940.0, 61080.0, 60100.0, 60440.0, 60700.0, 60760.0, 61740.0, 60480.0, 59800.0, 59780.0, 59860.0, 59880.0, 60060.0, 58900.0, 59120.0, 60700.0, 60880.0, 61500.0, 63300.0, 62260.0, 62780.0, 63960.0, 64080.0, 63280.0, 63660.0, 63880.0, 64400.0, 64180.0, 64280.0, 66480.0, 66660.0, 66420.0, 67960.0, 69960.0, 71280.0, 72880.0, 69380.0, 76680.0, 80520.0, 73120.0, 70840.0, 70600.0, 68280.0, 68920.0, 68920.0, 67840.0, 69620.0, 72300.0, 76960.0, 81000.0, 82520.0, 85100.0, 85300.0, 86900.0, 89240.0, 87540.0, 80980.0, 82760.0, 78960.0, 79380.0, 79020.0, 78860.0, 78140.0, 77180.0, 75560.0, 72620.0, 71880.0, 73420.0, 74260.0, 74800.0, 72900.0, 70720.0, 71000.0, 71160.0, 72680.0, 73180.0, 73640.0, 72880.0, 73960.0, 73420.0, 73660.0, 72880.0, 74040.0, 72880.0, 73920.0, 72800.0, 73340.0, 72740.0, 72280.0, 72680.0, 72940.0, 75080.0, 75780.0, 75940.0, 75980.0, 77120.0, 79940.0, 79520.0, 81900.0, 81640.0, 82900.0, 83400.0, 80780.0, 82280.0, 78560.0, 79140.0, 80500.0, 82300.0, 87240.0, 86540.0, 86580.0, 87840.0, 87360.0, 95200.0, 93520.0, 99300.0, 98980.0, 91020.0, 90480.0, 95400.0, 96340.0, 95820.0, 96420.0, 96940.0, 96560.0, 93660.0, 93700.0, 92160.0, 94840.0, 92800.0, 95980.0, 98880.0, 97720.0, 101060.0, 100600.0, 108620.0, 106160.0, 111400.0, 114380.0, 120360.0, 124720.0, 123520.0, 130520.0, 118820.0, 121580.0, 121580.0, 129980.0, 137940.0, 142300.0, 145000.0, 143420.0, 156060.0, 166980.0, 161940.0, 163220.0, 146200.0, 147260.0, 160500.0, 166740.0, 168780.0, 181520.0, 165680.0, 179600.0, 166280.0, 164820.0, 148200.0, 132440.0, 148100.0, 147220.0, 132780.0, 132920.0, 137000.0, 137340.0, 150260.0, 149420.0, 152640.0, 164120.0, 166480.0, 173660.0, 176040.0, 172020.0, 150860.0, 153060.0, 155860.0, 156160.0, 161060.0, 163000.0, 155040.0, 156980.0, 152080.0, 159620.0, 155320.0, 150120.0, 142600.0, 143860.0, 149040.0, 152940.0, 159120.0, 157200.0, 168440.0, 171620.0, 157500.0, 158640.0, 159120.0, 156980.0, 159420.0, 158320.0, 152420.0, 155440.0, 166500.0, 166840.0, 168680.0, 176020.0, 177580.0, 180200.0, 177860.0],
             borderColor: '#27ae60', backgroundColor: 'rgba(39,174,96,0.06)',
             tension: 0.3, pointRadius: 0, fill: false, spanGaps: true,
             borderWidth: 2,
@@ -336,7 +336,7 @@
           
           {
             label: '锂精矿SC6（USD/吨，右轴）',
-            data: [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 2080, 2360, null, 2360, 2205, 2285, null, null, 2170, 2290, 2295, 2295, 2295, 2325, 2415],
+            data: [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 2080, 2360, null, 2360, 2205, 2285, null, null, 2170, 2290, 2295, 2295, 2295, 2325, 2415, null],
             borderColor: '#8e44ad', backgroundColor: 'rgba(142,68,173,0.08)',
             tension: 0.3, pointRadius: 3, borderDash: [4,3],
             yAxisID: 'y2', spanGaps: true,
@@ -479,9 +479,9 @@
     new Chart(el, {
       type: 'line',
       data: {
-        labels: ["04-21", "04-22", "04-23", "04-24", "04-25", "04-28", "04-29", "04-30", "05-06", "05-07", "05-08", "05-09", "05-12", "05-13", "05-14", "05-15", "05-16", "05-19", "05-20", "05-21", "05-22", "05-23", "05-26", "05-27", "05-28", "05-29", "05-30", "06-03", "06-04", "06-05", "06-06", "06-09", "06-10", "06-11", "06-12", "06-13", "06-16", "06-17", "06-18", "06-19", "06-20", "06-23", "06-24", "06-25", "06-26", "06-27", "06-30", "07-01", "07-02", "07-03", "07-04", "07-07", "07-08", "07-09", "07-10", "07-11", "07-14", "07-15", "07-16", "07-17", "07-18", "07-21", "07-22", "07-23", "07-24", "07-25", "07-28", "07-29", "07-30", "07-31", "08-01", "08-04", "08-05", "08-06", "08-07", "08-08", "08-11", "08-12", "08-13", "08-14", "08-15", "08-18", "08-19", "08-20", "08-21", "08-22", "08-25", "08-26", "08-27", "08-28", "08-29", "09-01", "09-02", "09-03", "09-04", "09-05", "09-08", "09-09", "09-10", "09-11", "09-12", "09-15", "09-16", "09-17", "09-18", "09-19", "09-22", "09-23", "09-24", "09-25", "09-26", "09-29", "09-30", "10-09", "10-10", "10-13", "10-14", "10-15", "10-16", "10-17", "10-20", "10-21", "10-22", "10-23", "10-24", "10-27", "10-28", "10-29", "10-30", "10-31", "11-03", "11-04", "11-05", "11-06", "11-07", "11-10", "11-11", "11-12", "11-13", "11-14", "11-17", "11-18", "11-19", "11-20", "11-21", "11-24", "11-25", "11-26", "11-27", "11-28", "12-01", "12-02", "12-03", "12-04", "12-05", "12-08", "12-09", "12-10", "12-11", "12-12", "12-15", "12-16", "12-17", "12-18", "12-19", "12-22", "12-23", "12-24", "12-25", "12-26", "12-29", "12-30", "12-31", "01-05", "01-06", "01-07", "01-08", "01-09", "01-12", "01-13", "01-14", "01-15", "01-16", "01-19", "01-20", "01-21", "01-22", "01-23", "01-26", "01-27", "01-28", "01-29", "01-30", "02-02", "02-03", "02-04", "02-05", "02-06", "02-09", "02-10", "02-11", "02-12", "02-13", "02-24", "02-25", "02-26", "02-27", "03-02", "03-03", "03-04", "03-05", "03-06", "03-09", "03-10", "03-11", "03-12", "03-13", "03-16", "03-17", "03-18", "03-19", "03-20", "03-23", "03-24", "03-25", "03-26", "03-27", "03-30", "03-31", "04-01", "04-02", "04-03", "04-07", "04-08", "04-09", "04-10", "04-13", "04-14", "04-15", "04-16", "04-17", "04-20"],
+        labels: ["04-21", "04-22", "04-23", "04-24", "04-25", "04-28", "04-29", "04-30", "05-06", "05-07", "05-08", "05-09", "05-12", "05-13", "05-14", "05-15", "05-16", "05-19", "05-20", "05-21", "05-22", "05-23", "05-26", "05-27", "05-28", "05-29", "05-30", "06-03", "06-04", "06-05", "06-06", "06-09", "06-10", "06-11", "06-12", "06-13", "06-16", "06-17", "06-18", "06-19", "06-20", "06-23", "06-24", "06-25", "06-26", "06-27", "06-30", "07-01", "07-02", "07-03", "07-04", "07-07", "07-08", "07-09", "07-10", "07-11", "07-14", "07-15", "07-16", "07-17", "07-18", "07-21", "07-22", "07-23", "07-24", "07-25", "07-28", "07-29", "07-30", "07-31", "08-01", "08-04", "08-05", "08-06", "08-07", "08-08", "08-11", "08-12", "08-13", "08-14", "08-15", "08-18", "08-19", "08-20", "08-21", "08-22", "08-25", "08-26", "08-27", "08-28", "08-29", "09-01", "09-02", "09-03", "09-04", "09-05", "09-08", "09-09", "09-10", "09-11", "09-12", "09-15", "09-16", "09-17", "09-18", "09-19", "09-22", "09-23", "09-24", "09-25", "09-26", "09-29", "09-30", "10-09", "10-10", "10-13", "10-14", "10-15", "10-16", "10-17", "10-20", "10-21", "10-22", "10-23", "10-24", "10-27", "10-28", "10-29", "10-30", "10-31", "11-03", "11-04", "11-05", "11-06", "11-07", "11-10", "11-11", "11-12", "11-13", "11-14", "11-17", "11-18", "11-19", "11-20", "11-21", "11-24", "11-25", "11-26", "11-27", "11-28", "12-01", "12-02", "12-03", "12-04", "12-05", "12-08", "12-09", "12-10", "12-11", "12-12", "12-15", "12-16", "12-17", "12-18", "12-19", "12-22", "12-23", "12-24", "12-25", "12-26", "12-29", "12-30", "12-31", "01-05", "01-06", "01-07", "01-08", "01-09", "01-12", "01-13", "01-14", "01-15", "01-16", "01-19", "01-20", "01-21", "01-22", "01-23", "01-26", "01-27", "01-28", "01-29", "01-30", "02-02", "02-03", "02-04", "02-05", "02-06", "02-09", "02-10", "02-11", "02-12", "02-13", "02-24", "02-25", "02-26", "02-27", "03-02", "03-03", "03-04", "03-05", "03-06", "03-09", "03-10", "03-11", "03-12", "03-13", "03-16", "03-17", "03-18", "03-19", "03-20", "03-23", "03-24", "03-25", "03-26", "03-27", "03-30", "03-31", "04-01", "04-02", "04-03", "04-07", "04-08", "04-09", "04-10", "04-13", "04-14", "04-15", "04-16", "04-17", "04-20", "04-21"],
         datasets: [{
-          data: [69000.0, 67840.0, 68980.0, 68300.0, 68180.0, 66960.0, 66260.0, 65960.0, 65260.0, 64160.0, 64280.0, 63020.0, 64040.0, 63220.0, 65200.0, 64120.0, 61800.0, 61180.0, 60860.0, 61100.0, 62140.0, 60960.0, 60100.0, 60920.0, 60380.0, 58860.0, 59800.0, 59940.0, 61080.0, 60100.0, 60440.0, 60700.0, 60760.0, 61740.0, 60480.0, 59800.0, 59780.0, 59860.0, 59880.0, 60060.0, 58900.0, 59120.0, 60700.0, 60880.0, 61500.0, 63300.0, 62260.0, 62780.0, 63960.0, 64080.0, 63280.0, 63660.0, 63880.0, 64400.0, 64180.0, 64280.0, 66480.0, 66660.0, 66420.0, 67960.0, 69960.0, 71280.0, 72880.0, 69380.0, 76680.0, 80520.0, 73120.0, 70840.0, 70600.0, 68280.0, 68920.0, 68920.0, 67840.0, 69620.0, 72300.0, 76960.0, 81000.0, 82520.0, 85100.0, 85300.0, 86900.0, 89240.0, 87540.0, 80980.0, 82760.0, 78960.0, 79380.0, 79020.0, 78860.0, 78140.0, 77180.0, 75560.0, 72620.0, 71880.0, 73420.0, 74260.0, 74800.0, 72900.0, 70720.0, 71000.0, 71160.0, 72680.0, 73180.0, 73640.0, 72880.0, 73960.0, 73420.0, 73660.0, 72880.0, 74040.0, 72880.0, 73920.0, 72800.0, 73340.0, 72740.0, 72280.0, 72680.0, 72940.0, 75080.0, 75780.0, 75940.0, 75980.0, 77120.0, 79940.0, 79520.0, 81900.0, 81640.0, 82900.0, 83400.0, 80780.0, 82280.0, 78560.0, 79140.0, 80500.0, 82300.0, 87240.0, 86540.0, 86580.0, 87840.0, 87360.0, 95200.0, 93520.0, 99300.0, 98980.0, 91020.0, 90480.0, 95400.0, 96340.0, 95820.0, 96420.0, 96940.0, 96560.0, 93660.0, 93700.0, 92160.0, 94840.0, 92800.0, 95980.0, 98880.0, 97720.0, 101060.0, 100600.0, 108620.0, 106160.0, 111400.0, 114380.0, 120360.0, 124720.0, 123520.0, 130520.0, 118820.0, 121580.0, 121580.0, 129980.0, 137940.0, 142300.0, 145000.0, 143420.0, 156060.0, 166980.0, 161940.0, 163220.0, 146200.0, 147260.0, 160500.0, 166740.0, 168780.0, 181520.0, 165680.0, 179600.0, 166280.0, 164820.0, 148200.0, 132440.0, 148100.0, 147220.0, 132780.0, 132920.0, 137000.0, 137340.0, 150260.0, 149420.0, 152640.0, 164120.0, 166480.0, 173660.0, 176040.0, 172020.0, 150860.0, 153060.0, 155860.0, 156160.0, 161060.0, 163000.0, 155040.0, 156980.0, 152080.0, 159620.0, 155320.0, 150120.0, 142600.0, 143860.0, 149040.0, 152940.0, 159120.0, 157200.0, 168440.0, 171620.0, 157500.0, 158640.0, 159120.0, 156980.0, 159420.0, 158320.0, 152420.0, 155440.0, 166500.0, 166840.0, 168680.0, 176020.0, 177580.0, 180200.0],
+          data: [69000.0, 67840.0, 68980.0, 68300.0, 68180.0, 66960.0, 66260.0, 65960.0, 65260.0, 64160.0, 64280.0, 63020.0, 64040.0, 63220.0, 65200.0, 64120.0, 61800.0, 61180.0, 60860.0, 61100.0, 62140.0, 60960.0, 60100.0, 60920.0, 60380.0, 58860.0, 59800.0, 59940.0, 61080.0, 60100.0, 60440.0, 60700.0, 60760.0, 61740.0, 60480.0, 59800.0, 59780.0, 59860.0, 59880.0, 60060.0, 58900.0, 59120.0, 60700.0, 60880.0, 61500.0, 63300.0, 62260.0, 62780.0, 63960.0, 64080.0, 63280.0, 63660.0, 63880.0, 64400.0, 64180.0, 64280.0, 66480.0, 66660.0, 66420.0, 67960.0, 69960.0, 71280.0, 72880.0, 69380.0, 76680.0, 80520.0, 73120.0, 70840.0, 70600.0, 68280.0, 68920.0, 68920.0, 67840.0, 69620.0, 72300.0, 76960.0, 81000.0, 82520.0, 85100.0, 85300.0, 86900.0, 89240.0, 87540.0, 80980.0, 82760.0, 78960.0, 79380.0, 79020.0, 78860.0, 78140.0, 77180.0, 75560.0, 72620.0, 71880.0, 73420.0, 74260.0, 74800.0, 72900.0, 70720.0, 71000.0, 71160.0, 72680.0, 73180.0, 73640.0, 72880.0, 73960.0, 73420.0, 73660.0, 72880.0, 74040.0, 72880.0, 73920.0, 72800.0, 73340.0, 72740.0, 72280.0, 72680.0, 72940.0, 75080.0, 75780.0, 75940.0, 75980.0, 77120.0, 79940.0, 79520.0, 81900.0, 81640.0, 82900.0, 83400.0, 80780.0, 82280.0, 78560.0, 79140.0, 80500.0, 82300.0, 87240.0, 86540.0, 86580.0, 87840.0, 87360.0, 95200.0, 93520.0, 99300.0, 98980.0, 91020.0, 90480.0, 95400.0, 96340.0, 95820.0, 96420.0, 96940.0, 96560.0, 93660.0, 93700.0, 92160.0, 94840.0, 92800.0, 95980.0, 98880.0, 97720.0, 101060.0, 100600.0, 108620.0, 106160.0, 111400.0, 114380.0, 120360.0, 124720.0, 123520.0, 130520.0, 118820.0, 121580.0, 121580.0, 129980.0, 137940.0, 142300.0, 145000.0, 143420.0, 156060.0, 166980.0, 161940.0, 163220.0, 146200.0, 147260.0, 160500.0, 166740.0, 168780.0, 181520.0, 165680.0, 179600.0, 166280.0, 164820.0, 148200.0, 132440.0, 148100.0, 147220.0, 132780.0, 132920.0, 137000.0, 137340.0, 150260.0, 149420.0, 152640.0, 164120.0, 166480.0, 173660.0, 176040.0, 172020.0, 150860.0, 153060.0, 155860.0, 156160.0, 161060.0, 163000.0, 155040.0, 156980.0, 152080.0, 159620.0, 155320.0, 150120.0, 142600.0, 143860.0, 149040.0, 152940.0, 159120.0, 157200.0, 168440.0, 171620.0, 157500.0, 158640.0, 159120.0, 156980.0, 159420.0, 158320.0, 152420.0, 155440.0, 166500.0, 166840.0, 168680.0, 176020.0, 177580.0, 180200.0, 177860.0],
           borderColor: '#27ae60',
           backgroundColor: '#27ae6018',
           tension: 0.3, pointRadius: 0, fill: true,
@@ -674,64 +674,64 @@
     <tr>
       <td>9696.HK</td>
       <td>天齐锂业H</td>
-      <td class="text-right">58.25</td>
-      <td class="text-right" style="color:#27ae60">-0.60%</td>
+      <td class="text-right">—</td>
+      <td class="text-right" style="color:#888">—</td>
       <td><span class="tag-cat">锂矿+锂盐</span></td>
     </tr>
     <tr>
       <td>1772.HK</td>
       <td>赣锋锂业H</td>
-      <td class="text-right">80.60</td>
-      <td class="text-right" style="color:#27ae60">-1.53%</td>
+      <td class="text-right">—</td>
+      <td class="text-right" style="color:#888">—</td>
       <td><span class="tag-cat">锂盐+电池</span></td>
     </tr>
     <tr>
       <td>ALB</td>
       <td>Albemarle</td>
-      <td class="text-right">194.83</td>
-      <td class="text-right" style="color:#27ae60">-1.48%</td>
+      <td class="text-right">—</td>
+      <td class="text-right" style="color:#888">—</td>
       <td><span class="tag-cat">全球最大锂生产商</span></td>
     </tr>
     <tr>
       <td>SQM</td>
       <td>SQM</td>
-      <td class="text-right">88.42</td>
-      <td class="text-right" style="color:#27ae60">-0.43%</td>
+      <td class="text-right">—</td>
+      <td class="text-right" style="color:#888">—</td>
       <td><span class="tag-cat">智利盐湖锂</span></td>
     </tr>
     <tr>
       <td>RIO</td>
       <td>力拓(Rio Tinto)</td>
-      <td class="text-right">99.83</td>
-      <td class="text-right" style="color:#27ae60">-0.32%</td>
+      <td class="text-right">—</td>
+      <td class="text-right" style="color:#888">—</td>
       <td><span class="tag-cat">矿业巨头（含锂）</span></td>
     </tr>
     <tr>
       <td>LAC</td>
       <td>Lithium Americas</td>
-      <td class="text-right">4.98</td>
-      <td class="text-right" style="color:#e74c3c">+2.89%</td>
+      <td class="text-right">—</td>
+      <td class="text-right" style="color:#888">—</td>
       <td><span class="tag-cat">锂矿开发</span></td>
     </tr>
     <tr>
       <td>PLS.AX</td>
       <td>Pilbara Minerals</td>
-      <td class="text-right">6.04</td>
-      <td class="text-right" style="color:#888">0.00%</td>
+      <td class="text-right">—</td>
+      <td class="text-right" style="color:#888">—</td>
       <td><span class="tag-cat">锂精矿</span></td>
     </tr>
     <tr>
       <td>LTR.AX</td>
       <td>Liontown Resources</td>
-      <td class="text-right">2.23</td>
-      <td class="text-right" style="color:#e74c3c">+1.36%</td>
+      <td class="text-right">—</td>
+      <td class="text-right" style="color:#888">—</td>
       <td><span class="tag-cat">锂精矿</span></td>
     </tr>
     <tr>
       <td>IGO.AX</td>
       <td>IGO Limited</td>
-      <td class="text-right">8.94</td>
-      <td class="text-right" style="color:#27ae60">-3.35%</td>
+      <td class="text-right">—</td>
+      <td class="text-right" style="color:#888">—</td>
       <td><span class="tag-cat">锂精矿</span></td>
     </tr></tbody>
   </table>
@@ -1006,21 +1006,6 @@
     <tbody><tr><td colspan='6' class='empty'>暂无数据</td></tr></tbody>
   </table>
   
-  <div class="section-label" style="margin-top:16px;">进口量（—）</div>
-  <div class="card-row">
-    <div class="stat-card">
-      <div class="stat-label">锂矿石进口量</div>
-      <div class="stat-value">— <span class="unit-small">吨</span></div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-label">碳酸锂进口量</div>
-      <div class="stat-value">— <span class="unit-small">吨</span></div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-label">同比变化</div>
-      <div class="stat-value" style="color:#888">—</div>
-    </div>
-  </div>
 </div>
     
 <div class="panel" id="p5">
@@ -1132,11 +1117,11 @@
       </div>
     </div>
     <div class="price-card">
-      <div class="price-label">GFEX注册仓单 None
+      <div class="price-label">GFEX注册仓单 20260420
         <span class="src-tag src-api">📡 akshare·GFEX</span>
       </div>
-      <div class="price-value">— <span class="price-unit">手</span></div>
-      <div class="price-meta">1手=2吨</div>
+      <div class="price-value">30,688 <span class="price-unit">手</span></div>
+      <div class="price-meta">手（1手=2吨）</div>
     </div>
     <div class="price-card">
       <div class="price-label">港口锂精矿库存</div>
@@ -1155,7 +1140,7 @@
   (function(){
     var labels = ["03-19", "03-20", "03-26", "03-27", "03-28", "03-30", "03-31", "04-01", "04-02", "04-03", "04-04", "04-05", "04-06", "04-07", "04-08", "04-09", "04-10", "04-11", "04-12", "04-13", "04-14", "04-16", "04-17", "04-18", "04-19", "04-20", "04-21"];
     var smm    = [98959, 98959, 99500, 99489, 99489, 99489, null, 99489, 100349, 100349, null, null, null, null, null, 101802, 35170, 101802, 101802, null, null, 102814, 102814, 102814, null, null, null];
-    var gfex   = [38476.0, 35316.0, 22636.0, 22636.0, 62128.0, 35316.0, 22636.0, 42476.0, 50906.0, 49328.0, 42476.0, null, null, null, 47308.0, 61376.0, null, null, null, null, 52406.0, null, null, null, null, null, null];
+    var gfex   = [38476.0, 35316.0, 22636.0, 22636.0, 62128.0, 35316.0, 22636.0, 42476.0, 50906.0, 49328.0, 42476.0, null, null, null, 47308.0, 61376.0, null, null, null, null, 52406.0, null, null, null, null, null, 61376.0];
     var port   = [null, 18.5, 19.3, 19.3, 19.3, null, null, 15.5, 14.3, 9.4, 15.5, 15.5, null, null, null, 17.4, 17.4, null, null, 14.3, null, 17.4, 16.4, null, 16.4, null, null];
     new Chart(document.getElementById('invFullHistChart'), {
       type: 'line',
@@ -1172,7 +1157,7 @@
           
           {
             label: 'GFEX注册仓单（吨）',
-            data: [38476.0, 35316.0, 22636.0, 22636.0, 62128.0, 35316.0, 22636.0, 42476.0, 50906.0, 49328.0, 42476.0, null, null, null, 47308.0, 61376.0, null, null, null, null, 52406.0, null, null, null, null, null, null],
+            data: [38476.0, 35316.0, 22636.0, 22636.0, 62128.0, 35316.0, 22636.0, 42476.0, 50906.0, 49328.0, 42476.0, null, null, null, 47308.0, 61376.0, null, null, null, null, 52406.0, null, null, null, null, null, 61376.0],
             borderColor: '#8e44ad', backgroundColor: 'rgba(142,68,173,0.07)',
             tension: 0.3, pointRadius: 3, fill: false, spanGaps: true,
             yAxisID: 'y',
@@ -1346,10 +1331,10 @@
 
   <script>
   (function(){
-    var labels  = ["LC2604", "LC2605", "LC2606", "LC2607", "LC2608", "LC2609", "LC2610", "LC2611", "LC2612", "LC2701", "LC2702", "LC2703"];
-    var prices  = [163400.0, 176220.0, 177100.0, 177800.0, 179900.0, 180200.0, 179520.0, 178900.0, 178320.0, 178700.0, 178380.0, 176820.0];
+    var labels  = ["LC2605", "LC2606", "LC2607", "LC2608", "LC2609", "LC2610", "LC2611", "LC2612", "LC2701", "LC2702", "LC2703", "LC2704"];
+    var prices  = [173940.0, 174760.0, 175340.0, 177020.0, 177860.0, 177480.0, 175980.0, 176160.0, 176440.0, 178380.0, 176820.0, 180000.0];
     var bases   = [null, null, null, null, null, null, null, null, null, null, null, null];
-    var volumes = [0, 73627, 25017, 141975, 17300, 435887, 10453, 18065, 14321, 10198, 801, 74];
+    var volumes = [71726, 24766, 142301, 17317, 438773, 10466, 18048, 14686, 10218, 801, 74, 5];
 
     new Chart(document.getElementById('futuresCurveChart'), {
       type: 'line',
@@ -1415,7 +1400,7 @@
   })();
   </script>
 
-  
+  <div class='section-label' style='margin-top:16px;'>多空持仓排名（前5）</div><table class='data-table'><tbody><tr><td>1</td><td>中信期货</td><td>39590</td><td>1848</td><td>国泰君安期货</td><td>40680</td></tr><tr><td>2</td><td>国泰君安期货</td><td>34907</td><td>406</td><td>华泰期货</td><td>32322</td></tr><tr><td>3</td><td>东证期货</td><td>18585</td><td>187</td><td>中信期货</td><td>26428</td></tr><tr><td>4</td><td>广发期货</td><td>15693</td><td>-149</td><td>永安期货</td><td>25505</td></tr><tr><td>5</td><td>银河期货</td><td>13820</td><td>3936</td><td>东证期货</td><td>21756</td></tr></tbody></table>
 </div>
     
 <div class="panel" id="pvol">
@@ -1430,7 +1415,7 @@
   <div class="section-label" style="margin-top:16px;">GFEX LC期货主力成交量（日度，手）— 2022年至今</div>
   <canvas id="fvChart" style="max-height:160px;"></canvas>
 
-  <div class="data-source">数据来源：akshare（新浪财经·A股历史）+ 新浪财经·GFEX · 更新于 2026-04-21 08:13:07</div>
+  <div class="data-source">数据来源：akshare（新浪财经·A股历史）+ 新浪财经·GFEX · 更新于 2026-04-21 09:18:25</div>
 
   <script>
   (function(){
